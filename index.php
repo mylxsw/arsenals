@@ -1,4 +1,7 @@
 <?php
+/**
+ * Arsenals框架示例程序入口
+ */
 use Arsenals\ArsenalsBootstrap;
 // 定义项目配置
 define('APP_NAME', 'Demo');
