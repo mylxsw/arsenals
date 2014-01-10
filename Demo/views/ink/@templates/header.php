@@ -16,11 +16,34 @@
   	<!--[if lte IE 7 ]>
   		<link rel="stylesheet" type="text/css" href="<?php \Demo\views\ink\public_resource_path();?>ink/css/ink-ie7.css" />
   	<![endif]-->
+  	<?php foreach ($load_css as $key => $val):?>
+  		<link rel="stylesheet" type="text/css" href="<?php \Demo\views\ink\public_resource_path();?><?php echo $val;?>" />
+  	<?php endforeach;?>
   	<link rel="stylesheet/less" type="text/css" href="<?php \Demo\views\ink\resource_path();?>css/custom.css" />
   	<link rel="stylesheet/less" type="text/css" href="<?php \Demo\views\ink\resource_path();?>css/style.css" />
 	<script type="text/javascript" src="<?php \Demo\views\ink\public_resource_path();?>less-1.4.2.min.js" ></script>
+	
+	<script type="text/javascript" src="<?php \Demo\views\ink\public_resource_path();?>ink/js/holder.js"></script>
+	<script type="text/javascript" src="<?php \Demo\views\ink\public_resource_path();?>ink/js/ink.min.js"></script>
+	<script type="text/javascript" src="<?php \Demo\views\ink\public_resource_path();?>ink/js/ink-ui.min.js"></script>
+	<script type="text/javascript" src="<?php \Demo\views\ink\public_resource_path();?>ink/js/autoload.js"></script>
+	<script type="text/javascript" src="<?php \Demo\views\ink\public_resource_path();?>require.js" ></script>
+	<script type="text/javascript">
+		var global = {
+			view_resources_path: "<?php \Demo\views\ink\resource_path();?>",
+			public_resources_path: "<?php \Demo\views\ink\public_resource_path();?>" 
+		};
+		require.config({
+			baseUrl: global.view_resources_path + "js/",
+			paths: {
+				"jquery": global.public_resources_path + "jquery-1.8.3.min",
+				"underscore": global.public_resources_path + "underscore-1.4.4",
+				"backbone": global.public_resources_path + "backbone"
+			}
+		});
+	</script>
 </head>
-<body data-resource="<?php \Demo\views\ink\public_resource_path();?>">
+<body>
 <div class="ink-grid" id="main">
 	<header id="header">
 		<h1><img src="http://115.29.39.240/wp-content/uploads/2013/12/%E5%92%96%E5%95%A1%E5%8E%85logo.png" /></h1>

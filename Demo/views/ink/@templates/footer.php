@@ -36,12 +36,5 @@
 		</div>
 		<p class="title">Design By <a href="http://agiledev.pw" target="_blank">AgileDEV.pw</a></p>
 	</footer>
-	<script type="text/javascript" src="<?php \Demo\views\ink\public_resource_path();?>jquery-1.8.3.min.js"></script>
-	<script type="text/javascript" src="<?php \Demo\views\ink\public_resource_path();?>ink/js/holder.js"></script>
-	<script type="text/javascript" src="<?php \Demo\views\ink\public_resource_path();?>ink/js/ink.min.js"></script>
-	<script type="text/javascript" src="<?php \Demo\views\ink\public_resource_path();?>ink/js/ink-ui.min.js"></script>
-	<script type="text/javascript" src="<?php \Demo\views\ink\public_resource_path();?>ink/js/autoload.js"></script>
-	<script type="text/javascript" src="<?php \Demo\views\ink\resource_path();?>js/common.js"></script>
-	<script type="text/javascript" src="<?php \Demo\views\ink\resource_path();?>js/init.js"></script>
 </body>
 </html>

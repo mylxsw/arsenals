@@ -1,5 +1,5 @@
 <?php Demo\views\ink\header();?>
-<div id="js-control" data-load="slider_play">
+<div>
 	<div id='sliderPlay' style='visibility: hidden'>
 		<a href='http://www.webrhai.com/' target="_blank"><img src='http://ww3.sinaimg.cn/large/adde8400gw1ebn1vgnos8j20k00ag0us.jpg' alt='这是标题一' height='376px' width='940px'/></a>
 		<a href='http://www.webrhai.com/' target="_blank"><img src='http://ww4.sinaimg.cn/large/adde8400gw1ebn1vktdigj20k00ag0vt.jpg' alt='这是标题二' height='376px' width='940px'/></a>
@@ -32,4 +32,9 @@
 		</div>
 	</div>
 </div>
+<script>
+require(['jquery', 'page/home'], function($, home){
+	home.slider_play();
+});
+</script>
 <?php Demo\views\ink\footer();?>

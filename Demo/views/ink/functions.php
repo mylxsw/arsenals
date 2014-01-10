@@ -25,7 +25,7 @@ function public_resource_path(){
 /**
  * 页面头部内容
  */
-function header(){
+function header($load_css = array()){
 	@extract(ValueStack::gets());
 	include TMP_FUNC . 'header.php';
 }
