@@ -1,0 +1,414 @@
+<?php
+
+namespace Arsenals\Core\Abstracts;
+
+use Arsenals\Core\Database\SessionFactory;
+use Arsenals\Core\Config;
+use Arsenals\Core\Exceptions\QueryException;
+/**
+ * 抽象模型
+ * 
+ * @author 管宜尧<mylxsw@126.com>
+ *
+ */
+abstract class Model extends Arsenals {
+	protected $_table_name = null;
+	protected $_conn = null;
+	
+	/**
+	 * @var 最后一次分页查询到的总记录数量
+	 */
+	private $page_count = 0;
+	
+	public function __construct(){
+		// 初始化当前模型对应的数据表名称
+		if($this->_table_name == null){
+			$class_name = get_called_class();
+			$config = Config::load('database');
+			$this->_table_name = strtolower($config['global']['prefix']) 
+					. substr(strtolower($class_name), strrpos($class_name, '\\') + 1);
+		}
+		$this->_conn = SessionFactory::getSession();
+	}
+	/**
+	 * 载入单个数据对象
+	 *
+	 * @param mixed $conditions 条件
+	 * @return object
+	 */
+	public function load($conditions = array()){
+		$sql = 'SELECT * FROM ' . $this->_table_name ;
+		$args = array();
+		if(count($conditions) > 0){
+			$sql .= ' WHERE ';
+			$conditions_result = $this->_init_conditions($conditions);
+			$sql .= $conditions_result[0];
+			$args = $conditions_result[1];
+		}
+		$result = $this->query($sql, $args)->fetch_array();
+		return $result;
+	}
+	/**
+	 * 删除元素
+	 *
+	 * @param mixed $conditions 条件
+	 * @return int
+	 */
+	public function delete($conditions){
+		if(is_array($conditions) && count($conditions) > 0){
+			$sql = 'DELETE FROM `' . $this->_table_name . '` WHERE ';
+			$conditions_result = $this->_init_conditions($conditions);
+			$sql .= $conditions_result[0];
+			$args = $conditions_result[1];
+			$this->query($sql, $args);
+		}else{
+			throw new QueryException('执行删除操作必须指定查询条件!');
+		}
+	}
+	/**
+	 * 查出指定表中的数据记录列表（支持分页）
+	 * 
+	 * 查出指定表中的数据记录，支持分页，通过指定不同的查询条件，实现查询不同
+	 * 结果集。
+	 * 
+	 * @param array $conditions 查询条件数组
+	 * @param bool|int 是否分页或者是分页的当前页码
+	 * @param int 每页显示的记录数量
+	 * 
+	 * @return array
+	 */ 
+	public function find($conditions = array(), $order = '',
+		$index = FALSE, $per = 15){
+		
+		$args = array();
+		$sql = " FROM {$this->_table_name} ";
+		if(count($conditions) > 0){
+			$sql .= ' WHERE ';
+			$conditions_result = $this->_init_conditions($conditions);
+			$sql .= $conditions_result[0];
+			$args = $conditions_result[1];
+		}
+		
+		if($order != ''){
+			$sql .= ' ORDER BY ' . $order;
+		}
+		
+		// $index 为FALSE，则不分页，直接查询所有数据
+		if($index === FALSE){
+			return $this->query("SELECT * {$sql}", $args);
+		}
+		// 分页查询
+		return $this->select($sql, $args, $index, $per);
+	}
+	/**
+	 * 更新单个数据对象
+	 *
+	 * @param array $data
+	 * @return int
+	 */
+	public function update($data, $conditions){
+// 		$table_datas = array_merge($this->_datas_, $data);
+// 		$pk = $table_datas[$this->getPk()];
+// 		unset($table_datas[$this->getPk()]);
+// 		// 执行字段校验等
+// 		$this->_create($table_datas);
+		
+// 		$sql = 'UPDATE `' . $this->get_table_name() . '` SET ' ;
+// 		$args = array();
+// 		foreach ($this->get_table_fields() as $field=>$v) {
+// 			if(array_key_exists($field, $table_datas)){
+// 				$sql .= "{$field} = ? , ";
+// 				array_push($args, $table_datas[$field]);
+// 			}
+// 		}
+// 		$sql = trim(trim($sql), ',') . ' WHERE ' . $this->getPk() . '= ? ';
+// 		array_push($args, $pk);
+// 		return $this->query($sql, $args);
+	}
+	/**
+	 * 保存数据
+	 * 
+	 * @param array $data 要保存的数据（key-value对应field-value）
+	 * @return int
+	 */ 
+	public function save($data = array()){
+		// $table_datas = array_merge($this->_datas_, $data);
+
+		// 执行字段校验等
+		//$this->_create($table_datas);
+
+		$sql = 'INSERT INTO `' . $this->_table_name . '` (' ;
+		$args = array();
+		foreach ($data as $field=>$v) {
+			$sql .= "{$field}, ";
+			array_push($args, $v);
+		}
+		$sql = trim(trim($sql), ',') . ') VALUES(' 
+			. implode(array_fill(0, count($args), '?'), ',') . ')';
+
+		return $this->query($sql, $args);
+	}
+	/**
+	 * SELECT 查询（支持分页）
+	 *
+	 * @param sring $sql 	要执行的sql
+	 * @param array $args 	参数
+	 * @param bool|int $index 为FALSE则不分页，数字进行分页
+	 * @param int $per 	每页数量
+	 *
+	 * @return array
+	 */
+	public function select($sql, $args = array(), $index = FALSE, $per = 15){
+		if($index === FALSE){
+			return $this->query($sql, $args );
+		}
+		$sql = trim($sql);
+		$index = intval($index);
+		$per = intval($per);
+	
+		// 分页查询
+		// 首先查询出总记录数量
+		$count_res = $this->query( 'SELECT COUNT(*) ' . substr($sql, strstr(strtolower($sql), ' FROM ')), $args)->fetch_row();
+		$this->page_count = $count_res[0];
+		// 总页数
+		$total_pages = $this->page_count / $per + 1;
+		// 判断当前页码是否正确
+		if($index <= 0 || $index > $total_pages){
+			$index = 1;
+		}
+		$sql .= ' LIMIT ' . ($index - 1) * $per . ', ' . $per;
+		return $this->query($sql, $args);
+	}
+	/**
+	 * 执行sql语句
+	 *
+	 * @param string $sql 要执行的sql语句
+	 * @param array $args 预处理的变量
+	 * @return array | int
+	 */
+	public function query($sql, $args = array()){
+		// 如果没有提供参数数组，则执行普通查询
+		if(\count($args) == 0){
+			$res = $this->_conn->query($sql);
+			if($this->_conn->errno){
+				throw new QueryException($this->_conn->error);
+			}
+			return $res;
+		}
+		// 提供了参数数组，执行预处理
+		$stmt = $this->_conn->prepare($sql);
+		if($this->_conn->errno){
+			throw new QueryException($this->_conn->error);
+		}
+		$b_types = '';
+		$b_params = array();
+		foreach ($args as $k => $v){
+			if(\is_integer($v)){
+				$type = 'i';
+			}else if(\is_float($v) || \is_double($v)){
+				$type = 'd';
+			}else{
+				$type = 's';
+			}
+			$b_types .= $type;
+			// bind_param第二个参数之后必须是引用
+			// 同时注意的是，这里必须用$args，而不能用$v
+			// 因为每次引用$v，都是传递的引用，$v最后只有一个相同的值
+			$b_params[$k] = &$args[$k];
+		}
+		
+		call_user_func_array(array($stmt, 'bind_param'), array_merge(array($b_types), $b_params));
+		if(!$stmt->execute() ){
+			throw new QueryException($this->_conn->error);
+		}
+		
+		if(method_exists($stmt, 'get_result')){
+			$res = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+		}else{
+			$stmt->store_result();
+			
+			$fileds = $stmt->result_metadata()->fetch_fields();
+			$statementParams = '';
+			$column = array();
+			foreach ($fileds as $field){
+				if(empty($statementParams)){
+					$statementParams .= "\$column['" . $field->name . "']";
+				}else{
+					$statementParams .= ", \$column['" . $field->name . "']";
+				}
+			}
+			$statement = "\$stmt->bind_result($statementParams);";
+			eval($statement);
+			
+			$res = array();
+			while ($stmt->fetch()){
+				$res[] = $column;
+			}
+		}
+		return $res;
+	}
+	
+	/**
+	 * 查询出表中所有数据
+	 * @param number $limit
+	 * @throws QueryException
+	 */
+	public function lists($limit = 10){
+		$sql = "SELECT * FROM {$this->_table_name}";
+		// 添加查询记录数量限制
+		if(!\is_null($limit)){
+			$sql .= " LIMIT {$limit}";
+		}
+		$res = $this->_conn->query($sql);
+		if($this->_conn->errno){
+			throw new QueryException($this->_conn->error);
+		}
+		return $res;
+	}
+	
+	/**
+	 * 初始化查询条件数组为字符串
+	 *
+	 * @access private
+	 * @param array $conditions 查询条件数组
+	 * @return string
+	 */
+	private function _init_conditions($conditions){
+		$sql = '';
+		$args = array();
+		$join_method = 'AND';
+		if(array_key_exists('_OR', $conditions)){
+			if($conditions['_OR'] === TRUE){
+				$join_method = 'OR';
+			}
+			unset($conditions['_OR']);
+		}
+	
+		foreach ($conditions as $c_k => $c_v) {
+			$c_cmd_pos = strstr($c_k, '%');
+			if($c_cmd_pos === FALSE){
+				$sql .= "{$c_k} = ? ";
+				array_push($args, $c_v);
+			}else{
+				$c_cmd = preg_split('/%/', $c_k, 2);
+				switch ($c_cmd[1]) {
+					case 'LIKE':
+						$sql .= "{$c_cmd[0]} LIKE ? ";
+						array_push($args, $c_v);
+						break;
+					case 'EQ':
+						$sql .= "{$c_cmd[0]} = ? ";
+						array_push($args, $c_v);
+						break;
+					case 'NEQ':
+						$sql .= "{$c_cmd[0]} <> ? ";
+						array_push($args, $c_v);
+						break;
+					case 'GT':
+						$sql .= "{$c_cmd[0]} > ? ";
+						array_push($args, $c_v);
+						break;
+					case 'GET':
+						$sql .= "{$c_cmd[0]} >= ? ";
+						array_push($args, $c_v);
+						break;
+					case 'LT':
+						$sql .= "{$c_cmd[0]} < ? ";
+						array_push($args, $c_v);
+						break;
+					case 'LET':
+						$sql .= "{$c_cmd[0]} <= ? ";
+						array_push($args, $c_v);
+						break;
+					case 'IS_NULL':
+						$sql .= "{$c_cmd[0]} IS NULL ";
+						break;
+					case 'IS_NOT_NULL':
+						$sql .= "{$c_cmd[0]} IS NOT NULL ";
+						break;
+					default:
+				}
+			}
+			$sql .= " {$join_method} ";
+		}
+	
+		return array(rtrim(trim($sql), $join_method), $args);
+	}
+	
+	/**
+	 * 设置模型属性
+	 *
+	 * @param string $name 字段名
+	 * @param mixed $value 字段值
+	 * @return object
+	 */
+	public function __set($name, $value){
+// 		if(str_start_with($name, '_')){
+// 			$this->{$name} = $value;
+// 			return $this;
+// 		}
+// 		if(array_key_exists($name, $this->get_table_fields())){
+// 			$this->_datas_[$name] = $value;
+// 			return $this;
+// 		}else{
+// 			show_error("表{$this->_table_name_}中不存在字段{$name}!");
+// 		}
+	}
+	
+	/**
+	 * 实现查询方法
+	 *
+	 * 实现了通过调用方法by_, eq_等类似方法+字段名从表中执行查询
+	 * 方法含有如下：by_ eq_ like_ neq_ gt_ gte_ lt_ lte_
+	 *
+	 * @param string name 调用的方法名
+	 * @param array $arguments 参数数组
+	 *
+	 * @return object 返回的为query对象，如果要获取值需要调用row(_array), result(_array)
+	 */
+	public function __call($name , $arguments){
+// 		$name_array = preg_split('/_/', $name, 2);
+// 		if(count($name_array) != 2 ||
+// 		!array_key_exists($name_array[1], $this->get_table_fields())){
+// 			show_error("调用的方法{$name}不存在!");
+// 		}
+	
+// 		$sql = 'SELECT * FROM `' . $this->get_table_name() . '` WHERE ';
+// 		switch ($name_array[0]) {
+// 			case 'by':
+// 			case 'eq':
+// 				$sql .= $name_array[1] . ' = ? ';
+// 				break;
+// 			case 'like':
+// 				$sql .= $name_array[1] . ' LIKE ? ';
+// 				break;
+// 			case 'gt':
+// 				$sql .= $name_array[1] . ' > ? ';
+// 				break;
+// 			case 'lt':
+// 				$sql .= $name_array[1] . ' < ? ';
+// 				break;
+// 			case 'gte':
+// 				$sql .= $name_array[1] . ' >= ? ';
+// 				break;
+// 			case 'lte':
+// 				$sql .= $name_array[1] . ' <= ? ';
+// 				break;
+// 			case 'neq':
+// 				$sql .= $name_array[1] . ' <> ? ';
+// 				break;
+// 			default:
+// 				show_error("调用的方法{$name}不存在!");
+// 		}
+	
+// 		return $this->query($sql, $arguments);
+	}
+	/**
+	 * 字符串转义，安全处理sql值
+	 * @param string $str
+	 * @return string
+	 */
+	public function escape($str){
+		return mysql_real_escape_string($str);
+	}
+}

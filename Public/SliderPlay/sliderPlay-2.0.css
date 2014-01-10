@@ -1,0 +1,44 @@
+.sliderPlay{
+    position: relative;
+}
+.sliderPlay a{
+    float: left;
+}
+.sliderPlay img{
+    border: none;
+}
+.sliderPlay-title {
+    position:absolute;
+    z-index:2;
+    bottom:0;
+    width:100%;
+    background:#000;
+    font:12px/32px "Microsoft YaHei",Arial;
+    color:#fff;
+    text-indent:8px;
+    opacity:0.5;
+    filter:alpha(opacity:60)
+}
+.sliderPlay-btn {
+    position:absolute;
+    z-index:3;
+    bottom:5px;
+    right:0;
+    text-align:center;
+}
+.sliderPlay-btn span {
+    margin-right:10px;
+    height:20px;
+    width:20px;
+    border-radius: 10px;
+    background:#ddd;
+    display:inline-block;
+    text-align:center;
+    cursor:pointer;
+    line-height:20px
+}
+.sliderPlay-btn span.current {
+    background:#5DCB17;
+    color:#fff
+}
+
