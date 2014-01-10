@@ -176,3 +176,17 @@ Arsenals采用了基于MVC的架构，同时支持Service层的扩展。
 	</tr>
 </tbody>
 </table>
+
+###模板引擎
+默认是采用系统内置的简单模板的，该模板使用纯PHP。  
+
+可以通过在入口文件中定义常量 **VIEW_LAWER** 修改默认采用的模板引擎，默认值为： **Arsenals\Core\Views\SimpleView** ，采用纯PHP模板。
+例如：  
+
+```define('VIEW_LAYER', 'Arsenals\Core\Views\SimpleView');```  
+
+系统还提供了一个基于Twig的模板引擎，不过需要手动加入Twig的类库才可以使用。加入Twig的类库之后，需要在项目的入口文件中定义Twig的Autoloader.php文件的路径常量，如下所示：  
+
+```define('TWIG_LIB', 'Twig所在目录/Autoloader.php');```
+
+接下来再配置VIEW_LAWER值为 **'Arsenals\Libraries\Twig\TwigView'** 即可。

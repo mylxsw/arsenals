@@ -12,7 +12,8 @@ use Arsenals\Core\Config;
 class TwigView implements View {
 	private $_twig;
 	public function __construct(){
-		include ARSENALS_LIBRARIES_PATH . 'Twig' . DIRECTORY_SEPARATOR . 'Twig' . DIRECTORY_SEPARATOR . 'Autoloader.php';
+		!defined('TWIG_LIB') && define('TWIG_LIB', ARSENALS_LIBRARIES_PATH . 'Twig' . DIRECTORY_SEPARATOR . 'Twig' . DIRECTORY_SEPARATOR . 'Autoloader.php'); 
+		include TWIG_LIB;
 		\Twig_Autoloader::register();
 		$this->_twig = new \Twig_Environment(new \Twig_Loader_Filesystem(VIEW_PATH),
 						array(
