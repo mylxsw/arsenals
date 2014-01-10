@@ -190,3 +190,34 @@ Arsenals采用了基于MVC的架构，同时支持Service层的扩展。
 ```define('TWIG_LIB', 'Twig所在目录/Autoloader.php');```
 
 接下来再配置VIEW_LAWER值为 **'Arsenals\Libraries\Twig\TwigView'** 即可。
+
+####自定义模板引擎
+除了使用内置模板引擎之外，开发者可以使用自定义的模板引擎，使用自定义的模板引擎也很简单，只需要实现自定义的视图解析类，自定义视图解析类实现 **Arsenals\Core\Views\View** 接口即可。  
+
+View接口中包含两个方法， ```display($vm)```和```parse($vm)```, $vm为```Arsenals\Core\Views\ViewAndModel```类型的对象，其中保存了要显示的视图名称以及传递给视图的数据模型。
+
+```display($vm)```方法中实现显示视图解析结果给浏览器。
+
+```parse($vm)```方法完成视图解析，并返回解析后的视图内容。
+
+例如：  
+<pre>
+namespace Demo\DemoViews;
+use Arsenals\Core\Views\View;
+
+class DemoView implements View{  
+	public function display($vm){  
+		echo $this->parse($vm);
+	}  
+	public function parse($vm){  
+		// $vm->getDatas(); 传递给视图的数据数组
+		// 例如： @extract($vm->getDatas());
+
+		// $vm->getView(); 要显示的视图名称
+
+		return "解析之后的视图字符串";
+	}
+}
+</pre>
+
+配置常量VIEW_LAWE为 ```Demo\DemoViews\DemoView```即可。
