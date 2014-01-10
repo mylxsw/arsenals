@@ -196,9 +196,9 @@ Arsenals采用了基于MVC的架构，同时支持Service层的扩展。
 
 View接口中包含两个方法， ```display($vm)```和```parse($vm)```, $vm为```Arsenals\Core\Views\ViewAndModel```类型的对象，其中保存了要显示的视图名称以及传递给视图的数据模型。
 
-```display($vm)```方法中实现显示视图解析结果给浏览器。
+```display($vm)``` 方法中实现显示视图解析结果给浏览器。
 
-```parse($vm)```方法完成视图解析，并返回解析后的视图内容。
+```parse($vm)``` 方法完成视图解析，并返回解析后的视图内容。
 
 例如：  
 <pre>
