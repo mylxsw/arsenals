@@ -11,6 +11,10 @@ use Arsenals\Core\Abstracts\Model;
  */
 class Blog extends Model  {
 	
+	public function getAllArticles($category){
+		return $this->find(array('category_id'=> intval($category)));
+	}
+	
 	public function getNewBlogInCategory($category, $count = 1){
 		if (!is_array($category)) {
 			$category = array($category);

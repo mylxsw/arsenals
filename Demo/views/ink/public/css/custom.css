@@ -1,3 +1,44 @@
+.text-overflow-ellipsis{
+	text-overflow:ellipsis;
+	-ms-text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;/* Opera */
+	-moz-binding: url("ellipsis.xml#ellipsis");/*FireFox*/
+}
+.article-list{
+	display: block;
+	margin-top: 5px;
+	border-bottom: 1px solid #ccc;
+	padding: 5px;
+	.content{
+		float: left;
+		margin-left: 10px;
+		padding: 5px;
+		.title{
+			width: 500px;
+			overflow:hidden;
+			font-size: 16px;
+			white-space: nowrap;
+			.text-overflow-ellipsis;
+			a{
+				color: #353535;
+			}
+		}
+		.intro{
+			width: 500px;
+			font-size: 14px;
+			text-indent: 20px;
+			line-height: 1.5;
+		}
+	}
+	.picture{
+		float: left;
+		img{
+			width: 100px;
+			height: 100px;
+		}
+	}
+}
+
 .article{
 	h5{
 		.tags{

@@ -33,7 +33,7 @@
 	</div>
 </div>
 <script>
-require(['jquery', 'page/home'], function($, home){
+require(['page/home'], function(home){
 	home.slider_play();
 });
 </script>

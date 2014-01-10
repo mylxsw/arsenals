@@ -44,15 +44,15 @@ class Uri extends Arsenals {
 				
 			if($last_slash_pos > 0){
 				$this->_module_name = str_replace('.', '\\', substr($paths[0], 0, $last_slash_pos));
-				$this->_controller_name = substr($paths[0], $last_slash_pos + 1);
+				$this->_controller_name = ucfirst(substr($paths[0], $last_slash_pos + 1));
 			}else{
 				$this->_module_name = '';
-				$this->_controller_name = $paths[0];
+				$this->_controller_name = ucfirst($paths[0]);
 			}
 			$this->_action_name = count($paths) >= 2 ? $paths[1] : $router_config['default_action'];
 		}else{
-			$this->_controller_name = preg_replace('/\./', '\\',
-					$router_config['default_controller']);
+			$this->_controller_name = ucfirst(preg_replace('/\./', '\\',
+					$router_config['default_controller']));
 			$this->_action_name = $router_config['default_action'];
 			$this->_module_name = '';
 		}

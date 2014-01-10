@@ -37,6 +37,21 @@ function footer(){
 	include TMP_FUNC . 'footer.php';
 }
 /**
+ * 移除Html中的标签
+ * @param string $html
+ * @return string
+ */
+function htmlToText($html){
+	return strip_tags($html);	
+}
+/**
+ * 解析超链接
+ * @param unknown $url
+ */
+function url($url){
+	return SITE_URL . $url;
+}
+/**
  * 顶栏菜单
  * @param string $current_nav
  * @return string
@@ -51,12 +66,12 @@ function top_nav($current_nav = 'home'){
 			'<li'. ($current_nav == $v['menu_name'] ?
 				' class="active" '
 				: '')
-				."><a href=\"{$v['menu_href']}\">{$v['menu_show']}</a>";
+				."><a href=\"" . url($v['menu_href']) . "\">{$v['menu_show']}</a>";
 		if( isset($v['sub']) && is_array($v['sub']) && count($v['sub']) > 0){
 			$_top_menus .= "<ul class=\"submenu\">";
 			foreach ($v['sub'] as $k2=>$v2){
 				$_top_menus .=
-				"<li><a href=\"{$v['menu_href']}\">{$v['menu_show']}</a></li>";
+				"<li><a href=\"" . url($v['menu_href']) . "\">{$v['menu_show']}</a></li>";
 			}
 			$_top_menus .= "</ul>";
 		}
@@ -72,4 +87,26 @@ function top_nav($current_nav = 'home'){
 function new_blog($category, $count = 1){
 	$blogModel = Registry::load('Demo\\models\\Blog');
 	return $blogModel->getNewBlogInCategory($category, $count);	
+}
+/**
+ * 面包屑导航
+ * @param array $elements
+ */
+function breadcrumbs($elements = array()){
+	if(!is_array($elements) || count($elements) == 0){
+		return '';
+	}
+	$html = '<div id="main-left" ><nav class="ink-navigation"><ul class="breadcrumbs">';
+	$i = 0;
+	foreach ($elements as $k => $e){
+		$html .= '<li' . ($i == (count($elements) - 1) ? ' class="active" ' : '') . '>';
+		$html .= '<a href="' . url($e) . '">';
+		$html .= $k;
+		$html .= '</a>';
+		$html .= "</li>";
+		$i ++;
+	}
+	$html .= '</ul></nav>';
+	
+	return $html;
 }

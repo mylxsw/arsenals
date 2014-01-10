@@ -3,7 +3,7 @@
  * @author Code.404
  * 2013-9-19
  */
-define("common", ['jquery', 'underscore', 'backbone'], function($, _, Backbone){
+define("common", ['jquery'], function($){
 	return {
 		// 提示消息
 		alert: function(message){

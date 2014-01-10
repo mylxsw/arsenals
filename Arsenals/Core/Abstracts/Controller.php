@@ -6,6 +6,7 @@ use Arsenals\Core\Config;
 use Arsenals\Core\Registry;
 use Arsenals\Core\Views\ViewAndModel;
 use Arsenals\Core\Views\Ajax;
+use Arsenals\Core\Exceptions\TypeErrorException;
 /**
  * 抽象控制器
  * 
@@ -13,6 +14,12 @@ use Arsenals\Core\Views\Ajax;
  *
  */
 abstract class Controller extends Service {
+	/**
+	 * 需要传递给视图的数据
+	 * @var array
+	 */
+	private $_view_datas = array();
+	
 	/**
 	 * 实现对资源的快速访问（类似于Ioc）
 	 *
@@ -52,7 +59,7 @@ abstract class Controller extends Service {
 	 * @return \Arsenals\Core\View\ViewAndModel
 	 */
 	protected function view($view_name, $data = array()){
-		return new ViewAndModel($view_name, $data);
+		return new ViewAndModel($view_name, array_merge($this->_view_datas, $data));
 	}
 	/**
 	 * 返回Ajax结果视图
@@ -61,5 +68,16 @@ abstract class Controller extends Service {
 	 */
 	protected function ajax($data = array()){
 		return new Ajax($data);
+	}
+	/**
+	 * 传递给视图的值
+	 * @param string $key
+	 * @param mixed $data
+	 */
+	protected function assign($key, $data){
+		if(!is_string($key)){
+			throw new TypeErrorException("key必须为字符串格式！");
+		}
+		$this->_view_datas[$key] = $data;
 	}
 }

@@ -49,7 +49,7 @@
 		<h1><img src="http://115.29.39.240/wp-content/uploads/2013/12/%E5%92%96%E5%95%A1%E5%8E%85logo.png" /></h1>
 		<nav class="ink-navigation vspace">
 		<ul class="menu horizontal grey rounded ">
-			<?php echo Demo\views\ink\top_nav($current_nav);?>
+			<?php echo Demo\views\ink\top_nav(isset($current_nav) ? $current_nav : '');?>
 		</ul>
 		</nav>
 	</header>

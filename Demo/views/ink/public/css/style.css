@@ -29,6 +29,9 @@
 #main{
 	max-width: 961px;
 	padding: 0;
+	#main-content{
+		margin-top: -1.5em;
+	}
 	#sliderPlay{
 		width: 961px!important;
 		img{
@@ -36,6 +39,16 @@
 			height: 376px;
 		}
 	}
+	#main-left{
+		width: 690px;
+		float: left;
+	}
+	#main-right{
+		width: 261px;
+		border: 1px solid #ccc;
+		float: right;
+	}
+	
 	.new-product, .new-activy{
 		
 		margin: 10px 0;
