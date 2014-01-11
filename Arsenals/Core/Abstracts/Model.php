@@ -13,6 +13,7 @@ use Arsenals\Core\Exceptions\QueryException;
  */
 abstract class Model extends Arsenals {
 	protected $_table_name = null;
+	protected $_table_prefix;
 	protected $_conn = null;
 	
 	/**
@@ -25,7 +26,8 @@ abstract class Model extends Arsenals {
 		if($this->_table_name == null){
 			$class_name = get_called_class();
 			$config = Config::load('database');
-			$this->_table_name = strtolower($config['global']['prefix']) 
+			$this->_table_prefix = strtolower($config['global']['prefix']);
+			$this->_table_name = $this->_table_prefix
 					. substr(strtolower($class_name), strrpos($class_name, '\\') + 1);
 		}
 		$this->_conn = SessionFactory::getSession();
@@ -65,6 +67,7 @@ abstract class Model extends Arsenals {
 			throw new QueryException('执行删除操作必须指定查询条件!');
 		}
 	}
+	
 	/**
 	 * 查出指定表中的数据记录列表（支持分页）
 	 * 
@@ -168,8 +171,8 @@ abstract class Model extends Arsenals {
 	
 		// 分页查询
 		// 首先查询出总记录数量
-		$count_res = $this->query( 'SELECT COUNT(*) ' . substr($sql, strstr(strtolower($sql), ' FROM ')), $args)->fetch_row();
-		$this->page_count = $count_res[0];
+		$count_res = $this->query( 'SELECT COUNT(*) AS C ' . substr($sql, strpos(strtoupper($sql), ' FROM ')), $args);
+		$this->page_count = $count_res[0]['C'];
 		// 总页数
 		$total_pages = $this->page_count / $per + 1;
 		// 判断当前页码是否正确
@@ -177,6 +180,7 @@ abstract class Model extends Arsenals {
 			$index = 1;
 		}
 		$sql .= ' LIMIT ' . ($index - 1) * $per . ', ' . $per;
+		
 		return $this->query($sql, $args);
 	}
 	/**
@@ -186,14 +190,14 @@ abstract class Model extends Arsenals {
 	 * @param array $args 预处理的变量
 	 * @return array | int
 	 */
-	public function query($sql, $args = array()){
+	public function query($sql, $args = array(), $insert = false){
 		// 如果没有提供参数数组，则执行普通查询
 		if(\count($args) == 0){
 			$res = $this->_conn->query($sql);
 			if($this->_conn->errno){
 				throw new QueryException($this->_conn->error);
 			}
-			return $res;
+			return $insert ? $res : $res->fetch_all(MYSQLI_ASSOC);
 		}
 		// 提供了参数数组，执行预处理
 		$stmt = $this->_conn->prepare($sql);
@@ -221,31 +225,32 @@ abstract class Model extends Arsenals {
 		if(!$stmt->execute() ){
 			throw new QueryException($this->_conn->error);
 		}
-		
-		if(method_exists($stmt, 'get_result')){
-			$res = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-		}else{
-			$stmt->store_result();
-			
-			$fileds = $stmt->result_metadata()->fetch_fields();
-			$statementParams = '';
-			$column = array();
-			foreach ($fileds as $field){
-				if(empty($statementParams)){
-					$statementParams .= "\$column['" . $field->name . "']";
-				}else{
-					$statementParams .= ", \$column['" . $field->name . "']";
+		if(!$insert){
+			if(method_exists($stmt, 'get_result')){
+				$res = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+			}else{
+				$stmt->store_result();
+					
+				$fileds = $stmt->result_metadata()->fetch_fields();
+				$statementParams = '';
+				$column = array();
+				foreach ($fileds as $field){
+					if(empty($statementParams)){
+						$statementParams .= "\$column['" . $field->name . "']";
+					}else{
+						$statementParams .= ", \$column['" . $field->name . "']";
+					}
+				}
+				$statement = "\$stmt->bind_result($statementParams);";
+				eval($statement);
+					
+				$res = array();
+				while ($stmt->fetch()){
+					$res[] = $column;
 				}
 			}
-			$statement = "\$stmt->bind_result($statementParams);";
-			eval($statement);
-			
-			$res = array();
-			while ($stmt->fetch()){
-				$res[] = $column;
-			}
+			return $res;
 		}
-		return $res;
 	}
 	
 	/**
@@ -408,7 +413,18 @@ abstract class Model extends Arsenals {
 	 * @param string $str
 	 * @return string
 	 */
-	public function escape($str){
+	protected function escape($str){
 		return mysql_real_escape_string($str);
+	}
+	/**
+	 * 获取表名
+	 * @param string $tablename 需要获取的表名，不带前缀!
+	 * @return string
+	 */
+	protected function getTableName($tablename = NULL){
+		if(is_null($tablename)){
+			return $this->_table_name;
+		}
+		return $this->_table_prefix . $tablename;
 	}
 }

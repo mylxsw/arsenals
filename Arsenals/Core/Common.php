@@ -51,6 +51,9 @@ function str_end_with($string, $suffix, $case_sensitive = TRUE){
  * @return bool
  */
 function str_start_with($string, $prefix, $case_sensitive = TRUE){
+	if(strlen($string) < strlen($prefix)){
+		return false;
+	}
 	return substr_compare($string, $prefix,
 			0, strlen($prefix), $case_sensitive) === 0;
 }

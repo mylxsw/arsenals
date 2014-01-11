@@ -8,12 +8,12 @@
 return array(
 	'data_source'		=> 'Arsenals\Core\Database\MySQL\MySQLiDataSource',
 	'global'			=> array(
-		'prefix'		=> 'ori_',
+		'prefix'		=> 'ar_',
 	),
 	'mysql'				=> array(
 		'host'			=> 'localhost',
 		'port'			=> '3306',
-		'db_name'		=> 'orionis',
+		'db_name'		=> 'arsenals_demo',
 		'user'			=> 'root',
 		'password'		=> '',
 		'char_set'		=> 'utf8',

@@ -10,14 +10,37 @@ use Arsenals\Core\Abstracts\Controller;
  *
  */
 class Articles extends Controller {
+	/**
+	 * 文章列表
+	 * GET: cat, p
+	 * OUTPUT: p, current_nav, breadcrumbs, articles
+	 */
 	public function lists(){
 		$category = $this->get('cat');
+		$p = $this->get('p', 1);
 		
-		$blogModel = $this->model('Blog');
-		$this->assign('articles', $blogModel->getAllArticles($category));
+		$articleModel = $this->model('Article');
+		$this->assign('articles', $articleModel->getAllArticles($category, $p));
 		
-		$this->assign('breadcrumbs', array('首页'=>'', 'C.D.Cafe'=> 'articles/list?id=' . $category ));
-		
+		$this->assign('breadcrumbs', array('首页'=>'', 'C.D.Cafe'=> 'articles/list?cat=' . $category ));
+		$this->assign('current_nav', $category);
+		$this->assign('p', $p);
 		return $this->view('articles/lists');
+	}
+	/**
+	 * 显示文章内容
+	 * GET: id
+	 */
+	public function show(){
+		$id = $this->get('id');
+		
+		$articleModel = $this->model('Article');
+		$article = $articleModel->getArticleById($id);
+		$this->assign('article', $article);
+		
+		$this->assign('id', $id);
+		$this->assign('breadcrumbs', array('首页'=>'', 'C.D.Cafe'=> 'articles/lists?cat=' . $article['cate'][0]['id'], $article['title'] => $article['id'] ));
+		
+		return $this->view('articles/show');
 	}
 }

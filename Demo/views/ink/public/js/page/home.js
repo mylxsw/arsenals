@@ -2,6 +2,7 @@ define("page/home", ['jquery', 'common', 'page/ink'], function($, fn, i){
 	return {
 		init: function(){
 			i.breadcrumbs();
+			i.duoshuo();
 		},
 		slider_play: function(){
 			fn.load_css(global.public_resources_path + 'SliderPlay/sliderPlay-2.0.min.css');

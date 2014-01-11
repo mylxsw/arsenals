@@ -1,15 +1,16 @@
 <?php \Demo\views\ink\header();?>
+<div id="main-left">
 	<?php echo \Demo\views\ink\breadcrumbs(isset($breadcrumbs) ? $breadcrumbs:array());?>
 	<?php foreach ($articles as $art):?>
 		<div class="article-list">
-			<div class="picture"><img src="http://www.starbucks.com.cn/upload/news/20131021192704.jpg"/></div>
+			<div class="picture"><img src="<?php echo \Demo\views\ink\url($art['feature_img']);?>"/></div>
 			<div class="content">
 				<h5 class="title">
 					<a href="<?php echo \Demo\views\ink\url('articles/show?id=' . $art['id']);?>">
-						<?php echo $art['blog_title'];?>
+						<?php echo $art['title'];?>
 					</a>
 				</h5>
-				<div class="intro"><?php echo \Demo\views\ink\htmlToText($art['blog_intro']);?></div>
+				<div class="intro"><?php echo \Demo\views\ink\htmlToText($art['intro']);?></div>
 			</div>
 			<div class="ink-clear"></div>
 		</div>

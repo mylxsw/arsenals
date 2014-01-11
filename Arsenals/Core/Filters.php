@@ -60,7 +60,7 @@ class Filters extends Arsenals {
 			$this->_afterThrowException($e);
 		}
 		
-		$this->_after($content);
+		$this->_after(isset($content) ? $content : '');
 	}
 	
 	/**

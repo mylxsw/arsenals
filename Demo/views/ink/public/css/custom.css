@@ -41,16 +41,20 @@
 
 .article{
 	h5{
-		.tags{
-			font-size: 10px;
-			font-weight: normal;
-		}
 	}
+	.category, .tags{
+		font-size: 10px;
+		font-weight: normal;
+		margin: 10px;
+	}
+
 	.info{
 		margin-left: 20px;
 		margin-top: 10px;
+		font-size: 14px;
+		margin-bottom: 10px;
 	}
-	.label{
+	.tags{
 		font-size: 14px;
 		margin-left: 20px;
 		span{
@@ -60,6 +64,12 @@
 			font-weight: bold;
 		}
 	}
+	.content{
+		width: 670px;
+	}
+}
+.comments{
+	margin-top: 10px;
 }
 .footer {
 	width: 100%;

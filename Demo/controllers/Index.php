@@ -10,8 +10,7 @@ use Arsenals\Core\Abstracts\Controller;
  */
 class Index extends Controller{
 	public function index(){
-		$datas = array();
-		$datas['current_nav'] = 'home';
-		return $this->view('home', $datas);
+		$this->assign('current_nav', 'home');
+		return $this->view('home');
 	}
 }
