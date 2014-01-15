@@ -78,7 +78,7 @@ function top_nav($current_nav = 'home'){
 			$_top_menus .= "<ul class=\"submenu\">";
 			foreach ($v['sub'] as $k2=>$v2){
 				$_top_menus .=
-				"<li><a href=\"" . url($v['url']) . "\">{$v['name']}</a></li>";
+				"<li><a href=\"" . url($v2['url']) . "\">{$v2['name']}</a></li>";
 			}
 			$_top_menus .= "</ul>";
 		}
@@ -138,21 +138,40 @@ function breadcrumbs($elements = array()){
  * @param number $totals
  * @param number $page_count
  * @param number $current
+ * @param number $show_offset 当前页码前后显示的页码数量
  * @return string
  */
-function pagination($url, $totals, $page_count, $current){
+function pagination($url, $totals, $page_count, $current, $show_offset = 3){
+	
+	$current = intval($current);
+	if($current < 1 || $current > $page_count){
+		$current = 1;
+	}
+	
 	$html = '<nav class="ink-navigation">
 				<ul class="pagination">';
 	
+	// 是否显示上一页
 	if($current > 1){
 		$html .= '<li class="previous"><a href="' . url("{$url}?p=" . ($current - 1)) . '">上一页</a></li>';
 	}
 	
-	for($i = 1; $i <= $page_count; $i ++){
+	$start = 1;
+	if($current - $show_offset > 0){
+		$start = $current - $show_offset;
+	}
+	
+	$end = $page_count;
+	if($current + $show_offset < $page_count){
+		$end = $current + $show_offset;
+	}
+	
+	for($i = $start; $i <= $end; $i ++){
 		$html .= '		<li ' . ($current != $i ? '' : ' class="active" ' ) . '><a href="' . url($url . '?p=' . $i) . '">' . $i . '</a></li>';
 	
 	}
 	
+	// 是否显示下一页
 	if($current < $page_count){
 		$html .= '<li class="next"><a href="' . url("{$url}?p=" . ($current + 1)) . '">下一页</a></li>';
 	}
