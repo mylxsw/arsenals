@@ -111,7 +111,28 @@ CREATE TABLE `ar_navigator` (
 
 /*Data for the table `ar_navigator` */
 
-insert  into `ar_navigator`(`id`,`name`,`url`,`isvalid`,`intro`,`sort`,`pid`,`pos`) values (1,'C.D.Cafe','articles/lists?cat=2',1,NULL,'90',0,'top'),(2,'饮品&amp;美食',NULL,1,NULL,'80',0,'top'),(3,'市场活动',NULL,1,NULL,'70',0,'top'),(4,'原创音乐',NULL,1,NULL,'60',0,'top'),(5,'微电影',NULL,1,NULL,'50',0,'top'),(6,'C.D俱乐部',NULL,1,NULL,'40',0,'top'),(7,'C.D.M',NULL,1,NULL,'30',0,'top'),(8,'饮品',NULL,1,NULL,NULL,2,'top'),(9,'美食',NULL,1,NULL,NULL,2,'top'),(10,'新品试尝',NULL,1,NULL,NULL,3,'top'),(11,'促销活动',NULL,1,NULL,NULL,3,'top');
+insert  into `ar_navigator`(`id`,`name`,`url`,`isvalid`,`intro`,`sort`,`pid`,`pos`) values (1,'C.D.Cafe','articles/lists?cat=1',1,NULL,'90',0,'top'),(2,'饮品&amp;美食',NULL,1,NULL,'80',0,'top'),(3,'市场活动',NULL,1,NULL,'70',0,'top'),(4,'原创音乐',NULL,1,NULL,'60',0,'top'),(5,'微电影',NULL,1,NULL,'50',0,'top'),(6,'C.D俱乐部',NULL,1,NULL,'40',0,'top'),(7,'C.D.M',NULL,1,NULL,'30',0,'top'),(8,'饮品',NULL,1,NULL,NULL,2,'top'),(9,'美食',NULL,1,NULL,NULL,2,'top'),(10,'新品试尝',NULL,1,NULL,NULL,3,'top'),(11,'促销活动',NULL,1,NULL,NULL,3,'top');
+
+/*Table structure for table `ar_page` */
+
+DROP TABLE IF EXISTS `ar_page`;
+
+CREATE TABLE `ar_page` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(200) DEFAULT NULL COMMENT '标题',
+  `templates` text COMMENT '内容模板',
+  `isvalid` smallint(1) DEFAULT '1' COMMENT '是否可用',
+  `creator` int(11) DEFAULT NULL COMMENT '创建者',
+  `create_date` int(11) DEFAULT NULL COMMENT '创建时间',
+  `updator` int(11) DEFAULT NULL COMMENT '更新者',
+  `update_date` int(11) DEFAULT NULL COMMENT '更新时间',
+  `attr` text COMMENT '属性',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='页面';
+
+/*Data for the table `ar_page` */
+
+insert  into `ar_page`(`id`,`title`,`templates`,`isvalid`,`creator`,`create_date`,`updator`,`update_date`,`attr`) values (1,'测试页面','<div style=\"font-size: 24px\">\r\n	你好，这是测试页面模板!\r\n</div>',1,NULL,NULL,NULL,NULL,NULL);
 
 /*Table structure for table `ar_setting` */
 
