@@ -127,6 +127,6 @@ function _error_handler($errno, $errstr, $errfile, $errline){
  * 异常处理
  * @param unknown $exception
  */
-function _exception_handler($exception){
-	_D($exception);
+function _exception_handler(\Exception $exception){
+	_D("文件{$exception->getFile()}的第{$exception->getLine()}行抛出异常， 错误代码为 {$exception->getCode()}， 错误描述 ：{$exception->getMessage()}");
 }

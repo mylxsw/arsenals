@@ -24,6 +24,7 @@ class Articles extends Controller {
 		
 		$this->assign('breadcrumbs', array('首页'=>'', 'C.D.Cafe'=> 'articles/list?cat=' . $category ));
 		$this->assign('current_nav', $category);
+		$this->assign('cat', $category);
 		$this->assign('p', $p);
 		return $this->view('articles/lists');
 	}

@@ -7,7 +7,7 @@
 			<div class="np-body">
 				<?php $_new_good = \Demo\views\ink\new_blog(3);?>
 				<img src="<?php echo $_new_good[0]['feature_img'];?>" />
-				<p><?php echo $_new_good[0]['title'];?></p>
+				<p><a href="<?php echo \Demo\views\ink\url('articles/show?id=' . $_new_good[0]['id']);?>"><?php echo $_new_good[0]['title'];?></a></p>
 			</div>
 		</div>
 		<div class="new-activy pull-left">
@@ -17,7 +17,7 @@
 			<?php foreach ($_new_activys as $_ak=>$_av):?>
 				<div class="na-block">
 					<img src="<?php echo $_av['feature_img'];?>" title="<?php echo $_av['title'];?>"/>
-					<div class="nab-title"><a href="<?php echo $_av['id'];?>" title="<?php echo $_av['title'];?>"><?php echo $_av['title'];?></a></div>
+					<div class="nab-title"><a href="<?php echo \Demo\views\ink\url("articles/show?id={$_av['id']}");?>" title="<?php echo $_av['title'];?>"><?php echo $_av['title'];?></a></div>
 					<div class="ink-clear"></div>
 				</div>
 			<?php endforeach;?>

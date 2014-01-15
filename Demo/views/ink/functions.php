@@ -6,8 +6,6 @@ namespace Demo\views\ink;
 use Arsenals\Core\Config;
 use Arsenals\Core\Registry;
 use Arsenals\Core\Views\ValueStack;
-use Arsenals\Core\str_start_with;
-use Arsenals\Core\_D;
 
 $config = Config::load('config');
 define('TMP_FUNC', VIEW_PATH . $config['theme'] . DIRECTORY_SEPARATOR . '@templates' . DIRECTORY_SEPARATOR);
@@ -51,10 +49,14 @@ function htmlToText($html){
  * @param unknown $url
  */
 function url($url){
+	$split_pos = strpos($url, '?');
+	$new_url = $split_pos ? (substr($url, 0, $split_pos). '?' . str_replace('?', '&', substr($url, $split_pos + 1))) : $url;
+	
 	if(\Arsenals\Core\str_start_with($url, 'http://') || \Arsenals\Core\str_start_with($url, 'https://')){
-		return $url;
+		return $new_url;
 	}
-	return SITE_URL . $url;
+	
+	return SITE_URL . $new_url;
 }
 /**
  * 顶栏菜单
@@ -65,7 +67,7 @@ function top_nav($current_nav = 'home'){
 	$navModel = Registry::load('Demo\\models\\Navigator');
 	$ui_top_menus = $navModel->getNavTrees(0,'top',3);
 // 	\Arsenals\Core\_D($ui_top_menus);
-	$_top_menus = '<li'. ($current_nav == 'home' ? ' class="active" ' : '') .'><a href=""><i class="icon-home"></i></a></li>';
+	$_top_menus = '<li'. ($current_nav == 'home' ? ' class="active" ' : '') .'><a href="' . url('') . '"><i class="icon-home"></i></a></li>';
 	foreach($ui_top_menus as $k => $v){
 		$_top_menus .=
 			'<li'. ($current_nav == $v['id'] ?
@@ -128,5 +130,34 @@ function breadcrumbs($elements = array()){
 	}
 	$html .= '</ul></nav>';
 	
+	return $html;
+}
+/**
+ * 分页
+ * @param string $url
+ * @param number $totals
+ * @param number $page_count
+ * @param number $current
+ * @return string
+ */
+function pagination($url, $totals, $page_count, $current){
+	$html = '<nav class="ink-navigation">
+				<ul class="pagination">';
+	
+	if($current > 1){
+		$html .= '<li class="previous"><a href="' . url("{$url}?p=" . ($current - 1)) . '">上一页</a></li>';
+	}
+	
+	for($i = 1; $i <= $page_count; $i ++){
+		$html .= '		<li ' . ($current != $i ? '' : ' class="active" ' ) . '><a href="' . url($url . '?p=' . $i) . '">' . $i . '</a></li>';
+	
+	}
+	
+	if($current < $page_count){
+		$html .= '<li class="next"><a href="' . url("{$url}?p=" . ($current + 1)) . '">下一页</a></li>';
+	}
+	
+	$html .= '	</ul>
+			</nav>';
 	return $html;
 }

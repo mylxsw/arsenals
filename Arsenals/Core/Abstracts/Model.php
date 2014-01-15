@@ -19,7 +19,12 @@ abstract class Model extends Arsenals {
 	/**
 	 * @var 最后一次分页查询到的总记录数量
 	 */
-	private $page_count = 0;
+	private $page_record_counts = 0;
+	/**
+	 * 最后一次查询的总页数
+	 * @var number
+	 */
+	private $page_counts = 1;
 	
 	public function __construct(){
 		// 初始化当前模型对应的数据表名称
@@ -36,7 +41,7 @@ abstract class Model extends Arsenals {
 	 * 载入单个数据对象
 	 *
 	 * @param mixed $conditions 条件
-	 * @return object
+	 * @return object|null
 	 */
 	public function load($conditions = array()){
 		$sql = 'SELECT * FROM ' . $this->_table_name ;
@@ -47,8 +52,11 @@ abstract class Model extends Arsenals {
 			$sql .= $conditions_result[0];
 			$args = $conditions_result[1];
 		}
-		$result = $this->query($sql, $args)->fetch_array();
-		return $result;
+		$result = $this->query($sql, $args);
+		if(count($result) > 0){
+			return $result[0];
+		}
+		return null;
 	}
 	/**
 	 * 删除元素
@@ -172,11 +180,11 @@ abstract class Model extends Arsenals {
 		// 分页查询
 		// 首先查询出总记录数量
 		$count_res = $this->query( 'SELECT COUNT(*) AS C ' . substr($sql, strpos(strtoupper($sql), ' FROM ')), $args);
-		$this->page_count = $count_res[0]['C'];
+		$this->page_record_counts = $count_res[0]['C'];
 		// 总页数
-		$total_pages = $this->page_count / $per + 1;
+		$this->page_counts = $this->page_record_counts / $per + 1;
 		// 判断当前页码是否正确
-		if($index <= 0 || $index > $total_pages){
+		if($index <= 0 || $index > $this->page_counts){
 			$index = 1;
 		}
 		$sql .= ' LIMIT ' . ($index - 1) * $per . ', ' . $per;
@@ -426,5 +434,19 @@ abstract class Model extends Arsenals {
 			return $this->_table_name;
 		}
 		return $this->_table_prefix . $tablename;
+	}
+	/**
+	 * 最后一次分页查询的总记录数量
+	 * @return number
+	 */
+	protected function getPageRecordCounts(){
+		return $this->page_record_counts;
+	}
+	/**
+	 * 最后一次查询的总页数
+	 * @return number
+	 */
+	protected function getPageCounts(){
+		return $this->page_counts;
 	}
 }

@@ -48,13 +48,16 @@ class Article extends Model {
 			$category = array($category);
 		}
 		$sql = "SELECT * FROM " . $this->getTableName() . " WHERE id in (";
-		$sql .= "SELECT DISTINCT A.ID FROM " . $this->getTableName('article_category') . " AS A WHERE A.CATEGORY_ID IN (";
+		$sql .= "SELECT DISTINCT A.ARTICLE_ID FROM " . $this->getTableName('article_category') . " AS A WHERE A.CATEGORY_ID IN (";
 		foreach ($category as $k){
 			$sql .= intval($k) . ' ,';
 		}
 		$sql = rtrim($sql, ',') . ")) ORDER BY PUBLISH_DATE DESC";
-		
-		return $this->select($sql, array(), $p);
+		return array(
+			'data' => $this->select($sql, array(), $p),
+			'total' => $this->getPageRecordCounts(),
+			'page'	=> $this->getPageCounts()
+		);
 	}
 	/**
 	 * 查询指定数量指定分类下的最新文章

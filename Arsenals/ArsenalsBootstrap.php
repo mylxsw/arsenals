@@ -3,6 +3,7 @@
 namespace Arsenals;
 
 use Arsenals\Core\Registry;
+use Arsenals\Core\Abstracts\Arsenals;
 /**
  * Arsenals框架入口
  * 
@@ -44,6 +45,9 @@ class ArsenalsBootstrap {
 			throw new \Exception('BASE_PATH必须定义！');
 		}
 		// 定义系统常量
+		defined('ERROR_HANDLER') || define('ERROR_HANDLER', 'Arsenals\\Core\\_error_handler');
+		defined('EXCEPTION_HANDLER') || define('EXCEPTION_HANDLER', 'Arsenals\\Core\\_exception_handler');
+		
 		define('ARSENALS_PATH', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 		define('ARSENALS_CORE_PATH', ARSENALS_PATH . 'Core' . DIRECTORY_SEPARATOR);
 		define('ARSENALS_CONFIG_PATH', ARSENALS_PATH . 'Configs' . DIRECTORY_SEPARATOR);
@@ -62,8 +66,8 @@ class ArsenalsBootstrap {
 		// 载入系统函数库
 		require ARSENALS_CORE_PATH . 'Common.php';
 		// 配置统一的异常处理
-		set_error_handler('Arsenals\\Core\\_error_handler');
-		set_exception_handler('Arsenals\\Core\\_exception_handler');
+		set_error_handler(ERROR_HANDLER);
+		set_exception_handler(EXCEPTION_HANDLER);
 		
 		// 初始化环境变量
 		self::$_paths = array_merge(

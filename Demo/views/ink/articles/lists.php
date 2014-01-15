@@ -1,7 +1,7 @@
 <?php \Demo\views\ink\header();?>
 <div id="main-left">
 	<?php echo \Demo\views\ink\breadcrumbs(isset($breadcrumbs) ? $breadcrumbs:array());?>
-	<?php foreach ($articles as $art):?>
+	<?php foreach ($articles['data'] as $art):?>
 		<div class="article-list">
 			<div class="picture"><img src="<?php echo \Demo\views\ink\url($art['feature_img']);?>"/></div>
 			<div class="content">
@@ -15,6 +15,7 @@
 			<div class="ink-clear"></div>
 		</div>
 	<?php endforeach;?>
+	<?php echo \Demo\views\ink\pagination('articles/lists?cat=' . $cat, $articles['total'], $articles['page'], $p);?>
 </div>
 <div id="main-right">
 右侧区域

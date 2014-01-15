@@ -83,6 +83,6 @@ class Filters extends Arsenals {
 	 * @param Exception $e
 	 */
 	private function _afterThrowException(\Exception $e){
-		
+		throw $e;
 	}
 }
