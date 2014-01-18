@@ -24,6 +24,11 @@ class Uri extends Arsenals {
 	 * @var string
 	 */
 	private $_action_name;
+	/**
+	 * 访问的路径
+	 * @var string
+	 */
+	private $_path_info;
 	
 	/**
 	 * 构造函数
@@ -33,7 +38,7 @@ class Uri extends Arsenals {
 		$router_config = Config::load('router');
 		
 		// 获取访问路径信息
-		$path_info = array_key_exists('PATH_INFO', $_SERVER) ? 
+		$this->_path_info = $path_info = array_key_exists('PATH_INFO', $_SERVER) ? 
 							trim($_SERVER['PATH_INFO'], '/')
 							: '';
 		$paths = preg_split('/\//', $path_info);
@@ -77,5 +82,11 @@ class Uri extends Arsenals {
 	 */
 	public function getActionName(){
 		return $this->_action_name;
+	}
+	/**
+	 * 获取当前的路径信息
+	 */
+	public function getPathInfo(){
+		return $this->_path_info;
 	}
 }

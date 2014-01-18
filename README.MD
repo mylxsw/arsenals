@@ -126,6 +126,7 @@ Arsenals采用了基于MVC的架构，同时支持Service层的扩展。
 </table>
 
 ####路由配置router.php
+下面是默认的路由配置。
 <table>
 <thead>
 	<tr><th>配置项</th><th>默认值</th><th>作用</th></tr>
@@ -143,6 +144,19 @@ Arsenals采用了基于MVC的架构，同时支持Service层的扩展。
 	</tr>
 </tbody>
 </table>
+
+默认情况下访问配置文件中配置的控制其方法，一般访问方法为：控制器名称/方法名（首字母小写即可）。  
+如果需要自定义路由，可以在项目入口文件中定义如下： 
+<pre>
+public function run() {
+	//Route::map("articles/lists", '\\Demo\\controllers\\Articles@lists');
+	Route::map("articles/lists", function ($input){
+		return $input->get("cat");
+	});
+}
+</pre>
+如果没有自定义路由，将采用系统内置路由规则，系统对所有的控制器方法注入了$input参数，该参数为Input类的实例，方便开发。  
+
 
 ###钩子
 Arsenals框架提供了系统运行各个阶段的钩子函数功能，使对系统的扩展成为了可能，要使用钩子功能，需要在 ```config.php``` 配置文件中配置 ```hook_enabled``` 为 ```true```。  

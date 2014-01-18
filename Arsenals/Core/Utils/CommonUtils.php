@@ -31,4 +31,32 @@ class CommonUtils {
 		
 		return $validate_entity;
 	}
+	/**
+	 * 正则表达式验证数组中是否含有key
+	 * @param unknown $search_key
+	 * @param unknown $array
+	 * @return boolean
+	 */
+	public static function array_key_exists_regexp($search_key, $array){
+		foreach ($array as $key => $value){
+			if(preg_match('/^' . $key . '$/', $search_key)){
+				return true;
+			}
+		}
+		return false;
+	}
+	/**
+	 * 正则表达式从数组中获取值
+	 * @param unknown $array
+	 * @param unknown $key
+	 * @return unknown|NULL
+	 */
+	public static function array_val_by_key_regexp($array, $search_key){
+		foreach ($array as $key => $value){
+			if(preg_match('/^' . $key . '$/', $search_key)){
+				return $value;
+			}
+		}
+		return null;
+	}
 }

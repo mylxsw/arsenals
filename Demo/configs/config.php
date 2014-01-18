@@ -7,5 +7,5 @@
 return array(
 	'theme'			=>	'ink',
 	'hook_enabled'	=>	false,
-	'site_url'		=> 'http://localhost/Arsenals/',
+	'site_url'		=> 'http://localhost/Arsenals3/',
 );

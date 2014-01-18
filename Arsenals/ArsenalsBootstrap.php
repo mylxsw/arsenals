@@ -11,6 +11,7 @@ use Arsenals\Core\Abstracts\Arsenals;
  *
  */
 class ArsenalsBootstrap {
+	
 	/**
 	 * 环境变量
 	 * @var array
@@ -23,7 +24,7 @@ class ArsenalsBootstrap {
 	 * 执行框架
 	 * @throws \Exception
 	 */
-	public static function run(){
+	public function startup(){
 		// 检查PHP版本
 		if(version_compare(PHP_VERSION, '5.3.0', '>=')){
 			// 类自动加载
@@ -76,6 +77,9 @@ class ArsenalsBootstrap {
 						}, self::$_paths), 
 				explode(PATH_SEPARATOR, get_include_path()));
 		
+		// 执行入口运行初始化
+		$this->run();
+		
 		// 对用户输入进行预处理
 		Registry::register('Arsenals\\Core\\Input');
 		
@@ -117,4 +121,8 @@ class ArsenalsBootstrap {
 			}
 		}
 	}
+	/**
+	 * 子类覆写该方法，实现系统的自定义初始化工作
+	 */
+	public function run(){}
 }
