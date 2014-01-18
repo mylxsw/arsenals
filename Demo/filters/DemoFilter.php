@@ -13,7 +13,13 @@ class DemoFilter implements Filter {
 	 * @see \Arsenals\Core\Abstracts\Filter::doFilter()
 	 */
 	public function doFilter(\Arsenals\Core\Filters $filterChain,\Arsenals\Core\Router $router) {
-		$filterChain->doFilter();		
+		try{
+			$filterChain->doFilter();
+		}catch (\Arsenals\Core\Exceptions\ArsenalsException $e){
+			if($e instanceof \Arsenals\Core\Exceptions\TypeErrorException){
+				echo "字段类型异常：{$e->getMessage()} ";
+			}
+		}
 	}
 
 	

@@ -38,19 +38,21 @@ abstract class Controller extends Service {
 	 * 获取get值
 	 * @param unknown $key
 	 * @param string $default
+	 * @param string $type
 	 */
-	protected function get($key, $default = null){
+	protected function get($key, $default = null, $type = null){
 		$input = Registry::load('\\Arsenals\\Core\\Input');
-		return $input->get($key, $default);
+		return $input->get($key, $default, $type);
 	}
 	/**
 	 * 获取post值
 	 * @param unknown $key
 	 * @param string $default
+	 * @param string $type
 	 */
-	protected function post($key, $default = null){
+	protected function post($key, $default = null, $type = null){
 		$input = Registry::load('\\Arsenals\\Core\\Input');
-		return $input->post($key, $default);
+		return $input->post($key, $default, $type);
 	}
 	/**
 	 * 返回模型视图

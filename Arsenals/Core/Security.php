@@ -15,7 +15,6 @@ class Security extends Arsenals {
 	 */
 	public function init(){
 		
-		
 	}
 	
 }

@@ -6,5 +6,5 @@
  */ 
 return array(
 	'default_controller' 	=> 'Index',
-	'default_action'		=> 'index',
+	'default_action'		=> 'index'
 );

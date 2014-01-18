@@ -145,6 +145,26 @@ Arsenals采用了基于MVC的架构，同时支持Service层的扩展。
 </table>
 
 ###钩子
+Arsenals框架提供了系统运行各个阶段的钩子函数功能，使对系统的扩展成为了可能，要使用钩子功能，需要在 ```config.php``` 配置文件中配置 ```hook_enabled``` 为 ```true```。  
+
+钩子的配置文件为config目录下的 ```hook.php``` 文件,配置规则如下：
+<pre>
+return array(
+	// before_system为挂载点
+	// 挂载点挂载的功能通过数组进行配置
+	'before_system' => array(
+		// 执行的为DemoHook对象的beforeSystem1方法
+		'Demo\\hooks\\DemoHook@beforeSystem1',
+		
+		// 执行的为DemoHook的静态方法beforeSystem2
+		'Demo\\hooks\\DemoHook::beforeSystem2'
+	)	
+);
+</pre>
+
+
+
+系统内置挂载点：
 <table>
 <thead>
 	<tr><th>挂载点</th><th>用途</th></tr>
@@ -176,6 +196,59 @@ Arsenals采用了基于MVC的架构，同时支持Service层的扩展。
 	</tr>
 </tbody>
 </table>
+
+###字段校验规则
+Arsenals框架提供了字段校验功能，开发过程中，可以方便的使用框架提供的字段校验功能对来自用户的输入信息进行校验。
+
+要使用字段校验功能，需要使用Input类的静态方法validate方法。
+<pre>
+\Arsenals\Core\Input::validate($var, $type, $optionals = null)
+</pre>
+- ```$var``` 需要检验的字段值
+- ```$type``` 校验采用的规则
+- ```$optionals``` 额外的参数，可以为空
+
+####系统内置校验规则： 
+- 正则表达式(指定type为Input::REGEXP)， 第三个参数optionals为正则表达式
+- 单一规则  
+	int, boolean, float, validate_url, validate_email, validate_ip, string, stripped,  email, url, number_int, number_float, magic_quotes  
+- 组合规则  
+<table>
+<thead>
+	<tr><th>规则</th><th>用途</th></tr>
+</thead>
+<tbody>
+	<tr>
+		<td>required</td>
+		<td>字段必须</td>
+	</tr>
+	<tr>
+		<td>string</td>
+		<td>字符串，可以指定长度（最小长度,最大长度）</td>
+	</tr>
+	<tr>
+		<td>number, int, float</td>
+		<td>数字，可以指定范围(最小值,最大值)</td>
+	</tr>
+	<tr>
+		<td>range</td>
+		<td>指定范围(最小值,最大值)</td>
+	</tr>
+	<tr>
+		<td>len</td>
+		<td>指定长度（最小长度,最大长度）</td>
+	</tr>
+</tbody>
+</table>
+
+注意： 多个规则之间属于偶那个|进行分隔。  
+如果需要指定规则参数，使用如下规则： 规则名:参数1,参数2
+
+如果需要使用自定义的规则也很简单，使用Input的validateRuleRegister方法，为Input类注册自定义的校验规则。
+<pre>
+\Arsenals\Core\Input::validateRuleRegister($rule_name, $entity_name)
+</pre>
+```$rule_name``` 为定义的规则名称，```$entity_name``` 为规则实现（使用系统约定的对象指定方式）。
 
 ###模板引擎
 默认是采用系统内置的简单模板的，该模板使用纯PHP。  

@@ -3,6 +3,7 @@
 namespace Arsenals\Core;
 
 use Arsenals\Core\Abstracts\Arsenals;
+use Arsenals\Core\Utils\CommonUtils;
 /**
  * 系统钩子
  * 
@@ -43,17 +44,7 @@ class Hooks extends Arsenals {
 		if(array_key_exists($point, $this->_hooks)){
 			$hooks = $this->_hooks[$point];
 			foreach ($hooks as $hook){
-				$static = false;
-				if(array_key_exists('static', $hook)){
-					$static = $hook['static'];
-				}
-				
-				if($static){
-					call_user_func("{$hook['class']}::{$hook['method']}");
-				}else{
-					$hook_class = new $hook['class']();
-					call_user_func(array($hook_class, $hook['method']));
-				}
+				call_user_func(CommonUtils::convStringToCallUserFuncParam($hook));
 			}
 		}
 		
