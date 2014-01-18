@@ -26,7 +26,7 @@ class Page extends Controller {
 // 			$page_res['attr'] = unserialize($page_res['attr']);
 // 		}
 		
-		
+		return $this->view('page/show', array('page'=> $page_res));
 	}
 
 }
