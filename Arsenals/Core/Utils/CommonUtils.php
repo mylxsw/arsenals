@@ -39,7 +39,7 @@ class CommonUtils {
 	 */
 	public static function array_key_exists_regexp($search_key, $array){
 		foreach ($array as $key => $value){
-			if(preg_match('/^' . $key . '$/', $search_key)){
+			if(preg_match($key, $search_key)){
 				return true;
 			}
 		}
@@ -53,8 +53,8 @@ class CommonUtils {
 	 */
 	public static function array_val_by_key_regexp($array, $search_key){
 		foreach ($array as $key => $value){
-			if(preg_match('/^' . $key . '$/', $search_key)){
-				return $value;
+			if(preg_match($key, $search_key)){
+				return array($key, $value);
 			}
 		}
 		return null;

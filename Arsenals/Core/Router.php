@@ -17,6 +17,13 @@ class Router extends Arsenals {
 	private $_action;
 	private $_path_info;
 	private $_hook;
+	/**
+	 * 正则表达式替换变量
+	 * @var array
+	 */
+	private static $_regexp_replace_vars = array(
+		':num' 				=> '[0-9]*',
+	);
 	
 	/**
 	 * 映射指定路径到函数或者是控制器
@@ -24,7 +31,12 @@ class Router extends Arsenals {
 	 * @param unknown $route
 	 */
 	public static function map($url, $route){
-		self::$_router_defined[str_replace('/', '\/', $url)] = CommonUtils::convStringToCallUserFuncParam($route);
+		// 替换为标准正则表达式
+		$key = str_replace(
+				array_keys(self::$_regexp_replace_vars), 
+				array_values(self::$_regexp_replace_vars), 
+				'/' . str_replace('/', '\/', trim($url, '/')) . '/');
+		self::$_router_defined[$key] = $route;
 	}
 	
 	public function __construct(){
@@ -39,6 +51,9 @@ class Router extends Arsenals {
 		$this->_action = $uri->getActionName();
 		// 钩子
 		$this->_hook = Registry::load('Arsenals\\Core\\Hooks');
+		
+		// 配置文件定义的路由
+		self::$_router_defined = array_merge(self::$_router_defined, $this->_routers['route']);
 	}
 	/**
 	 * 路由初始化
@@ -51,9 +66,20 @@ class Router extends Arsenals {
 	public function dispatch(){
 		
 		if (CommonUtils::array_key_exists_regexp($this->_path_info, self::$_router_defined)){
-			$view = call_user_func(CommonUtils::array_val_by_key_regexp(
-					self::$_router_defined, $this->_path_info), 
-					Registry::load('\\Arsenals\\Core\\Input'));
+			// 返回值 [0] 正则 [1] 回调函数
+			$callback_funcs = CommonUtils::array_val_by_key_regexp(self::$_router_defined, $this->_path_info);
+			// 捕获正则组
+			$matches = array();
+			preg_match($callback_funcs[0], $this->_path_info, $matches);
+			
+			// 移除原始路径
+			if(is_array($matches) && count($matches) > 1){
+				$matches = array_slice($matches, 1);
+			}
+			// 第一个参数设为$input,INPUT类的实例
+			array_unshift($matches, Registry::load('\\Arsenals\\Core\\Input'));
+			// 调用函数OR控制器
+			$view = call_user_func_array(CommonUtils::convStringToCallUserFuncParam($callback_funcs[1]), $matches);
 		}else{
 			// 创建控制器并执行动作
 			$this->_hook->call('before_controller_init');

@@ -15,8 +15,7 @@ class Articles extends Controller {
 	 * GET: cat, p
 	 * OUTPUT: p, current_nav, breadcrumbs, articles
 	 */
-	public function lists(){
-		$category = $this->get('cat');
+	public function lists($input, $category){
 		$p = $this->get('p', 1);
 		
 		$articleModel = $this->model('Article');

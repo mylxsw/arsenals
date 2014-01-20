@@ -46,7 +46,7 @@
 <body>
 <div class="ink-grid" id="main">
 	<header id="header">
-		<h1><img src="http://115.29.39.240/wp-content/uploads/2013/12/%E5%92%96%E5%95%A1%E5%8E%85logo.png" /></h1>
+		<h1><img src="http://cdcafe.cc/wp-content/uploads/2013/12/%E5%92%96%E5%95%A1%E5%8E%85logo.png" /></h1>
 		<nav class="ink-navigation vspace">
 		<ul class="menu horizontal grey rounded ">
 			<?php echo Demo\views\ink\top_nav(isset($current_nav) ? $current_nav : '');?>

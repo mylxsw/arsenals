@@ -7,4 +7,5 @@
 return array(
 	'default_controller' 	=> 'Index',
 	'default_action'		=> 'index',
+	'route' => array()
 );
