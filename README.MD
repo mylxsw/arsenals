@@ -58,9 +58,9 @@ Arsenals采用了基于MVC的架构，同时支持Service层的扩展。
 - **入口文件**  
 	项目的入口文件 ```index.php```
 	<pre>
-	/**
-	 * Arsenals框架示例程序入口
-	 */
+	/\*\*
+	 \* Arsenals框架示例程序入口
+	 \*/
 	use Demo\DemoBootstrap;
 	
 	// 定义项目配置
