@@ -34,8 +34,81 @@ Arsenals采用了基于MVC的架构，同时支持Service层的扩展。
 6. 文件命名，所有的类文件命名以含有的类名为准，比如类`SessionUtils`所在的PHP文件应该命名为 ***SessionUtils.php*** , 不要使用类似SessionUtils.class.php等格式的命名，自动加载机制无法加载此种命名方法。
 
 
+##第三章 快速开始
+本章主要介绍如何快速开始一个Arsenals项目的开发。  
 
-##第三章 快速入门
+- **目录结构**  
+	建立你的项目目录，本例以Demo为例。
+	<pre>
+	Demo
+	|-caches		缓存目录
+	|-configs
+		|-config.php  	项目基本配置
+		|-database.php  数据库连接配置
+		|-filter.php  	过滤器配置
+		|-hook.php  	钩子配置
+		|_router.php  	路由配置
+	|-controllers		控制器
+	|-filter		过滤器
+	|-hooks			钩子目录
+	|-models		模型
+	|_views			视图
+	</pre>
+	实际上，该目录结构并不是必须的，除configs目录是固定之外，其余目录都会根据namespace进行寻找，因此，可以根据程序需要自定义文件存储结构（必须与命名空间相匹配的目录结构）。
+- **入口文件**  
+	项目的入口文件 ```index.php```
+	<pre>
+	/**
+	 * Arsenals框架示例程序入口
+	 */
+	use Demo\DemoBootstrap;
+	
+	// 定义项目配置
+	define('APP_NAME', 'Demo');
+	define('BASE_PATH', realpath(dirname(__FILE__)) . DIRECTORY_SEPARATOR);
+	
+	// 项目入口
+	require BASE_PATH . 'Demo/DemoBootstrap.php';
+	$instance = new DemoBootstrap();
+	$instance->startup();
+	</pre>
+	在项目Demo下，建立项目初始化文件DemoBootstrap.php文件。
+	<pre>
+	namespace Demo;
+	use Arsenals\Core\Router as Route;
+	
+	require BASE_PATH . 'Arsenals' . DIRECTORY_SEPARATOR . 'ArsenalsBootstrap.php';
+	// 自定义的初始化文件必须继承自ArsenalsBootstrap类
+	class DemoBootstrap extends \Arsenals\ArsenalsBootstrap {
+		// run方法为项目提供了更加方便的配置方式，可以
+		// 在此文件中自定义路由以及其它一些个性化配置等
+		public function run() {
+			Route::map("art", '\\Demo\\controllers\\Articles@lists');
+			Route::map("articles/lists", function ($input){
+				return $input->get("cat");
+			});
+		}
+	
+	}
+	</pre>
+- **项目配置**  
+	配置文件并不是必须的，如果没有在项目下建立配置文件，将会采用框架内置的配置文件对系统进行配置，自定义配置可以覆盖默认配置。
+- **部署运行**  
+	完成项目配置之后就可以简单的写一个控制器，然后运行程序查看结果了。  
+	写一个简单的测试控制器Index控制器：
+	<pre>
+	namespace Demo\controllers;
+	use Arsenals\Core\Abstracts\Controller;
+	
+	class Index extends Controller{
+		public function index(){
+			return "hello,world";
+		}
+	}
+	</pre>
+	
+
+##第四章 参考文档
 
 ###常量定义
 <table>
