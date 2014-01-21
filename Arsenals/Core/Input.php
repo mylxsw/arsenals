@@ -53,6 +53,8 @@ class Input extends Arsenals {
 		$this->_post = & $_POST;
 		$this->_request = & $_REQUEST;
 		$this->_cookies = & $_COOKIE;
+		
+		parent::__construct();
 	}
 	/**
 	 * 获取GET值
@@ -106,7 +108,18 @@ class Input extends Arsenals {
 	 * @param mixed $default
 	 * @return mixed
 	 */
-	public function request($key, $default = null){
+	public function request($key, $default = null, $type = null){
+		// 如果不存在该字段，则返回默认值
+		if(!array_key_exists($key, $this->_request)){
+			return $default;
+		}
+		// 如果类型为null，则直接返回字段值
+		if(is_null($type)){
+			return $this->_request[$key];
+		}
+		// 进行类型校验
+		self::validate($this->_request[$key], $type);
+		
 		return $this->_request[$key];
 	}
 	/**
@@ -116,7 +129,18 @@ class Input extends Arsenals {
 	 * @param mixed $default
 	 * @return mixed
 	 */
-	public function cookie($key, $default = null){
+	public function cookie($key, $default = null, $type = null){
+		// 如果不存在该字段，则返回默认值
+		if(!array_key_exists($key, $this->_cookies)){
+			return $default;
+		}
+		// 如果类型为null，则直接返回字段值
+		if(is_null($type)){
+			return $this->_cookies[$key];
+		}
+		// 进行类型校验
+		self::validate($this->_cookies[$key], $type);
+		
 		return $this->_cookies[$key];
 	}
 	/**
@@ -200,7 +224,7 @@ class Input extends Arsenals {
 	/**
 	 * 注册验证规则
 	 * @param string $rule_name
-	 * @param string $entity_name
+	 * @param string $entity_name 可以是类方法字符串表示或者回调函数
 	 */
 	public static function validateRuleRegister($rule_name, $entity_name){
 		self::$_validate_rules[$rule_name] = $entity_name;

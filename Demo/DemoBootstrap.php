@@ -8,7 +8,6 @@ require BASE_PATH . 'Arsenals' . DIRECTORY_SEPARATOR . 'ArsenalsBootstrap.php';
 class DemoBootstrap extends \Arsenals\ArsenalsBootstrap {
 
 	public function run() {
-		//Route::map("art", '\\Demo\\controllers\\Articles@lists');
 		Route::map("^articles/lists/(:num)", '\\Demo\\controllers\\Articles@lists');
 		Route::map('^page/show/(:num)', '\\Demo\\controllers\\Page@show');
 		Route::map('市场活动', '\\Demo\\controllers\\Page@show', 1);

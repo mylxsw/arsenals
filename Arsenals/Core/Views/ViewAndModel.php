@@ -28,6 +28,8 @@ class ViewAndModel extends Arsenals {
 	public function __construct($view_name, $view_datas = array()){
 		$this->view_name = $view_name;
 		$this->view_datas = $view_datas;
+		
+		parent::__construct();
 	}
 	/**
 	 * 获取当前视图名称

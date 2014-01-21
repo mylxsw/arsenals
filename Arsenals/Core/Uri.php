@@ -61,6 +61,7 @@ class Uri extends Arsenals {
 			$this->_action_name = $router_config['default_action'];
 			$this->_module_name = '';
 		}
+		parent::__construct();
 	}
 	/**
 	 * 获取控制器名称

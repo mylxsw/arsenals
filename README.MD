@@ -276,20 +276,12 @@ return array(
 		<td>系统初始化之后</td>
 	</tr>
 	<tr>
-		<td>before_controller_init</td>
-		<td>控制器初始化之前</td>
+		<td>before_controller</td>
+		<td>控制器之前</td>
 	</tr>
 	<tr>
-		<td>after_controller_init</td>
-		<td>控制器初始化之后</td>
-	</tr>
-	<tr>
-		<td>before_action</td>
-		<td>控制器动作执行之前</td>
-	</tr>
-	<tr>
-		<td>after_action</td>
-		<td>控制器动作执行之后</td>
+		<td>after_controller</td>
+		<td>控制器之后</td>
 	</tr>
 </tbody>
 </table>
@@ -338,7 +330,7 @@ Arsenals框架提供了字段校验功能，开发过程中，可以方便的使
 </tbody>
 </table>
 
-注意： 多个规则之间属于偶那个|进行分隔。  
+注意： 多个规则之间用|进行分隔。  
 如果需要指定规则参数，使用如下规则： 规则名:参数1,参数2
 
 如果需要使用自定义的规则也很简单，使用Input的validateRuleRegister方法，为Input类注册自定义的校验规则。

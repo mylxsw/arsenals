@@ -4,6 +4,7 @@ namespace Arsenals;
 
 use Arsenals\Core\Registry;
 use Arsenals\Core\Abstracts\Arsenals;
+use Arsenals\Core\Log;
 /**
  * Arsenals框架入口
  * 
@@ -77,6 +78,10 @@ class ArsenalsBootstrap {
 						}, self::$_paths), 
 				explode(PATH_SEPARATOR, get_include_path()));
 		
+		// 开始计算系统运行时间
+		$benchMark = Registry::load('Arsenals\\Core\\Benchmark');
+		$benchMark->mark('system_start');
+		
 		// 执行入口运行初始化
 		$this->run();
 		
@@ -103,6 +108,12 @@ class ArsenalsBootstrap {
 		
 		// 进行路由调度
 		$filter->dispatch();
+		// 记录系统运行结束时间
+		$benchMark->mark('system_end');
+		
+		//echo $benchMark->elapsedTime('system_start', 'system_end');
+		var_dump($benchMark->elapsedTime('system_start', 'system_end'));
+		var_dump($benchMark->elapsedTime('controller_start', 'controller_end'));
 	}
 	/**
 	 * 自动加载文件

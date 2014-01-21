@@ -29,6 +29,7 @@ class Hooks extends Arsenals {
 			return false;
 		}
 		$this->_hooks = Config::load('hook');
+		parent::__construct();
 	}
 	/**
 	 * 调用钩子

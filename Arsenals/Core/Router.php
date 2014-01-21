@@ -64,6 +64,7 @@ class Router extends Arsenals {
 		
 		// 配置文件定义的路由
 		self::$_router_defined = array_merge(self::$_router_defined, $this->_routers['route']);
+		parent::__construct();
 	}
 	
 	/**
@@ -112,23 +113,31 @@ class Router extends Arsenals {
 					array_unshift($matches, Registry::load('\\Arsenals\\Core\\Input'));
 				}
 			}
+			$this->_hook->call('before_controller');
+			$this->_benchMark->mark('controller_start');
 			
 			$view = call_user_func_array($controller_func, $matches);
+			
+			$this->_benchMark->mark('controller_end');
+			$this->_hook->call('after_controller');
 		}else{
 			if(!class_exists($this->_controller)){
 				throw new PageNotFoundException('指定的控制器不存在！');
 			}
 			// 创建控制器并执行动作
-			$this->_hook->call('before_controller_init');
+			$this->_hook->call('before_controller');
+			$this->_benchMark->mark('controller_start');
+			
 			$controller = new $this->_controller();
-			$this->_hook->call('after_controller_init');
 			
 			if(!method_exists($controller, $this->_action)) {
 				throw new PageNotFoundException('指定的控制器方法不存在！');
 			}
-			$this->_hook->call('before_action');
+			
 			$view = $controller->{$this->_action}(Registry::load('\\Arsenals\\Core\\Input'));
-			$this->_hook->call('after_action');
+			
+			$this->_benchMark->mark('controller_end');
+			$this->_hook->call('after_controller');
 			
 			// 如果视图含有_output方法，则使用视图自定义的输出方式处理
 			if(method_exists($controller, '_output')){

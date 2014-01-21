@@ -36,6 +36,7 @@ abstract class Model extends Arsenals {
 					. substr(strtolower($class_name), strrpos($class_name, '\\') + 1);
 		}
 		$this->_conn = SessionFactory::getSession();
+		parent::__construct();
 	}
 	/**
 	 * 载入单个数据对象

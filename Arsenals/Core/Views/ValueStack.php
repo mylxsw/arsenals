@@ -11,8 +11,6 @@ use Arsenals\Core\Abstracts\Arsenals;
 class ValueStack extends Arsenals {
 	private static $_stack_map = array();
 	
-	private function __construct(){}
-	
 	public static function add($key, $value){
 		self::$_stack_map[$key] = $value;
 	}

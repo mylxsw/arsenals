@@ -13,7 +13,6 @@ use Arsenals\Core\Abstracts\Arsenals;
 class SessionFactory extends Arsenals {
 	private static $_last_connection = null;
 	private static $_connections = array();
-	private function __construct(){}
 	/**
 	 * 创建一个会话，打开数据库连接
 	 * 

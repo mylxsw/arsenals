@@ -20,6 +20,7 @@ class Ajax extends Arsenals {
 	 */
 	function __construct($datas = array()) {
 		$this->datas = $datas;
+		parent::__construct();
 	}
 	/**
 	 * 添加数据

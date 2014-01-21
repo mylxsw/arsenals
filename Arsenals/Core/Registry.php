@@ -16,10 +16,6 @@ class Registry extends Arsenals {
 	 */
 	private static $_cache_objects = array();
 	/**
-	 * 该类禁止实例化
-	*/
-	private function __construct(){}
-	/**
 	 * 防止该类被克隆
 	 */
 	private function __clone(){}

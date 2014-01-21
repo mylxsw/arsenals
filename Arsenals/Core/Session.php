@@ -15,6 +15,7 @@ class Session extends Arsenals {
 	 */
 	public function __construct(){
 		session_start();
+		parent::__construct();
 	}
 	/**
 	 * 获取当前Session的ID
