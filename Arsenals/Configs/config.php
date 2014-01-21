@@ -16,5 +16,5 @@ return array(
 	/**
 	 * 是否允许钩子调用
 	 */
-	'hook_enabled'	=>	false
+	'hook_enabled'	=>	false,
 );

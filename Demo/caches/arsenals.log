@@ -1,0 +1,34 @@
+2014-01-21 19:11:39  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-01-21 19:11:39  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-01-21 19:11:39  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-01-21 19:11:39  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-01-21 19:11:39  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-01-21 19:11:39  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-01-21 19:11:39  [info]  [Demo\controllers\Index] 类加载完成!
+2014-01-21 19:11:39  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-01-21 19:11:39  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-01-21 19:11:39  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-01-21 19:11:39  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-01-21 19:11:40  [info]  [Demo\models\Navigator] 类加载完成!
+2014-01-21 19:11:40  [info]  [Demo\models\Setting] 类加载完成!
+2014-01-21 19:11:41  [info]  [Demo\models\Article] 类加载完成!
+2014-01-21 19:11:41  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-01-21 19:11:41  [debug]  [system] 系统运行时间: 2.1055
+2014-01-21 19:11:41  [debug]  [system] 控制器执行时间: 2.0810
+2014-01-21 19:12:10  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-01-21 19:12:10  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-01-21 19:12:10  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-01-21 19:12:10  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-01-21 19:12:10  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-01-21 19:12:10  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-01-21 19:12:10  [info]  [Demo\controllers\Index] 类加载完成!
+2014-01-21 19:12:10  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-01-21 19:12:10  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-01-21 19:12:10  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-01-21 19:12:10  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-01-21 19:12:11  [info]  [Demo\models\Navigator] 类加载完成!
+2014-01-21 19:12:11  [info]  [Demo\models\Setting] 类加载完成!
+2014-01-21 19:12:12  [info]  [Demo\models\Article] 类加载完成!
+2014-01-21 19:12:12  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-01-21 19:12:12  [debug]  [system] 系统运行时间: 2.1006
+2014-01-21 19:12:12  [debug]  [system] 控制器执行时间: 2.0797

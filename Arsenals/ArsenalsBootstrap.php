@@ -4,7 +4,6 @@ namespace Arsenals;
 
 use Arsenals\Core\Registry;
 use Arsenals\Core\Abstracts\Arsenals;
-use Arsenals\Core\Log;
 /**
  * Arsenals框架入口
  * 
@@ -49,16 +48,24 @@ class ArsenalsBootstrap {
 		// 定义系统常量
 		defined('ERROR_HANDLER') || define('ERROR_HANDLER', 'Arsenals\\Core\\_error_handler');
 		defined('EXCEPTION_HANDLER') || define('EXCEPTION_HANDLER', 'Arsenals\\Core\\_exception_handler');
+		defined('LOG_IMPL') || define('LOG_IMPL', 'Arsenals\\Core\\Logs\\FileLogImpl');// 日志实现
 		
 		define('ARSENALS_PATH', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 		define('ARSENALS_CORE_PATH', ARSENALS_PATH . 'Core' . DIRECTORY_SEPARATOR);
 		define('ARSENALS_CONFIG_PATH', ARSENALS_PATH . 'Configs' . DIRECTORY_SEPARATOR);
 		define('ARSENALS_LIBRARIES_PATH', ARSENALS_PATH . 'Libraries' . DIRECTORY_SEPARATOR);
 		
+		// 是否调试模式和记录日志
+		defined('DEBUG') || define('DEBUG', false);
+		defined('LOG') || define('LOG', false);
+		
+		defined('DEFAULT_TIME_ZONE') || define('DEFAULT_TIME_ZONE', 'PRC');
+		
 		defined('APP_PATH') || define('APP_PATH', BASE_PATH . APP_NAME . DIRECTORY_SEPARATOR);
 		defined('CONFIG_PATH') || define('CONFIG_PATH', APP_PATH . 'configs' . DIRECTORY_SEPARATOR);
 		defined('VIEW_PATH') || define('VIEW_PATH', APP_PATH . 'views' . DIRECTORY_SEPARATOR);
 		defined('VIEW_LAYER') || define('VIEW_LAYER', 'Arsenals\\Core\\Views\\SimpleView');
+		defined('CACHE_PATH') || define('CACHE_PATH', APP_PATH . 'caches' . DIRECTORY_SEPARATOR);
 		
 		defined('MODEL_NAMESPACE') || define('MODEL_NAMESPACE', APP_NAME . '\\models\\');
 		defined('SERVICE_NAMESPACE') || define('SERVICE_NAMESPACE', APP_NAME . '\\services\\');
@@ -82,6 +89,8 @@ class ArsenalsBootstrap {
 		$benchMark = Registry::load('Arsenals\\Core\\Benchmark');
 		$benchMark->mark('system_start');
 		
+		// 设置时区
+		date_default_timezone_set(DEFAULT_TIME_ZONE);
 		// 执行入口运行初始化
 		$this->run();
 		
@@ -111,9 +120,9 @@ class ArsenalsBootstrap {
 		// 记录系统运行结束时间
 		$benchMark->mark('system_end');
 		
-		//echo $benchMark->elapsedTime('system_start', 'system_end');
-		var_dump($benchMark->elapsedTime('system_start', 'system_end'));
-		var_dump($benchMark->elapsedTime('controller_start', 'controller_end'));
+		$log = Registry::load('Arsenals\\Core\\Log');
+		$log->debug("系统运行时间: {$benchMark->elapsedTime('system_start', 'system_end')}", 'system');
+		$log->debug("控制器执行时间: {$benchMark->elapsedTime('controller_start', 'controller_end')}", 'system');
 	}
 	/**
 	 * 自动加载文件

@@ -3,6 +3,8 @@
 namespace Arsenals\Core;
 
 use Arsenals\Core\Abstracts\Arsenals;
+use Arsenals\Core\Logs\Logs;
+use Arsenals\Core\Exceptions\ClassTypeException;
 /**
  * 日志记录
  * 
@@ -10,16 +12,20 @@ use Arsenals\Core\Abstracts\Arsenals;
  *
  */
 class Log{
-	/**
-	 * 全局日志消息
-	 * @var unknown
-	 */
-	private static $_messages = array();
-	/**
-	 * 当前日志计数
-	 * @var unknown
-	 */
-	private static $_log_count = 0;
+	private static $_log_instance;
+	private $_conf = array();
+
+	public function __construct(){
+		if(!LOG){return ;}
+		if(self::$_log_instance == null){
+			$logImpl = LOG_IMPL;
+			self::$_log_instance = new $logImpl;
+			if (!self::$_log_instance instanceof Logs) {
+				throw new ClassTypeException('日志实现类必须实现Logs接口！');
+			}
+		}
+		$this->_conf = Config::load('log');
+	}
 	
 	public function info($message, $name = ''){
 		$this->writeLog('info', "[{$name}] {$message}");
@@ -39,29 +45,26 @@ class Log{
 	 * @param unknown $message
 	 */
 	public function writeLog($level, $message){
-		self::$_messages[self::$_log_count ++] = array('level' => $level, 
-				'message' => $message, 
-				'time' => microtime());
+		if(!LOG){
+			return false;
+		}
+		
+		if (!in_array($level, $this->_conf['log_levels'])) {
+			return false;
+		}
+		return self::$_log_instance->write($level, $message);
 	}
 	/**
 	 * 获取所有日志
 	 * @return \Arsenals\Core\unknown
 	 */
-	public static function getLogs($level = null){
-		if(is_null($level)){
-			return self::$_messages;
+	public function getLogs($level = null){
+		if(!LOG){
+			return '';
 		}
-		$messages = array();
-		
-		if(!is_array($level)){
-			$level = array($level);
+		if (!in_array($level, $this->_conf['log_levels'])) {
+			return '';
 		}
-		
-		foreach (self::$_messages as $key=>$val){
-			if (in_array($val['level'], $level)) {
-				$messages[$key] = $val;
-			}
-		}
-		return $messages;
+		return self::$_log_instance->getLogs($level);
 	}
 }

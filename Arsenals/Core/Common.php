@@ -114,6 +114,17 @@ function strip_whitespace($content){
 	return $source;
 }
 /**
+ * 写文件
+ * @param unknown $filename
+ * @param unknown $data
+ * @param string $flag
+ * @param string $context
+ * @return number
+ */
+function file_put_contents($filename, $data, $flag = null, $context = null){
+	return \file_put_contents($filename, $data, $flag, $context);
+}
+/**
  * 错误处理
  * @param unknown $errno
  * @param unknown $errstr
