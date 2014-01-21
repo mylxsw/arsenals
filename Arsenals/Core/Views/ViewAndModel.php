@@ -45,4 +45,27 @@ class ViewAndModel extends Arsenals {
 	public function getDatas(){
 		return $this->view_datas;
 	}
+	/**
+	 * 视图模型解析
+	 * @param unknown $view_name
+	 * @param unknown $view_datas
+	 * @throws \Exception
+	 * @return string
+	 */
+	public static function make($view_name, $view_datas = array()){
+		if ($view_name instanceof ViewAndModel) {
+			$view_layer = VIEW_LAYER;
+			$view = new $view_layer();
+			if($view instanceof View){
+				// 将数据添加到值栈，以便随时访问
+				ValueStack::addAll($view_name->getDatas());
+				return $view->parse($view_name);
+			}else{
+				throw new \Exception('指定的视图类必须实现Arsenals\\Core\\Views\\View接口!');
+			}
+		}else{
+			$vm = new ViewAndModel($view_name, $view_datas);
+			return self::make($vm);
+		}
+	}
 }

@@ -10,13 +10,7 @@ namespace Arsenals\Core\Views;
  */
 interface View {
 	/**
-	 * 显示内容给最终用户
-	 * 
-	 * @param mixed $vm
-	 */
-	public function display($vm);
-	/**
-	 * 解析模板并返回解析完成后的模板
+	 * 解析模板并返回解析完成后的内容
 	 * 
 	 * @param mixed $vm
 	 * @return string

@@ -27,12 +27,6 @@ class TwigView implements View {
 							'optimizations'			=> -1
 						));
 	}
-	/* (non-PHPdoc)
-	 * @see \Arsenals\Core\Views\View::display()
-	 */
-	public function display(\Arsenals\Core\Views\ViewAndModel $vm) {
-		echo $this->parse($vm);
-	}
 
 	/* (non-PHPdoc)
 	 * @see \Arsenals\Core\Views\View::parse()

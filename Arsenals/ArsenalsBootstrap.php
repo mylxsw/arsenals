@@ -93,11 +93,9 @@ class ArsenalsBootstrap {
 		
 		// 执行安全检查
 		$security = Registry::load('Arsenals\\Core\\Security');
-		$security->init();
 		
 		// 路由转发
 		$router = Registry::load('Arsenals\\Core\\Router');
-		$router->init();
 		
 		// 增加过滤器控制
 		$filter = Registry::load('Arsenals\\Core\\Filters');

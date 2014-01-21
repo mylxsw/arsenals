@@ -3,6 +3,7 @@
 namespace Arsenals\Core;
 use Arsenals\Core\Abstracts\Arsenals;
 use Arsenals\Core\Utils\CommonUtils;
+use Arsenals\Core\Exceptions\PageNotFoundException;
 /**
  * 路由控制
  * 
@@ -11,6 +12,7 @@ use Arsenals\Core\Utils\CommonUtils;
  */
 class Router extends Arsenals {
 	private static $_router_defined = array();
+	private static $_router_data = array();
 	
 	private $_routers;
 	private $_controller;
@@ -22,7 +24,8 @@ class Router extends Arsenals {
 	 * @var array
 	 */
 	private static $_regexp_replace_vars = array(
-		':num' 				=> '[0-9]*',
+		':num' 				=> '[0-9]+',
+		':any'				=> '.+'
 	);
 	
 	/**
@@ -37,6 +40,13 @@ class Router extends Arsenals {
 				array_values(self::$_regexp_replace_vars), 
 				'/' . str_replace('/', '\/', trim($url, '/')) . '/');
 		self::$_router_defined[$key] = $route;
+		
+		$args = array();
+		if(func_num_args() > 2){
+			$func_args = func_get_args();
+			$args = array_splice($func_args, 2);
+		}
+		self::$_router_data[$key] = $args;
 	}
 	
 	public function __construct(){
@@ -55,16 +65,12 @@ class Router extends Arsenals {
 		// 配置文件定义的路由
 		self::$_router_defined = array_merge(self::$_router_defined, $this->_routers['route']);
 	}
-	/**
-	 * 路由初始化
-	 */
-	public function init(){}
 	
 	/**
 	 * 执行路由调度
 	 */
 	public function dispatch(){
-		
+		// 如果匹配了指定的路由规则，则使用路由规则进行路由分发，否则使用惯例优先
 		if (CommonUtils::array_key_exists_regexp($this->_path_info, self::$_router_defined)){
 			// 返回值 [0] 正则 [1] 回调函数
 			$callback_funcs = CommonUtils::array_val_by_key_regexp(self::$_router_defined, $this->_path_info);
@@ -73,19 +79,53 @@ class Router extends Arsenals {
 			preg_match($callback_funcs[0], $this->_path_info, $matches);
 			
 			// 移除原始路径
-			if(is_array($matches) && count($matches) > 1){
+			if(is_array($matches) && count($matches) > 0){
 				$matches = array_slice($matches, 1);
 			}
-			// 第一个参数设为$input,INPUT类的实例
-			array_unshift($matches, Registry::load('\\Arsenals\\Core\\Input'));
+			
+			// 追加提供的参数
+			$data = self::$_router_data[$callback_funcs[0]];
+			if (count($data) > 0) {
+				$matches = array_merge($matches, $data);
+			}
+			
 			// 调用函数OR控制器
-			$view = call_user_func_array(CommonUtils::convStringToCallUserFuncParam($callback_funcs[1]), $matches);
+			$controller_func = CommonUtils::convStringToCallUserFuncParam($callback_funcs[1]);
+			// 如果第一个参数为Input类型，则注入Input对象
+			$reflectionParameter = null;
+			if(is_array($controller_func)){// 如果为数组，则第一个参数为对象，第二个为方法名
+				// 反射获取参数对象
+				$reflectionClass = new \ReflectionClass($controller_func[0]);
+				$reflectionMethod = $reflectionClass->getMethod($controller_func[1]);
+				$reflectionParameter = $reflectionMethod->getParameters();
+			}else if (is_callable($controller_func)){// 如果可执行，则为回调函数
+				// 反射获取参数对象
+				$reflectionFunc = new \ReflectionFunction($controller_func);
+				$reflectionParameter = $reflectionFunc->getParameters();
+			}
+			// 在含有参数的情况下，检查第一个参数是否为Input
+			if ($reflectionParameter != null && count($reflectionParameter) > 0){
+				if ($reflectionParameter[0] instanceof \ReflectionParameter 
+					&& !is_null($reflectionParameter[0]->getClass()) 
+					&& $reflectionParameter[0]->getClass()->getName() == 'Arsenals\\Core\\Input') {
+					// 第一个参数设为$input,INPUT类的实例
+					array_unshift($matches, Registry::load('\\Arsenals\\Core\\Input'));
+				}
+			}
+			
+			$view = call_user_func_array($controller_func, $matches);
 		}else{
+			if(!class_exists($this->_controller)){
+				throw new PageNotFoundException('指定的控制器不存在！');
+			}
 			// 创建控制器并执行动作
 			$this->_hook->call('before_controller_init');
 			$controller = new $this->_controller();
 			$this->_hook->call('after_controller_init');
 			
+			if(!method_exists($controller, $this->_action)) {
+				throw new PageNotFoundException('指定的控制器方法不存在！');
+			}
 			$this->_hook->call('before_action');
 			$view = $controller->{$this->_action}(Registry::load('\\Arsenals\\Core\\Input'));
 			$this->_hook->call('after_action');
@@ -96,7 +136,6 @@ class Router extends Arsenals {
 				return ;
 			}
 		}
-		
 		
 		// 处理输出
 		$output = Registry::load('Arsenals\\Core\\Output');

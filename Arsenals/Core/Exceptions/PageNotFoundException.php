@@ -1,8 +1,7 @@
 <?php
 
-namespace ArsenalsCore\Exceptions;
+namespace Arsenals\Core\Exceptions;
 
-use Arsenals\Core\Exceptions\ArsenalsException;
 /**
  * 找不到页面异常404
  * 

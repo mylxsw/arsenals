@@ -212,6 +212,11 @@ Arsenals采用了基于MVC的架构，同时支持Service层的扩展。
 		<td>index</td>
 		<td>默认访问的方法</td>
 	</tr>
+	<tr>
+		<td>route</td>
+		<td>空数组</td>
+		<td>以数组的kv形式提供路由映射，key为url（支持正则）， value为控制器方法字符串标识</td>
+	</tr>
 </tbody>
 </table>
 
@@ -227,6 +232,14 @@ public function run() {
 </pre>
 如果没有自定义路由，将采用系统内置路由规则，系统对所有的控制器方法注入了$input参数，该参数为Input类的实例，方便开发。  
 
+Route::map方法支持任意数量参数，可以在第三个参数开始任意传递变量，该参数将会自动附加到回调函数或者控制器方法中，例如：
+<pre>
+Route::map('^原创音乐$', function($media, $action){
+	return "这里是原创音乐:{$media} {$action}";
+}, "MP3", "play");
+</pre>
+
+**小提示** ： *如果方法或者回调函数 **第一个** 参数为Input类型的对象，则可以自动注入Input对象，其它参数顺序后移一位。*
 
 ###钩子
 Arsenals框架提供了系统运行各个阶段的钩子函数功能，使对系统的扩展成为了可能，要使用钩子功能，需要在 ```config.php``` 配置文件中配置 ```hook_enabled``` 为 ```true```。  
@@ -336,6 +349,7 @@ Arsenals框架提供了字段校验功能，开发过程中，可以方便的使
 
 ###模板引擎
 默认是采用系统内置的简单模板的，该模板使用纯PHP。  
+在控制器中渲染模板引擎只需要执行 ```ViewAndModel::make()``` 或者 ```VM::make()``` 方法即可获取解析之后的模板内容。
 
 可以通过在入口文件中定义常量 **VIEW_LAWER** 修改默认采用的模板引擎，默认值为： **Arsenals\Core\Views\SimpleView** ，采用纯PHP模板。
 例如：  
@@ -351,9 +365,7 @@ Arsenals框架提供了字段校验功能，开发过程中，可以方便的使
 ####自定义模板引擎
 除了使用内置模板引擎之外，开发者可以使用自定义的模板引擎，使用自定义的模板引擎也很简单，只需要实现自定义的视图解析类，自定义视图解析类实现 **Arsenals\Core\Views\View** 接口即可。  
 
-View接口中包含两个方法， ```display($vm)```和```parse($vm)```, $vm为```Arsenals\Core\Views\ViewAndModel```类型的对象，其中保存了要显示的视图名称以及传递给视图的数据模型。
-
-```display($vm)``` 方法中实现显示视图解析结果给浏览器。
+View接口中只包含一个方法， ```parse($vm)```, $vm为```Arsenals\Core\Views\ViewAndModel```类型的对象，其中保存了要显示的视图名称以及传递给视图的数据模型。
 
 ```parse($vm)``` 方法完成视图解析，并返回解析后的视图内容。
 
@@ -363,9 +375,6 @@ namespace Demo\DemoViews;
 use Arsenals\Core\Views\View;
 
 class DemoView implements View{  
-	public function display($vm){  
-		echo $this->parse($vm);
-	}  
 	public function parse($vm){  
 		// $vm->getDatas(); 传递给视图的数据数组
 		// 例如： @extract($vm->getDatas());
@@ -378,3 +387,20 @@ class DemoView implements View{
 </pre>
 
 配置常量VIEW_LAWE为 ```Demo\DemoViews\DemoView```即可。
+
+###杂项
+####异常处理/错误处理
+可以在项目入口文件index.php中通过定义常量 ```ERROR_HANDLER``` 和 ```EXCEPTION_HANDLER``` 使用自定义的异常处理。  
+例如：
+<pre>
+define('ERROR_HANDLER', 'Arsenals\\Core\\_error_handler');
+define('EXCEPTION_HANDLER', 'Arsenals\\Core\\_exception_handler');
+
+function _error_handler($errno, $errstr, $errfile, $errline){
+	_D("文件{$errfile}的第{$errline}行有一个错误，错误代码为{$errno}, 错误描述:{$errstr}");
+}
+
+function _exception_handler(\Exception $exception){
+	_D("文件{$exception->getFile()}的第{$exception->getLine()}行抛出异常， 错误代码为 {$exception->getCode()}， 错误描述 ：{$exception->getMessage()}");
+}
+</pre>

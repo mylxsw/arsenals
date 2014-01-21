@@ -18,6 +18,10 @@ class DemoFilter implements Filter {
 		}catch (\Arsenals\Core\Exceptions\ArsenalsException $e){
 			if($e instanceof \Arsenals\Core\Exceptions\TypeErrorException){
 				echo "字段类型异常：{$e->getMessage()} ";
+			}else if($e instanceof \Arsenals\Core\Exceptions\PageNotFoundException){
+				echo "页面不存在 404 : {$e->getMessage()}";
+			}else{
+				throw $e;
 			}
 		}
 	}

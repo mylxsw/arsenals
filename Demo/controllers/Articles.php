@@ -3,6 +3,7 @@
 namespace Demo\controllers;
 
 use Arsenals\Core\Abstracts\Controller;
+use Arsenals\Core\Input;
 /**
  * 文章控制器
  * 
@@ -15,7 +16,7 @@ class Articles extends Controller {
 	 * GET: cat, p
 	 * OUTPUT: p, current_nav, breadcrumbs, articles
 	 */
-	public function lists($input, $category){
+	public function lists(Input $input, $category){
 		$p = $this->get('p', 1);
 		
 		$articleModel = $this->model('Article');

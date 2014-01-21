@@ -61,7 +61,7 @@ abstract class Controller extends Service {
 	 * @return \Arsenals\Core\View\ViewAndModel
 	 */
 	protected function view($view_name, $data = array()){
-		return new ViewAndModel($view_name, array_merge($this->_view_datas, $data));
+		return ViewAndModel::make($view_name, array_merge($this->_view_datas, $data));
 	}
 	/**
 	 * 返回Ajax结果视图

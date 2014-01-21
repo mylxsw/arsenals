@@ -15,19 +15,6 @@ class SimpleView extends Arsenals implements View {
 	/**
 	 * (non-PHPdoc)
 	 *
-	 * @see \Arsenals\Core\Views\View::display()
-	 *
-	 */
-	public function display($vm) {
-		if(!$vm instanceof ViewAndModel){
-			return FALSE;
-		}
-		echo $this->parse($vm);
-	}
-	
-	/**
-	 * (non-PHPdoc)
-	 *
 	 * @see \Arsenals\Core\Views\View::parse()
 	 *
 	 */

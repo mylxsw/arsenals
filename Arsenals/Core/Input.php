@@ -30,7 +30,8 @@ class Input extends Arsenals {
 		'int' 			=> 'self::_rule_int', 
 		'float' 		=> 'self::_rule_float', 
 		'len' 			=> 'self::_rule_len',
-		'range'			=> 'self::_rule_range'
+		'range'			=> 'self::_rule_range',
+		'id'			=> 'self::_rule_id'
 	);
 	
 	/**
@@ -282,7 +283,7 @@ class Input extends Arsenals {
 	 * @param unknown $rule
 	 */
 	private static function _rule_int($var, $rule){
-		if(!is_int($var)){
+		if($var != (int) $var){
 			throw new TypeErrorException("字段不是一个合法的整数！");
 		}
 		return self::_rule_range($var, $rule);
@@ -316,6 +317,20 @@ class Input extends Arsenals {
 			if(!is_null($len_max) && $var_len > $len_max){
 				throw new TypeErrorException("字段长度不能大于{$len_max}个字符！");
 			}	
+		}
+		return TRUE;
+	}
+	/**
+	 * 校验字段 ID
+	 * @param unknown $var
+	 * @param unknown $rule
+	 * @throws TypeErrorException
+	 * @return boolean
+	 */
+	private static function _rule_id($var, $rule){
+		self::_rule_int($var, $rule);
+		if($var <= 0){
+			throw new TypeErrorException("字段不是一个合法的ID！");
 		}
 		return TRUE;
 	}
