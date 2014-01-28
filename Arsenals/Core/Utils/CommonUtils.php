@@ -46,6 +46,24 @@ class CommonUtils {
 		return false;
 	}
 	/**
+	 * 正则表达式匹配数组中是否含有值
+	 * @param unknown $search
+	 * @param unknown $array
+	 * @return boolean
+	 */
+	public static function array_exists_regexp($search, $array){
+		foreach ($array as $arr){
+			$reg = $arr;
+			if (!\Arsenals\Core\str_start_with($arr, '/')){
+				$reg = "/{$arr}/";
+			}
+			if(preg_match($reg, $search)){
+				return true;
+			}
+		}
+		return false;
+	}
+	/**
 	 * 正则表达式从数组中获取值
 	 * @param unknown $array
 	 * @param unknown $key

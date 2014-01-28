@@ -33,7 +33,7 @@ class TwigView implements View {
 	 */
 	public function parse(\Arsenals\Core\Views\ViewAndModel $vm) {
 		$config = Config::load('config');
-		$_view_path = VIEW_PATH . $config['theme'] . DIRECTORY_SEPARATOR;
+		$_view_path = VIEW_PATH . ($config['multi_theme'] ? $config['theme'] . DIRECTORY_SEPARATOR : '');
 		if(file_exists("{$_view_path}functions.php")){
 			include "{$_view_path}functions.php";
 		}

@@ -1,0 +1,185 @@
+/**
+ * SyntaxHighlighter
+ * http://alexgorbatchev.com/
+ *
+ * SyntaxHighlighter is donationware. If you are using it, please donate.
+ * http://alexgorbatchev.com/wiki/SyntaxHighlighter:Donate
+ *
+ * @version
+ * 2.1.364 (October 15 2009)
+ * 
+ * @copyright
+ * Copyright (C) 2004-2009 Alex Gorbatchev.
+ *
+ * @license
+ * This file is part of SyntaxHighlighter.
+ * 
+ * SyntaxHighlighter is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * SyntaxHighlighter is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with SyntaxHighlighter.  If not, see <http://www.gnu.org/copyleft/lesser.html>.
+ */
+/************************************
+ * Default Syntax Highlighter theme.
+ * 
+ * Interface elements.
+ ************************************/
+
+.syntaxhighlighter
+{
+  background-color: transparent !important; //changed from #fff
+  border: 1px solid #E0E0E0 !important;
+  padding: 0 !important;
+       width: 100%;
+  margin: 1em 0 1em 0 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  overflow-y: hidden !important;
+  font-size: .9em !important;
+}
+
+/* Highlighed line number */
+.syntaxhighlighter .line.highlighted .number
+{
+  color: black !important;
+}
+
+/* Highlighed line */
+.syntaxhighlighter .line.highlighted.alt1,
+.syntaxhighlighter .line.highlighted.alt2
+{
+  background-color: #666 !important; //changed from e0e0e0
+}
+
+/* Gutter line numbers */
+.syntaxhighlighter .line .number
+{
+  color: #afafaf !important;
+}
+
+/* Add border to the lines */
+.syntaxhighlighter .line .content
+{
+  border-left: 3px solid #7fa6b9 !important; //changed from #6CE26C
+  color: #afafaf !important; //changed from 000
+}
+
+.syntaxhighlighter.printing .line .content 
+{
+  border: 0 !important;
+}
+
+/* First line */
+.syntaxhighlighter .line.alt1
+{
+  background-color: #2a2a2a !important; //changed from ffffff
+    padding: 2px; //added
+}
+
+/* Second line */
+.syntaxhighlighter .line.alt2
+{
+  background-color: #2a2a2a !important;  //changed from f8f8f8
+    padding: 2px; //added
+}
+
+.syntaxhighlighter .toolbar
+{
+  background-color: #F8F8F8 !important;
+  border: #E7E5DC solid 1px !important;
+}
+
+.syntaxhighlighter .toolbar a
+{
+  color: #a0a0a0 !important;
+}
+
+.syntaxhighlighter .toolbar a:hover
+{
+  color: red !important;
+}
+
+.nogutter { border: none !important; }
+
+/************************************
+ * Actual syntax highlighter colors.
+ ************************************/
+.syntaxhighlighter .plain,
+.syntaxhighlighter .plain a
+{ 
+  color: #0095d3 !important;  //changed from 000
+}
+
+.syntaxhighlighter .comments,
+.syntaxhighlighter .comments a
+{ 
+  color: #ccc !important; //changed from 008200
+}
+
+.syntaxhighlighter .string,
+.syntaxhighlighter .string a
+{
+  color: #6db33f !important;  //changed from 6CE26C
+}
+
+.syntaxhighlighter .keyword
+{ 
+  font-weight: 900 !important; 
+  color: #0095d3 !important; //changed from 069
+}
+
+.syntaxhighlighter .preprocessor 
+{ 
+  color: gray !important; 
+}
+
+.syntaxhighlighter .variable 
+{ 
+  color: #a70 !important; 
+}
+
+.syntaxhighlighter .value
+{ 
+  color: #c2cd23 !important; //changed from 090
+}
+
+.syntaxhighlighter .functions
+{ 
+  color: #c2cd23 !important; //changed from FF1493
+}
+
+.syntaxhighlighter .constants
+{ 
+  color: #7fa6b9 !important; //changed from 0066CC 
+}
+
+.syntaxhighlighter .script
+{ 
+  background-color: yellow !important;
+}
+
+.syntaxhighlighter .color1,
+.syntaxhighlighter .color1 a
+{ 
+  color: #d9541e !important; //changed from #808080
+}
+
+.syntaxhighlighter .color2,
+.syntaxhighlighter .color2 a
+{ 
+  color: #ff1493 !important; 
+}
+
+.syntaxhighlighter .color3,
+.syntaxhighlighter .color3 a
+{ 
+  color: red !important; 
+}

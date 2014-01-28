@@ -26,7 +26,7 @@ class SimpleView extends Arsenals implements View {
 		@extract($vm->getDatas());
 		// 读取视图相关配置信息
 		$config = Config::load('config');
-		$_view_path = VIEW_PATH . $config['theme'] . DIRECTORY_SEPARATOR;
+		$_view_path = VIEW_PATH . ($config['multi_theme'] ? $config['theme'] . DIRECTORY_SEPARATOR : '');
 		// 捕获视图输出内容
 		ob_start();
 		// 加载视图函数库

@@ -14,13 +14,13 @@ define('SITE_URL', $config['site_url']);
  * 资源文件路径
  */
 function resource_path(){
-	echo SITE_URL . 'Demo/views/ink/public/';
+	echo SITE_URL , 'Demo/views/ink/public/';
 }
 /**
  * 公共资源路径
  */
 function public_resource_path(){
-	echo SITE_URL . 'Public/';
+	echo SITE_URL , 'Public/';
 }
 /**
  * 页面头部内容

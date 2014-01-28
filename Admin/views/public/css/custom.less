@@ -1,0 +1,95 @@
+ul li, ol li{
+	margin: auto;
+}
+div + address, div + article, div + aside, div + audio, div + blockquote, div + canvas, div + details, div + dl, div + figure, div + footer, div + form, div + header, div + hr, div + img, div + nav, div + ol, div + p, div + pre, div + table, div + ul, div + video, address + div, article + div, aside + div, audio + div, blockquote + div, canvas + div, details + div, dl + div, figure + div, footer + div, form + div, header + div, hr + div, img + div, nav + div, ol + div, p + div, pre + div, table + div, ul + div, video + div{
+	margin: auto;
+}
+.screen-size-helper {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	line-height: 1.6em;
+	font-size: 1em;
+	padding: 0.5333333333333333em 0.8em;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 9990;
+	text-align: center;
+	
+	.title,ul {
+		color: white;
+		text-shadow: 0 1px 0 #000000;
+	}
+	.title {
+		font-size: inherit;
+		line-height: inherit;
+		text-transform: uppercase;
+		font-weight: 500;
+		float: none;
+	}
+	ul {
+		float: right;
+		margin: 0;
+		padding: 0;
+		line-height: inherit !important;
+		li {
+			padding: 0;
+			margin: 0;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size: inherit !important;
+			&.small{
+				color: #80c431;
+			}
+			&.medium{
+				color: #80c431;
+			}
+			&.large{
+				color: #80c431;
+			}
+			&.extra-large{
+				color: #80c431;
+			}
+		}
+	}
+}
+
+.ink-clear{
+	clear: both;
+}
+.alert-message{
+	position: fixed!important;
+	bottom: 50px;
+	right: 7px;
+	min-width: 200px;
+	display: none;
+}
+.messenger-on-bottom{
+	bottom: 50px!important;
+}
+
+/* 编辑器 */
+.o-editor-text{
+	.o-editor-panel{
+		margin-left: 10px;
+		i{
+			margin-right: 8px;
+			cursor: pointer;
+		}
+	}
+}
+
+.edui-default{
+	line-height: 0;
+}
+
+.o-table-list-panel{
+	margin-top: 10px;
+}
+table{
+	font-size: 14px;
+}
+.ink-navigation .pills li{
+	line-height: 1.2;
+}

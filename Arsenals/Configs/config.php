@@ -6,6 +6,10 @@
  */ 
 return array(
 	/**
+	 * 是否允许多主题
+	 */
+	'multi_theme'	=>	true,
+	/**
 	 * 默认主题
 	 */
 	'theme'			=>	'defaults',

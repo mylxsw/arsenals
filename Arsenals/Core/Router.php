@@ -168,4 +168,12 @@ class Router extends Arsenals {
 	public function getAction(){
 		return $this->_action;
 	}
+	/**
+	 * 获取当前的PATH_INFO
+	 * 
+	 * @return string
+	 */
+	public function getPathInfo(){
+		return $this->_path_info;		
+	}
 }
