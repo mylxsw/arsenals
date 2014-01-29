@@ -38,8 +38,7 @@ function url($url){
 	if(\Arsenals\Core\str_start_with($url, 'http://') || \Arsenals\Core\str_start_with($url, 'https://')){
 		return $new_url;
 	}
-
-	return SITE_URL . $new_url;
+	return SITE_URL  . 'admin.php/' . $new_url;
 }
 /**
  * 顶栏菜单

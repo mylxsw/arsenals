@@ -4,6 +4,7 @@ namespace Arsenals\Core;
 
 use Arsenals\Core\Views\Ajax;
 use Arsenals\Core\Abstracts\Arsenals;
+use Demo\views\ink\header;
 /**
  * 输出控制类
  * 
@@ -33,6 +34,7 @@ class Output extends Arsenals {
 	 * @param Ajax $view
 	 */
 	public function _renderAjax(Ajax $view){
+		header('Content-Type:text/json; charset=utf-8');
 		$this->output(json_encode($view->getDatas()));
 	}
 	

@@ -66,11 +66,6 @@ window.o_fn = {
 			var form = _this.parents("form");
 			form.find("input[name=is_tmp]").val("0");
 			form.trigger("submit");
-		},
-		save_to_tmp: function(_this){
-			var form = _this.parents("form");
-			form.find("input[name=is_tmp]").val("1");
-			form.trigger("submit");
 		}
 	}
 };

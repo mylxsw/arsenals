@@ -42,10 +42,12 @@ abstract class Model extends Arsenals {
 	 * 载入单个数据对象
 	 *
 	 * @param mixed $conditions 条件
+	 * @param string $table
 	 * @return object|null
 	 */
-	public function load($conditions = array()){
-		$sql = 'SELECT * FROM ' . $this->_table_name ;
+	public function load($conditions = array(), $table = null){
+		$table = is_null($table) ? $this->_table_name : $this->getTableName($table);
+		$sql = 'SELECT * FROM ' . $table ;
 		$args = array();
 		if(count($conditions) > 0){
 			$sql .= ' WHERE ';
@@ -63,11 +65,13 @@ abstract class Model extends Arsenals {
 	 * 删除元素
 	 *
 	 * @param mixed $conditions 条件
+	 * @param string $table
 	 * @return int
 	 */
-	public function delete($conditions){
+	public function delete($conditions, $table = null){
 		if(is_array($conditions) && count($conditions) > 0){
-			$sql = 'DELETE FROM `' . $this->_table_name . '` WHERE ';
+			$table = is_null($table) ? $this->_table_name : $this->getTableName($table);
+			$sql = 'DELETE FROM `' . $table . '` WHERE ';
 			$conditions_result = $this->_init_conditions($conditions);
 			$sql .= $conditions_result[0];
 			$args = $conditions_result[1];
@@ -86,14 +90,17 @@ abstract class Model extends Arsenals {
 	 * @param array $conditions 查询条件数组
 	 * @param bool|int 是否分页或者是分页的当前页码
 	 * @param int 每页显示的记录数量
+	 * @param string $table
 	 * 
 	 * @return array
 	 */ 
 	public function find($conditions = array(), $order = '',
-		$index = FALSE, $per = 15){
+		$index = FALSE, $per = 15, $table = null){
+		
+		$table = is_null($table) ? $this->_table_name : $this->getTableName($table);
 		
 		$args = array();
-		$sql = " FROM {$this->_table_name} ";
+		$sql = " FROM {$table} ";
 		if(count($conditions) > 0){
 			$sql .= ' WHERE ';
 			$conditions_result = $this->_init_conditions($conditions);
@@ -116,9 +123,10 @@ abstract class Model extends Arsenals {
 	 * 更新单个数据对象
 	 *
 	 * @param array $data
+	 * @param string $table
 	 * @return int
 	 */
-	public function update($data, $conditions){
+	public function update($data, $conditions, $table = null){
 // 		$table_datas = array_merge($this->_datas_, $data);
 // 		$pk = $table_datas[$this->getPk()];
 // 		unset($table_datas[$this->getPk()]);
@@ -141,15 +149,17 @@ abstract class Model extends Arsenals {
 	 * 保存数据
 	 * 
 	 * @param array $data 要保存的数据（key-value对应field-value）
-	 * @return int
+	 * @param string $table 要操作的表名，默认是当前表
+	 * @return int 插入数据的ID
 	 */ 
-	public function save($data = array()){
+	public function save($data = array(), $table = null){
 		// $table_datas = array_merge($this->_datas_, $data);
 
 		// 执行字段校验等
 		//$this->_create($table_datas);
+		$table = is_null($table) ? $this->_table_name : $this->getTableName($table);
 
-		$sql = 'INSERT INTO `' . $this->_table_name . '` (' ;
+		$sql = 'INSERT INTO `' . $table . '` (' ;
 		$args = array();
 		foreach ($data as $field=>$v) {
 			$sql .= "{$field}, ";
@@ -158,7 +168,8 @@ abstract class Model extends Arsenals {
 		$sql = trim(trim($sql), ',') . ') VALUES(' 
 			. implode(array_fill(0, count($args), '?'), ',') . ')';
 
-		return $this->query($sql, $args);
+		$this->query($sql, $args, true);
+		return $this->getLastInsertId();
 	}
 	/**
 	 * SELECT 查询（支持分页）
@@ -265,10 +276,13 @@ abstract class Model extends Arsenals {
 	/**
 	 * 查询出表中所有数据
 	 * @param number $limit
+	 * @param string $table
 	 * @throws QueryException
 	 */
-	public function lists($limit = 10){
-		$sql = "SELECT * FROM {$this->_table_name}";
+	public function lists($limit = 10, $table = null){
+		$table = is_null($table) ? $this->_table_name : $this->getTableName($table);
+		
+		$sql = "SELECT * FROM {$table}";
 		// 添加查询记录数量限制
 		if(!\is_null($limit)){
 			$sql .= " LIMIT {$limit}";
@@ -449,5 +463,11 @@ abstract class Model extends Arsenals {
 	 */
 	protected function getPageCounts(){
 		return $this->page_counts;
+	}
+	/**
+	 * 最后一次执行插入操作的ID
+	 */
+	protected function getLastInsertId(){
+		return $this->_conn->insert_id;
 	}
 }

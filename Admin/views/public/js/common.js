@@ -4,21 +4,37 @@
  * 2013-10-12
  */
 window.f = {
+	/**
+	 * 循环索引
+	 */
+	_cycle_index: 0,
 	// Alert消息
 	alert: function(message){
 		alert(message);
 	},
 	// 提示消息
 	// type : info , success, error
-	tip: function(message, type){
+	tip: function(message, type, delay){
 		if(typeof type == "undefined"){
 			type = "info";
 		}
-		$.globalMessenger().post({
-			message: message,
-			showCloseButton: true,
-			type:type
-		});
+		delay = delay || 3000;
+		var style = false;
+		switch (type) {
+		case 'info':
+			style = {background: '#1ba1e2', color: 'white'};
+			break;
+		case 'error':
+			style = {background: 'red', color: 'white'};
+			break;
+		case 'success':
+			style = {background: 'green', color: 'white'};
+			break;
+		case 'alert':
+			style = false;
+			break;
+		}
+		$.Notify({content: message, style: style, timeout: delay});
 	},
 	// 确认消息
 	confirm: function(message, callback){
@@ -38,6 +54,15 @@ window.f = {
 			return Math.random() - 0.5;
 		});
 		return array[0];
+	},
+	/**
+	 * 循环数组中的值
+	 */
+	cycle: function(array){
+		if(this._cycle_index >= array.length){
+			this._cycle_index = 0;
+		}
+		return array[this._cycle_index ++];
 	},
 	/**
 	 * 加载JS文件
@@ -62,6 +87,7 @@ window.f = {
 		document.getElementsByTagName('body')[0].appendChild(div);
 	},
 	parseUrl: function(url){
+		var deal_file = "admin.php/";
 		if(url == ''){
 			return basePath;
 		}
@@ -70,16 +96,14 @@ window.f = {
 				|| url.indexOf("ftp://") == 0 ){
 			return url;
 		}
-		var suffix = ".html";
-		var includedSuffix = url.indexOf(suffix) == (url.length - suffix.length);
 		var params = url.split("??", 2);
 		url = params[0];
 		var return_val = "";
 		if(url.indexOf("/") == 0){
-			return_val= basePath + url.substring(1) + (includedSuffix ? "" : suffix) 
+			return_val= basePath + deal_file + url.substring(1)
 					+ (params.length == 2 ? ("?" + params[1] ) :  "");
 		}else{
-			return_val = basePath + url + (includedSuffix ? "" : suffix) + (params.length == 2 ? ("?" + params[1] ) : "" );
+			return_val = basePath + deal_file + url + (params.length == 2 ? ("?" + params[1] ) : "" );
 		}
 		//var end_with_suffix = return_val.indexOf(suffix) == (return_val.length - suffix.length);
 		//+ (end_with_suffix ? "?_r=" : "&_r=") + Math.random()
@@ -111,7 +135,10 @@ window.f = {
 	// 更新页面内容
 	page_update: function(id, link, clear){
 		var _this = this;
+		link = _this.parseUrl(link);
 		// $(id).hide();
+		_this.tip('页面加载中...', 'info', 1500);
+		$(id).fadeOut('fast');
 		$(id).load(link, function(){
 			var _t = $(id);
 			var old_link = _t.data("link");
@@ -119,15 +146,7 @@ window.f = {
 				_t.data("old-link", old_link);
 			}
 			_t.data("link", link);
-			// 重新执行一次性时间，页面渲染
-			o_fn.once();
-			// 清理页面载入事件
-			if(clear){
-				Messenger().hideAll();
-			}
-			//_t.fadeIn('fast');
-
-			//_this.init_duoshuo();
+			$(this).fadeIn();
 		});
 	},
 	/**
@@ -203,7 +222,7 @@ window.f = {
 			if(_.isEmpty(after)){
 				success = function(data){
 					if(data.status == '1'){
-						Messenger().hideAll();
+						//Messenger().hideAll();
 						__this__.tip(data.info, "success");
 						__this__.page_update("#main-area", $("#main-area").data("link"));
 					}else{

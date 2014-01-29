@@ -75,8 +75,11 @@ class Input extends Arsenals {
 			return $this->_get[$key];
 		}
 		// 进行类型校验
-		self::validate($this->_get[$key], $type);
-		
+		try{
+			self::validate($this->_get[$key], $type);
+		}catch(TypeErrorException $e){
+			throw new TypeErrorException("[{$key}] {$e->getMessage()}");
+		}
 		return $this->_get[$key];
 	}
 	/**
@@ -97,8 +100,11 @@ class Input extends Arsenals {
 			return $this->_post[$key];
 		}
 		// 进行类型校验
-		self::validate($this->_post[$key], $type);
-		
+		try{
+			self::validate($this->_post[$key], $type);
+		}catch(TypeErrorException $e){
+			throw new TypeErrorException("[{$key}] {$e->getMessage()}");
+		}
 		return $this->_post[$key];
 	}
 	/**
@@ -118,8 +124,11 @@ class Input extends Arsenals {
 			return $this->_request[$key];
 		}
 		// 进行类型校验
-		self::validate($this->_request[$key], $type);
-		
+		try{
+			self::validate($this->_request[$key], $type);
+		}catch(TypeErrorException $e){
+			throw new TypeErrorException("[{$key}] {$e->getMessage()}");
+		}
 		return $this->_request[$key];
 	}
 	/**
@@ -139,9 +148,24 @@ class Input extends Arsenals {
 			return $this->_cookies[$key];
 		}
 		// 进行类型校验
-		self::validate($this->_cookies[$key], $type);
-		
+		try{
+			self::validate($this->_cookies[$key], $type);
+		}catch(TypeErrorException $e){
+			throw new TypeErrorException("[{$key}] {$e->getMessage()}");
+		}
 		return $this->_cookies[$key];
+	}
+	/**
+	 * Server变量
+	 * @param unknown $key
+	 * @param string $default
+	 * @return unknown|string
+	 */
+	public function server($key, $default = null){
+		if (array_key_exists($key, $_SERVER)){
+			return $_SERVER[$key];
+		}
+		return $default;
 	}
 	/**
 	 * 反引用一个引用字符串
@@ -199,7 +223,7 @@ class Input extends Arsenals {
 				// 否则，如果自定义校验规则中，则使用自定义校验规则进行校验
 				if(in_array($filter, filter_list())){
 					self::_filter_var($var, $filter, $optionals);
-				}else if(array_key_exists(($filter_name = substr($filter, intval(strpos($filter, ':'))))
+				}else if(array_key_exists(($filter_name = substr($filter, 0, ($mpos = intval(strpos($filter, ':'))) == 0 ? strlen($filter) : $mpos ))
 						, self::$_validate_rules)){
 					
 					$validate_entity = CommonUtils::convStringToCallUserFuncParam(self::$_validate_rules[$filter_name]);
