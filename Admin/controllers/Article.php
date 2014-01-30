@@ -3,7 +3,6 @@
 namespace Admin\controllers;
 
 use Arsenals\Core\Abstracts\Controller;
-use Arsenals\Core\Registry;
 use Arsenals\Core\Session;
 use Admin\utils\Ajax;
 /**

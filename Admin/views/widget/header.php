@@ -14,7 +14,25 @@
         </ul>
 
         <div class="no-tablet-portrait no-phone">
-            <div class="element place-right" title="退出"><span class="icon-exit"></span></div>
+            <div class="element place-right" title="退出"><a href="<?php echo \Admin\url('account/logout');?>" class="exit-sys"><span class="icon-exit"></span></a></div>
         </div>
     </div>
 </div>
+<script>
+$(function(){
+	$(".exit-sys").on("click", function(e){
+		e.preventDefault();
+		var that = $(this);
+		f.confirm("您确定要退出系统？", function(){
+			f.async(that.attr('href'), {}, function(data){
+				f.tip(data.info, data.status == 1 ? 'success':'error');
+				if(data.status == 1){
+					window.setTimeout(function(){
+						window.location.href="<?php echo \Admin\url('account/login');?>";
+						}, 3000);
+				}
+			});
+		});
+	});
+});
+</script>

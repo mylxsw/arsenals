@@ -9,8 +9,23 @@ window.f = {
 	 */
 	_cycle_index: 0,
 	// Alert消息
-	alert: function(message){
-		alert(message);
+	alert: function(message, callback){
+		callback = callback || function(){};
+		$.Dialog({
+			shadow: true,
+			overlay: true,
+			icon:'<span class="icon-rocket"></span>',
+			title: "系统消息",
+			width: 500,
+			padding: 10,
+			content: message,
+			sysButtons: {
+				btnClose: true
+			},
+			sysBtnCloseClick: function(e){
+				callback();
+			}
+		});
 	},
 	// 提示消息
 	// type : info , success, error
@@ -36,13 +51,44 @@ window.f = {
 		}
 		$.Notify({content: message, style: style, timeout: delay});
 	},
+	// 执行异步请求
+	async: function(url, params, callback, method){
+		method = method || "get";
+		params = params || {};
+		callback = callback || function(data){
+			f.tip(data.info);
+		};
+		
+		if(method == 'get'){
+			$.get(url, params, callback, "json");
+		}else{
+			$.post(url, params, callback, "json");
+		}
+	},
 	// 确认消息
 	confirm: function(message, callback){
-		if(confirm(message)){
-			callback(true);
-		}else{
-			callback(false);
-		}
+		$.Dialog({
+			overlay: true,
+			shadow: true,
+			icon: '<span class="icon-rocket"></span>',
+			title: '确认',
+			content: '',
+			padding: 20,
+			width: 400,
+			onShow: function(_dialog){
+			    var content = '<div>' + message + '</div><div class="o-button-panel">\
+			    			<button class="primary btn-confirm-ok">确定</button>\
+			    			<button onclick="$.Dialog.close()">取消</button>\
+			    			</div>';
+			    
+			    $.Dialog.title("确认操作");
+			    $.Dialog.content(content);
+			    $(".btn-confirm-ok").unbind('click').bind("click", function(){
+			    	callback();
+			    	$.Dialog.close();
+			    });
+			}
+		});
 	},
 	/**
 	 * 从数组中随机去一个值

@@ -57,7 +57,7 @@
 	        e.preventDefault();
 	        history.back();
 	        return false;
-	    })
+	    });
 	});
 // 	function headerPosition(){
 // 	    if ($(window).scrollTop() > $('header').height()) {

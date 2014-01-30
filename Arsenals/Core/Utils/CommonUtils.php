@@ -53,10 +53,7 @@ class CommonUtils {
 	 */
 	public static function array_exists_regexp($search, $array){
 		foreach ($array as $arr){
-			$reg = $arr;
-			if (!\Arsenals\Core\str_start_with($arr, '/')){
-				$reg = "/{$arr}/";
-			}
+			$reg = '/' . str_replace('/', '\/', $arr) . '/';
 			if(preg_match($reg, $search)){
 				return true;
 			}
