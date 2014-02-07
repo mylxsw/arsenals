@@ -40,8 +40,9 @@ class Widget extends Controller {
 			),
 			'pages' => array(),
 			'system' => array(
-					'users' => array('用户', 'users/user_info'),
-					'settings' => array('配置', 'settings/setting_data')
+					'users' => array('用户', 'user/user_info'),
+					'settings' => array('配置', 'settings/setting_data'),
+					'logs' => array('日志', 'log/lists')
 			)
 		);
 		return $this->view('widget/slidebar', array('nav' => $nav));

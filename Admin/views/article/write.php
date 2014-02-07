@@ -1,4 +1,4 @@
-<blockquote class="block-title">写文章 <a href="#" data-event="g.refresh" title="刷新页面"><i class="icon-cycle"></i></a></blockquote>
+<blockquote class="block-title">写文章</blockquote>
 <form action="<?php echo \Admin\url('article/writePost');?>" method="post" id="o-form-write-article">
 	<input type="hidden" name="id" value="" />
 	<input type="hidden" name="act" value="" />

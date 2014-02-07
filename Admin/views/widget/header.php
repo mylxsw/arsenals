@@ -12,10 +12,24 @@
 			<li><a href="pages">页面</a></li>
 			<li><a href="system">系统</a></li>
         </ul>
-
-        <div class="no-tablet-portrait no-phone">
-            <div class="element place-right" title="退出"><a href="<?php echo \Admin\url('account/logout');?>" class="exit-sys"><span class="icon-exit"></span></a></div>
-        </div>
+		<div class="no-tablet-portrait">
+			<span class="element-divider"></span>
+			<a class="element brand" href="#" onclick="o_fn.g.refresh()"><span class="icon-spin"></span></a>
+			<span class="element-divider"></span>
+			<div class="element place-right">
+				<a class="dropdown-toggle" href="#">
+					<span class="icon-cog"></span>
+				</a>
+				<ul class="dropdown-menu place-right" data-role="dropdown">
+					<li>
+						<a href="<?php echo \Admin\url('account/logout');?>" class="exit-sys">
+							<span class="icon-exit">退出</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<span class="element-divider place-right"></span>
+		</div>
     </div>
 </div>
 <script>
