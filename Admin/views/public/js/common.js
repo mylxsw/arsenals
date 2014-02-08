@@ -8,6 +8,31 @@ window.f = {
 	 * 循环索引
 	 */
 	_cycle_index: 0,
+	// 数据表格
+	dataTable: function(selector, url){
+		$(selector).dataTable({
+            "bProcessing": true,
+            "bServerSide": true,
+            "sAjaxSource": url,
+            "oLanguage":{
+            	"sProcessing": "处理中...",
+            	"sLengthMenu": "显示 _MENU_ 条记录",
+            	"sZeroRecords": "没有记录.",
+            	"sInfo": "显示第 _START_ 到 _END_ 条记录，总共 _TOTAL_ 条记录",
+            	"sInfoEmpty": "没有信息",
+            	"sInfoFiltered": "(从 _MAX_ 条记录中过滤)",
+            	"sInfoPostFix": "",
+            	"sSearch": "搜索",
+            	"sUrl": "",
+            	"oPaginate": {
+            		"sFirst":    "首页",
+            		"sPrevious": "上一页",
+            		"sNext":     "下一页",
+            		"sLast":     "末页"
+            	}
+            }
+        });
+	},
 	// Alert消息
 	alert: function(message, callback){
 		callback = callback || function(){};

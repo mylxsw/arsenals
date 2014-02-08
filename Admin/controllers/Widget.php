@@ -41,7 +41,7 @@ class Widget extends Controller {
 			'pages' => array(),
 			'system' => array(
 					'users' => array('用户', 'user/user_info'),
-					'settings' => array('配置', 'settings/setting_data'),
+					'settings' => array('配置', 'setting/lists'),
 					'logs' => array('日志', 'log/lists')
 			)
 		);
