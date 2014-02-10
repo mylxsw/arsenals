@@ -180,3 +180,11 @@ function pagination($url, $totals, $page_count, $current, $show_offset = 3){
 			</nav>';
 	return $html;
 }
+
+function remark($article_id){
+	$demo_config = Config::load('demo');
+	if (!$demo_config['enable_remark']) {
+		return false;
+	}
+	echo "<div class=\"comments\"><div class='ds-thread' data-thread-key=\"article_{$article_id}\"></div></div>";
+}

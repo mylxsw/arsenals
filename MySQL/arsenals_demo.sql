@@ -107,11 +107,11 @@ CREATE TABLE `ar_log` (
   `data` text,
   `action_type` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 /*Data for the table `ar_log` */
 
-insert  into `ar_log`(`id`,`action_time`,`action_name`,`operator`,`data`,`action_type`) values (1,1391786098,'用户admin登陆了系统！','admin',NULL,'event'),(2,1391786118,'用户admin退出了系统！','admin',NULL,'event'),(3,1391786579,'用户admin登陆了系统！','admin',NULL,'event'),(4,1391793841,'用户admin退出了系统！','admin',NULL,'event'),(5,1391793847,'用户admin登陆了系统！','admin',NULL,'event'),(6,1391793856,'用户admin退出了系统！','admin',NULL,'event'),(7,1391793860,'用户admin登陆了系统！','admin',NULL,'event'),(8,1391793869,'用户admin退出了系统！','admin',NULL,'event'),(9,1391793872,'用户admin登陆了系统！','admin',NULL,'event'),(10,1391793919,'用户admin退出了系统！','admin',NULL,'event'),(11,1391793926,'用户admin登陆了系统！','admin',NULL,'event'),(12,1391794905,'用户admin退出了系统！','admin',NULL,'event');
+insert  into `ar_log`(`id`,`action_time`,`action_name`,`operator`,`data`,`action_type`) values (1,1391786098,'用户admin登陆了系统！','admin',NULL,'event'),(2,1391786118,'用户admin退出了系统！','admin',NULL,'event'),(3,1391786579,'用户admin登陆了系统！','admin',NULL,'event'),(4,1391793841,'用户admin退出了系统！','admin',NULL,'event'),(5,1391793847,'用户admin登陆了系统！','admin',NULL,'event'),(6,1391793856,'用户admin退出了系统！','admin',NULL,'event'),(7,1391793860,'用户admin登陆了系统！','admin',NULL,'event'),(8,1391793869,'用户admin退出了系统！','admin',NULL,'event'),(9,1391793872,'用户admin登陆了系统！','admin',NULL,'event'),(10,1391793919,'用户admin退出了系统！','admin',NULL,'event'),(11,1391793926,'用户admin登陆了系统！','admin',NULL,'event'),(12,1391794905,'用户admin退出了系统！','admin',NULL,'event'),(13,1391829065,'用户admin登陆了系统！','admin',NULL,'event'),(14,1392045711,'用户admin登陆了系统！','admin',NULL,'event'),(15,1392045774,'用户admin退出了系统！','admin',NULL,'event');
 
 /*Table structure for table `ar_navigator` */
 
@@ -131,7 +131,7 @@ CREATE TABLE `ar_navigator` (
 
 /*Data for the table `ar_navigator` */
 
-insert  into `ar_navigator`(`id`,`name`,`url`,`isvalid`,`intro`,`sort`,`pid`,`pos`) values (1,'C.D.Cafe','articles/lists/1',1,NULL,'90',0,'top'),(2,'饮品&amp;美食','#',1,NULL,'80',0,'top'),(3,'市场活动','市场活动',1,NULL,'70',0,'top'),(4,'原创音乐','原创音乐',1,NULL,'60',0,'top'),(5,'微电影','page/show/1',1,NULL,'50',0,'top'),(6,'C.D俱乐部','page/show/2',1,NULL,'40',0,'top'),(7,'C.D.M','page/show/3',1,NULL,'30',0,'top'),(8,'饮品','page/show/4',1,NULL,NULL,2,'top'),(9,'美食','page/show/5',1,NULL,NULL,2,'top'),(10,'新品试尝','page/show/6',1,NULL,NULL,3,'top'),(11,'促销活动','page/show/7',1,NULL,NULL,3,'top');
+insert  into `ar_navigator`(`id`,`name`,`url`,`isvalid`,`intro`,`sort`,`pid`,`pos`) values (1,'咖啡CAFFEE','articles/lists/1',1,NULL,'90',0,'top'),(2,'影音MOVIE','#',1,NULL,'80',0,'top'),(3,'创业职业OCCUPATION','市场活动',1,NULL,'70',0,'top'),(4,'研发DEVELOPMENT','原创音乐',1,NULL,'60',0,'top');
 
 /*Table structure for table `ar_page` */
 

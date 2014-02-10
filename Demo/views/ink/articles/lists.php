@@ -17,10 +17,6 @@
 	<?php endforeach;?>
 	<?php echo \Demo\views\ink\pagination('articles/lists/' . $cat, $articles['total'], $articles['page'], $p);?>
 </div>
-<div id="main-right">
-右侧区域
-
-</div>
 <script>
 require(['page/home'], function(home){
 	home.init();

@@ -23,11 +23,9 @@
 			</div>
 		<?php endif;?>
 	</div>
-	<div class="comments"><div class='ds-thread' data-thread-key="article_<?php echo $article['id'];?>"></div></div>
+	<?php \Demo\views\ink\remark($article['id']);?>
 </div>
-<div id="main-right">
-右侧区域
-</div>
+
 <script>
 require(['page/home'], function(home){
 	home.init();
