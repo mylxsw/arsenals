@@ -3,11 +3,11 @@
 	<table id="logTable" class="table striped hovered dataTable">
 		<thead>
 			<tr>
-				<th>ID</th>
-				<th>操作时间</th>
-				<th>操作</th>
-				<th>操作者</th>
-				<th>类型</th>
+				<th class="text-left">ID</th>
+				<th class="text-left">操作时间</th>
+				<th class="text-left">操作</th>
+				<th class="text-left">操作者</th>
+				<th class="text-left">类型</th>
 			</tr>
 		</thead>
 		<tbody></tbody>

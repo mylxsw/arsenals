@@ -116,6 +116,34 @@ window.f = {
 		});
 	},
 	/**
+	 * 打开对话框
+	 * @param url
+	 * @param title
+	 * @param params
+	 * @param callback 页面展示后的回调函数
+	 */
+	dialog: function(url, title, params, callback){
+		params = params || {};
+		callback = callback || function(){};
+		$.get(url, params, function(data){
+			$.Dialog({
+				shadow: true,
+				overlay: true,
+				icon:'<span class="icon-rocket"></span>',
+				title: title,
+				draggable: true,
+				padding: 10,
+				content: data,
+				sysButtons: {
+					btnClose: true
+				},
+				onShow: function(_dialog){
+					callback();
+				}
+			});
+		});
+	},
+	/**
 	 * 从数组中随机去一个值
 	 * @param array
 	 * @returns
@@ -263,7 +291,16 @@ window.f = {
 			}
 		});
 	},
-	// Ajax表单提交
+	submit: function(selector){
+		return this.ajaxSubmit($(selector));
+	},
+	/**
+	 * Ajax表单提交
+	 * @param _this 要提交的表单对象
+	 * @param before 提交前置事件
+	 * @param after 提交后处理事件
+	 * @returns {Boolean}
+	 */
 	ajaxSubmit: function(_this, before, after){
 		var __this__ = this;
 
@@ -276,7 +313,9 @@ window.f = {
 			before = _this.attr("before");
 			if(_.isEmpty(before)){
 				beforeSubmit = function(){
-					UM.sync();
+					if(typeof(UM) != 'undefined'){
+						UM.sync();
+					}
 				};
 			}else{
 				beforeSubmit = function(){

@@ -7,6 +7,9 @@
 	-o-text-overflow: ellipsis;/* Opera */
 	-moz-binding: url("ellipsis.xml#ellipsis");/*FireFox*/
 }
+.ink-navigation ul.menu.horizontal li ul.submenu{
+	width: 15em;
+}
 
 .article-list{
 	display: block;

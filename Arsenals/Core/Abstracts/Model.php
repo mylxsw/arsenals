@@ -275,6 +275,8 @@ abstract class Model extends Arsenals {
 	
 	/**
 	 * 查询出表中所有数据
+	 * 
+	 * 如果要查询出所有的数据，则$limit为null即可
 	 * @param number $limit
 	 * @param string $table
 	 * @throws QueryException

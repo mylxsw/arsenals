@@ -33,7 +33,8 @@ $(function(){
 		o_fn[evt[0]][evt[1]]($(this));
 	}).delegate("button[data-event]", "click", function(){
 		// button按钮事件触发
-		var evt = $(this).attr("data-event").split('.');
-		o_fn[evt[0]][evt[1]]($(this));
+		var evt = $(this).attr("data-event");
+		//o_fn[evt[0]][evt[1]]($(this));
+		eval("o_fn." + evt + "($(this))");
 	});
 });

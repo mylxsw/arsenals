@@ -36737,3 +36737,2529 @@
 2014-02-10 23:22:58  [info]  [Arsenals\Core\Output] 类加载完成!
 2014-02-10 23:22:58  [debug]  [system] 系统运行时间: 0.0237
 2014-02-10 23:22:58  [debug]  [system] 控制器执行时间: 0.0053
+2014-02-11 21:04:50  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:04:50  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:04:50  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:04:50  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:04:50  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:04:50  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:04:50  [debug]  [system] 系统运行时间: 0.0218
+2014-02-11 21:04:50  [debug]  [system] 控制器执行时间: 
+2014-02-11 21:04:50  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:04:50  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:04:50  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:04:50  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:04:50  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:04:50  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:04:50  [info]  [Admin\controllers\Account] 类加载完成!
+2014-02-11 21:04:50  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:04:50  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:04:50  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:04:50  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:04:50  [debug]  [system] 系统运行时间: 0.0201
+2014-02-11 21:04:50  [debug]  [system] 控制器执行时间: 0.0060
+2014-02-11 21:05:10  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:05:10  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:05:10  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:05:10  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:05:10  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:05:10  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:05:10  [info]  [Admin\controllers\Account] 类加载完成!
+2014-02-11 21:05:10  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:05:10  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 21:05:11  [info]  [Admin\models\User] 类加载完成!
+2014-02-11 21:05:11  [info]  [Admin\models\Log] 类加载完成!
+2014-02-11 21:05:11  [info]  [Arsenals\Core\Views\Ajax] 类加载完成!
+2014-02-11 21:05:11  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:05:11  [debug]  [system] 系统运行时间: 1.1422
+2014-02-11 21:05:11  [debug]  [system] 控制器执行时间: 1.1254
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:05:14  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:05:14  [debug]  [system] 系统运行时间: 0.0232
+2014-02-11 21:05:14  [debug]  [system] 控制器执行时间: 0.0048
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:05:14  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:05:14  [debug]  [system] 系统运行时间: 0.0268
+2014-02-11 21:05:14  [debug]  [system] 控制器执行时间: 0.0092
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:05:14  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:05:14  [debug]  [system] 系统运行时间: 0.0879
+2014-02-11 21:05:14  [debug]  [system] 控制器执行时间: 0.0098
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:05:14  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:05:14  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:05:14  [debug]  [system] 系统运行时间: 0.0202
+2014-02-11 21:05:14  [debug]  [system] 控制器执行时间: 0.0012
+2014-02-11 21:05:19  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:05:19  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:05:19  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:05:19  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:05:19  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:05:19  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:05:19  [info]  [Admin\controllers\Setting] 类加载完成!
+2014-02-11 21:05:19  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:05:19  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:05:19  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:05:19  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:05:19  [debug]  [system] 系统运行时间: 0.0237
+2014-02-11 21:05:19  [debug]  [system] 控制器执行时间: 0.0048
+2014-02-11 21:05:19  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:05:19  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:05:19  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:05:19  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:05:19  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:05:19  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:05:19  [info]  [Admin\controllers\Setting] 类加载完成!
+2014-02-11 21:05:19  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:05:19  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 21:05:20  [info]  [Admin\models\Setting] 类加载完成!
+2014-02-11 21:05:20  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:05:20  [debug]  [system] 系统运行时间: 1.0497
+2014-02-11 21:05:20  [debug]  [system] 控制器执行时间: 1.0302
+2014-02-11 21:05:21  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:05:21  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:05:21  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:05:21  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:05:21  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:05:21  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:05:21  [info]  [Admin\controllers\Log] 类加载完成!
+2014-02-11 21:05:21  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:05:21  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:05:21  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:05:21  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:05:21  [debug]  [system] 系统运行时间: 0.0236
+2014-02-11 21:05:21  [debug]  [system] 控制器执行时间: 0.0058
+2014-02-11 21:05:21  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:05:21  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:05:21  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:05:21  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:05:21  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:05:21  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:05:21  [info]  [Admin\controllers\Log] 类加载完成!
+2014-02-11 21:05:21  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:05:21  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 21:05:22  [info]  [Admin\models\Log] 类加载完成!
+2014-02-11 21:05:22  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:05:22  [debug]  [system] 系统运行时间: 1.0328
+2014-02-11 21:05:22  [debug]  [system] 控制器执行时间: 1.0121
+2014-02-11 21:08:46  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:08:46  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:08:46  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:08:46  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:08:46  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:08:46  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:08:46  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 21:08:46  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:08:46  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:08:46  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:08:46  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:08:46  [debug]  [system] 系统运行时间: 0.0273
+2014-02-11 21:08:46  [debug]  [system] 控制器执行时间: 0.0064
+2014-02-11 21:08:57  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:08:57  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:08:57  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:08:57  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:08:57  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:08:57  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:08:57  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 21:08:57  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:08:57  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 21:08:58  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 21:08:58  [info]  [Demo\models\Tag] 类加载完成!
+2014-02-11 21:08:58  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:08:58  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:08:58  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:08:58  [debug]  [system] 系统运行时间: 1.0437
+2014-02-11 21:08:58  [debug]  [system] 控制器执行时间: 1.0267
+2014-02-11 21:09:06  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:09:06  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:09:06  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:09:06  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:09:06  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:09:06  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:09:06  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 21:09:06  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:09:06  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:09:06  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:09:06  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:09:06  [debug]  [system] 系统运行时间: 0.0212
+2014-02-11 21:09:06  [debug]  [system] 控制器执行时间: 0.0044
+2014-02-11 21:16:57  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:16:57  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:16:57  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:16:57  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:16:57  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:16:57  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:16:57  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 21:16:57  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:16:57  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:16:57  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:16:57  [debug]  [system] 系统运行时间: 0.0247
+2014-02-11 21:16:57  [debug]  [system] 控制器执行时间: 0.0058
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:16:58  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:16:58  [debug]  [system] 系统运行时间: 0.0271
+2014-02-11 21:16:58  [debug]  [system] 控制器执行时间: 0.0081
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:16:58  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:16:58  [debug]  [system] 系统运行时间: 0.0467
+2014-02-11 21:16:58  [debug]  [system] 控制器执行时间: 0.0079
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:16:58  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:16:58  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:16:58  [debug]  [system] 系统运行时间: 0.0159
+2014-02-11 21:16:58  [debug]  [system] 控制器执行时间: 0.0010
+2014-02-11 21:16:59  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:16:59  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:16:59  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:16:59  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:16:59  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:16:59  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:16:59  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:16:59  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:16:59  [info]  [Arsenals\Core\Views\Ajax] 类加载完成!
+2014-02-11 21:17:02  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:17:02  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:17:02  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:17:02  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:17:02  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:17:02  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:17:02  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 21:17:02  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:17:02  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 21:17:03  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 21:17:03  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:17:03  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:17:03  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:17:03  [debug]  [system] 系统运行时间: 1.0443
+2014-02-11 21:17:03  [debug]  [system] 控制器执行时间: 1.0238
+2014-02-11 21:24:57  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:24:57  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:24:57  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:24:57  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:24:57  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:24:57  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:24:57  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 21:24:57  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:24:57  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 21:24:58  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 21:24:58  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:24:58  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:24:58  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:24:58  [debug]  [system] 系统运行时间: 1.0385
+2014-02-11 21:24:58  [debug]  [system] 控制器执行时间: 1.0157
+2014-02-11 21:31:32  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:31:32  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:31:32  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:31:32  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:31:32  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:31:32  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:31:32  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 21:31:32  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:31:32  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:31:32  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:31:32  [debug]  [system] 系统运行时间: 0.0229
+2014-02-11 21:31:32  [debug]  [system] 控制器执行时间: 0.0042
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:31:33  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:31:33  [debug]  [system] 系统运行时间: 0.0296
+2014-02-11 21:31:33  [debug]  [system] 控制器执行时间: 0.0078
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:31:33  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:31:33  [debug]  [system] 系统运行时间: 0.0486
+2014-02-11 21:31:33  [debug]  [system] 控制器执行时间: 0.0080
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:31:33  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:31:33  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:31:33  [debug]  [system] 系统运行时间: 0.0157
+2014-02-11 21:31:33  [debug]  [system] 控制器执行时间: 0.0010
+2014-02-11 21:31:37  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:31:37  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:31:37  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:31:37  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:31:37  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:31:37  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:31:37  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 21:31:37  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:31:37  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 21:31:38  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 21:31:38  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:31:38  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:31:52  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:31:52  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:31:52  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:31:52  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:31:52  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:31:52  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:31:52  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 21:31:52  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:31:52  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 21:31:53  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 21:31:53  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:31:53  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:31:53  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:31:53  [debug]  [system] 系统运行时间: 1.0345
+2014-02-11 21:31:53  [debug]  [system] 控制器执行时间: 1.0138
+2014-02-11 21:36:58  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:36:58  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:36:58  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:36:59  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:36:59  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:36:59  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:36:59  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 21:36:59  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:36:59  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 21:37:00  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 21:37:00  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:37:00  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:37:00  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:37:00  [debug]  [system] 系统运行时间: 1.0501
+2014-02-11 21:37:00  [debug]  [system] 控制器执行时间: 1.0256
+2014-02-11 21:37:16  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:37:16  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:37:16  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:37:16  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:37:16  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:37:16  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:37:16  [info]  [Admin\controllers\Log] 类加载完成!
+2014-02-11 21:37:16  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:37:16  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:37:16  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:37:16  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:37:16  [debug]  [system] 系统运行时间: 0.0229
+2014-02-11 21:37:16  [debug]  [system] 控制器执行时间: 0.0052
+2014-02-11 21:37:16  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:37:16  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:37:16  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:37:16  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:37:16  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:37:16  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:37:16  [info]  [Admin\controllers\Log] 类加载完成!
+2014-02-11 21:37:16  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:37:16  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 21:37:17  [info]  [Admin\models\Log] 类加载完成!
+2014-02-11 21:37:17  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:37:17  [debug]  [system] 系统运行时间: 1.0408
+2014-02-11 21:37:17  [debug]  [system] 控制器执行时间: 1.0218
+2014-02-11 21:37:46  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:37:46  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:37:46  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:37:46  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:37:46  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:37:46  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:37:46  [info]  [Admin\controllers\Log] 类加载完成!
+2014-02-11 21:37:46  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:37:46  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:37:46  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:37:46  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:37:46  [debug]  [system] 系统运行时间: 0.0255
+2014-02-11 21:37:46  [debug]  [system] 控制器执行时间: 0.0061
+2014-02-11 21:37:46  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:37:46  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:37:46  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:37:46  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:37:46  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:37:46  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:37:46  [info]  [Admin\controllers\Log] 类加载完成!
+2014-02-11 21:37:46  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:37:46  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 21:37:47  [info]  [Admin\models\Log] 类加载完成!
+2014-02-11 21:37:47  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:37:47  [debug]  [system] 系统运行时间: 1.0405
+2014-02-11 21:37:47  [debug]  [system] 控制器执行时间: 1.0200
+2014-02-11 21:37:49  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:37:49  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:37:49  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:37:49  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:37:49  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:37:49  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:37:49  [info]  [Admin\controllers\Log] 类加载完成!
+2014-02-11 21:37:49  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:37:49  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 21:37:50  [info]  [Admin\models\Log] 类加载完成!
+2014-02-11 21:37:50  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:37:50  [debug]  [system] 系统运行时间: 1.0404
+2014-02-11 21:37:50  [debug]  [system] 控制器执行时间: 1.0241
+2014-02-11 21:37:51  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:37:51  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:37:51  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:37:51  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:37:51  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:37:51  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:37:51  [info]  [Admin\controllers\Log] 类加载完成!
+2014-02-11 21:37:51  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:37:51  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 21:37:52  [info]  [Admin\models\Log] 类加载完成!
+2014-02-11 21:37:52  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:37:52  [debug]  [system] 系统运行时间: 1.0252
+2014-02-11 21:37:52  [debug]  [system] 控制器执行时间: 1.0100
+2014-02-11 21:37:57  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:37:57  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:37:57  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:37:57  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:37:57  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:37:57  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:37:57  [info]  [Admin\controllers\Setting] 类加载完成!
+2014-02-11 21:37:57  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:37:57  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:37:57  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:37:57  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:37:57  [debug]  [system] 系统运行时间: 0.0253
+2014-02-11 21:37:57  [debug]  [system] 控制器执行时间: 0.0063
+2014-02-11 21:37:57  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:37:57  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:37:57  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:37:57  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:37:57  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:37:57  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:37:57  [info]  [Admin\controllers\Setting] 类加载完成!
+2014-02-11 21:37:57  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:37:57  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 21:37:58  [info]  [Admin\models\Setting] 类加载完成!
+2014-02-11 21:37:58  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:37:58  [debug]  [system] 系统运行时间: 1.0409
+2014-02-11 21:37:58  [debug]  [system] 控制器执行时间: 1.0197
+2014-02-11 21:38:01  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:38:01  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:38:01  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:38:01  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:38:01  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:38:01  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:38:01  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 21:38:01  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:38:01  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:38:01  [debug]  [system] 系统运行时间: 0.0199
+2014-02-11 21:38:01  [debug]  [system] 控制器执行时间: 0.0012
+2014-02-11 21:38:02  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:38:02  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:38:02  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:38:02  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:38:02  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:38:02  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:38:02  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 21:38:02  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:38:02  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 21:38:03  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 21:38:03  [info]  [Demo\models\Tag] 类加载完成!
+2014-02-11 21:38:03  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:38:03  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:38:03  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:38:03  [debug]  [system] 系统运行时间: 1.0377
+2014-02-11 21:38:03  [debug]  [system] 控制器执行时间: 1.0165
+2014-02-11 21:38:09  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:38:09  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:38:09  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:38:09  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:38:09  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:38:09  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:38:09  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 21:38:09  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:38:09  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 21:38:10  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 21:38:10  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:38:10  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:38:10  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:38:10  [debug]  [system] 系统运行时间: 1.0370
+2014-02-11 21:38:10  [debug]  [system] 控制器执行时间: 1.0198
+2014-02-11 21:46:53  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:46:53  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:46:53  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:46:53  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:46:53  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:46:53  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:46:53  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 21:46:53  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:46:53  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 21:46:54  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 21:46:54  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:46:54  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:46:54  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:46:54  [debug]  [system] 系统运行时间: 1.0378
+2014-02-11 21:46:54  [debug]  [system] 控制器执行时间: 1.0129
+2014-02-11 21:47:22  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:47:22  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:47:22  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:47:22  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:47:22  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:47:22  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:47:22  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 21:47:22  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:47:22  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 21:47:23  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 21:47:23  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:47:23  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:47:23  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:47:23  [debug]  [system] 系统运行时间: 1.0321
+2014-02-11 21:47:23  [debug]  [system] 控制器执行时间: 1.0079
+2014-02-11 21:50:39  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:50:39  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:50:39  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:50:39  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:50:39  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:50:39  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:50:39  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 21:50:39  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:50:39  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:50:39  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:50:39  [debug]  [system] 系统运行时间: 0.0225
+2014-02-11 21:50:39  [debug]  [system] 控制器执行时间: 0.0045
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:50:40  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:50:40  [debug]  [system] 系统运行时间: 0.0240
+2014-02-11 21:50:40  [debug]  [system] 控制器执行时间: 0.0062
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:50:40  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:50:40  [debug]  [system] 系统运行时间: 0.0819
+2014-02-11 21:50:40  [debug]  [system] 控制器执行时间: 0.0479
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:50:40  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:50:40  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:50:40  [debug]  [system] 系统运行时间: 0.0208
+2014-02-11 21:50:40  [debug]  [system] 控制器执行时间: 0.0011
+2014-02-11 21:50:42  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:50:42  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:50:42  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:50:42  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:50:42  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:50:42  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:50:42  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 21:50:42  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:50:42  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 21:50:43  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 21:50:43  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:50:43  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:50:43  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:50:43  [debug]  [system] 系统运行时间: 1.0449
+2014-02-11 21:50:43  [debug]  [system] 控制器执行时间: 1.0262
+2014-02-11 21:52:25  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:52:25  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:52:25  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:52:25  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:52:25  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:52:25  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:52:25  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 21:52:25  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:52:25  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 21:52:26  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 21:52:26  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:52:26  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:52:26  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:52:26  [debug]  [system] 系统运行时间: 1.0345
+2014-02-11 21:52:26  [debug]  [system] 控制器执行时间: 1.0144
+2014-02-11 21:52:40  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:52:40  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:52:40  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:52:40  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:52:40  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:52:40  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:52:40  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 21:52:40  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:52:40  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 21:52:41  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 21:52:41  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:52:41  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:52:41  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:52:41  [debug]  [system] 系统运行时间: 1.0424
+2014-02-11 21:52:41  [debug]  [system] 控制器执行时间: 1.0173
+2014-02-11 21:52:56  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:52:56  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:52:56  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:52:56  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:52:56  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:52:56  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:52:56  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 21:52:56  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:52:56  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 21:52:57  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 21:52:57  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:52:57  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:52:57  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:52:57  [debug]  [system] 系统运行时间: 1.0379
+2014-02-11 21:52:57  [debug]  [system] 控制器执行时间: 1.0138
+2014-02-11 21:53:33  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:53:33  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:53:33  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:53:33  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:53:33  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:53:33  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:53:33  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 21:53:33  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:53:33  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 21:53:34  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 21:53:34  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:53:34  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:53:34  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:53:34  [debug]  [system] 系统运行时间: 1.0476
+2014-02-11 21:53:34  [debug]  [system] 控制器执行时间: 1.0248
+2014-02-11 21:54:39  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:54:39  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 21:54:39  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 21:54:39  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 21:54:39  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 21:54:39  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 21:54:39  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 21:54:39  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 21:54:39  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 21:54:40  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 21:54:40  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 21:54:40  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 21:54:40  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 21:54:40  [debug]  [system] 系统运行时间: 1.0399
+2014-02-11 21:54:40  [debug]  [system] 控制器执行时间: 1.0151
+2014-02-11 22:01:14  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:01:14  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:01:14  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:01:14  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:01:14  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:01:14  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:01:14  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:01:14  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:01:14  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 22:01:15  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 22:01:15  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:01:15  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:01:15  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:01:15  [debug]  [system] 系统运行时间: 1.0524
+2014-02-11 22:01:15  [debug]  [system] 控制器执行时间: 1.0234
+2014-02-11 22:01:26  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:01:26  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:01:26  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:01:26  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:01:26  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:01:26  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:01:26  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:01:26  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:01:26  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 22:01:27  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 22:01:27  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:01:27  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:01:27  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:01:27  [debug]  [system] 系统运行时间: 1.0459
+2014-02-11 22:01:27  [debug]  [system] 控制器执行时间: 1.0237
+2014-02-11 22:05:25  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:05:25  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:05:25  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:05:25  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:05:25  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:05:25  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:05:25  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:05:25  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:05:25  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 22:05:26  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 22:05:26  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:05:26  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:05:26  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:05:26  [debug]  [system] 系统运行时间: 1.0670
+2014-02-11 22:05:26  [debug]  [system] 控制器执行时间: 1.0402
+2014-02-11 22:10:33  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:10:33  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:10:33  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:10:33  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:10:33  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:10:33  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:10:33  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:10:33  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:10:33  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:10:33  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:10:33  [debug]  [system] 系统运行时间: 0.0288
+2014-02-11 22:10:33  [debug]  [system] 控制器执行时间: 0.0058
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:10:34  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:10:34  [debug]  [system] 系统运行时间: 0.0278
+2014-02-11 22:10:34  [debug]  [system] 控制器执行时间: 0.0085
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:10:34  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:10:34  [debug]  [system] 系统运行时间: 0.0455
+2014-02-11 22:10:34  [debug]  [system] 控制器执行时间: 0.0077
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:10:34  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:10:34  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:10:34  [debug]  [system] 系统运行时间: 0.0209
+2014-02-11 22:10:34  [debug]  [system] 控制器执行时间: 0.0015
+2014-02-11 22:10:37  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:10:37  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:10:37  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:10:37  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:10:37  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:10:37  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:10:37  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:10:37  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:10:37  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 22:10:38  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 22:10:38  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:10:38  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:10:38  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:10:38  [debug]  [system] 系统运行时间: 1.0351
+2014-02-11 22:10:38  [debug]  [system] 控制器执行时间: 1.0130
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:16:17  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:16:17  [debug]  [system] 系统运行时间: 0.0227
+2014-02-11 22:16:17  [debug]  [system] 控制器执行时间: 0.0044
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:16:17  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:16:17  [debug]  [system] 系统运行时间: 0.0209
+2014-02-11 22:16:17  [debug]  [system] 控制器执行时间: 0.0053
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:16:17  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:16:17  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:16:17  [debug]  [system] 系统运行时间: 0.0408
+2014-02-11 22:16:17  [debug]  [system] 控制器执行时间: 0.0082
+2014-02-11 22:16:18  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:16:18  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:16:18  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:16:18  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:16:18  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:16:18  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:16:18  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:16:18  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:16:18  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:16:18  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:16:18  [debug]  [system] 系统运行时间: 0.0210
+2014-02-11 22:16:18  [debug]  [system] 控制器执行时间: 0.0047
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:16:19  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:16:19  [debug]  [system] 系统运行时间: 0.0244
+2014-02-11 22:16:19  [debug]  [system] 控制器执行时间: 0.0075
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:16:19  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:16:19  [debug]  [system] 系统运行时间: 0.0404
+2014-02-11 22:16:19  [debug]  [system] 控制器执行时间: 0.0063
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:16:19  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:16:19  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:16:19  [debug]  [system] 系统运行时间: 0.0158
+2014-02-11 22:16:19  [debug]  [system] 控制器执行时间: 0.0010
+2014-02-11 22:16:23  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:16:23  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:16:23  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:16:23  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:16:23  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:16:23  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:16:23  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:16:23  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:16:23  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 22:16:24  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 22:16:24  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:16:24  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:16:24  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:16:24  [debug]  [system] 系统运行时间: 1.0356
+2014-02-11 22:16:24  [debug]  [system] 控制器执行时间: 1.0172
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:17:03  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:17:03  [debug]  [system] 系统运行时间: 0.0196
+2014-02-11 22:17:03  [debug]  [system] 控制器执行时间: 0.0035
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:17:03  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:17:03  [debug]  [system] 系统运行时间: 0.0224
+2014-02-11 22:17:03  [debug]  [system] 控制器执行时间: 0.0066
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:17:03  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:17:03  [debug]  [system] 系统运行时间: 0.0361
+2014-02-11 22:17:03  [debug]  [system] 控制器执行时间: 0.0062
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:17:03  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:17:03  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:17:03  [debug]  [system] 系统运行时间: 0.0175
+2014-02-11 22:17:03  [debug]  [system] 控制器执行时间: 0.0011
+2014-02-11 22:17:06  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:17:06  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:17:06  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:17:06  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:17:06  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:17:06  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:17:06  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:17:06  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:17:06  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 22:17:07  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 22:17:07  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:17:07  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:17:07  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:17:07  [debug]  [system] 系统运行时间: 1.0349
+2014-02-11 22:17:07  [debug]  [system] 控制器执行时间: 1.0147
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:28:09  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:28:09  [debug]  [system] 系统运行时间: 0.0257
+2014-02-11 22:28:09  [debug]  [system] 控制器执行时间: 0.0049
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:28:09  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:28:09  [debug]  [system] 系统运行时间: 0.0264
+2014-02-11 22:28:09  [debug]  [system] 控制器执行时间: 0.0069
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:28:09  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:28:09  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:28:09  [debug]  [system] 系统运行时间: 0.0524
+2014-02-11 22:28:09  [debug]  [system] 控制器执行时间: 0.0120
+2014-02-11 22:28:11  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:28:11  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:28:11  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:28:11  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:28:11  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:28:11  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:28:11  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:28:17  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:28:17  [debug]  [system] 系统运行时间: 0.0195
+2014-02-11 22:28:17  [debug]  [system] 控制器执行时间: 0.0043
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:28:17  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:28:17  [debug]  [system] 系统运行时间: 0.0270
+2014-02-11 22:28:17  [debug]  [system] 控制器执行时间: 0.0091
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:28:17  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:28:17  [debug]  [system] 系统运行时间: 0.0801
+2014-02-11 22:28:17  [debug]  [system] 控制器执行时间: 0.0115
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:28:17  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:28:17  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:28:17  [debug]  [system] 系统运行时间: 0.0216
+2014-02-11 22:28:17  [debug]  [system] 控制器执行时间: 0.0012
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:28:19  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:28:19  [debug]  [system] 系统运行时间: 0.0211
+2014-02-11 22:28:19  [debug]  [system] 控制器执行时间: 0.0043
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:28:19  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:28:19  [debug]  [system] 系统运行时间: 0.0258
+2014-02-11 22:28:19  [debug]  [system] 控制器执行时间: 0.0064
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:28:19  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:28:19  [debug]  [system] 系统运行时间: 0.0421
+2014-02-11 22:28:19  [debug]  [system] 控制器执行时间: 0.0080
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:28:19  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:28:19  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:28:19  [debug]  [system] 系统运行时间: 0.0196
+2014-02-11 22:28:19  [debug]  [system] 控制器执行时间: 0.0012
+2014-02-11 22:28:26  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:28:26  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:28:26  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:28:26  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:28:26  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:28:26  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:28:26  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:28:26  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:28:26  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 22:28:27  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 22:28:27  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:28:27  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:28:27  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:28:27  [debug]  [system] 系统运行时间: 1.0477
+2014-02-11 22:28:27  [debug]  [system] 控制器执行时间: 1.0281
+2014-02-11 22:28:29  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:28:29  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:28:29  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:28:29  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:28:29  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:28:29  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:28:29  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:28:29  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:28:29  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:28:29  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:28:29  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:28:29  [debug]  [system] 系统运行时间: 0.0236
+2014-02-11 22:28:29  [debug]  [system] 控制器执行时间: 0.0052
+2014-02-11 22:28:37  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:28:37  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:28:37  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:28:37  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:28:37  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:28:37  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:28:37  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:28:37  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:28:37  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:28:37  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:28:37  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:28:37  [debug]  [system] 系统运行时间: 0.0222
+2014-02-11 22:28:37  [debug]  [system] 控制器执行时间: 0.0049
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:29:19  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:29:19  [debug]  [system] 系统运行时间: 0.0220
+2014-02-11 22:29:19  [debug]  [system] 控制器执行时间: 0.0044
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:29:19  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:29:19  [debug]  [system] 系统运行时间: 0.0242
+2014-02-11 22:29:19  [debug]  [system] 控制器执行时间: 0.0065
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:29:19  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:29:19  [debug]  [system] 系统运行时间: 0.0416
+2014-02-11 22:29:19  [debug]  [system] 控制器执行时间: 0.0086
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:29:19  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:29:19  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:29:19  [debug]  [system] 系统运行时间: 0.0183
+2014-02-11 22:29:19  [debug]  [system] 控制器执行时间: 0.0011
+2014-02-11 22:29:24  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:29:24  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:29:24  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:29:24  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:29:24  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:29:24  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:29:24  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:29:24  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:29:24  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 22:29:25  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 22:29:25  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:29:25  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:29:25  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:29:25  [debug]  [system] 系统运行时间: 1.0567
+2014-02-11 22:29:25  [debug]  [system] 控制器执行时间: 1.0366
+2014-02-11 22:29:27  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:29:27  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:29:27  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:29:27  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:29:27  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:29:27  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:29:27  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:29:27  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:29:27  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:29:27  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:29:27  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:29:27  [debug]  [system] 系统运行时间: 0.0228
+2014-02-11 22:29:27  [debug]  [system] 控制器执行时间: 0.0076
+2014-02-11 22:29:36  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:29:36  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:29:36  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:29:36  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:29:36  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:29:36  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:29:36  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:29:36  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:29:36  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:29:36  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:29:36  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:29:36  [debug]  [system] 系统运行时间: 0.0197
+2014-02-11 22:29:36  [debug]  [system] 控制器执行时间: 0.0044
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:30:45  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:30:45  [debug]  [system] 系统运行时间: 0.0197
+2014-02-11 22:30:45  [debug]  [system] 控制器执行时间: 0.0039
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:30:45  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:30:45  [debug]  [system] 系统运行时间: 0.0256
+2014-02-11 22:30:45  [debug]  [system] 控制器执行时间: 0.0060
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:30:45  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:30:45  [debug]  [system] 系统运行时间: 0.0430
+2014-02-11 22:30:45  [debug]  [system] 控制器执行时间: 0.0078
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:30:45  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:30:45  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:30:45  [debug]  [system] 系统运行时间: 0.0178
+2014-02-11 22:30:45  [debug]  [system] 控制器执行时间: 0.0010
+2014-02-11 22:30:50  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:30:50  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:30:50  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:30:50  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:30:50  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:30:50  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:30:50  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:30:50  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:30:50  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 22:30:51  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 22:30:51  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:30:51  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:30:51  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:30:51  [debug]  [system] 系统运行时间: 1.0507
+2014-02-11 22:30:51  [debug]  [system] 控制器执行时间: 1.0321
+2014-02-11 22:30:56  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:30:56  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:30:56  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:30:56  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:30:56  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:30:56  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:30:56  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:30:56  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:30:56  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:30:56  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:30:56  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:30:56  [debug]  [system] 系统运行时间: 0.0213
+2014-02-11 22:30:56  [debug]  [system] 控制器执行时间: 0.0047
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:33:20  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:33:20  [debug]  [system] 系统运行时间: 0.0294
+2014-02-11 22:33:20  [debug]  [system] 控制器执行时间: 0.0076
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:33:20  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:33:20  [debug]  [system] 系统运行时间: 0.0243
+2014-02-11 22:33:20  [debug]  [system] 控制器执行时间: 0.0064
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:33:20  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:33:20  [debug]  [system] 系统运行时间: 0.0400
+2014-02-11 22:33:20  [debug]  [system] 控制器执行时间: 0.0070
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:33:20  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:33:20  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:33:20  [debug]  [system] 系统运行时间: 0.0178
+2014-02-11 22:33:20  [debug]  [system] 控制器执行时间: 0.0011
+2014-02-11 22:33:24  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:33:24  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:33:24  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:33:24  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:33:24  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:33:24  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:33:24  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:33:24  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:33:24  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 22:33:25  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 22:33:25  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:33:25  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:33:25  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:33:25  [debug]  [system] 系统运行时间: 1.0374
+2014-02-11 22:33:25  [debug]  [system] 控制器执行时间: 1.0166
+2014-02-11 22:33:27  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:33:27  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:33:27  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:33:27  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:33:27  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:33:27  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:33:27  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:33:27  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:33:27  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:33:27  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:33:27  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:33:27  [debug]  [system] 系统运行时间: 0.0207
+2014-02-11 22:33:27  [debug]  [system] 控制器执行时间: 0.0043
+2014-02-11 22:33:30  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:33:30  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:33:30  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:33:30  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:33:30  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:33:30  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:33:30  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:33:30  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:33:30  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:33:30  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:33:30  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:33:30  [debug]  [system] 系统运行时间: 0.0197
+2014-02-11 22:33:30  [debug]  [system] 控制器执行时间: 0.0042
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:33:54  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:33:54  [debug]  [system] 系统运行时间: 0.0202
+2014-02-11 22:33:54  [debug]  [system] 控制器执行时间: 0.0041
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:33:54  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:33:54  [debug]  [system] 系统运行时间: 0.0212
+2014-02-11 22:33:54  [debug]  [system] 控制器执行时间: 0.0054
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:33:54  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:33:54  [debug]  [system] 系统运行时间: 0.0387
+2014-02-11 22:33:54  [debug]  [system] 控制器执行时间: 0.0079
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:33:54  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:33:54  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:33:54  [debug]  [system] 系统运行时间: 0.0193
+2014-02-11 22:33:54  [debug]  [system] 控制器执行时间: 0.0011
+2014-02-11 22:34:00  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:34:00  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:34:00  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:34:00  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:34:00  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:34:00  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:34:00  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:34:00  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:34:00  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 22:34:01  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 22:34:01  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:34:01  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:34:01  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:34:01  [debug]  [system] 系统运行时间: 1.0386
+2014-02-11 22:34:01  [debug]  [system] 控制器执行时间: 1.0188
+2014-02-11 22:34:03  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:34:03  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:34:03  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:34:03  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:34:03  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:34:03  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:34:03  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:34:03  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:34:03  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:34:03  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:34:03  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:34:03  [debug]  [system] 系统运行时间: 0.0214
+2014-02-11 22:34:03  [debug]  [system] 控制器执行时间: 0.0048
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:40:35  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:40:35  [debug]  [system] 系统运行时间: 0.0236
+2014-02-11 22:40:35  [debug]  [system] 控制器执行时间: 0.0040
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:40:35  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:40:35  [debug]  [system] 系统运行时间: 0.0262
+2014-02-11 22:40:35  [debug]  [system] 控制器执行时间: 0.0065
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:40:35  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:40:35  [debug]  [system] 系统运行时间: 0.0431
+2014-02-11 22:40:35  [debug]  [system] 控制器执行时间: 0.0079
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:40:35  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:40:35  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:40:35  [debug]  [system] 系统运行时间: 0.0204
+2014-02-11 22:40:35  [debug]  [system] 控制器执行时间: 0.0013
+2014-02-11 22:40:40  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:40:40  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:40:40  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:40:40  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:40:40  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:40:40  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:40:40  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:40:40  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:40:40  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 22:40:41  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 22:40:41  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:40:41  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:40:41  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:40:41  [debug]  [system] 系统运行时间: 1.0442
+2014-02-11 22:40:41  [debug]  [system] 控制器执行时间: 1.0228
+2014-02-11 22:40:43  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:40:43  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:40:43  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:40:43  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:40:43  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:40:43  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:40:43  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:40:43  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:40:43  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:40:43  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:40:43  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:40:43  [debug]  [system] 系统运行时间: 0.0212
+2014-02-11 22:40:43  [debug]  [system] 控制器执行时间: 0.0050
+2014-02-11 22:41:23  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:41:23  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:41:23  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:41:23  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:41:23  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:41:23  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:41:23  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:41:23  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:41:23  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:41:23  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:41:23  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:41:23  [debug]  [system] 系统运行时间: 0.0211
+2014-02-11 22:41:23  [debug]  [system] 控制器执行时间: 0.0051
+2014-02-11 22:41:27  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:41:27  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:41:27  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:41:27  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:41:27  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:41:27  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:41:27  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:41:27  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:41:30  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:41:30  [debug]  [system] 系统运行时间: 0.0202
+2014-02-11 22:41:30  [debug]  [system] 控制器执行时间: 0.0040
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:41:30  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:41:30  [debug]  [system] 系统运行时间: 0.0279
+2014-02-11 22:41:30  [debug]  [system] 控制器执行时间: 0.0074
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:41:30  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:41:30  [debug]  [system] 系统运行时间: 0.0450
+2014-02-11 22:41:30  [debug]  [system] 控制器执行时间: 0.0078
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:41:30  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:41:30  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:41:30  [debug]  [system] 系统运行时间: 0.0231
+2014-02-11 22:41:30  [debug]  [system] 控制器执行时间: 0.0014
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:41:32  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:41:32  [debug]  [system] 系统运行时间: 0.0219
+2014-02-11 22:41:32  [debug]  [system] 控制器执行时间: 0.0039
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:41:32  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:41:32  [debug]  [system] 系统运行时间: 0.0252
+2014-02-11 22:41:32  [debug]  [system] 控制器执行时间: 0.0063
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:41:32  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:41:32  [debug]  [system] 系统运行时间: 0.0335
+2014-02-11 22:41:32  [debug]  [system] 控制器执行时间: 0.0077
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:41:32  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:41:32  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:41:32  [debug]  [system] 系统运行时间: 0.0216
+2014-02-11 22:41:32  [debug]  [system] 控制器执行时间: 0.0012
+2014-02-11 22:42:12  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:42:12  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:42:12  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:42:12  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:42:12  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:42:12  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:42:12  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:42:12  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:42:12  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 22:42:13  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 22:42:13  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:42:13  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:42:13  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:42:13  [debug]  [system] 系统运行时间: 1.0244
+2014-02-11 22:42:13  [debug]  [system] 控制器执行时间: 1.0041
+2014-02-11 22:42:20  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:42:20  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:42:20  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:42:20  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:42:20  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:42:20  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:42:20  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:42:20  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:42:20  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:42:20  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:42:20  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:42:20  [debug]  [system] 系统运行时间: 0.0203
+2014-02-11 22:42:20  [debug]  [system] 控制器执行时间: 0.0052
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:46:57  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:46:57  [debug]  [system] 系统运行时间: 0.0256
+2014-02-11 22:46:57  [debug]  [system] 控制器执行时间: 0.0047
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:46:57  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:46:57  [debug]  [system] 系统运行时间: 0.0281
+2014-02-11 22:46:57  [debug]  [system] 控制器执行时间: 0.0088
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:46:57  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:46:57  [debug]  [system] 系统运行时间: 0.0456
+2014-02-11 22:46:57  [debug]  [system] 控制器执行时间: 0.0077
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Views\Ajax] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:46:57  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:46:57  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:46:57  [debug]  [system] 系统运行时间: 0.0232
+2014-02-11 22:46:57  [debug]  [system] 控制器执行时间: 0.0010
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:47:26  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:47:26  [debug]  [system] 系统运行时间: 0.0174
+2014-02-11 22:47:26  [debug]  [system] 控制器执行时间: 0.0031
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:47:26  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:47:26  [debug]  [system] 系统运行时间: 0.0281
+2014-02-11 22:47:26  [debug]  [system] 控制器执行时间: 0.0087
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:47:26  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:47:26  [debug]  [system] 系统运行时间: 0.0459
+2014-02-11 22:47:26  [debug]  [system] 控制器执行时间: 0.0068
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:47:26  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:47:26  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:47:26  [debug]  [system] 系统运行时间: 0.0156
+2014-02-11 22:47:26  [debug]  [system] 控制器执行时间: 0.0010
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:47:29  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:47:29  [debug]  [system] 系统运行时间: 0.0198
+2014-02-11 22:47:29  [debug]  [system] 控制器执行时间: 0.0039
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:47:29  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:47:29  [debug]  [system] 系统运行时间: 0.0255
+2014-02-11 22:47:29  [debug]  [system] 控制器执行时间: 0.0076
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:47:29  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:47:29  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:47:29  [debug]  [system] 系统运行时间: 0.0456
+2014-02-11 22:47:29  [debug]  [system] 控制器执行时间: 0.0074
+2014-02-11 22:47:30  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:47:30  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:47:30  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:47:30  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:47:30  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:47:30  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:47:30  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:47:30  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:47:30  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:47:30  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:47:30  [debug]  [system] 系统运行时间: 0.0180
+2014-02-11 22:47:30  [debug]  [system] 控制器执行时间: 0.0033
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:47:31  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:47:31  [debug]  [system] 系统运行时间: 0.0266
+2014-02-11 22:47:31  [debug]  [system] 控制器执行时间: 0.0077
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:47:31  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:47:31  [debug]  [system] 系统运行时间: 0.0426
+2014-02-11 22:47:31  [debug]  [system] 控制器执行时间: 0.0072
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:47:31  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:47:31  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:47:31  [debug]  [system] 系统运行时间: 0.0203
+2014-02-11 22:47:31  [debug]  [system] 控制器执行时间: 0.0010
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:47:48  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:47:48  [debug]  [system] 系统运行时间: 0.0240
+2014-02-11 22:47:48  [debug]  [system] 控制器执行时间: 0.0045
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:47:48  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:47:48  [debug]  [system] 系统运行时间: 0.0273
+2014-02-11 22:47:48  [debug]  [system] 控制器执行时间: 0.0077
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:47:48  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:47:48  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:47:48  [debug]  [system] 系统运行时间: 0.0496
+2014-02-11 22:47:48  [debug]  [system] 控制器执行时间: 0.0075
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:47:50  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:47:50  [debug]  [system] 系统运行时间: 0.0198
+2014-02-11 22:47:50  [debug]  [system] 控制器执行时间: 0.0044
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:47:50  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:47:50  [debug]  [system] 系统运行时间: 0.0228
+2014-02-11 22:47:50  [debug]  [system] 控制器执行时间: 0.0059
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:47:50  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:47:50  [debug]  [system] 系统运行时间: 0.0387
+2014-02-11 22:47:50  [debug]  [system] 控制器执行时间: 0.0063
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Views\Ajax] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:47:50  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:47:50  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:47:50  [debug]  [system] 系统运行时间: 0.0199
+2014-02-11 22:47:50  [debug]  [system] 控制器执行时间: 0.0012
+2014-02-11 22:48:20  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:48:20  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:48:20  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:48:20  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:48:20  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:48:20  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:48:20  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:48:20  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:48:20  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:48:20  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:48:20  [debug]  [system] 系统运行时间: 0.0201
+2014-02-11 22:48:20  [debug]  [system] 控制器执行时间: 0.0037
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:48:21  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:48:21  [debug]  [system] 系统运行时间: 0.0423
+2014-02-11 22:48:21  [debug]  [system] 控制器执行时间: 0.0268
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:48:21  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:48:21  [debug]  [system] 系统运行时间: 0.0613
+2014-02-11 22:48:21  [debug]  [system] 控制器执行时间: 0.0080
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:48:21  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:48:21  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:48:21  [debug]  [system] 系统运行时间: 0.0156
+2014-02-11 22:48:21  [debug]  [system] 控制器执行时间: 0.0010
+2014-02-11 22:48:26  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:48:26  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:48:26  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:48:26  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:48:26  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:48:26  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:48:26  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:48:26  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:48:26  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 22:48:27  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 22:48:27  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:48:27  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:48:27  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:48:27  [debug]  [system] 系统运行时间: 1.0362
+2014-02-11 22:48:27  [debug]  [system] 控制器执行时间: 1.0146
+2014-02-11 22:48:29  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:48:29  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:48:29  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:48:29  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:48:29  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:48:29  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:48:29  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:48:29  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:48:29  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:48:29  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:48:29  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:48:29  [debug]  [system] 系统运行时间: 0.0203
+2014-02-11 22:48:29  [debug]  [system] 控制器执行时间: 0.0051
+2014-02-11 22:48:32  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:48:32  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:48:32  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:48:32  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:48:32  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:48:32  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:48:32  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:48:32  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:48:35  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:48:35  [debug]  [system] 系统运行时间: 0.0188
+2014-02-11 22:48:35  [debug]  [system] 控制器执行时间: 0.0038
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:48:35  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:48:35  [debug]  [system] 系统运行时间: 0.0236
+2014-02-11 22:48:35  [debug]  [system] 控制器执行时间: 0.0066
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:48:35  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:48:35  [debug]  [system] 系统运行时间: 0.0397
+2014-02-11 22:48:35  [debug]  [system] 控制器执行时间: 0.0065
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:48:35  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:48:35  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:48:35  [debug]  [system] 系统运行时间: 0.0221
+2014-02-11 22:48:35  [debug]  [system] 控制器执行时间: 0.0013
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:49:33  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:49:33  [debug]  [system] 系统运行时间: 0.0225
+2014-02-11 22:49:33  [debug]  [system] 控制器执行时间: 0.0054
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:49:33  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:49:33  [debug]  [system] 系统运行时间: 0.0242
+2014-02-11 22:49:33  [debug]  [system] 控制器执行时间: 0.0077
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:49:33  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:49:33  [debug]  [system] 系统运行时间: 0.0431
+2014-02-11 22:49:33  [debug]  [system] 控制器执行时间: 0.0076
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:49:33  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:49:33  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:49:33  [debug]  [system] 系统运行时间: 0.0221
+2014-02-11 22:49:33  [debug]  [system] 控制器执行时间: 0.0013
+2014-02-11 22:49:37  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:49:37  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:49:37  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:49:37  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:49:37  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:49:37  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:49:37  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:49:37  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:49:37  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 22:49:38  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 22:49:38  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:49:38  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:49:38  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:49:38  [debug]  [system] 系统运行时间: 1.0537
+2014-02-11 22:49:38  [debug]  [system] 控制器执行时间: 1.0346
+2014-02-11 22:49:40  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:49:40  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:49:40  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:49:40  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:49:40  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:49:40  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:49:40  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:49:40  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:49:40  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:49:40  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:49:40  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:49:40  [debug]  [system] 系统运行时间: 0.0210
+2014-02-11 22:49:40  [debug]  [system] 控制器执行时间: 0.0053
+2014-02-11 22:49:49  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:49:49  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:49:49  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:49:49  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:49:49  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:49:49  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:49:49  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:49:49  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:54:38  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:54:38  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:54:38  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:54:38  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:54:38  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:54:38  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:54:38  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:54:38  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:54:38  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:54:38  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:54:38  [debug]  [system] 系统运行时间: 0.0203
+2014-02-11 22:54:38  [debug]  [system] 控制器执行时间: 0.0035
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:54:39  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:54:39  [debug]  [system] 系统运行时间: 0.0298
+2014-02-11 22:54:39  [debug]  [system] 控制器执行时间: 0.0089
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:54:39  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:54:39  [debug]  [system] 系统运行时间: 0.0480
+2014-02-11 22:54:39  [debug]  [system] 控制器执行时间: 0.0077
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:54:39  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:54:39  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:54:39  [debug]  [system] 系统运行时间: 0.0217
+2014-02-11 22:54:39  [debug]  [system] 控制器执行时间: 0.0018
+2014-02-11 22:54:44  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:54:44  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:54:44  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:54:44  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:54:44  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:54:44  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:54:44  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:54:44  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:54:44  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 22:54:45  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 22:54:45  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:54:45  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:54:45  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:54:45  [debug]  [system] 系统运行时间: 1.0352
+2014-02-11 22:54:45  [debug]  [system] 控制器执行时间: 1.0140
+2014-02-11 22:54:47  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:54:47  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:54:47  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:54:47  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:54:47  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:54:47  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:54:47  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:54:47  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:54:47  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:54:47  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:54:47  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:54:47  [debug]  [system] 系统运行时间: 0.0198
+2014-02-11 22:54:47  [debug]  [system] 控制器执行时间: 0.0049
+2014-02-11 22:57:37  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:57:37  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:57:37  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:57:37  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:57:37  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:57:37  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:57:37  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:57:37  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:57:37  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:57:37  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:57:37  [debug]  [system] 系统运行时间: 0.0225
+2014-02-11 22:57:37  [debug]  [system] 控制器执行时间: 0.0042
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:57:38  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:57:38  [debug]  [system] 系统运行时间: 0.0259
+2014-02-11 22:57:38  [debug]  [system] 控制器执行时间: 0.0065
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:57:38  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:57:38  [debug]  [system] 系统运行时间: 0.0438
+2014-02-11 22:57:38  [debug]  [system] 控制器执行时间: 0.0078
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:57:38  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:57:38  [debug]  [system] 系统运行时间: 0.0160
+2014-02-11 22:57:38  [debug]  [system] 控制器执行时间: 0.0010
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:57:38  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:57:38  [debug]  [system] 系统运行时间: 0.0213
+2014-02-11 22:57:38  [debug]  [system] 控制器执行时间: 0.0058
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:57:38  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:57:38  [debug]  [system] 系统运行时间: 0.0227
+2014-02-11 22:57:38  [debug]  [system] 控制器执行时间: 0.0061
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:57:38  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:57:38  [debug]  [system] 系统运行时间: 0.0397
+2014-02-11 22:57:38  [debug]  [system] 控制器执行时间: 0.0073
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:57:38  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:57:38  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:57:38  [debug]  [system] 系统运行时间: 0.0210
+2014-02-11 22:57:38  [debug]  [system] 控制器执行时间: 0.0010
+2014-02-11 22:57:42  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:57:42  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:57:42  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:57:42  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:57:42  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:57:42  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:57:42  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:57:42  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:57:42  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 22:57:43  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 22:57:43  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:57:43  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:57:43  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:57:43  [debug]  [system] 系统运行时间: 1.0565
+2014-02-11 22:57:43  [debug]  [system] 控制器执行时间: 1.0352
+2014-02-11 22:57:45  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:57:45  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 22:57:45  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 22:57:45  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 22:57:45  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 22:57:45  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 22:57:45  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 22:57:45  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 22:57:45  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 22:57:45  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 22:57:45  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 22:57:45  [debug]  [system] 系统运行时间: 0.0184
+2014-02-11 22:57:45  [debug]  [system] 控制器执行时间: 0.0041
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 23:00:21  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 23:00:21  [debug]  [system] 系统运行时间: 0.0236
+2014-02-11 23:00:21  [debug]  [system] 控制器执行时间: 0.0041
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 23:00:21  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 23:00:21  [debug]  [system] 系统运行时间: 0.0250
+2014-02-11 23:00:21  [debug]  [system] 控制器执行时间: 0.0059
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 23:00:21  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 23:00:21  [debug]  [system] 系统运行时间: 0.0600
+2014-02-11 23:00:21  [debug]  [system] 控制器执行时间: 0.0071
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 23:00:21  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 23:00:21  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 23:00:21  [debug]  [system] 系统运行时间: 0.0159
+2014-02-11 23:00:21  [debug]  [system] 控制器执行时间: 0.0010
+2014-02-11 23:00:25  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 23:00:25  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 23:00:25  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 23:00:25  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 23:00:25  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 23:00:25  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 23:00:25  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 23:00:25  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 23:00:25  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 23:00:26  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 23:00:26  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 23:00:26  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 23:00:26  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 23:00:26  [debug]  [system] 系统运行时间: 1.0360
+2014-02-11 23:00:26  [debug]  [system] 控制器执行时间: 1.0177
+2014-02-11 23:00:28  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 23:00:28  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 23:00:28  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 23:00:28  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 23:00:28  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 23:00:28  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 23:00:28  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 23:00:28  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 23:00:28  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 23:00:28  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 23:00:28  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 23:00:28  [debug]  [system] 系统运行时间: 0.0200
+2014-02-11 23:00:28  [debug]  [system] 控制器执行时间: 0.0048
+2014-02-11 23:00:34  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 23:00:34  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 23:00:34  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 23:00:34  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 23:00:34  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 23:00:34  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 23:00:34  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 23:00:34  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 23:00:34  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 23:00:34  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 23:00:34  [debug]  [system] 系统运行时间: 0.0213
+2014-02-11 23:00:34  [debug]  [system] 控制器执行时间: 0.0038
+2014-02-11 23:00:43  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 23:00:43  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 23:00:43  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 23:00:43  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 23:00:43  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 23:00:43  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 23:00:43  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 23:00:43  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 23:00:43  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 23:00:43  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 23:00:43  [debug]  [system] 系统运行时间: 0.0191
+2014-02-11 23:00:43  [debug]  [system] 控制器执行时间: 0.0038
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 23:02:09  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 23:02:09  [debug]  [system] 系统运行时间: 0.0185
+2014-02-11 23:02:09  [debug]  [system] 控制器执行时间: 0.0032
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 23:02:09  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 23:02:09  [debug]  [system] 系统运行时间: 0.0242
+2014-02-11 23:02:09  [debug]  [system] 控制器执行时间: 0.0058
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 23:02:09  [info]  [Admin\controllers\Widget] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 23:02:09  [debug]  [system] 系统运行时间: 0.0398
+2014-02-11 23:02:09  [debug]  [system] 控制器执行时间: 0.0073
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 23:02:09  [info]  [Admin\controllers\Index] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 23:02:09  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 23:02:09  [debug]  [system] 系统运行时间: 0.0160
+2014-02-11 23:02:09  [debug]  [system] 控制器执行时间: 0.0011
+2014-02-11 23:02:15  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 23:02:15  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 23:02:15  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 23:02:15  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 23:02:15  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 23:02:15  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 23:02:15  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 23:02:15  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 23:02:15  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-11 23:02:16  [info]  [Demo\models\Category] 类加载完成!
+2014-02-11 23:02:16  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 23:02:16  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 23:02:16  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 23:02:16  [debug]  [system] 系统运行时间: 1.0394
+2014-02-11 23:02:16  [debug]  [system] 控制器执行时间: 1.0222
+2014-02-11 23:02:17  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 23:02:17  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 23:02:17  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 23:02:17  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 23:02:17  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 23:02:17  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 23:02:17  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 23:02:17  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 23:02:17  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-11 23:02:17  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-11 23:02:17  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 23:02:17  [debug]  [system] 系统运行时间: 0.0204
+2014-02-11 23:02:17  [debug]  [system] 控制器执行时间: 0.0053
+2014-02-11 23:02:19  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 23:02:19  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-11 23:02:19  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-11 23:02:19  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-11 23:02:19  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-11 23:02:19  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-11 23:02:19  [info]  [Admin\controllers\Article] 类加载完成!
+2014-02-11 23:02:19  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-11 23:02:19  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-11 23:02:19  [info]  [Arsenals\Core\Views\Ajax] 类加载完成!

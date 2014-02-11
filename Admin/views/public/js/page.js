@@ -42,6 +42,17 @@ window.o_fn = {
 		};
 		//autoSave("#o-form-write-article", 90000);
 	},
+	// 文章管理相关
+	article: {
+		// 文章分类
+		category: {
+			// 添加分类
+			add: function(){
+				f.dialog('article/categoryAdd', "添加分类", {}, function(){
+				});
+			}
+		}
+	},
 	// 归档页面
 	archive: {
 		category_show: function(){

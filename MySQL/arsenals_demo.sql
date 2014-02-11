@@ -107,11 +107,11 @@ CREATE TABLE `ar_log` (
   `data` text,
   `action_type` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 /*Data for the table `ar_log` */
 
-insert  into `ar_log`(`id`,`action_time`,`action_name`,`operator`,`data`,`action_type`) values (1,1391786098,'用户admin登陆了系统！','admin',NULL,'event'),(2,1391786118,'用户admin退出了系统！','admin',NULL,'event'),(3,1391786579,'用户admin登陆了系统！','admin',NULL,'event'),(4,1391793841,'用户admin退出了系统！','admin',NULL,'event'),(5,1391793847,'用户admin登陆了系统！','admin',NULL,'event'),(6,1391793856,'用户admin退出了系统！','admin',NULL,'event'),(7,1391793860,'用户admin登陆了系统！','admin',NULL,'event'),(8,1391793869,'用户admin退出了系统！','admin',NULL,'event'),(9,1391793872,'用户admin登陆了系统！','admin',NULL,'event'),(10,1391793919,'用户admin退出了系统！','admin',NULL,'event'),(11,1391793926,'用户admin登陆了系统！','admin',NULL,'event'),(12,1391794905,'用户admin退出了系统！','admin',NULL,'event'),(13,1391829065,'用户admin登陆了系统！','admin',NULL,'event'),(14,1392045711,'用户admin登陆了系统！','admin',NULL,'event'),(15,1392045774,'用户admin退出了系统！','admin',NULL,'event');
+insert  into `ar_log`(`id`,`action_time`,`action_name`,`operator`,`data`,`action_type`) values (1,1391786098,'用户admin登陆了系统！','admin',NULL,'event'),(2,1391786118,'用户admin退出了系统！','admin',NULL,'event'),(3,1391786579,'用户admin登陆了系统！','admin',NULL,'event'),(4,1391793841,'用户admin退出了系统！','admin',NULL,'event'),(5,1391793847,'用户admin登陆了系统！','admin',NULL,'event'),(6,1391793856,'用户admin退出了系统！','admin',NULL,'event'),(7,1391793860,'用户admin登陆了系统！','admin',NULL,'event'),(8,1391793869,'用户admin退出了系统！','admin',NULL,'event'),(9,1391793872,'用户admin登陆了系统！','admin',NULL,'event'),(10,1391793919,'用户admin退出了系统！','admin',NULL,'event'),(11,1391793926,'用户admin登陆了系统！','admin',NULL,'event'),(12,1391794905,'用户admin退出了系统！','admin',NULL,'event'),(13,1391829065,'用户admin登陆了系统！','admin',NULL,'event'),(14,1392045711,'用户admin登陆了系统！','admin',NULL,'event'),(15,1392045774,'用户admin退出了系统！','admin',NULL,'event'),(16,1392123911,'用户admin登陆了系统！','admin',NULL,'event');
 
 /*Table structure for table `ar_navigator` */
 
@@ -127,11 +127,11 @@ CREATE TABLE `ar_navigator` (
   `pid` int(11) DEFAULT '0' COMMENT '上级id\n',
   `pos` varchar(45) DEFAULT NULL COMMENT '导航位置',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='导航';
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COMMENT='导航';
 
 /*Data for the table `ar_navigator` */
 
-insert  into `ar_navigator`(`id`,`name`,`url`,`isvalid`,`intro`,`sort`,`pid`,`pos`) values (1,'咖啡CAFFEE','articles/lists/1',1,NULL,'90',0,'top'),(2,'影音MOVIE','#',1,NULL,'80',0,'top'),(3,'创业职业OCCUPATION','市场活动',1,NULL,'70',0,'top'),(4,'研发DEVELOPMENT','原创音乐',1,NULL,'60',0,'top');
+insert  into `ar_navigator`(`id`,`name`,`url`,`isvalid`,`intro`,`sort`,`pid`,`pos`) values (1,'咖啡 CAFFEE','articles/lists/1',1,NULL,'90',0,'top'),(2,'影像 MOVIE&PIC','MOVIE',1,NULL,'80',0,'top'),(3,'创业职业 SYB','SYB',1,NULL,'70',0,'top'),(4,'研发R&D','RD',1,NULL,'60',0,'top'),(12,'项目提交 Submit an Idea','Idea',1,NULL,'50',0,'top'),(13,'咖啡世界 Kaffeewelten',NULL,1,NULL,NULL,1,'top'),(14,'服务与发展 <br />Service & Nachhaltigkeit',NULL,1,NULL,NULL,1,'top'),(15,'电影精选 Movie selection',NULL,1,NULL,NULL,2,'top'),(16,'开始创作 Began to write',NULL,1,NULL,NULL,2,'top'),(17,'活动 Activities',NULL,1,NULL,NULL,3,'top'),(18,'机构 Organization',NULL,1,NULL,NULL,3,'top'),(19,'活动 Event',NULL,1,NULL,NULL,4,'top'),(20,'机构 Organization',NULL,1,NULL,NULL,4,'top');
 
 /*Table structure for table `ar_page` */
 

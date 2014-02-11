@@ -3,12 +3,12 @@
 	<table id="logTable" class="table striped hovered dataTable">
 		<thead>
 			<tr>
-				<th>ID</th>
-				<th>配置键</th>
-				<th>命名空间</th>
-				<th>备注</th>
-				<th>是否可用</th>
-				<th>操作</th>
+				<th class="text-left">ID</th>
+				<th class="text-left">配置键</th>
+				<th class="text-left">命名空间</th>
+				<th class="text-left">备注</th>
+				<th class="text-left">是否可用</th>
+				<th class="text-left">操作</th>
 			</tr>
 		</thead>
 		<tbody></tbody>
