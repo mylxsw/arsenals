@@ -211,6 +211,10 @@ abstract class Model extends Arsenals {
 	 * @return array | int
 	 */
 	public function query($sql, $args = array(), $insert = false){
+        if(is_null($args)){
+            $args = array();
+        }
+        
 		// 如果没有提供参数数组，则执行普通查询
 		if(\count($args) == 0){
 			$res = $this->_conn->query($sql);
