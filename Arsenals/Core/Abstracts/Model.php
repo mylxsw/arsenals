@@ -127,6 +127,18 @@ abstract class Model extends Arsenals {
 	 * @return int
 	 */
 	public function update($data, $conditions, $table = null){
+        $table = is_null($table) ? $this->_table_name : $this->getTableName($table);
+        $sql = 'UPDATE `{$table}` SET ';
+        
+        foreach($data as $k=>$v){
+            $sql .= "{$k}={$v},";
+        }
+        
+        $sql = trim($sql, ',');
+        $sql .= ' WHERE ' . $this->_init_conditions_no_prepare($conditions);
+        
+        $this->query($sql, null, true);
+        
 // 		$table_datas = array_merge($this->_datas_, $data);
 // 		$pk = $table_datas[$this->getPk()];
 // 		unset($table_datas[$this->getPk()]);
