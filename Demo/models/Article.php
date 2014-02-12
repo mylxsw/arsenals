@@ -122,6 +122,22 @@ class Article extends Model {
 		// 保存标签信息
 		$this->mapArtToTags($article_id, $data['tag']);
 	}
+
+    /**
+     * 从指定分类删除指定文章
+     * @param int $art_id
+     * @param int $cat_id
+     * 
+     * @return void
+     */ 
+    public function removeArtFromCate($art_id, $cat_id){
+        $art_id = intval($art_id);
+        $cat_id = intval($cat_id);
+        
+        $this->delete(array('category_id' => $cat_id, 'article_id'=> $art_id ), 'article_category');
+    }
+
+
 	/**
 	 * 添加文章到分类的关联
 	 * @param number $article_id
