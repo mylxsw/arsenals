@@ -54,4 +54,17 @@ class Article extends Controller {
 	public function categoryAdd(){
 		return $this->view('article/category_add');
 	}
+    /**
+     * 添加分类页面保存
+     */ 
+    public function categoryAddPost(){
+        $data = array();
+        $data['name'] = $this->post('name', null, 'len:1,100|required');
+        $data['isvalid'] = 1;
+        
+        $categoryModel = Registry::load('Demo\\models\\Category');
+        $categoryModel->addCategory($data);
+        
+        return Ajax::ajaxReturn('添加成功！', Ajax::SUCCESS);
+    }
 }
