@@ -311,15 +311,21 @@ abstract class Model extends Arsenals {
 		}
 		return $res;
 	}
-	
+    /**
+     * 初始化查询条件数组为字符串，无prepare
+     */ 
+	private function _init_conditions_no_prepare($conditions){
+        return $this->_init_conditions($conditions, false)[0];
+	}
 	/**
 	 * 初始化查询条件数组为字符串
 	 *
 	 * @access private
 	 * @param array $conditions 查询条件数组
+     * @param array $is_prepare 是否使用prepare
 	 * @return string
 	 */
-	private function _init_conditions($conditions){
+	private function _init_conditions($conditions, $is_prepare = true){
 		$sql = '';
 		$args = array();
 		$join_method = 'AND';
@@ -329,41 +335,44 @@ abstract class Model extends Arsenals {
 			}
 			unset($conditions['_OR']);
 		}
+        
 	
 		foreach ($conditions as $c_k => $c_v) {
 			$c_cmd_pos = strstr($c_k, '%');
+            $val = $is_prepare ? '?' : $this->escape($c_v);
+            
 			if($c_cmd_pos === FALSE){
-				$sql .= "{$c_k} = ? ";
+				$sql .= "{$c_k} = {$val} ";
 				array_push($args, $c_v);
 			}else{
 				$c_cmd = preg_split('/%/', $c_k, 2);
 				switch ($c_cmd[1]) {
 					case 'LIKE':
-						$sql .= "{$c_cmd[0]} LIKE ? ";
+						$sql .= "{$c_cmd[0]} LIKE {$val} ";
 						array_push($args, $c_v);
 						break;
 					case 'EQ':
-						$sql .= "{$c_cmd[0]} = ? ";
+						$sql .= "{$c_cmd[0]} = {$val} ";
 						array_push($args, $c_v);
 						break;
 					case 'NEQ':
-						$sql .= "{$c_cmd[0]} <> ? ";
+						$sql .= "{$c_cmd[0]} <> {$val} ";
 						array_push($args, $c_v);
 						break;
 					case 'GT':
-						$sql .= "{$c_cmd[0]} > ? ";
+						$sql .= "{$c_cmd[0]} > {$val} ";
 						array_push($args, $c_v);
 						break;
 					case 'GET':
-						$sql .= "{$c_cmd[0]} >= ? ";
+						$sql .= "{$c_cmd[0]} >= {$val} ";
 						array_push($args, $c_v);
 						break;
 					case 'LT':
-						$sql .= "{$c_cmd[0]} < ? ";
+						$sql .= "{$c_cmd[0]} < {$val} ";
 						array_push($args, $c_v);
 						break;
 					case 'LET':
-						$sql .= "{$c_cmd[0]} <= ? ";
+						$sql .= "{$c_cmd[0]} <= {$val} ";
 						array_push($args, $c_v);
 						break;
 					case 'IS_NULL':
