@@ -335,6 +335,7 @@ window.f = {
 						//Messenger().hideAll();
 						__this__.tip(data.info, "success");
 						__this__.page_update("#main-area", $("#main-area").data("link"));
+						$.Dialog.close();
 					}else{
 						__this__.tip(data.info, "error");
 					}

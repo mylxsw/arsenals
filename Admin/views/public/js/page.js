@@ -8,6 +8,10 @@ window.o_fn = {
 		// 页面刷新
 		refresh: function(){
 			f.page_update("#main-area", $("#main-area").data("link"));
+		},
+		// 全选
+		select_all: function(){
+			f.alert("全选");
 		}
 	},
 	// 一次性事件

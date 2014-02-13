@@ -10,6 +10,7 @@
 	<table class="table hovered">
 		<thead>
 			<tr>
+				<th class="text-left" style="width: 50px;"><a href="#" data-event="g.select_all">选择</a></th>
 				<th class="text-left">ID</th>
 				<th class="text-left">分类名称</th>
 				<th class="text-left">是否可用</th>
@@ -18,6 +19,7 @@
 		<tbody>
 			<?php foreach ($categories as $cat):?>
 				<tr>
+					<td><input type="checkbox" name="id" value="<?php echo $cat['id'];?>" /></td>
 					<td><?php echo $cat['id'];?></td>
 					<td><?php echo $cat['name'];?></td>
 					<td><?php echo $cat['isvalid'] == 1 ? '是' : '否';?></td>
