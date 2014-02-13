@@ -315,7 +315,8 @@ abstract class Model extends Arsenals {
      * 初始化查询条件数组为字符串，无prepare
      */ 
 	private function _init_conditions_no_prepare($conditions){
-        return $this->_init_conditions($conditions, false)[0];
+		$res = $this->_init_conditions($conditions, false);
+        return $res[0];
 	}
 	/**
 	 * 初始化查询条件数组为字符串

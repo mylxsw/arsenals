@@ -33,10 +33,10 @@ class Page extends Model {
     public function updatePage($data, $id){
         $entity = array();
         
-        isset($data['title'] && $entity['title'] = $data['title'];
-        isset($data['templates'] && $entity['templates'] = $data['templates'];
-        isset($data['attr'] && $entity['attr'] = $data['attr'];
-        isset($data['isvalid'] && $entity['isvalid'] = $data['isvalid'];
+        isset($data['title']) && $entity['title'] = $data['title'];
+        isset($data['templates']) && $entity['templates'] = $data['templates'];
+        isset($data['attr']) && $entity['attr'] = $data['attr'];
+        isset($data['isvalid']) && $entity['isvalid'] = $data['isvalid'];
         
         $entity['updator'] = $data['creator'];
         $entity['update_date'] = time();
