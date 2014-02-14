@@ -80,7 +80,7 @@ window.o_fn = {
 							o_fn.g.refresh();
 						}
 					});
-				});
+				}, 'post');
 			}
 		}
 	},

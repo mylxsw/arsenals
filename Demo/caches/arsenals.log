@@ -3131,3 +3131,20 @@
 2014-02-13 12:36:10  [info]  [Arsenals\Core\Filters] 类加载完成!
 2014-02-13 12:36:10  [debug]  [system] 系统运行时间: 0.0356
 2014-02-13 12:36:10  [debug]  [system] 控制器执行时间: 
+2014-02-14 11:08:16  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-14 11:08:16  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-14 11:08:16  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-14 11:08:16  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-14 11:08:16  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-14 11:08:16  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-14 11:08:16  [info]  [Demo\controllers\Index] 类加载完成!
+2014-02-14 11:08:16  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-14 11:08:16  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-14 11:08:16  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-14 11:08:16  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-14 11:08:17  [info]  [Demo\models\Navigator] 类加载完成!
+2014-02-14 11:08:17  [info]  [Demo\models\Setting] 类加载完成!
+2014-02-14 11:08:18  [info]  [Demo\models\Article] 类加载完成!
+2014-02-14 11:08:18  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-14 11:08:18  [debug]  [system] 系统运行时间: 2.1889
+2014-02-14 11:08:18  [debug]  [system] 控制器执行时间: 2.1541
