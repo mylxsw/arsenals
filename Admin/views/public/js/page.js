@@ -10,8 +10,17 @@ window.o_fn = {
 			f.page_update("#main-area", $("#main-area").data("link"));
 		},
 		// 全选
-		select_all: function(){
-			f.alert("全选");
+		select_all: function(_this){
+			var table = _this.parents('table');
+			var is_checked = table.data('checked');
+			
+			if(typeof is_checked == 'undefined'){
+				table.data('checked', false);
+				is_checked = false;
+			}
+
+			table.find('input.select_all_item:checkbox').prop('checked', !is_checked);
+			table.data('checked', !is_checked);
 		}
 	},
 	// 一次性事件
@@ -53,6 +62,24 @@ window.o_fn = {
 			// 添加分类
 			add: function(){
 				f.dialog('article/categoryAdd', "添加分类", {}, function(){
+				});
+			},
+			// 删除分类
+			del: function(){
+				var ids = $("#category_table").find('input.select_all_item:checked').map(function(){
+					return $(this).val();
+				}).get().join(",");
+
+				if(ids == ''){
+					return f.alert("请选择要删除的项!");
+				}
+
+				f.async('article/categoryDel', {ids: ids}, function(data){
+					f.alert(data.info, function(){
+						if(data.status == 1){
+							o_fn.g.refresh();
+						}
+					});
 				});
 			}
 		}

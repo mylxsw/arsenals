@@ -67,4 +67,10 @@ class Article extends Controller {
         
         return Ajax::ajaxReturn('添加成功！', Ajax::SUCCESS);
     }
+    /**
+     * 删除分类
+     */
+    public function categoryDel(){
+    	return Ajax::ajaxReturn('删除成功!', Ajax::SUCCESS);
+    }
 }

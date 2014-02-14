@@ -22,16 +22,20 @@ $(function(){
 		// 托管所有的链接事件，防止刷新页面
 		e.preventDefault();
 		f.page_update("#main-area", f.parseUrl($(this).attr("href")));
-	}).delegate("a[href='#']", "click", function(e){
-		// 托管所有#链接时间，进行不同事件处理
-		e.preventDefault();
-		var evt = $(this).attr("data-event").split('.');
-		o_fn[evt[0]][evt[1]]($(this));
 	}).delegate("select[data-event]", "change", function(){
 		// select事件触发
-		var evt = $(this).attr("data-event").split('.');
-		o_fn[evt[0]][evt[1]]($(this));
-	}).delegate("button[data-event]", "click", function(){
+		var evt = $(this).attr("data-event");
+		eval("o_fn." + evt + "($(this))");
+	}).delegate("a[href='#'],button[data-event]", "click", function(e){
+
+		if(e && e.preventDefault ) {
+		　　//阻止默认浏览器动作(W3C)
+		　　e.preventDefault();
+		} else {
+		　　//IE中阻止函数器默认动作的方式
+		　　window.event.returnValue = false;
+		}
+
 		// button按钮事件触发
 		var evt = $(this).attr("data-event");
 		//o_fn[evt[0]][evt[1]]($(this));
