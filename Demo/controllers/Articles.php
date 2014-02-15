@@ -22,7 +22,7 @@ class Articles extends Controller {
 		$articleModel = $this->model('Article');
 		$this->assign('articles', $articleModel->getAllArticles($category, $p));
 		
-		$this->assign('breadcrumbs', array('首页'=>'', 'C.D.Cafe'=> 'articles/list?cat=' . $category ));
+		$this->assign('breadcrumbs', array('首页'=>'', 'C.D.Cafe'=> 'articles/list/' . $category ));
 		$this->assign('current_nav', $category);
 		$this->assign('cat', $category);
 		$this->assign('p', $p);
@@ -40,7 +40,7 @@ class Articles extends Controller {
 		$this->assign('article', $article);
 		
 		$this->assign('id', $id);
-		$this->assign('breadcrumbs', array('首页'=>'', 'C.D.Cafe'=> 'articles/lists?cat=' . $article['cate'][0]['id'], $article['title'] => $article['id'] ));
+		$this->assign('breadcrumbs', array('首页'=>'', 'C.D.Cafe'=> 'articles/lists/' . $article['cate'][0]['id'], $article['title'] => $article['id'] ));
 		
 		return $this->view('articles/show');
 	}

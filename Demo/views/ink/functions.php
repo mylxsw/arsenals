@@ -13,6 +13,12 @@ define('SITE_URL', $config['site_url']);
 /**
  * 资源文件路径
  */
+function resources(){
+	echo SITE_URL , 'Resources/';
+}
+/**
+ * 资源文件路径
+ */
 function resource_path(){
 	echo SITE_URL , 'Demo/views/ink/public/';
 }

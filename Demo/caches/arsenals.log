@@ -1,0 +1,268 @@
+2014-02-15 11:10:34  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-15 11:10:34  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-15 11:10:34  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-15 11:10:34  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-15 11:10:34  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-15 11:10:34  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-15 11:10:34  [info]  [Demo\controllers\Index] 类加载完成!
+2014-02-15 11:10:34  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-15 11:10:34  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-15 11:10:34  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-15 11:10:34  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-15 11:10:35  [info]  [Demo\models\Navigator] 类加载完成!
+2014-02-15 11:10:35  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:35  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:35  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:35  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:35  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:35  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:35  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:35  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:35  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:35  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:35  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:35  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:35  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:35  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:35  [info]  [Demo\models\Setting] 类加载完成!
+2014-02-15 11:10:36  [debug]  [system] 执行SQL：SELECT * FROM ar_setting WHERE `namespace`='plugin' AND `isvalid`=1 AND `setting_key`='index_lunbo_imgs'
+2014-02-15 11:10:36  [info]  [Demo\models\Article] 类加载完成!
+2014-02-15 11:10:36  [debug]  [system] 执行SQL：SELECT * FROM ar_article WHERE id in (SELECT DISTINCT A.ID FROM ar_article_category AS A WHERE A.CATEGORY_ID in (3 )) ORDER BY PUBLISH_DATE DESC LIMIT 1
+2014-02-15 11:10:36  [debug]  [system] 执行SQL：SELECT * FROM ar_article WHERE id in (SELECT DISTINCT A.ID FROM ar_article_category AS A WHERE A.CATEGORY_ID in (2 )) ORDER BY PUBLISH_DATE DESC LIMIT 6
+2014-02-15 11:10:36  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-15 11:10:36  [debug]  [system] 系统运行时间: 2.1307
+2014-02-15 11:10:36  [debug]  [system] 控制器执行时间: 2.1054
+2014-02-15 11:10:49  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-15 11:10:49  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-15 11:10:49  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-15 11:10:49  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-15 11:10:49  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-15 11:10:49  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-15 11:10:49  [info]  [Demo\controllers\Index] 类加载完成!
+2014-02-15 11:10:49  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-15 11:10:49  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-15 11:10:49  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-15 11:10:49  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-15 11:10:50  [info]  [Demo\models\Navigator] 类加载完成!
+2014-02-15 11:10:50  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:50  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:50  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:50  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:50  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:50  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:50  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:50  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:50  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:50  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:50  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:50  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:50  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:50  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:10:50  [info]  [Demo\models\Setting] 类加载完成!
+2014-02-15 11:10:51  [debug]  [system] 执行SQL：SELECT * FROM ar_setting WHERE `namespace`='plugin' AND `isvalid`=1 AND `setting_key`='index_lunbo_imgs'
+2014-02-15 11:10:51  [info]  [Demo\models\Article] 类加载完成!
+2014-02-15 11:10:51  [debug]  [system] 执行SQL：SELECT * FROM ar_article WHERE id in (SELECT DISTINCT A.ID FROM ar_article_category AS A WHERE A.CATEGORY_ID in (3 )) ORDER BY PUBLISH_DATE DESC LIMIT 1
+2014-02-15 11:10:51  [debug]  [system] 执行SQL：SELECT * FROM ar_article WHERE id in (SELECT DISTINCT A.ID FROM ar_article_category AS A WHERE A.CATEGORY_ID in (2 )) ORDER BY PUBLISH_DATE DESC LIMIT 6
+2014-02-15 11:10:51  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-15 11:10:51  [debug]  [system] 系统运行时间: 2.1697
+2014-02-15 11:10:51  [debug]  [system] 控制器执行时间: 2.1243
+2014-02-15 11:44:48  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-15 11:44:48  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-15 11:44:48  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-15 11:44:48  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-15 11:44:48  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-15 11:44:48  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-15 11:44:48  [info]  [Demo\controllers\Index] 类加载完成!
+2014-02-15 11:44:48  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-15 11:44:48  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-15 11:44:48  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-15 11:44:50  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-15 11:44:50  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-15 11:44:50  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-15 11:44:50  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-15 11:44:50  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-15 11:44:50  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-15 11:44:50  [info]  [Demo\controllers\Index] 类加载完成!
+2014-02-15 11:44:50  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-15 11:44:50  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-15 11:44:50  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-15 11:45:00  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-15 11:45:00  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-15 11:45:00  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-15 11:45:00  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-15 11:45:00  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-15 11:45:00  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-15 11:45:00  [info]  [Demo\controllers\Index] 类加载完成!
+2014-02-15 11:45:00  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-15 11:45:00  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-15 11:45:00  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-15 11:45:10  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-15 11:45:10  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-15 11:45:10  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-15 11:45:10  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-15 11:45:10  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-15 11:45:10  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-15 11:45:10  [info]  [Demo\controllers\Index] 类加载完成!
+2014-02-15 11:45:10  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-15 11:45:10  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-15 11:45:10  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-15 11:45:10  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-15 11:45:11  [info]  [Demo\models\Navigator] 类加载完成!
+2014-02-15 11:45:11  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:45:11  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:45:11  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:45:11  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:45:11  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:45:11  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:45:11  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:45:11  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:45:11  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:45:11  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:45:11  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:45:11  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:45:11  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:45:11  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:45:11  [info]  [Demo\models\Setting] 类加载完成!
+2014-02-15 11:45:12  [debug]  [system] 执行SQL：SELECT * FROM ar_setting WHERE `namespace`='plugin' AND `isvalid`=1 AND `setting_key`='index_lunbo_imgs'
+2014-02-15 11:45:12  [info]  [Demo\models\Article] 类加载完成!
+2014-02-15 11:45:12  [debug]  [system] 执行SQL：SELECT * FROM ar_article WHERE id in (SELECT DISTINCT A.ID FROM ar_article_category AS A WHERE A.CATEGORY_ID in (3 )) ORDER BY PUBLISH_DATE DESC LIMIT 1
+2014-02-15 11:45:12  [debug]  [system] 执行SQL：SELECT * FROM ar_article WHERE id in (SELECT DISTINCT A.ID FROM ar_article_category AS A WHERE A.CATEGORY_ID in (2 )) ORDER BY PUBLISH_DATE DESC LIMIT 6
+2014-02-15 11:45:12  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-15 11:45:12  [debug]  [system] 系统运行时间: 2.1409
+2014-02-15 11:45:12  [debug]  [system] 控制器执行时间: 2.1057
+2014-02-15 11:46:56  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-15 11:46:56  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-15 11:46:56  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-15 11:46:56  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-15 11:46:56  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-15 11:46:56  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-15 11:46:56  [info]  [Demo\controllers\Index] 类加载完成!
+2014-02-15 11:46:56  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-15 11:46:56  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-15 11:46:56  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-15 11:46:56  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-15 11:46:57  [info]  [Demo\models\Navigator] 类加载完成!
+2014-02-15 11:46:57  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:46:57  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:46:57  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:46:57  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:46:57  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:46:57  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:46:57  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:46:57  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:46:57  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:46:57  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:46:57  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:46:57  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:46:57  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:46:57  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 11:46:57  [info]  [Demo\models\Setting] 类加载完成!
+2014-02-15 11:46:58  [debug]  [system] 执行SQL：SELECT * FROM ar_setting WHERE `namespace`='plugin' AND `isvalid`=1 AND `setting_key`='index_lunbo_imgs'
+2014-02-15 11:46:58  [info]  [Demo\models\Article] 类加载完成!
+2014-02-15 11:46:58  [debug]  [system] 执行SQL：SELECT * FROM ar_article WHERE id in (SELECT DISTINCT A.ID FROM ar_article_category AS A WHERE A.CATEGORY_ID in (3 )) ORDER BY PUBLISH_DATE DESC LIMIT 1
+2014-02-15 11:46:58  [debug]  [system] 执行SQL：SELECT * FROM ar_article WHERE id in (SELECT DISTINCT A.ID FROM ar_article_category AS A WHERE A.CATEGORY_ID in (2 )) ORDER BY PUBLISH_DATE DESC LIMIT 6
+2014-02-15 11:46:58  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-15 11:46:58  [debug]  [system] 系统运行时间: 2.1444
+2014-02-15 11:46:58  [debug]  [system] 控制器执行时间: 2.0992
+2014-02-15 13:13:57  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-15 13:13:57  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-15 13:13:57  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-15 13:13:57  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-15 13:13:57  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-15 13:13:57  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-15 13:13:57  [info]  [Demo\controllers\Index] 类加载完成!
+2014-02-15 13:13:57  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-15 13:13:57  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-15 13:13:57  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-15 13:13:57  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-15 13:13:58  [info]  [Demo\models\Navigator] 类加载完成!
+2014-02-15 13:13:58  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:13:58  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:13:58  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:13:58  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:13:58  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:13:58  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:13:58  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:13:58  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:13:58  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:13:58  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:13:58  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:13:58  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:13:58  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:13:58  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:13:58  [info]  [Demo\models\Setting] 类加载完成!
+2014-02-15 13:13:58  [debug]  [system] 执行SQL：SELECT * FROM ar_setting WHERE `namespace`='plugin' AND `isvalid`=1 AND `setting_key`='index_lunbo_imgs'
+2014-02-15 13:13:58  [info]  [Demo\models\Article] 类加载完成!
+2014-02-15 13:13:58  [debug]  [system] 执行SQL：SELECT * FROM ar_article WHERE id in (SELECT DISTINCT A.ID FROM ar_article_category AS A WHERE A.CATEGORY_ID in (3 )) ORDER BY PUBLISH_DATE DESC LIMIT 1
+2014-02-15 13:13:58  [debug]  [system] 执行SQL：SELECT * FROM ar_article WHERE id in (SELECT DISTINCT A.ID FROM ar_article_category AS A WHERE A.CATEGORY_ID in (2 )) ORDER BY PUBLISH_DATE DESC LIMIT 6
+2014-02-15 13:13:58  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-15 13:13:58  [debug]  [system] 系统运行时间: 1.1128
+2014-02-15 13:13:58  [debug]  [system] 控制器执行时间: 1.0870
+2014-02-15 13:14:03  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-15 13:14:03  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-15 13:14:03  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-15 13:14:03  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-15 13:14:03  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-15 13:14:03  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-15 13:14:03  [info]  [Demo\controllers\Index] 类加载完成!
+2014-02-15 13:14:03  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-15 13:14:03  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-15 13:14:03  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-15 13:14:03  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-15 13:14:04  [info]  [Demo\models\Navigator] 类加载完成!
+2014-02-15 13:14:04  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:04  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:04  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:04  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:04  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:04  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:04  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:04  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:04  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:04  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:04  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:04  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:04  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:04  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:04  [info]  [Demo\models\Setting] 类加载完成!
+2014-02-15 13:14:04  [debug]  [system] 执行SQL：SELECT * FROM ar_setting WHERE `namespace`='plugin' AND `isvalid`=1 AND `setting_key`='index_lunbo_imgs'
+2014-02-15 13:14:04  [info]  [Demo\models\Article] 类加载完成!
+2014-02-15 13:14:04  [debug]  [system] 执行SQL：SELECT * FROM ar_article WHERE id in (SELECT DISTINCT A.ID FROM ar_article_category AS A WHERE A.CATEGORY_ID in (3 )) ORDER BY PUBLISH_DATE DESC LIMIT 1
+2014-02-15 13:14:04  [debug]  [system] 执行SQL：SELECT * FROM ar_article WHERE id in (SELECT DISTINCT A.ID FROM ar_article_category AS A WHERE A.CATEGORY_ID in (2 )) ORDER BY PUBLISH_DATE DESC LIMIT 6
+2014-02-15 13:14:04  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-15 13:14:04  [debug]  [system] 系统运行时间: 1.0950
+2014-02-15 13:14:04  [debug]  [system] 控制器执行时间: 1.0777
+2014-02-15 13:14:06  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-15 13:14:06  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-15 13:14:06  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-15 13:14:06  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-15 13:14:06  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-15 13:14:06  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-15 13:14:06  [info]  [Demo\controllers\Index] 类加载完成!
+2014-02-15 13:14:06  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-15 13:14:06  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-15 13:14:06  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-15 13:14:06  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-15 13:14:07  [info]  [Demo\models\Navigator] 类加载完成!
+2014-02-15 13:14:07  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:07  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:07  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:07  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:07  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:07  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:07  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:07  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:07  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:07  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:07  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:07  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:07  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:07  [debug]  [system] 执行SQL：SELECT *  FROM ar_navigator  WHERE pid = ?  AND pos = ?   ORDER BY sort DESC
+2014-02-15 13:14:07  [info]  [Demo\models\Setting] 类加载完成!
+2014-02-15 13:14:07  [debug]  [system] 执行SQL：SELECT * FROM ar_setting WHERE `namespace`='plugin' AND `isvalid`=1 AND `setting_key`='index_lunbo_imgs'
+2014-02-15 13:14:07  [info]  [Demo\models\Article] 类加载完成!
+2014-02-15 13:14:07  [debug]  [system] 执行SQL：SELECT * FROM ar_article WHERE id in (SELECT DISTINCT A.ID FROM ar_article_category AS A WHERE A.CATEGORY_ID in (3 )) ORDER BY PUBLISH_DATE DESC LIMIT 1
+2014-02-15 13:14:07  [debug]  [system] 执行SQL：SELECT * FROM ar_article WHERE id in (SELECT DISTINCT A.ID FROM ar_article_category AS A WHERE A.CATEGORY_ID in (2 )) ORDER BY PUBLISH_DATE DESC LIMIT 6
+2014-02-15 13:14:07  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-15 13:14:07  [debug]  [system] 系统运行时间: 1.0738
+2014-02-15 13:14:07  [debug]  [system] 控制器执行时间: 1.0593

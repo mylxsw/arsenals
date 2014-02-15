@@ -469,7 +469,7 @@ abstract class Model extends Arsenals {
 	 * @return string
 	 */
 	protected function escape($str){
-		return mysql_real_escape_string($str);
+		return $this->_conn->real_escape_string($str);
 	}
 	/**
 	 * 获取表名
