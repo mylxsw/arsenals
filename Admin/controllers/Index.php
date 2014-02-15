@@ -2,18 +2,17 @@
 
 namespace Admin\controllers;
 
-use Arsenals\Core\Abstracts\Controller;
 /**
  *
  * @author guan
  *        
  */
-class Index extends Controller {
+class Index extends CoreController {
 	public function main(){
 		return $this->view('main');
 	}
 	
 	public function home(){
-		return "hello, world!";
+		return $this->view('home');
 	}
 }

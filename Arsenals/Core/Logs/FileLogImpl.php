@@ -27,7 +27,7 @@ class FileLogImpl implements Logs {
 	 * 获取日志文件名称
 	 */
 	private function _getLogFile(){
-		return CACHE_PATH . 'arsenals.log';
+		return CACHE_PATH . 'arsenals' . date('Y-m-d', time()) . '.log';
 	}
 
 	/* (non-PHPdoc)

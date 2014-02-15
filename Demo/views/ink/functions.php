@@ -70,7 +70,7 @@ function url($url){
  * @return string
  */
 function top_nav($current_nav = 'home'){
-	$navModel = Registry::load('Demo\\models\\Navigator');
+	$navModel = Registry::load('Common\\models\\Navigator');
 	$ui_top_menus = $navModel->getNavTrees(0,'top',3);
 // 	\Arsenals\Core\_D($ui_top_menus);
 	$_top_menus = '<li'. ($current_nav == 'home' ? ' class="active" ' : '') .'><a href="' . url('') . '"><i class="icon-home"></i></a></li>';
@@ -97,7 +97,7 @@ function top_nav($current_nav = 'home'){
  * @return string
  */
 function index_lunbo(){
-	$settingModel = Registry::load('Demo\\models\\Setting');
+	$settingModel = Registry::load('Common\\models\\Setting');
 	$lunbos = $settingModel->getSetting('index_lunbo_imgs', 'plugin');
 	$lunbo_imgs = \unserialize($lunbos['setting_value']);
 	$html = "<div id='sliderPlay' style='visibility: hidden'>";
@@ -113,7 +113,7 @@ function index_lunbo(){
  * @param number $count
  */
 function new_blog($category, $count = 1){
-	$articleModel = Registry::load('Demo\\models\\Article');
+	$articleModel = Registry::load('Common\\models\\Article');
 	return $articleModel->getNewArticlesInCategory($category, $count);	
 }
 /**

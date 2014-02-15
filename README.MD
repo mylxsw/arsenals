@@ -380,6 +380,35 @@ class DemoView implements View{
 
 配置常量VIEW_LAWE为 ```Demo\DemoViews\DemoView```即可。
 
+###日志系统
+开发过程中要进行日志记录，可以通过使用内置的 ```\Arsenals\Core\Log``` 类进行日志记录，默认情况下，系统日志功能是关闭的。   
+如果要启用日志功能，需要在项目入口文件中定义常量 ```LOG``` 为 ```true``` 。   
+默认情况下，系统会使用内置的文件方式进行日志写入，你也可以通过自定义日志实现进行接管日志写入操作，系统日志实现由常量 ```LOG_IMPL``` 定义，默认值为	```Arsenals\\Core\\Logs\\FileLogImpl``` ， 采用基于文件的方式。 
+
+要写入日志，使用一下方法：   
+<pre>
+$log = Registry::load('Arsenals\\Core\\Log');
+$log->debug("日志内容", '日志类型');
+</pre>
+
+日志类型含有三种： info, debug, error, warning。    
+如果需要获取日志内容， 使用 ```getLogs(日志级别)``` 方法。 
+
+如果需要控制写入日志的级别，可以通过log.php配置文件进行配置：
+<pre>
+return array(
+	'log_levels' => array('info', 'error', 'warning', 'debug') // 允许的日志级别
+);
+</pre>
+ 
+####自定义日志实现
+要使用自定义的日志实现，需要实现 ```Arsenals\Core\Logs``` 接口， 该接口含有两个方法：   
+<pre>
+public function write($level, $message);
+public function getLogs($level = null);
+</pre>
+然后再入口文件中定义日志实现就可以了。   
+<pre>define('LOG_IMPL', '你的日志实现类（包含命名空间）');</pre>
 ###杂项
 ####异常处理/错误处理
 可以在项目入口文件index.php中通过定义常量 ```ERROR_HANDLER``` 和 ```EXCEPTION_HANDLER``` 使用自定义的异常处理。  

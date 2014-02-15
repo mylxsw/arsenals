@@ -1,6 +1,6 @@
 <?php
 
-namespace Demo\models;
+namespace Common\models;
 
 use Arsenals\Core\Abstracts\Model;
 use Arsenals\Core\Exceptions\NoRecoredException;
@@ -166,7 +166,7 @@ class Article extends Model {
 		// 分割标签
 		$tags_array = explode(',', trim(str_replace(' ', '', $tags), ','));
 		
-		$tagModel = Registry::load('\\Demo\\models\\Tag');
+		$tagModel = Registry::load('\\Common\\models\\Tag');
 		// 遍历所有标签并插入
 		foreach ($tags_array as $tag){
 			$data = array();

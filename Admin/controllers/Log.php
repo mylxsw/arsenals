@@ -2,14 +2,13 @@
 
 namespace Admin\controllers;
 
-use Arsenals\Core\Abstracts\Controller;
 
 /**
  *
  * @author guan
  *        
  */
-class Log extends Controller {
+class Log extends CoreController {
 	public function lists(){
 		return $this->view('log/list');
 	}

@@ -2,10 +2,9 @@
 
 namespace Demo\controllers;
 
-use Arsenals\Core\Abstracts\Controller;
 use Arsenals\Core\Input;
 
-class Page extends Controller {
+class Page extends CoreController {
 	
 	public function show(Input $input, $id = null){
 		if(is_null($id)){

@@ -2,7 +2,6 @@
 
 namespace Demo\controllers;
 
-use Arsenals\Core\Abstracts\Controller;
 use Arsenals\Core\Input;
 /**
  * 文章控制器
@@ -10,7 +9,7 @@ use Arsenals\Core\Input;
  * @author 管宜尧<mylxsw@126.com>
  *
  */
-class Articles extends Controller {
+class Articles extends CoreController {
 	/**
 	 * 文章列表
 	 * GET: cat, p

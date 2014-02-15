@@ -1,4 +1,10 @@
 $(function(){
+    $("[data-load]").each(function(){
+        $(this).load($(this).data("load"), function(){});
+    });
+
+	METRO_AUTO_REINIT = true;
+	
 	// 内容区域事件委派绑定
 	$("#main-area").delegate(".o-toggle[data-target]", "click", function(e){
 		if(e.target.tagName.toUpperCase() == 'A'){

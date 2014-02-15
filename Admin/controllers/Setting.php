@@ -2,13 +2,12 @@
 
 namespace Admin\controllers;
 
-use Arsenals\Core\Abstracts\Controller;
 /**
  *
  * @author guan
  *        
  */
-class Setting extends Controller {
+class Setting extends CoreController {
 	public function lists(){
 		
 		return $this->view('setting/list');

@@ -1,6 +1,6 @@
 <?php
 
-namespace Demo\models;
+namespace Common\models;
 
 use Arsenals\Core\Abstracts\Model;
 /**

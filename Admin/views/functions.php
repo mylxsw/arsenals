@@ -162,3 +162,9 @@ function pagination($url, $totals, $page_count, $current, $show_offset = 3){
 			</nav>';
 	return $html;
 }
+/**
+ * 页面标题
+ */
+function block_header($title){
+	echo "<blockquote class=\"block-title\">{$title}</blockquote>";
+}

@@ -2,7 +2,6 @@
 
 namespace Admin\controllers;
 
-use Arsenals\Core\Abstracts\Controller;
 use Arsenals\Core\Session;
 use Admin\utils\Ajax;
 use Arsenals\Core\Registry;
@@ -11,13 +10,13 @@ use Arsenals\Core\Registry;
  * @author guan
  *        
  */
-class Article extends Controller {
+class Article extends CoreController {
 	/**
 	 * 文章发布页面
 	 */
 	public function write(){
-		$this->assign('categorys', $this->model('\\Demo\\models\\Category')->lists());
-		$this->assign('tags', $this->model('\\Demo\\models\\Tag')->lists());
+		$this->assign('categorys', $this->model('Category')->lists());
+		$this->assign('tags', $this->model('Tag')->lists());
 		
 		return $this->view('article/write');
 	}
@@ -36,7 +35,7 @@ class Article extends Controller {
 		$data['category_id'] = $this->post('category_id', 'required|int');
 		$data['author'] = $user['username'];
 		
-		$this->model('\\Demo\\models\\Article')->addArticle($data);
+		$this->model('Article')->addArticle($data);
 		
 		return Ajax::ajaxReturn('保存成功！', Ajax::SUCCESS);
 	}
@@ -44,7 +43,7 @@ class Article extends Controller {
 	 * 文章分类列表页面
 	 */
 	public function category(){
-		$categoryModel = Registry::load('Demo\\models\\Category');
+		$categoryModel = $this->model('Category');
 		$this->assign('categories', $categoryModel->lists(null));
 		return $this->view('article/category');
 	}
@@ -62,10 +61,33 @@ class Article extends Controller {
         $data['name'] = $this->post('name', null, 'len:1,100|required');
         $data['isvalid'] = 1;
         
-        $categoryModel = Registry::load('Demo\\models\\Category');
+        $categoryModel = $this->model('Category');
         $categoryModel->addCategory($data);
         
         return Ajax::ajaxReturn('添加成功！', Ajax::SUCCESS);
+    }
+    /**
+	 * 编辑分类页面
+     */
+    public function categoryEdit(){
+    	$id = $this->get('id', null, 'required|int');
+
+    	$categoryModel = $this->model('Category');
+    	$this->assign('cat', $categoryModel->load(array('id'=>$id)));
+
+    	return $this->view('article/category_edit');
+    }
+    /**
+     * 编辑分类保存
+     */
+    public function categoryEditPost(){
+    	$data = array();
+    	$data['name'] = $this->post('name', null, 'len:1, 100|required');
+
+    	$categoryModel = $this->model('Category');
+    	$categoryModel->updateCate($data, $this->post('id', null , 'required|int'));
+
+    	return Ajax::ajaxReturn('修改成功！', Ajax::SUCCESS);
     }
     /**
      * 删除分类
@@ -74,7 +96,7 @@ class Article extends Controller {
     	$ids = str_replace(' ', '', $this->post('ids', null, 'required|len:1,100'));
     	$ids_array = preg_split('/,/', $ids);
 
-    	$categoryModel = Registry::load('Demo\\models\\Category');
+    	$categoryModel = $this->model('Category');
     	$categoryModel->delCategroy($ids_array);
 
     	return Ajax::ajaxReturn('删除成功!', Ajax::SUCCESS);

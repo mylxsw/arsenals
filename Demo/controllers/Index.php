@@ -2,13 +2,12 @@
 
 namespace Demo\controllers;
 
-use Arsenals\Core\Abstracts\Controller;
 /**
  *
  * @author guan
  *        
  */
-class Index extends Controller{
+class Index extends CoreController{
 	public function index(){
 		$this->assign('current_nav', 'home');
 		return $this->view('home');

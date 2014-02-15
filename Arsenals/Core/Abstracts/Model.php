@@ -129,10 +129,10 @@ abstract class Model extends Arsenals {
 	 */
 	public function update($data, $conditions, $table = null){
         $table = is_null($table) ? $this->_table_name : $this->getTableName($table);
-        $sql = 'UPDATE `{$table}` SET ';
+        $sql = "UPDATE `{$table}` SET ";
         
         foreach($data as $k=>$v){
-            $sql .= "{$k}={$v},";
+            $sql .= "{$k}='{$v}',";
         }
         
         $sql = trim($sql, ',');

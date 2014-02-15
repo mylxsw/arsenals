@@ -2,16 +2,15 @@
 
 namespace Admin\controllers;
 
-use Arsenals\Core\Abstracts\Controller;
 use Admin\utils\Ajax;
 use Arsenals\Core\Session;
-use Admin\models\Log;
+use Common\models\Log;
 /**
  * 账户管理
  * @author guan
  *        
  */
-class Account extends Controller {
+class Account extends CoreController {
 	/**
 	 * 用户登陆页面
 	 */

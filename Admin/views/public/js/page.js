@@ -64,6 +64,16 @@ window.o_fn = {
 				f.dialog('article/categoryAdd', "添加分类", {}, function(){
 				});
 			},
+			// 编辑分类
+			edit: function(){
+				var id = $("#category_table").find('input.select_all_item:checked');
+				if(id.length != 1){
+					return f.alert("请选择一个要编辑的项!");
+				}
+				f.dialog('article/categoryEdit', "编辑分类", {id: id.val()}, function(){
+
+				});
+			},
 			// 删除分类
 			del: function(){
 				var ids = $("#category_table").find('input.select_all_item:checked').map(function(){
@@ -73,15 +83,49 @@ window.o_fn = {
 				if(ids == ''){
 					return f.alert("请选择要删除的项!");
 				}
+				f.confirm("确定要删除这些项？", function(){
+					f.async('article/categoryDel', {ids: ids}, function(data){
+						f.alert(data.info, function(){
+							if(data.status == 1){
+								o_fn.g.refresh();
+							}
+						});
+					}, 'post');
+				});
+			}
+		}
+	},
+	page:{
+		// 添加
+		add: function(){
+			
+		},
+		// 编辑
+		edit: function(){
+			var id = $("#category_table").find('input.select_all_item:checked');
+			if(id.length != 1){
+				return f.alert("请选择一个要编辑的项!");
+			}
+			
+		},
+		// 删除
+		del: function(){
+			var ids = $("#page_table").find('input.select_all_item:checked').map(function(){
+				return $(this).val();
+			}).get().join(",");
 
-				f.async('article/categoryDel', {ids: ids}, function(data){
+			if(ids == ''){
+				return f.alert("请选择要删除的项!");
+			}
+			f.confirm("确定要删除这些项？", function(){
+				f.async('page/del', {ids: ids}, function(data){
 					f.alert(data.info, function(){
 						if(data.status == 1){
 							o_fn.g.refresh();
 						}
 					});
 				}, 'post');
-			}
+			});
 		}
 	},
 	// 归档页面

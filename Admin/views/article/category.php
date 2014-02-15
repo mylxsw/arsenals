@@ -4,7 +4,7 @@
 	    <div class="toolbar-group">
 	        <button data-event="article.category.add"><i class="icon-plus"></i> 添加</button>
 	        <button data-event="article.category.del"><i class="icon-remove"></i> 删除</button>
-	        <button><i class="icon-folder-2"></i> 编辑</button>
+	        <button data-event="article.category.edit"><i class="icon-folder-2"></i> 编辑</button>
 	    </div>
 	</div>
 	<table class="table hovered" id="category_table">
