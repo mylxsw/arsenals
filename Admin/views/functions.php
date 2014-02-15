@@ -168,3 +168,21 @@ function pagination($url, $totals, $page_count, $current, $show_offset = 3){
 function block_header($title){
 	echo "<blockquote class=\"block-title\">{$title}</blockquote>";
 }
+
+function code_editor($name, $default = ''){
+	$resource_path = SITE_URL ;
+	echo <<<START
+<input type="hidden" name="{$name}" value="{$default}" />
+<div class="code-area"><pre id="ace-editor" class="ace-editor" ></pre></div>
+<script src="{$resource_path}Public/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var ace_editor = ace.edit("ace-editor");
+    ace_editor.setTheme("ace/theme/eclipse");
+    ace_editor.getSession().setMode("ace/mode/php");
+    ace_editor.setValue($("input[name='{$name}']").val());
+    ace_editor.getSession().on("change", function(e){
+		$("input[name='{$name}']").val(ace_editor.getValue());
+    });
+</script>
+START;
+}

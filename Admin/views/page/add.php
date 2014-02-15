@@ -9,7 +9,7 @@
 			</div>
 			<label for="template">页面模板</label>
 			<div class="input-control textarea size9">
-		    	<textarea name="templates" id="templates" style="min-height: 200px;" placeholder="页面模板" ></textarea>
+		    	<?php \Admin\code_editor('templates');?>
 			</div>
 			<div class="o-clear"></div>
 			<button type="button" class="primary" onclick="f.submit('#add-new-page')">提交</button>
