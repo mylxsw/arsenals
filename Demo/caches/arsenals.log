@@ -3014,3 +3014,70 @@
 2014-02-13 10:39:54  [info]  [Arsenals\Core\Output] 类加载完成!
 2014-02-13 10:39:54  [debug]  [system] 系统运行时间: 2.1187
 2014-02-13 10:39:54  [debug]  [system] 控制器执行时间: 2.0909
+2014-02-13 22:24:48  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-13 22:24:48  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-13 22:24:48  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-13 22:24:48  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-13 22:24:48  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-13 22:24:48  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-13 22:24:48  [info]  [Demo\controllers\Index] 类加载完成!
+2014-02-13 22:24:48  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-13 22:24:48  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-13 22:24:48  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-13 22:24:48  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-13 22:24:49  [info]  [Demo\models\Navigator] 类加载完成!
+2014-02-13 22:24:50  [info]  [Demo\models\Setting] 类加载完成!
+2014-02-13 22:24:51  [info]  [Demo\models\Article] 类加载完成!
+2014-02-13 22:24:51  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-13 22:24:51  [debug]  [system] 系统运行时间: 2.5487
+2014-02-13 22:24:51  [debug]  [system] 控制器执行时间: 2.5273
+2014-02-13 22:47:35  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-13 22:47:35  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-13 22:47:35  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-13 22:47:35  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-13 22:47:35  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-13 22:47:35  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-13 22:47:35  [info]  [Demo\controllers\Articles] 类加载完成!
+2014-02-13 22:47:35  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-13 22:47:35  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-13 22:47:36  [info]  [Demo\models\Article] 类加载完成!
+2014-02-13 22:47:36  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-13 22:47:36  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-13 22:47:36  [info]  [Demo\models\Navigator] 类加载完成!
+2014-02-13 22:47:36  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-13 22:47:36  [debug]  [system] 系统运行时间: 1.1455
+2014-02-13 22:47:36  [debug]  [system] 控制器执行时间: 1.1268
+2014-02-13 22:47:40  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-13 22:47:40  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-13 22:47:40  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-13 22:47:40  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-13 22:47:40  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-13 22:47:40  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-13 22:47:40  [info]  [Demo\controllers\Index] 类加载完成!
+2014-02-13 22:47:40  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-13 22:47:40  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-13 22:47:40  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-13 22:47:40  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-13 22:47:41  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-13 22:47:41  [info]  [Demo\models\Navigator] 类加载完成!
+2014-02-13 22:47:41  [info]  [Demo\models\Setting] 类加载完成!
+2014-02-13 22:47:42  [info]  [Demo\models\Article] 类加载完成!
+2014-02-13 22:47:42  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-13 22:47:42  [debug]  [system] 系统运行时间: 2.0704
+2014-02-13 22:47:42  [debug]  [system] 控制器执行时间: 2.0536
+2014-02-13 22:47:42  [info]  [Arsenals\Core\Session] 类加载完成!
+2014-02-13 22:47:42  [info]  [Arsenals\Core\Security] 类加载完成!
+2014-02-13 22:47:42  [info]  [Arsenals\Core\Uri] 类加载完成!
+2014-02-13 22:47:42  [info]  [Arsenals\Core\Router] 类加载完成!
+2014-02-13 22:47:42  [info]  [Arsenals\Core\Filters] 类加载完成!
+2014-02-13 22:47:42  [info]  [Demo\controllers\Index] 类加载完成!
+2014-02-13 22:47:42  [info]  [Arsenals\Core\Input] 类加载完成!
+2014-02-13 22:47:42  [info]  [Arsenals\Core\Views\ViewAndModel] 类加载完成!
+2014-02-13 22:47:42  [info]  [Arsenals\Core\Views\SimpleView] 类加载完成!
+2014-02-13 22:47:42  [info]  [Arsenals\Core\Database\MySQL\MySQLiDataSource] 类加载完成!
+2014-02-13 22:47:43  [info]  [Demo\models\Navigator] 类加载完成!
+2014-02-13 22:47:43  [info]  [Demo\models\Setting] 类加载完成!
+2014-02-13 22:47:44  [info]  [Demo\models\Article] 类加载完成!
+2014-02-13 22:47:44  [info]  [Arsenals\Core\Output] 类加载完成!
+2014-02-13 22:47:45  [debug]  [system] 系统运行时间: 3.7014
+2014-02-13 22:47:45  [debug]  [system] 控制器执行时间: 2.0844
