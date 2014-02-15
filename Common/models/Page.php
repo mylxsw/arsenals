@@ -17,8 +17,8 @@ class Page extends Model {
         $entity['templates'] = $data['templates'];
         $entity['creator'] = $data['creator'];
         $entity['create_date'] = time();
-        $entity['attr'] = $data['attr'];
-        $entity['isvalid'] = 1;
+        $entity['attr'] = serialize($data['attr']);
+        $entity['isvalid'] = $data['isvalid'];
         
         return $this->save($entity);
     }
@@ -38,11 +38,22 @@ class Page extends Model {
         isset($data['attr']) && $entity['attr'] = $data['attr'];
         isset($data['isvalid']) && $entity['isvalid'] = $data['isvalid'];
         
-        $entity['updator'] = $data['creator'];
+        $entity['updator'] = $data['updator'];
         $entity['update_date'] = time();
         
         
         $this->update($entity, array('id'=> intval($id)));
+    }
+    /**
+     *  删除页面
+     */
+    public function delPage($id) {
+        if(!is_array($id)){
+            $id = array($id);
+        }
+        foreach($id as $i){
+            $this->delete(array('id'=>$i));
+        }
     }
     /**
      *  列出所有页面

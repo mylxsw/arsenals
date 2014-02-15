@@ -98,15 +98,16 @@ window.o_fn = {
 	page:{
 		// 添加
 		add: function(){
-			
+			f.page_update("#main-area", 'page/add');
 		},
 		// 编辑
 		edit: function(){
-			var id = $("#category_table").find('input.select_all_item:checked');
+			var id = $("#page_table").find('input.select_all_item:checked');
 			if(id.length != 1){
 				return f.alert("请选择一个要编辑的项!");
 			}
-			
+
+			f.page_update("#main-area", 'page/edit??id=' + id.val());
 		},
 		// 删除
 		del: function(){
