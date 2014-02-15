@@ -80,6 +80,7 @@ window.f = {
 	async: function(url, params, callback, method){
 		method = method || "get";
 		params = params || {};
+		url = this.parseUrl(url);
 		callback = callback || function(data){
 			f.tip(data.info);
 		};

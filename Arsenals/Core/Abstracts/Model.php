@@ -5,6 +5,7 @@ namespace Arsenals\Core\Abstracts;
 use Arsenals\Core\Database\SessionFactory;
 use Arsenals\Core\Config;
 use Arsenals\Core\Exceptions\QueryException;
+use Arsenals\Core\Registry;
 /**
  * 抽象模型
  * 
@@ -75,7 +76,7 @@ abstract class Model extends Arsenals {
 			$conditions_result = $this->_init_conditions($conditions);
 			$sql .= $conditions_result[0];
 			$args = $conditions_result[1];
-			$this->query($sql, $args);
+			$this->query($sql, $args, true);
 		}else{
 			throw new QueryException('执行删除操作必须指定查询条件!');
 		}
@@ -226,7 +227,10 @@ abstract class Model extends Arsenals {
         if(is_null($args)){
             $args = array();
         }
-        
+        // 日志记录
+        $log = Registry::load('Arsenals\\Core\\Log');
+		$log->debug("执行SQL：{$sql}", 'system');
+
 		// 如果没有提供参数数组，则执行普通查询
 		if(\count($args) == 0){
 			$res = $this->_conn->query($sql);

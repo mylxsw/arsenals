@@ -22,14 +22,24 @@ class Category extends Model {
     /**
      * 删除文章分类
      * 
-     * @param int $id
+     * @param int|array $id
      */ 
     public function delCategroy($id){
-        // 移动所有文章分类下的文章到回收站
-        $this->moveArtCatToOther($moved_cat_id, $dest_cat_id);
-        
-        // 删除该分类
-        $this->delete(array('id'=>$id));
+        if(!is_array($id)){
+            $id = array($id);
+        }
+        foreach($id as $i){
+            // 删除文章关联
+            $this->delCatArts($i);
+            // 删除该分类
+            $this->delete(array('id'=>$i));
+        }
+    }
+    /**
+     *  删除指定分类下的所有文章关联
+     */
+    public function delCatArts($cat_id){
+        $this->delete(array('category_id'=>$cat_id), 'article_category');
     }
     /**
      * 移动指定分类下的文章到另一个分类下

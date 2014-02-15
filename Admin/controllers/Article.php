@@ -67,4 +67,16 @@ class Article extends Controller {
         
         return Ajax::ajaxReturn('添加成功！', Ajax::SUCCESS);
     }
+    /**
+     * 删除分类
+     */
+    public function categoryDel(){
+    	$ids = str_replace(' ', '', $this->post('ids', null, 'required|len:1,100'));
+    	$ids_array = preg_split('/,/', $ids);
+
+    	$categoryModel = Registry::load('Demo\\models\\Category');
+    	$categoryModel->delCategroy($ids_array);
+
+    	return Ajax::ajaxReturn('删除成功!', Ajax::SUCCESS);
+    }
 }
