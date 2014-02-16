@@ -43,7 +43,7 @@ $(function(){
 				if(data.status == 1){
 					window.setTimeout(function(){
 						window.location.href="<?php echo \Admin\url('account/login');?>";
-						}, 3000);
+						}, 1000);
 				}
 			});
 		});

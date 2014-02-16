@@ -32,7 +32,7 @@ class Article extends CoreController {
 		$data['content'] = $this->post('blog_textarea', null, 'len:0,4000');
 		$data['intro'] = $this->post('intro', null, 'len:0, 200');
 		$data['tag'] = $this->post('tag', null);
-		$data['category_id'] = $this->post('category_id', 'required|int');
+		$data['category_id'] = $this->post('category_id', 'required');
 		$data['author'] = $user['username'];
 		
 		$this->model('Article')->addArticle($data);
@@ -100,5 +100,51 @@ class Article extends CoreController {
     	$categoryModel->delCategroy($ids_array);
 
     	return Ajax::ajaxReturn('删除成功!', Ajax::SUCCESS);
+    }
+    /**
+     * 归档列表
+     */
+    public function lists(){
+        $p = $this->get('p', 1, 'int');
+        
+        $articleModel = $this->model('Article');
+        $this->assign('articles', $articleModel->getAllArticles($p));
+    	
+        $this->assign('p', $p);
+        return $this->view('article/list');
+    }
+
+    public function temp(){
+        return $this->view('article/temp');
+    }
+    /**
+     * 删除文章
+     */ 
+    public function del(){
+        $ids = str_replace(' ', '', $this->post('ids', null, 'required|len:1,100'));
+        $ids_array = preg_split('/,/', $ids);
+
+        $articleModel = $this->model('Article');
+        $articleModel->deleteArticle($ids_array);
+
+        return Ajax::ajaxReturn('删除成功!', Ajax::SUCCESS);
+    }
+
+    public function edit(){
+        $id = $this->get('id', null, 'int|required');
+
+        $articleModel = $this->model('Article');
+        $this->assign('art', $articleModel->load(array('id' => $id)));
+        
+        $this->assign('categorys', $this->model('Category')->lists());
+        $this->assign('tags', $this->model('Tag')->lists());
+
+        return $this->view('article/edit');
+    }
+
+    public function editPost(){
+
+        
+        return Ajax::ajaxReturn('修改成功！', Ajax::SUCCESS);
     }
 }

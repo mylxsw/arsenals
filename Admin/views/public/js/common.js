@@ -246,7 +246,7 @@ window.f = {
 				_t.data("old-link", old_link);
 			}
 			_t.data("link", link);
-			$(this).fadeIn();
+			$(this).fadeIn('fast');
 		});
 	},
 	/**

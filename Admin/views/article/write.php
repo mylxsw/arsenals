@@ -8,9 +8,9 @@
 	      <input type="text" name="blog_title" id="blog_title" placeholder="标题" />
 	      <button class="btn-clear" tabindex="-1" type="button"></button>
 		</div>
-		<label for="category">分类</label>
+		<label for="category">分类 (Ctrl多选)</label>
 		<div class="input-control select size4">
-	     	<select name="category_id" id="category">
+	     	<select name="category_id[]" id="category" multiple>
 				<?php foreach($categorys as $k=>$v): ?>
 					<option value="<?php echo $v['id'];?>"><?php echo $v['name']; ?></option>
 				<?php endforeach;?>

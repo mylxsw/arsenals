@@ -31,9 +31,9 @@
         	</div>
         </section>
 	</div>
-	<footer class="screen-size-helper">
+	<!-- <footer class="screen-size-helper">
 		<p class="title">Design By AgileDEV.pw</p>
-	</footer>
+	</footer> -->
 	<script src="<?php \Admin\public_resource_path()?>jquery/jquery.min.js"></script>
 	<script src="<?php \Admin\public_resource_path()?>jquery/jquery.cookie.js"></script>
 	<script src="<?php \Admin\public_resource_path()?>jquery/jquery.widget.min.js"></script>

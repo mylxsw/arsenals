@@ -5,9 +5,11 @@
 		<div class="new-product push-left">
 			<div class="np-title">新品活动</div>
 			<div class="np-body">
-				<?php $_new_good = \Demo\views\ink\new_blog(3);?>
-				<img src="<?php echo $_new_good[0]['feature_img'];?>" />
-				<p><a href="<?php echo \Demo\views\ink\url('articles/show?id=' . $_new_good[0]['id']);?>"><?php echo $_new_good[0]['title'];?></a></p>
+				<?php $_new_good = \Demo\views\ink\new_blog(2);?>
+				<?php if(count($_new_good) > 0 ): ?>
+					<img src="<?php echo $_new_good[0]['feature_img'];?>" />
+					<p><a href="<?php echo \Demo\views\ink\url('articles/show?id=' . $_new_good[0]['id']);?>"><?php echo $_new_good[0]['title'];?></a></p>
+				<?php endif;?>
 			</div>
 		</div>
 		<div class="new-activy pull-left">

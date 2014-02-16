@@ -28,6 +28,13 @@ class Tag extends Model {
 			return $this->save($data);
 		}
 		return $tag['id'];
-	}
+	}	
 
+	/**
+	 * 获取指定文章的标签
+	 */ 
+	public function getTagsByArtId($id){
+		$sql = "SELECT * FROM `" . $this->getTableName() . "` WHERE id in (SELECT tag_id FROM `" . $this->getTableName('article_tag') . "` WHERE article_id='" . intval($id) . "' )";
+        return $this->query($sql);
+	}
 }

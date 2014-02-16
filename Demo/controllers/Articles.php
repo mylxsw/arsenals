@@ -19,7 +19,7 @@ class Articles extends CoreController {
 		$p = $this->get('p', 1);
 		
 		$articleModel = $this->model('Article');
-		$this->assign('articles', $articleModel->getAllArticles($category, $p));
+		$this->assign('articles', $articleModel->getAllArticlesInCate($category, $p));
 		
 		$this->assign('breadcrumbs', array('首页'=>'', 'C.D.Cafe'=> 'articles/list/' . $category ));
 		$this->assign('current_nav', $category);

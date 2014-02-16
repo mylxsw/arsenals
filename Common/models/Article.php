@@ -38,13 +38,25 @@ class Article extends Model {
 		}
 		return $res[0];
 	}
-	
 	/**
 	 * 查询所有文章
 	 * @param unknown $category
 	 * @return NULL
 	 */
-	public function getAllArticles($category, $p = 1){
+	public function getAllArticles($p = 1){
+		$sql = "SELECT * FROM `" . $this->getTableName() . "` ORDER BY PUBLISH_DATE DESC";
+		return array(
+			'data' => $this->select($sql, array(), $p),
+			'total' => $this->getPageRecordCounts(),
+			'page' => $this->getPageCounts()
+			);
+	}
+	/**
+	 * 查询所有文章(分类下)
+	 * @param unknown $category
+	 * @return NULL
+	 */
+	public function getAllArticlesInCate($category, $p = 1){
 		if (!is_array($category)) {
 			$category = array($category);
 		}
@@ -81,12 +93,17 @@ class Article extends Model {
 	}
 	/**
 	 * 删除文章
-	 * @param number $article_id
+	 * @param number $id
 	 */
-	public function deleteArticle($article_id){
-		$this->delArtToCateMapByArtId($article_id);
-		$this->delArtToTagMapByArtId($article_id);
-		$this->delete(array('id' => $article_id));
+	public function deleteArticle($id){
+		 if(!is_array($id)){
+            $id = array($id);
+        }
+        foreach($id as $i){
+            $this->delArtToCateMapByArtId($i);
+			$this->delArtToTagMapByArtId($i);
+			$this->delete(array('id' => $i));
+        }
 	}
 	/**
 	 * 根据文章id删除文章分类关联
@@ -141,21 +158,26 @@ class Article extends Model {
 	/**
 	 * 添加文章到分类的关联
 	 * @param number $article_id
-	 * @param number $category_id
+	 * @param number|array $category_id
 	 * @param number $sort
 	 * @param number $is_main
 	 */
 	public function mapArtToCate($article_id, $category_id, $sort = 0, $is_main = 0){
 		$data = array();
 		$data['article_id'] = $article_id;
-		$data['category_id'] = $category_id;
+		$data['sort'] = 0;
+		$data['is_main'] = 0;
 		
-		if(is_null($this->load($data, 'article_category'))){
-			$data['sort'] = $sort;
-			$data['is_main'] = $is_main;
-			
-			$this->save($data, 'article_category');
+		if(!is_array($category_id)){
+			$category_id = array($category_id);
 		}
+		foreach ($category_id as $cate_id) {
+			$data['category_id'] = $cate_id;
+			if(is_null($this->load($data, 'article_category'))){
+				$this->save($data, 'article_category');
+			}
+		}
+		
 	}
 	/**
 	 * 添加文章到标签的关联

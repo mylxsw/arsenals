@@ -28,6 +28,10 @@ $(function(){
 		// 托管所有的链接事件，防止刷新页面
 		e.preventDefault();
 		f.page_update("#main-area", f.parseUrl($(this).attr("href")));
+	}).delegate("button[data-url]", "click", function(){
+		var url = $(this).data('url');
+		f.page_update("#main-area", f.parseUrl(url));
+		return false;
 	}).delegate("select[data-event]", "change", function(){
 		// select事件触发
 		var evt = $(this).attr("data-event");

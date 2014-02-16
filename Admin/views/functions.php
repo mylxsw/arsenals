@@ -28,6 +28,12 @@ function htmlToText($html){
 	return strip_tags($html);
 }
 /**
+ * 安全输出html内容
+ */ 
+function escape($text){
+	echo htmlspecialchars($text);
+}
+/**
  * 解析超链接
  * @param unknown $url
  */
@@ -130,12 +136,12 @@ function pagination($url, $totals, $page_count, $current, $show_offset = 3){
 		$current = 1;
 	}
 
-	$html = '<nav class="ink-navigation">
-				<ul class="pagination">';
+	$html = '<div class="pagination">
+				<ul>';
 
 	// 是否显示上一页
 	if($current > 1){
-		$html .= '<li class="previous"><a href="' . url("{$url}?p=" . ($current - 1)) . '">上一页</a></li>';
+		$html .= '<li class="prev"><a href="' . url("{$url}?p=" . ($current - 1)) . '">上一页</a></li>';
 	}
 
 	$start = 1;
@@ -159,7 +165,7 @@ function pagination($url, $totals, $page_count, $current, $show_offset = 3){
 	}
 
 	$html .= '	</ul>
-			</nav>';
+			</div>';
 	return $html;
 }
 /**
@@ -185,4 +191,30 @@ function code_editor($name, $default = ''){
     });
 </script>
 START;
+}
+/**
+ * 获取文章分类
+ */ 
+function category($id, $join_str = ', '){
+	$categoryModel = Registry::load('Common\\models\\Category');
+	$categorys = $categoryModel->getCatesByArtId($id);
+	
+	$cate_arr = array();
+	foreach ($categorys as $k => $v) {
+		$cate_arr[] = $join_str === false ? $v['id'] : $v['name'];
+	}
+
+	return $join_str === false ? $cate_arr : implode($join_str, $cate_arr);
+}
+
+function tags($id, $join_str = ','){
+	$tagModel = Registry::load('Common\\models\\Tag');
+	$tags = $tagModel->getTagsByArtId($id);
+
+	$tag_arr = array();
+	foreach ($tags as $t) {
+		$tag_arr[] = $t['name'];
+	}
+
+	return implode($join_str, $tag_arr);
 }
