@@ -35,6 +35,7 @@
 		<p class="title">Design By AgileDEV.pw</p>
 	</footer>
 	<script src="<?php \Admin\public_resource_path()?>jquery/jquery.min.js"></script>
+	<script src="<?php \Admin\public_resource_path()?>jquery/jquery.cookie.js"></script>
 	<script src="<?php \Admin\public_resource_path()?>jquery/jquery.widget.min.js"></script>
 	<script src="<?php \Admin\public_resource_path()?>metro-ui-css/metro.min.js"></script>
 	<script src="<?php \Admin\public_resource_path()?>jquery.form.js"></script>	
