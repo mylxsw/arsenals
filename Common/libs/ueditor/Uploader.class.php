@@ -4,7 +4,7 @@ session_id($_GET['PHPSESSID']);
 session_start();
 $user = $_SESSION['user'];
 if($user['role'] != 'admin'){
-	echo '{"state":"' . session_id() . '"}';
+	echo '{"state":"禁止上传"}';
 	exit();
 }
 /**
