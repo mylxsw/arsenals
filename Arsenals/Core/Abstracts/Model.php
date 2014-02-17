@@ -301,7 +301,7 @@ abstract class Model extends Arsenals {
 	 * @param string $table
 	 * @throws QueryException
 	 */
-	public function lists($limit = 10, $table = null){
+	public function lists($limit = null, $table = null){
 		$table = is_null($table) ? $this->_table_name : $this->getTableName($table);
 		
 		$sql = "SELECT * FROM {$table}";

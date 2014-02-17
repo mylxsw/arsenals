@@ -21,6 +21,24 @@ window.o_fn = {
 
 			table.find('input.select_all_item:checkbox').prop('checked', !is_checked);
 			table.data('checked', !is_checked);
+		},
+		// 统一删除操作
+		del: function(table_id, url){
+			var ids = $(table_id).find('input.select_all_item:checked').map(function(){
+				return $(this).val();
+			}).get().join(",");
+
+			if(ids == ''){
+				return f.alert("请选择要删除的项!");
+			}
+			f.confirm("确定要删除这些项？", function(){
+				f.async(url, {ids: ids}, function(data){
+					f.tip(data.info, data.status == 1 ? 'success':'error');
+					if(data.status == 1){
+						o_fn.g.refresh();
+					}
+				}, 'post');
+			});
 		}
 	},
 	// 一次性事件
@@ -57,6 +75,17 @@ window.o_fn = {
 	},
 	// 文章管理相关
 	article: {
+		del: function(){
+			o_fn.g.del('#article_table', 'article/del');
+		},
+		edit: function(){
+			var id = $("#article_table").find('input.select_all_item:checked');
+			if(id.length != 1){
+				return f.alert("请选择一个要编辑的项!");
+			}
+
+			f.page_update("#main-area", 'article/edit??id=' + id.val());
+		},
 		// 文章分类
 		category: {
 			// 添加分类
@@ -76,22 +105,7 @@ window.o_fn = {
 			},
 			// 删除分类
 			del: function(){
-				var ids = $("#category_table").find('input.select_all_item:checked').map(function(){
-					return $(this).val();
-				}).get().join(",");
-
-				if(ids == ''){
-					return f.alert("请选择要删除的项!");
-				}
-				f.confirm("确定要删除这些项？", function(){
-					f.async('article/categoryDel', {ids: ids}, function(data){
-						f.alert(data.info, function(){
-							if(data.status == 1){
-								o_fn.g.refresh();
-							}
-						});
-					}, 'post');
-				});
+				o_fn.g.del('#category_table', 'article/categoryDel');
 			}
 		}
 	},
@@ -111,22 +125,7 @@ window.o_fn = {
 		},
 		// 删除
 		del: function(){
-			var ids = $("#page_table").find('input.select_all_item:checked').map(function(){
-				return $(this).val();
-			}).get().join(",");
-
-			if(ids == ''){
-				return f.alert("请选择要删除的项!");
-			}
-			f.confirm("确定要删除这些项？", function(){
-				f.async('page/del', {ids: ids}, function(data){
-					f.alert(data.info, function(){
-						if(data.status == 1){
-							o_fn.g.refresh();
-						}
-					});
-				}, 'post');
-			});
+			o_fn.g.del('#page_table', 'page/del');
 		}
 	},
 	// 归档页面

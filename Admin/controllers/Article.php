@@ -20,19 +20,43 @@ class Article extends CoreController {
 		
 		return $this->view('article/write');
 	}
+    private function _imageUpload($field){
+        if(isset($_FILES[$field]) && $_FILES[$field]['error'] == 0){
+            if ((($_FILES[$field]["type"] == "image/gif")
+                || ($_FILES[$field]["type"] == "image/jpeg")
+                || ($_FILES[$field]["type"] == "image/pjpeg"))
+                && ($_FILES[$field]["size"] < 1000000)) {
+                if ($_FILES[$field]["error"] > 0) {
+                    throw new \Common\FileUploadException("错误: " . $_FILES[$field]["error"]);
+                } else {
+                    $dest_file = 'Resources/uploads/' . md5($_FILES[$field]['name']) . '.' 
+                        . substr($_FILES[$field]['name'], strrpos($_FILES[$field]['name'], '.') + 1);
+                    move_uploaded_file($_FILES[$field]['tmp_name'], BASE_PATH . $dest_file);
+
+                    return $dest_file;
+                }
+            } else {
+                throw new \Common\FileUploadException("错误: 文件不合法");
+            }
+        }
+        return '';
+    }
 	/**
 	 * 文章发布提交
 	 * @return \Arsenals\Core\Views\Ajax
 	 */
 	public function writePost(){
-		$user = Session::get('user');
-		
-		$data = array();
+        $user = Session::get('user');
+        $data = array();
+        // 处理文件上传
+        $data['feature_img'] = $this->_imageUpload('feature_img');
+
+        // 处理表单
 		$data['title'] = $this->post('blog_title', null, 'required|len:1,100');
-		$data['content'] = $this->post('blog_textarea', null, 'len:0,4000');
-		$data['intro'] = $this->post('intro', null, 'len:0, 200');
+		$data['content'] = $this->post('blog_textarea', null, 'len:0,80000');
+		$data['intro'] = $this->post('intro', null, 'len:0, 500');
 		$data['tag'] = $this->post('tag', null);
-		$data['category_id'] = $this->post('category_id', 'required|int');
+		$data['category_id'] = $this->post('category_id', 'required');
 		$data['author'] = $user['username'];
 		
 		$this->model('Article')->addArticle($data);
@@ -100,5 +124,67 @@ class Article extends CoreController {
     	$categoryModel->delCategroy($ids_array);
 
     	return Ajax::ajaxReturn('删除成功!', Ajax::SUCCESS);
+    }
+    /**
+     * 归档列表
+     */
+    public function lists(){
+        $p = $this->get('p', 1, 'int');
+        
+        $articleModel = $this->model('Article');
+        $this->assign('articles', $articleModel->getAllArticles($p));
+    	
+        $this->assign('p', $p);
+        return $this->view('article/list');
+    }
+
+    public function temp(){
+        return $this->view('article/temp');
+    }
+    /**
+     * 删除文章
+     */ 
+    public function del(){
+        $ids = str_replace(' ', '', $this->post('ids', null, 'required|len:1,100'));
+        $ids_array = preg_split('/,/', $ids);
+
+        $articleModel = $this->model('Article');
+        $articleModel->deleteArticle($ids_array);
+
+        return Ajax::ajaxReturn('删除成功!', Ajax::SUCCESS);
+    }
+
+    public function edit(){
+        $id = $this->get('id', null, 'int|required');
+
+        $articleModel = $this->model('Article');
+        $this->assign('art', $articleModel->load(array('id' => $id)));
+        
+        $this->assign('categorys', $this->model('Category')->lists());
+        $this->assign('tags', $this->model('Tag')->lists());
+
+        return $this->view('article/edit');
+    }
+
+    public function editPost(){
+        $user = Session::get('user');
+        
+        $data = array();
+        
+        $data['feature_img'] = $this->_imageUpload('feature_img');
+
+        $data['title'] = $this->post('blog_title', null, 'required|len:1,100');
+        $data['content'] = $this->post('blog_textarea', null, 'len:0,80000');
+        $data['intro'] = $this->post('intro', null, 'len:0, 500');
+        $data['tag'] = $this->post('tag', null);
+        $data['category_id'] = $this->post('category_id', 'required');
+        //$data['author'] = $user['username'];
+        $data['updator'] = $user['username'];
+        //
+        $id = $this->post('id', null, 'required|int');
+        
+        $this->model('Article')->updateArticle($data, $id);
+        
+        return Ajax::ajaxReturn('修改成功！', Ajax::SUCCESS);
     }
 }

@@ -4,7 +4,10 @@ $(function(){
     });
 
 	METRO_AUTO_REINIT = true;
-	
+	// 页面事件
+	$("body").delegate("form", "submit", function(){
+		return f.ajaxSubmit($(this));
+	});
 	// 内容区域事件委派绑定
 	$("#main-area").delegate(".o-toggle[data-target]", "click", function(e){
 		if(e.target.tagName.toUpperCase() == 'A'){
@@ -22,12 +25,14 @@ $(function(){
 				'' : (input.val() + ",")
 			) 
 			+ $(this).attr("href"));
-	}).delegate("form", "submit", function(){
-		return f.ajaxSubmit($(this));
 	}).delegate("a[href!='#']:not(.direct)", "click", function(e){
 		// 托管所有的链接事件，防止刷新页面
 		e.preventDefault();
 		f.page_update("#main-area", f.parseUrl($(this).attr("href")));
+	}).delegate("button[data-url]", "click", function(){
+		var url = $(this).data('url');
+		f.page_update("#main-area", f.parseUrl(url));
+		return false;
 	}).delegate("select[data-event]", "change", function(){
 		// select事件触发
 		var evt = $(this).attr("data-event");

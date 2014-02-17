@@ -71,4 +71,13 @@ class Category extends Model {
         $res = $this->query($sql);
         return $res[0]['total'];
     }
+    /**
+     * 查询文章所属的所有分类
+     * 
+     * @param int $id 文章id
+     */ 
+    public function getCatesByArtId($id){
+        $sql = "SELECT * FROM `" . $this->getTableName() . "` WHERE id in (SELECT category_id FROM `" . $this->getTableName('article_category') . "` WHERE article_id='" . intval($id) . "' )";
+        return $this->query($sql);
+    }
 }

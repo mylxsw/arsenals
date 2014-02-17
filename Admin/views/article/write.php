@@ -1,5 +1,5 @@
 <blockquote class="block-title">写文章</blockquote>
-<form action="<?php echo \Admin\url('article/writePost');?>" method="post" id="o-form-write-article">
+<form action="<?php echo \Admin\url('article/writePost');?>" method="post" id="o-form-write-article" enctype="multipart/form-data">
 	<input type="hidden" name="id" value="" />
 	<input type="hidden" name="act" value="" />
 	<fieldset>
@@ -8,9 +8,9 @@
 	      <input type="text" name="blog_title" id="blog_title" placeholder="标题" />
 	      <button class="btn-clear" tabindex="-1" type="button"></button>
 		</div>
-		<label for="category">分类</label>
+		<label for="category">分类 (Ctrl多选)</label>
 		<div class="input-control select size4">
-	     	<select name="category_id" id="category">
+	     	<select name="category_id[]" id="category" multiple>
 				<?php foreach($categorys as $k=>$v): ?>
 					<option value="<?php echo $v['id'];?>"><?php echo $v['name']; ?></option>
 				<?php endforeach;?>
@@ -36,7 +36,12 @@
 		<div class="input-control textarea size 10">
 		    <script name="blog_textarea"  type="text/plain" id="blog_textarea"></script>
 		</div>
-		
+		<label for="feature_img">封面图片</label>
+		<div class="input-control file size4" data-role="input-control">
+			<input type="file" name="feature_img" id="feature_img" data-role="input-control" />
+			<button class="btn-file"></button>
+		</div>
+		<div class="o-clear"></div>
       	<button type="button" class="primary" data-event="blog.submit_to_blog" id="submit_to_blog">提交</button>
 	</fieldset>
 </form>
@@ -44,4 +49,5 @@
 <script src="<?php \Admin\public_resource_path();?>ueditor/ueditor.all.min.js"></script>
 <script type="text/javascript">
 window.UM = UE.getEditor('blog_textarea');
+$.Metro.initInputs();
 </script>

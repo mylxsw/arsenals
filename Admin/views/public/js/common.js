@@ -126,6 +126,7 @@ window.f = {
 	dialog: function(url, title, params, callback){
 		params = params || {};
 		callback = callback || function(){};
+		url = this.parseUrl(url);
 		$.get(url, params, function(data){
 			$.Dialog({
 				shadow: true,
@@ -246,7 +247,7 @@ window.f = {
 				_t.data("old-link", old_link);
 			}
 			_t.data("link", link);
-			$(this).fadeIn();
+			$(this).fadeIn('fast');
 		});
 	},
 	/**

@@ -76,7 +76,13 @@ class Input extends Arsenals {
 		}
 		// 进行类型校验
 		try{
-			self::validate($this->_get[$key], $type);
+			$val = $this->_get[$key];
+			if(!is_array($val)){
+				$vals = array($val);
+			}
+			foreach ($vals as $v) {
+				self::validate($v, $type);
+			}
 		}catch(TypeErrorException $e){
 			throw new TypeErrorException("[{$key}] {$e->getMessage()}");
 		}
@@ -101,7 +107,13 @@ class Input extends Arsenals {
 		}
 		// 进行类型校验
 		try{
-			self::validate($this->_post[$key], $type);
+			$val = $this->_post[$key];
+			if(!is_array($val)){
+				$vals = array($val);
+			}
+			foreach ($vals as $v) {
+				self::validate($v, $type);
+			}
 		}catch(TypeErrorException $e){
 			throw new TypeErrorException("[{$key}] {$e->getMessage()}");
 		}
@@ -125,7 +137,13 @@ class Input extends Arsenals {
 		}
 		// 进行类型校验
 		try{
-			self::validate($this->_request[$key], $type);
+			$val = $this->_request[$key];
+			if(!is_array($val)){
+				$vals = array($val);
+			}
+			foreach ($vals as $v) {
+				self::validate($v, $type);
+			}
 		}catch(TypeErrorException $e){
 			throw new TypeErrorException("[{$key}] {$e->getMessage()}");
 		}
