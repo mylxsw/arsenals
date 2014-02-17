@@ -83,12 +83,12 @@ class Article extends Model {
 			$category = array($category);
 		}
 		$sql = "SELECT * FROM " . $this->getTableName() . " WHERE id in (";
-		$sql .= "SELECT DISTINCT A.ID FROM " . $this->getTableName('article_category') . " AS A WHERE A.CATEGORY_ID in (";
+		$sql .= "SELECT DISTINCT A.ARTICLE_ID FROM " . $this->getTableName('article_category') . " AS A WHERE A.CATEGORY_ID in (";
 		foreach ($category as $k){
 			$sql .= intval($k) . ' ,';
 		}
 		$sql = rtrim($sql, ',') . ')) ORDER BY PUBLISH_DATE DESC LIMIT ' . intval($count);
-	
+		
 		return $this->query($sql);
 	}
 	/**
@@ -132,6 +132,7 @@ class Article extends Model {
 		$save_data['author'] = $data['author'];
 		$save_data['creator'] = $data['author'];
 		$save_data['publish_date'] = time();
+		$save_data['feature_img'] = $data['feature_img'];
 		
 		$article_id = $this->save($save_data);
 		// 保存分类信息
@@ -139,7 +140,26 @@ class Article extends Model {
 		// 保存标签信息
 		$this->mapArtToTags($article_id, $data['tag']);
 	}
+	public function updateArticle($data, $id){
+		$id = intval($id);
+		// 保存文章信息
+		//$save_data['isvalid'] = 1;
+		$save_data['title'] = $data['title'];
+		$save_data['content'] = $data['content'];
+		$save_data['intro'] = $data['intro'];
+		//$save_data['author'] = $data['author'];
+		//$save_data['creator'] = $data['author'];
+		//$save_data['publish_date'] = time();
+		$save_data['updator'] = $data['updator'];
+		$save_data['update_date'] = time();
+		isset($data['feature_img']) && $data['feature_img'] != '' && $save_data['feature_img'] = $data['feature_img'];
 
+		$this->update($save_data, array('id'=>$id));
+		// 保存分类信息
+		$this->mapArtToCate($id, $data['category_id']);
+		// 保存标签信息
+		$this->mapArtToTags($id, $data['tag']);
+	}
     /**
      * 从指定分类删除指定文章
      * @param int $art_id

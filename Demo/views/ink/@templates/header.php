@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>C.D.Cafe</title>
-	<meta name="description" content="">
-	<meta name="author" content="ink, cookbook, recipes">
+	<meta name="description" content="C.D.Cafe主页， 基于Arsenals框架开发">
+	<meta name="author" content="mylxsw, code.404, ink, cookbook, recipes">
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">

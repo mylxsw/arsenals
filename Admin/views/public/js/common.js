@@ -126,6 +126,7 @@ window.f = {
 	dialog: function(url, title, params, callback){
 		params = params || {};
 		callback = callback || function(){};
+		url = this.parseUrl(url);
 		$.get(url, params, function(data){
 			$.Dialog({
 				shadow: true,

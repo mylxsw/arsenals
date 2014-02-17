@@ -15,15 +15,17 @@ class Articles extends CoreController {
 	 * GET: cat, p
 	 * OUTPUT: p, current_nav, breadcrumbs, articles
 	 */
-	public function lists(Input $input, $category){
+	public function lists(Input $input, $category_id){
 		$p = $this->get('p', 1);
 		
 		$articleModel = $this->model('Article');
-		$this->assign('articles', $articleModel->getAllArticlesInCate($category, $p));
+		$this->assign('articles', $articleModel->getAllArticlesInCate($category_id, $p));
+
+		$category = $this->model('Category')->load(array('id'=>$category_id));
 		
-		$this->assign('breadcrumbs', array('首页'=>'', 'C.D.Cafe'=> 'articles/list/' . $category ));
-		$this->assign('current_nav', $category);
-		$this->assign('cat', $category);
+		$this->assign('breadcrumbs', array('首页'=>'', $category['name']=> 'articles/list/' . $category['id']));
+		$this->assign('current_nav', $category_id);
+		$this->assign('cat', $category_id);
 		$this->assign('p', $p);
 		return $this->view('articles/lists');
 	}
@@ -39,7 +41,7 @@ class Articles extends CoreController {
 		$this->assign('article', $article);
 		
 		$this->assign('id', $id);
-		$this->assign('breadcrumbs', array('首页'=>'', 'C.D.Cafe'=> 'articles/lists/' . $article['cate'][0]['id'], $article['title'] => $article['id'] ));
+		$this->assign('breadcrumbs', array('首页'=>'', $article['cate'][0]['name']=> 'articles/lists/' . $article['cate'][0]['id'], $article['title'] => $article['id'] ));
 		
 		return $this->view('articles/show');
 	}

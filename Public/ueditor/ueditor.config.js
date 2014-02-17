@@ -67,8 +67,8 @@
         ,webAppKey:"fI42qGCMe3w2wX65bulfyOfi"
         ,initialContent:''    //初始化编辑器的内容,也可以通过textarea/script给值，看官网例子
 
-        ,initialFrameWidth:760  //初始化编辑器宽度,默认1000
-        ,initialFrameHeight:320  //初始化编辑器高度,默认320
+        ,initialFrameWidth:945  //初始化编辑器宽度,默认1000
+        ,initialFrameHeight:500  //初始化编辑器高度,默认320
 
         ,zIndex : 900     //编辑器层级的基数,默认是900
 
@@ -76,11 +76,11 @@
 
         //wordCount
         ,wordCount:true          //是否开启字数统计
-        ,maximumWords:10000       //允许的最大字符数
+        ,maximumWords:80000       //允许的最大字符数
         //字数统计提示，{#count}代表当前字数，{#leave}代表还可以输入多少字符数,留空支持多语言自动切换，否则按此配置显示
-        ,wordCountMsg:''   //当前已输入 {#count} 个字符，您还可以输入{#leave} 个字符
+        ,wordCountMsg:'当前已输入{#count}个字符，您还可以输入{#leave}个字符.'   //当前已输入 {#count} 个字符，您还可以输入{#leave} 个字符
         //超出字数限制提示  留空支持多语言自动切换，否则按此配置显示
-        ,wordOverFlowMsg:''    //<span style="color:red;">你输入的字符个数已经超出最大允许值，服务器可能会拒绝保存！</span>
+        ,wordOverFlowMsg:'<span style="color:red;">你输入的字符个数已经超出最大允许值，服务器可能会拒绝保存！</span>'    //<span style="color:red;">你输入的字符个数已经超出最大允许值，服务器可能会拒绝保存！</span>
 
         //highlightcode
         // 代码高亮时需要加载的第三方插件的路径

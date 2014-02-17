@@ -1,5 +1,5 @@
 <?php \Admin\block_header('编辑文章');?>
-<form action="<?php echo \Admin\url('article/editPost');?>" method="post" id="o-form-edit-article">
+<form action="<?php echo \Admin\url('article/editPost');?>" method="post" id="o-form-edit-article" enctype="multipart/form-data">
 	<input type="hidden" name="id" value="<?php echo $art['id'];?>" />
 	<fieldset>
 		<label for="blog_title">标题</label>
@@ -36,7 +36,13 @@
 		<div class="input-control textarea size 10">
 		    <script name="blog_textarea"  type="text/plain" id="blog_textarea"><?php echo $art['content'];?></script>
 		</div>
-		
+		<label for="feature_img">封面图片</label>
+		<div class="input-control file size4" data-role="input-control">
+			<input type="file" name="feature_img" id="feature_img" data-role="input-control" />
+			<button class="btn-file"></button>
+		</div>
+		<div id="feature_img_area" class="image-container"></div>
+		<div class="o-clear"></div>
       	<button type="button" class="primary" onclick="f.submit('#o-form-edit-article')" >提交</button>
 	</fieldset>
 </form>
@@ -44,4 +50,11 @@
 <script src="<?php \Admin\public_resource_path();?>ueditor/ueditor.all.min.js"></script>
 <script type="text/javascript">
 window.UM = UE.getEditor('blog_textarea');
+$.Metro.initInputs();
+$(function(){
+	var feature_img = "<?php echo $art['feature_img'];?>";
+	if (feature_img != '') {
+		$("#feature_img_area").html("<img src='" + feature_img + "' class='span4' /><div class=\"overlay-fluid\">" + feature_img + "</div>");
+	};
+});	
 </script>

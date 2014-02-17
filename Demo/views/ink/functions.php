@@ -55,6 +55,9 @@ function htmlToText($html){
  * @param unknown $url
  */
 function url($url){
+	if(trim($url) == '#'){
+		return "javascript:void();";
+	}
 	$split_pos = strpos($url, '?');
 	$new_url = $split_pos ? (substr($url, 0, $split_pos). '?' . str_replace('?', '&', substr($url, $split_pos + 1))) : $url;
 	
@@ -148,7 +151,10 @@ function breadcrumbs($elements = array()){
  * @return string
  */
 function pagination($url, $totals, $page_count, $current, $show_offset = 3){
-	
+	if($page_count <= 1){
+		return '';
+	}
+
 	$current = intval($current);
 	if($current < 1 || $current > $page_count){
 		$current = 1;
