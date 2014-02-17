@@ -46,6 +46,7 @@ class Widget extends CoreController {
 			'system' => array(
 					'users' => array('用户', 'user/user_info'),
 					'settings' => array('配置', 'setting/lists'),
+					'navigator' => array('导航', 'navigator/lists'),
 					'logs' => array('日志', 'log/lists')
 			)
 		);
