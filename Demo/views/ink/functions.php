@@ -93,6 +93,28 @@ function top_nav($current_nav = 'home'){
 	return $_top_menus;
 }
 /**
+ * 底部导航
+ * @return string
+ */
+function footer_nav(){
+	$navModel = Registry::load('Common\\models\\Navigator');
+	$ui_footer_menus = $navModel->getNavTrees(0,'footer',3);
+	
+	$html = '';
+	foreach($ui_footer_menus as $k => $v){
+		$html .= '<div class="ftb-col">';
+		$html .= '<h4>' . $v['name'] . '</h4>';
+		if( isset($v['sub']) && is_array($v['sub']) && count($v['sub']) > 0){
+			foreach ($v['sub'] as $k2=>$v2){
+				$html .= '<li><a href="' . url($v2['url']) . "\">{$v2['name']}</a></li>";
+			}
+		}
+		$html .= '</div>';
+	}
+	
+	return $html;
+}
+/**
  * 首页轮播图
  * @return string
  */
