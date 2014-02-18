@@ -101,12 +101,19 @@
 	    font-size: 2em;
 		margin-top: 20px;
 		img{
-			max-width: 220px;
+			max-height: 45px;
+			display: block;
 		}
 		small:before  {
 		    content: "|";
 		    margin: 0 0.5em;
 		    font-size: 1.6em;
+		}
+		.left-img{
+			float:left;
+		}
+		.right-img{
+			margin-left: 726px;
 		}
 	}
 }
@@ -127,6 +134,7 @@
 	#main-left{
 		width: @content-width;
 		float: left;
+		min-height: 500px;
 	}
 	#main-right{
 		width: 261px;
@@ -189,14 +197,14 @@
 
 .footer {
 	width: 100%;
-	line-height: 1.6em;
-	font-size: 1em;
+	line-height: 1.5;
+	font-size: 14px;
 	padding: 0.5333333333333333em 0.8em;
 	background: rgba(0, 0, 0, 0.7);
 	z-index: 100;
 	text-align: center;
-	min-height: 100px;
-	border-top: 3px solid #71b43a;
+	/* min-height: 100px; */
+	border-top: 1px solid #71b43a;
 	
 	.title,ul {
 		color: white;
@@ -261,4 +269,8 @@
 		}
 	}
 }
-z
+.more{
+	float: right;
+	color: #CCC;
+	cursor: pointer;
+}

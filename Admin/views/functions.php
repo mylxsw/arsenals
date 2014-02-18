@@ -201,7 +201,7 @@ function category($id, $join_str = ', '){
 	
 	$cate_arr = array();
 	foreach ($categorys as $k => $v) {
-		$cate_arr[] = $join_str === false ? $v['id'] : $v['name'];
+		$cate_arr[] = $join_str === false ? $v['id'] : ("<a href='" . url("article/lists?cat={$v['id']}") . "'>{$v['name']}</a>");
 	}
 
 	return $join_str === false ? $cate_arr : implode($join_str, $cate_arr);

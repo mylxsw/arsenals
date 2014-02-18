@@ -33,5 +33,5 @@
 			<?php endforeach;?>
 		</tbody>
 	</table>
-	<?php echo \Admin\pagination('article/lists', $articles['total'], $articles['page'], $p); ?>
+	<?php echo \Admin\pagination('article/lists' . (isset($cat) && !is_null($cat) ? "?cat={$cat}" : ''), $articles['total'], $articles['page'], $p); ?>
 </div>

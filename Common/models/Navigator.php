@@ -21,6 +21,7 @@ class Navigator extends Model {
 		$top_menus_list = $this->find(array(
 				'pid'  => $top_id,
 				'pos'	=> $nav_pos,
+				'isvalid' => 1
 		), 'sort DESC');
 			
 		$level --;

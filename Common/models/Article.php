@@ -43,7 +43,11 @@ class Article extends Model {
 	 * @param unknown $category
 	 * @return NULL
 	 */
-	public function getAllArticles($p = 1){
+	public function getAllArticles($p = 1, $cat = null){
+		if (!is_null($cat) && $cat > 0){
+			return $this->getAllArticlesInCate($cat, $p);
+		}
+		
 		$sql = "SELECT * FROM `" . $this->getTableName() . "` ORDER BY PUBLISH_DATE DESC";
 		return array(
 			'data' => $this->select($sql, array(), $p),
@@ -188,6 +192,11 @@ class Article extends Model {
 		$data['sort'] = 0;
 		$data['is_main'] = 0;
 		
+		// 删除文章所有分类关联
+		$sql = "DELETE FROM `" . $this->getTableName('article_category') . "` WHERE article_id='" . intval($article_id) . "'";
+		$this->query($sql, null, true);
+		
+		// 重新添加关联
 		if(!is_array($category_id)){
 			$category_id = array($category_id);
 		}

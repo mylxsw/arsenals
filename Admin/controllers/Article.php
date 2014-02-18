@@ -4,7 +4,6 @@ namespace Admin\controllers;
 
 use Arsenals\Core\Session;
 use Admin\utils\Ajax;
-use Arsenals\Core\Registry;
 /**
  *
  * @author guan
@@ -29,7 +28,7 @@ class Article extends CoreController {
                 if ($_FILES[$field]["error"] > 0) {
                     throw new \Common\FileUploadException("错误: " . $_FILES[$field]["error"]);
                 } else {
-                    $dest_file = 'Resources/uploads/' . md5($_FILES[$field]['name']) . '.' 
+                    $dest_file = 'Resources/uploads/' . md5($_FILES[$field]['name'] . time()) . '.' 
                         . substr($_FILES[$field]['name'], strrpos($_FILES[$field]['name'], '.') + 1);
                     move_uploaded_file($_FILES[$field]['tmp_name'], BASE_PATH . $dest_file);
 
@@ -129,12 +128,14 @@ class Article extends CoreController {
      * 归档列表
      */
     public function lists(){
+    	$cat = $this->get('cat', null, 'int');
         $p = $this->get('p', 1, 'int');
         
         $articleModel = $this->model('Article');
-        $this->assign('articles', $articleModel->getAllArticles($p));
+        $this->assign('articles', $articleModel->getAllArticles($p, $cat));
     	
         $this->assign('p', $p);
+        $this->assign('cat', $cat);
         return $this->view('article/list');
     }
 

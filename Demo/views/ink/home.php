@@ -3,7 +3,7 @@
 	<?php echo Demo\views\ink\index_lunbo();?>
 	<div>
 		<div class="new-product push-left">
-			<div class="np-title">本周咖啡</div>
+			<div class="np-title">本周咖啡<a class="more" href="<?php echo \Demo\views\ink\url('articles/lists/14');?>">More...</a></div>
 			<div class="np-body">
 				<?php $_new_good = \Demo\views\ink\new_blog(14);?>
 				<?php if(is_array($_new_good) && count($_new_good) > 0 ): ?>
@@ -13,7 +13,7 @@
 			</div>
 		</div>
 		<div class="new-activy pull-left">
-			<div class="na-title">CD推荐</div>
+			<div class="na-title">CD推荐<a class="more" href="<?php echo \Demo\views\ink\url('articles/lists/15');?>">More...</a></div>
 			<?php $_new_activys = \Demo\views\ink\new_blog(15, 6);?>
 			<div class="na-body">
 			<?php foreach ($_new_activys as $_ak=>$_av):?>
@@ -26,6 +26,7 @@
 			</div>
 		</div>
 	</div>
+	<div><!-- 底部广告部分 --></div>
 </div>
 <script>
 require(['page/home'], function(home){

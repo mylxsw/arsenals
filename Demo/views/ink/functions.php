@@ -79,10 +79,7 @@ function top_nav($current_nav = 'home'){
 	$_top_menus = '<li'. ($current_nav == 'home' ? ' class="active" ' : '') .'><a href="' . url('') . '"><i class="icon-home"></i></a></li>';
 	foreach($ui_top_menus as $k => $v){
 		$_top_menus .=
-			'<li'. ($current_nav == $v['id'] ?
-				' class="active" '
-				: '')
-				."><a href=\"" . url($v['url']) . "\">{$v['name']}</a>";
+			"<li><a href=\"" . url($v['url']) . "\">{$v['name']}</a>";
 		if( isset($v['sub']) && is_array($v['sub']) && count($v['sub']) > 0){
 			$_top_menus .= "<ul class=\"submenu\">";
 			foreach ($v['sub'] as $k2=>$v2){
@@ -115,7 +112,7 @@ function footer_nav(){
 		$html .= '</div>';
 	}
 	
-	return $html;
+	return $html == '' ? '' : "<div class=\"ft-body\">{$html}<div class=\"ink-clear\"></div></div>";
 }
 /**
  * 首页轮播图
