@@ -18,7 +18,12 @@ function resource_path(){
 function public_resource_path(){
 	echo SITE_URL . 'Public/';
 }
-
+/**
+ * 站点根路径
+ */
+function site_url(){
+	return SITE_URL ;
+}
 /**
  * 移除Html中的标签
  * @param string $html

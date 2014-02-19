@@ -132,7 +132,7 @@ abstract class Model extends Arsenals {
         $sql = "UPDATE `{$table}` SET ";
         
         foreach($data as $k=>$v){
-            $sql .= "{$k}='{$v}',";
+            $sql .= "{$k}='" . $this->escape($v) . "',";
         }
         
         $sql = trim($sql, ',');
