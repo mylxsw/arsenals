@@ -56,7 +56,7 @@ function htmlToText($html){
  */
 function url($url){
 	if(trim($url) == '#'){
-		return "javascript:void();";
+		return "javascript:void(0)";
 	}
 	$split_pos = strpos($url, '?');
 	$new_url = $split_pos ? (substr($url, 0, $split_pos). '?' . str_replace('?', '&', substr($url, $split_pos + 1))) : $url;
@@ -218,4 +218,12 @@ function remark($article_id){
 		return false;
 	}
 	echo "<div class=\"comments\"><div class='ds-thread' data-thread-key=\"article_{$article_id}\"></div></div>";
+}
+
+function custom_css(){
+	//echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"\" />";
+	$settingModel = Registry::load('Common\\models\\Setting');
+	$cssSet = $settingModel->getSetting('custom_css', 'views');
+	
+	echo "<style type='text/css'>", $cssSet['setting_value'] , "</style>";
 }

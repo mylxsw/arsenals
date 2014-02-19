@@ -27,6 +27,12 @@ class ArsenalsBootstrap {
 	public function startup(){
 		// 检查PHP版本
 		if(version_compare(PHP_VERSION, '5.3.0', '>=')){
+			// 初始化环境变量
+			self::$_paths = array_merge(
+				array_map(function($item){
+							return APP_PATH . $item;
+						}, self::$_paths), 
+				explode(PATH_SEPARATOR, get_include_path()));
 			// 类自动加载
 			spl_autoload_register(array(new self(), 'autoload'), true, true);
 			// 处理魔术引号
@@ -75,15 +81,9 @@ class ArsenalsBootstrap {
 		// 载入系统函数库
 		require ARSENALS_CORE_PATH . 'Common.php';
 		// 配置统一的异常处理
-		set_error_handler(ERROR_HANDLER);
-		set_exception_handler(EXCEPTION_HANDLER);
+		set_error_handler(\Arsenals\Core\Utils\CommonUtils::convStringToCallUserFuncParam(ERROR_HANDLER));
+		set_exception_handler(\Arsenals\Core\Utils\CommonUtils::convStringToCallUserFuncParam(EXCEPTION_HANDLER));
 		
-		// 初始化环境变量
-		self::$_paths = array_merge(
-				array_map(function($item){
-							return APP_PATH . $item;
-						}, self::$_paths), 
-				explode(PATH_SEPARATOR, get_include_path()));
 		
 		// 开始计算系统运行时间
 		$benchMark = Registry::load('Arsenals\\Core\\Benchmark');
