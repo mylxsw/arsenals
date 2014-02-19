@@ -211,7 +211,27 @@ function category($id, $join_str = ', '){
 
 	return $join_str === false ? $cate_arr : implode($join_str, $cate_arr);
 }
+/**
+ * 获取导航
+ * @param unknown $id
+ * @return string
+ */
+function naviagtor($id){
+	if ($id == 0){
+		return '一级导航';
+	}
+	$navModel = Registry::load('Common\\models\\Navigator');
+	$nav = $navModel->load(array('id' => intval($id)));
+	
+	return $nav['name'];
+}
 
+/**
+ * 获取标签
+ * @param unknown $id
+ * @param string $join_str
+ * @return string
+ */
 function tags($id, $join_str = ','){
 	$tagModel = Registry::load('Common\\models\\Tag');
 	$tags = $tagModel->getTagsByArtId($id);

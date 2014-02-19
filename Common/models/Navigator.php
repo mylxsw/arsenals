@@ -11,6 +11,18 @@ use Arsenals\Core\Abstracts\Model;
  */
 class Navigator extends Model {
 	/**
+	 * 根据条件列出导航
+	 * @param unknown $condition
+	 * @return Ambigous <multitype:, multitype:multitype: , unknown>
+	 */
+	public function listByCondition($condition = array()){
+		$sql = "SELECT * FROM `" . $this->getTableName() . "` WHERE ";
+		$sql .= $this->_init_conditions_no_prepare($condition);
+		$sql .= " ORDER BY pos DESC, pid ASC, sort DESC";
+		
+		return $this->query($sql);
+	}
+	/**
 	 * 递归获取导航树
 	 * @param number $top_id 导航顶级id
 	 * @param string $nav_pos 导航位置

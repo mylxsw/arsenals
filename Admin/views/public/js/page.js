@@ -128,6 +128,24 @@ window.o_fn = {
 			o_fn.g.del('#page_table', 'page/del');
 		}
 	},
+	navigator: {
+		add: function(){
+			f.dialog('navigator/add', "添加导航", {}, function(){
+			});
+		},
+		del: function(){
+			o_fn.g.del('#navigator_table', 'navigator/del');
+		}, 
+		edit: function(){
+			var id = $("#navigator_table").find('input.select_all_item:checked');
+			if(id.length != 1){
+				return f.alert("请选择一个要编辑的项!");
+			}
+			f.dialog('navigator/edit', "编辑导航", {id: id.val()}, function(){
+
+			});
+		}
+	},
 	// 归档页面
 	archive: {
 		category_show: function(){
