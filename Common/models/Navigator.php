@@ -15,7 +15,7 @@ class Navigator extends Model {
 	 * @param unknown $condition
 	 * @return Ambigous <multitype:, multitype:multitype: , unknown>
 	 */
-	public function listByCondition($condition = array()){
+	public function listByCondition(array $condition ){
 		$sql = "SELECT * FROM `" . $this->getTableName() . "` WHERE ";
 		$sql .= $this->_init_conditions_no_prepare($condition);
 		$sql .= " ORDER BY pos DESC, pid ASC, sort DESC";

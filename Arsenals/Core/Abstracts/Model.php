@@ -344,40 +344,40 @@ abstract class Model extends Arsenals {
 	
 		foreach ($conditions as $c_k => $c_v) {
 			$c_cmd_pos = strstr($c_k, '%');
-            $val = $is_prepare ? '?' : $this->escape($c_v);
+            $val = $is_prepare ? '?' : "'{$this->escape($c_v)}'";
             
 			if($c_cmd_pos === FALSE){
-				$sql .= "{$c_k} = '{$val}' ";
+				$sql .= "{$c_k} = {$val} ";
 				$is_prepare && array_push($args, $c_v);
 			}else{
 				$c_cmd = preg_split('/%/', $c_k, 2);
 				switch ($c_cmd[1]) {
 					case 'LIKE':
-						$sql .= "{$c_cmd[0]} LIKE '{$val}' ";
+						$sql .= "{$c_cmd[0]} LIKE {$val} ";
 						$is_prepare && array_push($args, $c_v);
 						break;
 					case 'EQ':
-						$sql .= "{$c_cmd[0]} = '{$val}' ";
+						$sql .= "{$c_cmd[0]} = {$val} ";
 						$is_prepare && array_push($args, $c_v);
 						break;
 					case 'NEQ':
-						$sql .= "{$c_cmd[0]} <> '{$val}' ";
+						$sql .= "{$c_cmd[0]} <> {$val} ";
 						$is_prepare && array_push($args, $c_v);
 						break;
 					case 'GT':
-						$sql .= "{$c_cmd[0]} > '{$val}' ";
+						$sql .= "{$c_cmd[0]} > {$val} ";
 						$is_prepare && array_push($args, $c_v);
 						break;
 					case 'GET':
-						$sql .= "{$c_cmd[0]} >= '{$val}' ";
+						$sql .= "{$c_cmd[0]} >= {$val} ";
 						$is_prepare && array_push($args, $c_v);
 						break;
 					case 'LT':
-						$sql .= "{$c_cmd[0]} < '{$val}' ";
+						$sql .= "{$c_cmd[0]} < {$val} ";
 						$is_prepare && array_push($args, $c_v);
 						break;
 					case 'LET':
-						$sql .= "{$c_cmd[0]} <= '{$val}' ";
+						$sql .= "{$c_cmd[0]} <= {$val} ";
 						$is_prepare && array_push($args, $c_v);
 						break;
 					case 'IS_NULL':
