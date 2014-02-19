@@ -14,7 +14,7 @@
 		</div>
 		<div class="new-activy pull-left">
 			<div class="na-title">CD推荐<a class="more" href="<?php echo \Demo\views\ink\url('articles/lists/15');?>">More...</a></div>
-			<?php $_new_activys = \Demo\views\ink\new_blog(15, 6);?>
+			<?php $_new_activys = \Demo\views\ink\new_blog(15, 8);?>
 			<div class="na-body">
 			<?php foreach ($_new_activys as $_ak=>$_av):?>
 				<div class="na-block">

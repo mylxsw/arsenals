@@ -167,18 +167,23 @@
 }
 #main .new-product .na-body .na-block img,
 #main .new-activy .na-body .na-block img {
-  width: 218px;
-  height: 144px;
-  padding: 10px;
+  width: 163px;
+  height: 125px;
+  padding: 8px;
 }
 #main .new-product .na-body .na-block .nab-title,
 #main .new-activy .na-body .na-block .nab-title {
   color: white;
   background: rgba(0, 0, 0, 0.84);
+  *background: #696969;
+  /*IE6,7*/
+
+  background: #696969\0;
+  /*IE8*/
   position: absolute;
-  top: -11px;
-  left: 10px;
-  width: 198px;
+  top: -13px;
+  left: 8px;
+  width: 147px;
   font-size: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
