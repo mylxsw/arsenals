@@ -5,6 +5,7 @@
 	        <button data-url="article/write"><i class="icon-plus"></i> 添加</button>
 	        <button data-event="article.del"><i class="icon-remove"></i> 删除</button>
 	        <button data-event="article.edit"><i class="icon-folder-2"></i> 编辑</button>
+	        <button data-event="article.clear_cache"><i class="icon-fire"></i> 清理缓存</button>
 	    </div>
 	</div>
 	<table class="table hovered" id="article_table">

@@ -5,5 +5,5 @@
  * @author 管宜尧
  */
 return array(
-	'AuthFilter','DemoFilter'
+	'DemoFilter', 'CacheFilter'
 );

@@ -15,7 +15,8 @@
         </ul>
 		<div class="no-tablet-portrait">
 			<span class="element-divider"></span>
-			<a class="element brand" href="#" onclick="o_fn.g.refresh()"><span class="icon-spin"></span></a>
+			<a class="element brand" href="#" onclick="o_fn.g.refresh()" title="刷新页面"><span class="icon-spin"></span></a>
+			<a class="element brand" href="#" onclick="o_fn.g.clear_cache()" title="清空缓存"><span class="icon-fire"></span></a>
 			<span class="element-divider"></span>
 			<div class="element place-right">
 				<a class="dropdown-toggle" href="#">

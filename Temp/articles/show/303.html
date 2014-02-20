@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>C.D.Cafe</title>
+	<meta name="description" content="C.D.Cafe主页， 基于Arsenals框架开发">
+	<meta name="author" content="mylxsw, code.404, ink, cookbook, recipes">
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<!--[if IE]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="http://localhost/Arsenals/Public/ink/css/ink.css" />
+  	<!--[if lte IE 7 ]>
+  		<link rel="stylesheet" type="text/css" href="http://localhost/Arsenals/Public/ink/css/ink-ie7.css" />
+  	<![endif]-->
+  	  	<link rel="stylesheet" type="text/css" href="http://localhost/Arsenals/Demo/views/ink/public/css/custom.css" />
+  	<link rel="stylesheet" type="text/css" href="http://localhost/Arsenals/Demo/views/ink/public/css/style.css" />
+	<!--
+	<link rel="stylesheet/less" type="text/css" href="http://localhost/Arsenals/Demo/views/ink/public/css/custom.css" />
+  	<link rel="stylesheet/less" type="text/css" href="http://localhost/Arsenals/Demo/views/ink/public/css/style.css" />
+	<script type="text/javascript" src="http://localhost/Arsenals/Public/less-1.4.2.min.js" ></script>
+	-->
+	<style type='text/css'>.menu{
+	-webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.3);
+	-moz-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.3);
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.3);
+}</style>	
+	<script type="text/javascript" src="http://localhost/Arsenals/Public/ink/js/holder.js"></script>
+	<script type="text/javascript" src="http://localhost/Arsenals/Public/ink/js/ink.min.js"></script>
+	<script type="text/javascript" src="http://localhost/Arsenals/Public/ink/js/ink-ui.min.js"></script>
+	<script type="text/javascript" src="http://localhost/Arsenals/Public/ink/js/autoload.js"></script>
+	<script type="text/javascript" src="http://localhost/Arsenals/Public/require.js" ></script>
+	<script type="text/javascript">
+		window.onerror = function(err){
+			alert("您的页面加载时出现了异常，可能影响部分功能的正常使用，建议使用Chrome浏览器。");
+			return true;
+		};
+
+		var global = {
+			view_resources_path: "http://localhost/Arsenals/Demo/views/ink/public/",
+			public_resources_path: "http://localhost/Arsenals/Public/" 
+		};
+		require.config({
+			baseUrl: global.view_resources_path + "js/",
+			paths: {
+				"jquery": global.public_resources_path + "jquery-1.8.3.min",
+				"underscore": global.public_resources_path + "underscore-1.4.4",
+				"backbone": global.public_resources_path + "backbone"
+			}
+		});
+	</script>
+</head>
+<body>
+<!--[if lt IE 8]>
+	<div class="browser-invalid-tip ink-alert basic">
+		<p>您正在使用一款<strong>过期</strong>的浏览器，请<a href="http://browsehappy.com/">升级您的浏览器</a>或者<a href="http://www.google.com/chromeframe/?redirect=true">下载谷歌浏览器</a>以获取最佳体验效果。</p>
+		<p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+	</div>
+	<script>
+		window.setTimeout(function(){
+			document.getElementById("main").style.display = "none";
+			document.getElementById("footer").style.display = "none";
+		}, 0);
+	</script>
+<![endif]-->
+<div class="ink-grid" id="main">
+	<header id="header">
+		<h1><img class="left-img" src="http://localhost/Arsenals/Resources/uploads/logo.jpg" /><img class="right-img" src="http://localhost/Arsenals/Resources/uploads/logo-right.jpg" /></h1>
+		<nav class="ink-navigation vspace">
+		<ul class="menu horizontal grey rounded ">
+			<li><a href="http://localhost/Arsenals/"><i class="icon-home"></i></a></li><li><a href="javascript:void(0)">咖啡 CAFFEE</a><ul class="submenu"><li><a href="http://localhost/Arsenals/articles/lists/5.html">咖啡世界 Kaffeewelten</a></li><li><a href="http://localhost/Arsenals/articles/lists/6.html">服务与发展 <br />Service & Nachhaltigkeit</a></li><li><a href="http://localhost/Arsenals/articles/lists/16.html">CD印记</a></li></ul></li><li><a href="javascript:void(0)">影像 MOVIE&PIC</a><ul class="submenu"><li><a href="http://localhost/Arsenals/articles/lists/7.html">电影精选 Movie selection</a></li><li><a href="http://localhost/Arsenals/articles/lists/8.html">开始创作 Began to write</a></li></ul></li><li><a href="javascript:void(0)">创业职业 SYB</a><ul class="submenu"><li><a href="http://localhost/Arsenals/articles/lists/9.html">活动 Activities</a></li><li><a href="http://localhost/Arsenals/articles/lists/10.html">机构 Organization</a></li></ul></li><li><a href="javascript:void(0)">研发R&D</a><ul class="submenu"><li><a href="http://localhost/Arsenals/articles/lists/11.html">活动 Event</a></li><li><a href="http://localhost/Arsenals/articles/lists/12.html">机构 Organization</a></li></ul></li><li><a href="http://localhost/Arsenals/page/show/11.html">项目提交 Submit an Idea</a></li>		</ul>
+		</nav>
+	</header>
+	<div class="column-group" id="main-content"><div id="main-left">
+	<nav class="ink-navigation"><ul class="breadcrumbs"><li><a href="http://localhost/Arsenals/">首页</a></li><li><a href="http://localhost/Arsenals/articles/lists/7.html">Movie&Pic > 电影精选</a></li><li class="active" ><a href="http://localhost/Arsenals/303">《蒂凡尼的早餐 Breakfast at Tiffany's》</a></li></ul></nav>	<div class="article">
+		<h5 class="title">《蒂凡尼的早餐 Breakfast at Tiffany's》</h5>
+		<div class="info">admin 发布于 2014-02-18 
+			<span class="ds-thread-count" data-thread-key="article_303" data-count-type="comments"></span>
+		</div>
+					<div class="tags">
+									电影精选 
+							</div>
+				<div class="content"><p><img src="http://cdcafe.cc/Common/libs/ueditor/../../../Resources/uploads//20140218/1392712824784528.jpg" title="2.jpg"/></p><p><br/></p><p>《蒂凡尼的早餐 Breakfast at Tiffany&#39;s》</p><p><br/></p><p>&nbsp;剧情简介：</p><p>霍莉(奥黛丽·赫本)生活在曼哈顿的斯万克东区上流社会的。完全鲁莽的人,她有一个部分有家具的公寓,拥有一只猫没有名字,摆脱“心绪不宁”的访问蒂凡尼珠宝店,和永远遗忘她的门钥匙,失望的是她楼上的邻居Yunioshi先生(米奇鲁尼),一个日本摄影师。冬青使她生活在两个方面:她从绅士获得50美元护送每当她需要盥洗室钱,和她为每个每周旅行支付了100美元对新新监狱,在那里她访问莎莉番茄(ALAN REED),一个ex-mobster。一天,保罗Varjak(乔治·邦德),一个年轻的作家,是由一个老女人的绰号“2 e”(帕特里夏尼尔),进入冬青的生活。冬青的野生后举办的鸡尾酒会她的好莱坞经纪人,O.J.伯曼(MARTIN香脂),保罗意外满足医生戈莱特利(BUDDY EBSEN),温柔的德克萨斯冬青娶她只有15岁。冬青解释保罗,婚姻被宣告无效很久以前,他帮助她把伤心的医生。经过一天一起在城里,保罗意识到自己爱上了冬青和建议她,但她决心嫁给穆(VILALLONGA),南美百万富翁。然而,当它是公开透露,冬青一直天真地携带毒品从莎莉番茄环信息他纽约associates闷穆抛弃了她。一切,每个人都火冒三丈,冬青踢猫从她的出租车到雨和决定离开巴西,但保罗讲座她,然后出去找猫。冬青实现多少她放弃和种族穿过潮湿的纽约街道与保罗和猫一个快乐的聚会。</p><p><br/></p><p>时间：1月03日周五18:00</p><p>地址：济南大学七教西段国际教育交流学院副楼一层C.D.Cafe</p><p><br/></p><p>《 Breakfast at Tiffany&#39;s》</p><p><br/></p><p>Introduction:&nbsp;</p><p>Holly Golightly (AUDREY HEPBURN) lives in a brownstone on Manhattan&#39;s swank East Side. Totally madcap, she has a partially furnished apartment, owns a cat with no name, gets rid of the &quot;mean reds&quot; by visiting Tiffany&#39;s jewelry store, and is forever misplacing her door key, much to the dismay of her upstairs neighbor Mr. Yunioshi (MICKEY ROONEY), a Japanese photographer. Holly makes her living in two ways: she receive $50 from her gentlemen escorts whenever she needs powder room money, and she is paid $100 for each weekly trip she makes to Sing Sing Prison, where she visits Sally Tomato (ALAN REED), an ex-mobster. One day Paul Varjak (GEORGE PEPPARD), a young writer who is supported by an older woman nicknamed &quot;2E&quot; (PATRICIA NEAL), comes into Holly&#39;s life. Following one of Holly&#39;s wild cocktail parties hosted by her Hollywood agent, O.J. Berman (MARTIN BALSAM), Paul unexpectedly meets Doc Golightly (BUDDY EBSEN), a gentle Texan whom Holly married when she was only 15 years old. Holly explains to Paul that the marriage was annulled long ago, and he helps her send the heartbroken Doc away. After a day on the town together, Paul realizes that he is in love with Holly and proposes to her; but she is determined to marry José (VILALLONGA), a South American millionaire. However, when it is publicly revealed that Holly has been innocently carrying narcotics ring information from Sally Tomato to his New York associates, the stuffy José abandons her. Furious at everything and everyone, Holly kicks Cat out of her taxicab into the rain and decides to leave town for Brazil, but Paul lectures her and then goes out to find Cat. Holly realizes how much she is giving up and races through the wet New York streets to a happy reunion with Paul and Cat.</p><p><br/></p><p>Time:03/01/2014 &nbsp; 18:00</p><p><br/></p><p>Address: C.D.Cafe,The first floor in the west of the NO.7 Building (the vice Building of College of International Education Exchange) ,University of Jinan</p><p><br/></p><p><img src="http://cdcafe.cc/Common/libs/ueditor/../../../Resources/uploads//20140218/1392712836426743.jpg" title="4.jpg"/></p></div>
+					<div class="category">
+			所属分类： 
+									<span class='ink-badge black'>Movie&Pic > 电影精选</span> 
+									<span class='ink-badge black'>CD推荐</span> 
+									<span class='ink-badge black'>CD印记</span> 
+							</div>
+			</div>
+	</div>
+
+<script>
+require(['page/home'], function(home){
+	home.init();
+});
+</script>
+		</div>
+	</div>
+	<footer class="footer" id="footer">
+				<p class="title">Design By <a href="http://agiledev.pw" target="_blank">AgileDEV.pw</a></p>
+	</footer>
+</body>
+</html>
