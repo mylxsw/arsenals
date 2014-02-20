@@ -18,7 +18,7 @@ class CacheFilter implements Filter {
 		// 所有文章页面内容缓存
 		if(\Arsenals\Core\str_start_with($path_info, 'articles/show/') ){
 			//$cache_file = CACHE_PATH . md5($path_info);
-			$cache_file = CACHE_PATH . $path_info;
+			$cache_file = BASE_PATH . $path_info;
 
 			// 如果存在文件，则读取缓存
 			// 这里实际上没有用了

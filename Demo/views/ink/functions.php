@@ -73,61 +73,70 @@ function url($url){
  * @return string
  */
 function top_nav($current_nav = 'home'){
-	$navModel = Registry::load('Common\\models\\Navigator');
-	$ui_top_menus = $navModel->getNavTrees(0,'top',3);
-// 	\Arsenals\Core\_D($ui_top_menus);
-	$_top_menus = '<li'. ($current_nav == 'home' ? ' class="active" ' : '') .'><a href="' . url('') . '"><i class="icon-home"></i></a></li>';
-	foreach($ui_top_menus as $k => $v){
-		$_top_menus .=
-			"<li><a href=\"" . url($v['url']) . "\">{$v['name']}</a>";
-		if( isset($v['sub']) && is_array($v['sub']) && count($v['sub']) > 0){
-			$_top_menus .= "<ul class=\"submenu\">";
-			foreach ($v['sub'] as $k2=>$v2){
-				$_top_menus .=
-				"<li><a href=\"" . url($v2['url']) . "\">{$v2['name']}</a></li>";
+	return \Demo\common\CacheUtils::cacheFile('top-' . $current_nav, function($current_nav){
+		$current_nav = func_get_arg(0);
+		$navModel = Registry::load('Common\\models\\Navigator');
+		$ui_top_menus = $navModel->getNavTrees(0,'top',3);
+	// 	\Arsenals\Core\_D($ui_top_menus);
+		$_top_menus = '<li'. ($current_nav == 'home' ? ' class="active" ' : '') .'><a href="' . url('') . '"><i class="icon-home"></i></a></li>';
+		foreach($ui_top_menus as $k => $v){
+			$_top_menus .=
+				"<li><a href=\"" . url($v['url']) . "\">{$v['name']}</a>";
+			if( isset($v['sub']) && is_array($v['sub']) && count($v['sub']) > 0){
+				$_top_menus .= "<ul class=\"submenu\">";
+				foreach ($v['sub'] as $k2=>$v2){
+					$_top_menus .=
+					"<li><a href=\"" . url($v2['url']) . "\">{$v2['name']}</a></li>";
+				}
+				$_top_menus .= "</ul>";
 			}
-			$_top_menus .= "</ul>";
+			$_top_menus .=  "</li>";
 		}
-		$_top_menus .=  "</li>";
-	}
-	return $_top_menus;
+		
+		return $_top_menus;
+	}, $current_nav);
 }
 /**
  * 底部导航
  * @return string
  */
 function footer_nav(){
-	$navModel = Registry::load('Common\\models\\Navigator');
-	$ui_footer_menus = $navModel->getNavTrees(0,'footer',3);
-	
-	$html = '';
-	foreach($ui_footer_menus as $k => $v){
-		$html .= '<div class="ftb-col">';
-		$html .= '<h4>' . $v['name'] . '</h4>';
-		if( isset($v['sub']) && is_array($v['sub']) && count($v['sub']) > 0){
-			foreach ($v['sub'] as $k2=>$v2){
-				$html .= '<li><a href="' . url($v2['url']) . "\">{$v2['name']}</a></li>";
+	return \Demo\common\CacheUtils::cacheFile('footer', function(){
+		$navModel = Registry::load('Common\\models\\Navigator');
+		$ui_footer_menus = $navModel->getNavTrees(0,'footer',3);
+		
+		$html = '';
+		foreach($ui_footer_menus as $k => $v){
+			$html .= '<div class="ftb-col">';
+			$html .= '<h4>' . $v['name'] . '</h4>';
+			if( isset($v['sub']) && is_array($v['sub']) && count($v['sub']) > 0){
+				foreach ($v['sub'] as $k2=>$v2){
+					$html .= '<li><a href="' . url($v2['url']) . "\">{$v2['name']}</a></li>";
+				}
 			}
+			$html .= '</div>';
 		}
-		$html .= '</div>';
-	}
-	
-	return $html == '' ? '' : "<div class=\"ft-body\">{$html}<div class=\"ink-clear\"></div></div>";
+		$html = $html == '' ? '' : "<div class=\"ft-body\">{$html}<div class=\"ink-clear\"></div></div>";
+		return $html;
+	});
 }
 /**
  * 首页轮播图
  * @return string
  */
 function index_lunbo(){
-	$settingModel = Registry::load('Common\\models\\Setting');
-	$lunbos = $settingModel->getSetting('index_lunbo_imgs', 'plugin');
-	$lunbo_imgs = \unserialize($lunbos['setting_value']);
-	$html = "<div id='sliderPlay' style='visibility: hidden'>";
-	foreach ($lunbo_imgs as $key=>$val){
-		$html .= "<a href='" . url($val['url']) . "' target=\"_blank\"><img src='" . url($val['img']) . "' alt='" . $val['title'] . "' height='376px' width='940px'/></a>";
-	}
-	$html .= "</div>";
-	return $html;
+	return \Demo\common\CacheUtils::cacheFile('lunbo', function(){
+		$settingModel = Registry::load('Common\\models\\Setting');
+		$lunbos = $settingModel->getSetting('index_lunbo_imgs', 'plugin');
+		$lunbo_imgs = \unserialize($lunbos['setting_value']);
+		$html = "<div id='sliderPlay' style='visibility: hidden'>";
+		foreach ($lunbo_imgs as $key=>$val){
+			$html .= "<a href='" . url($val['url']) . "' target=\"_blank\"><img src='" . url($val['img']) . "' alt='" . $val['title'] . "' height='376px' width='940px'/></a>";
+		}
+		$html .= "</div>";
+		return $html;
+	});
+	
 }
 /**
  * 最新的文章
@@ -221,9 +230,13 @@ function remark($article_id){
 }
 
 function custom_css(){
-	//echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"\" />";
-	$settingModel = Registry::load('Common\\models\\Setting');
-	$cssSet = $settingModel->getSetting('custom_css', 'views');
-	
-	echo "<style type='text/css'>", $cssSet['setting_value'] , "</style>";
+	echo \Demo\common\CacheUtils::cacheFile('custom_css', function(){
+		//echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"\" />";
+		$settingModel = Registry::load('Common\\models\\Setting');
+		$cssSet = $settingModel->getSetting('custom_css', 'views');
+		
+		$css =  "<style type='text/css'>{$cssSet['setting_value']}</style>";
+		// 写入缓存
+		return $css;
+	});
 }

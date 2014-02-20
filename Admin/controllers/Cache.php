@@ -13,15 +13,14 @@ class Cache extends CoreController {
 	 */ 
 	public function clear(){
 		$DIR_S = DIRECTORY_SEPARATOR;
-		$cache_path = CACHE_PATH . "articles{$DIR_S}show{$DIR_S}";
+		$cache_path = array(
+			BASE_PATH . "articles{$DIR_S}show{$DIR_S}",
+			CACHE_PATH
+			);
 
-		$handler = opendir($cache_path);
-		while(($filename = readdir($handler)) !== false){
-			if($filename != '.' && $filename != '..'){
-				unlink($cache_path . $filename);
-			}
+		foreach ($cache_path as $v) {
+			$this->_clear($v);
 		}
-		closedir($handler);
 
 		return Ajax::ajaxReturn('缓存已经清理完毕!', Ajax::SUCCESS);
 	}
@@ -30,7 +29,7 @@ class Cache extends CoreController {
 	 */ 
 	public function clear_article_cache(){
 		$DIR_S = DIRECTORY_SEPARATOR;
-		$cache_path = CACHE_PATH . "articles{$DIR_S}show{$DIR_S}";
+		$cache_path = BASE_PATH . "articles{$DIR_S}show{$DIR_S}";
 
 		$ids = $this->get('ids', null);
 
@@ -47,5 +46,16 @@ class Cache extends CoreController {
 		}
 
 		return Ajax::ajaxReturn('缓存已经清理完毕!', Ajax::SUCCESS);
+	}
+
+	private function _clear($cache_path){
+
+		$handler = opendir($cache_path);
+		while(($filename = readdir($handler)) !== false){
+			if(is_file($cache_path . $filename) && $filename != '.' && $filename != '..'){
+				unlink($cache_path . $filename);
+			}
+		}
+		closedir($handler);
 	}
 }
