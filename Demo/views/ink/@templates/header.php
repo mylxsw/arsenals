@@ -71,7 +71,7 @@
 <![endif]-->
 <div class="ink-grid" id="main">
 	<header id="header">
-		<h1><img class="left-img" src="<?php \Demo\views\ink\resources();?>uploads/logo.png" /><img class="right-img" src="<?php \Demo\views\ink\resources();?>uploads/logo-right.jpg" /></h1>
+		<h1><img class="left-img" src="<?php \Demo\views\ink\resources();?>uploads/logo.jpg" /><img class="right-img" src="<?php \Demo\views\ink\resources();?>uploads/logo-right.jpg" /></h1>
 		<nav class="ink-navigation vspace">
 		<ul class="menu horizontal grey rounded ">
 			<?php echo Demo\views\ink\top_nav(isset($current_nav) ? $current_nav : '');?>

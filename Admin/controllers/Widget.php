@@ -49,7 +49,11 @@ class Widget extends CoreController {
 					'settings' => array('<i class="icon-cog"></i>配置', 'setting/lists'),
 					'navigator' => array('<i class="icon-arrow-up-right"></i>导航', 'navigator/lists'),
 					'logs' => array('<i class="icon-yelp"></i>日志', 'log/lists')
-			)
+			),
+			'help' => array(
+					'howto'	=> array('使用帮助', 'help/howto'),
+					'about' => array('关于', 'help/about')
+				)
 		);
 		return $this->view('widget/slidebar', array('nav' => $nav));
 	}
