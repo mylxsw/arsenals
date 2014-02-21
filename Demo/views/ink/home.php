@@ -26,7 +26,14 @@
 			</div>
 		</div>
 	</div>
-	<div><!-- 底部广告部分 --></div>
+	<div class="ink-clear"></div>
+	<div class="ad"><!-- 底部广告部分 -->
+		<a href="http://www.letv.com" target="_blank" title="乐视网"><img src="<?php echo \Demo\views\ink\url('Resources/uploads/leshi.jpg');?>" /></a>
+		<a href="http://www.mingyangyingshi.com" target="_blank" title="青岛名扬影视传播有限公司"><img src="<?php echo \Demo\views\ink\url('Resources/uploads/mingyang.jpg');?>" /></a>
+		<a href="http://www.chinawpc.com.cn" target="_blank" title="山东邹平三立特木塑复合材料有限公司"><img src="<?php echo \Demo\views\ink\url('Resources/uploads/sanlite.jpg');?>" /></a>
+		<a href="http://www.csia.cc" target="_blank" title="中国创业咖啡联盟"><img src="<?php echo \Demo\views\ink\url('Resources/uploads/csia.jpg');?>" /></a>
+		<a href="http://www.cntv.cn" target="_blank" title="中国网络电视台"><img src="<?php echo \Demo\views\ink\url('Resources/uploads/cntv.jpg');?>" /></a>
+	</div>
 </div>
 <script>
 require(['page/home'], function(home){
