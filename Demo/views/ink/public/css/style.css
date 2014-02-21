@@ -286,3 +286,11 @@
   color: #CCC;
   cursor: pointer;
 }
+.ad{
+  margin-top: 20px;
+}
+.ad a {
+  width: 170px;
+  float: left;
+  margin-right: 20px;
+}
