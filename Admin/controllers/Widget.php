@@ -8,10 +8,7 @@ namespace Admin\controllers;
  *        
  */
 class Widget extends CoreController {
-	public function header(){
-		return $this->view('widget/header');
-	}
-	
+
 	public function slidebar(){
 		$nav = array(
 			'main' => array(
@@ -52,9 +49,10 @@ class Widget extends CoreController {
 			),
 			'help' => array(
 					'howto'	=> array('使用帮助', 'help/howto'),
+					'doc'	=> array('开发文档', 'help/doc'),
 					'about' => array('关于', 'help/about')
 				)
 		);
-		return $this->view('widget/slidebar', array('nav' => $nav));
+		return $this->ajax($nav);
 	}
 }

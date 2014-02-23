@@ -34,21 +34,3 @@
 		</div>
     </div>
 </div>
-<script>
-$(function(){
-	$(".exit-sys").on("click", function(e){
-		e.preventDefault();
-		var that = $(this);
-		f.confirm("您确定要退出系统？", function(){
-			f.async(that.attr('href'), {}, function(data){
-				f.tip(data.info, data.status == 1 ? 'success':'error');
-				if(data.status == 1){
-					window.setTimeout(function(){
-						window.location.href="<?php echo \Admin\url('account/login');?>";
-						}, 1000);
-				}
-			});
-		});
-	});
-});
-</script>

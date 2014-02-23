@@ -47,6 +47,9 @@ abstract class Model extends Arsenals {
 	 * @return object|null
 	 */
 	public function load($conditions = array(), $table = null){
+		if (!is_array($conditions)) {
+			$conditions = array('id' => $conditions);
+		}
 		$table = is_null($table) ? $this->_table_name : $this->getTableName($table);
 		$sql = 'SELECT * FROM ' . $table ;
 		$args = array();
@@ -501,5 +504,17 @@ abstract class Model extends Arsenals {
 	 */
 	protected function getLastInsertId(){
 		return $this->_conn->insert_id;
+	}
+	/**
+	 * 没有记录异常
+	 */ 
+	protected function noRecoredException($message){
+		throw new \Arsenals\Core\Exceptions\NoRecordException($message);
+	}
+	/**
+	 * 查询异常
+	 */ 
+	protected function queryException($message){
+		throw new \Arsenals\Core\Exceptions\QueryException($message);	
 	}
 }

@@ -15,6 +15,19 @@ window.o_fn = {
 				f.tip(data.info, data.status == 1 ? 'success':'error');
 			});
 		},
+		// 退出系统
+		exit: function(){
+			f.confirm("您确定要退出系统？", function(){
+				f.async('account/logout', {}, function(data){
+					f.tip(data.info, data.status == 1 ? 'success':'error');
+					if(data.status == 1){
+						window.setTimeout(function(){
+							window.location.href= f.parseUrl('account/login');
+							}, 1000);
+					}
+				});
+			});
+		},
 		// 全选
 		select_all: function(_this){
 			var table = _this.parents('table');

@@ -8,6 +8,13 @@ window.f = {
 	 * 循环索引
 	 */
 	_cycle_index: 0,
+	ui: {
+		// 默认UI事件绑定
+		eventBind: function(selector){
+			// SELECT默认值选定
+			$(selector + " select[default]").val(function(){return $(this).attr('default');});
+		}
+	},
 	// 数据表格
 	dataTable: function(selector, url){
 		$(selector).dataTable({
@@ -127,20 +134,24 @@ window.f = {
 		params = params || {};
 		callback = callback || function(){};
 		url = this.parseUrl(url);
+		var that = this;
 		$.get(url, params, function(data){
 			$.Dialog({
 				shadow: true,
 				overlay: true,
 				icon:'<span class="icon-rocket"></span>',
 				title: title,
+				flat: true,
 				draggable: true,
-				padding: 10,
+				padding: 15,
 				content: data,
 				sysButtons: {
 					btnClose: true
 				},
 				onShow: function(_dialog){
 					callback();
+					// 重新初始化UI事件绑定
+					that.ui.eventBind(".window");
 				}
 			});
 		});
@@ -186,6 +197,9 @@ window.f = {
 	},
 	add_to_doc: function(div){
 		document.getElementsByTagName('body')[0].appendChild(div);
+	},
+	url: function(url){
+		return this.parseUrl(url);
 	},
 	parseUrl: function(url){
 		var deal_file = "admin.php/";

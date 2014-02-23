@@ -31,7 +31,8 @@ class Input extends Arsenals {
 		'float' 		=> 'self::_rule_float', 
 		'len' 			=> 'self::_rule_len',
 		'range'			=> 'self::_rule_range',
-		'id'			=> 'self::_rule_id'
+		'id'			=> 'self::_rule_id',
+		'in'			=>  'self::_rule_in'
 	);
 	
 	/**
@@ -339,6 +340,19 @@ class Input extends Arsenals {
 			}
 			if(!is_null($max) && $var > $max){
 				throw new TypeErrorException("字段不能大于{$max}！");
+			}
+		}
+		return TRUE;
+	}
+	/**
+	 * 校验规则， in
+	 * 
+	 */ 
+	private static function _rule_in($var, $rule){
+		if (!is_null($rule) && $rule != ''){
+			$rul_arr = preg_split('/,/', $rule);
+			if (!in_array($var, $rul_arr)) {
+				throw new TypeErrorException("字段必须为{$rule}之一！");
 			}
 		}
 		return TRUE;
