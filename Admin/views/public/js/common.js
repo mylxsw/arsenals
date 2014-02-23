@@ -13,6 +13,7 @@ window.f = {
 		eventBind: function(selector){
 			// SELECT默认值选定
 			$(selector + " select[default]").val(function(){return $(this).attr('default');});
+			$(selector + " table:not(.table)").addClass("table").addClass("bordered");
 		}
 	},
 	// 数据表格
@@ -262,6 +263,8 @@ window.f = {
 			}
 			_t.data("link", link);
 			$(this).fadeIn('fast');
+			
+			_this.ui.eventBind(id);
 		});
 	},
 	/**
@@ -292,7 +295,7 @@ window.f = {
 			id_list += $(this).val() + ",";
 		});
 		if(id_list == ''){
-			alert('您没有选择项!~')
+			alert('您没有选择项!~');
 			return false;
 		}
 		f.confirm(info, function(res){

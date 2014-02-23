@@ -15,8 +15,8 @@
 		<div class="input-control select size4">
 	     	<select name="pid" id="nav_pid" default="<?php echo $nav['pid']?>">
 				<option value="0" selected>-- 没有上级 --</option>
-				<?php foreach($navs as $nav):?>
-					<option value="<?php echo $nav['id'];?>"><?php \Admin\escape($nav['pos']);?> - <?php \Admin\escape($nav['name']);?></option>
+				<?php foreach($navs as $n):?>
+					<option value="<?php echo $n['id'];?>"><?php \Admin\escape($n['pos']);?> - <?php \Admin\escape($n['name']);?></option>
 				<?php endforeach;?>
 			</select>
 		</div>
