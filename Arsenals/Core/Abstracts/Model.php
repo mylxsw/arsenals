@@ -233,15 +233,26 @@ abstract class Model extends Arsenals {
         // 日志记录
         $log = Registry::load('Arsenals\\Core\\Log');
 		$log->debug("执行SQL：{$sql}", 'system');
-
+		
 		// 如果没有提供参数数组，则执行普通查询
 		if(\count($args) == 0){
 			$res = $this->_conn->query($sql);
 			if($this->_conn->errno){
-				throw new QueryException($this->_conn->error);
+				throw new \Arsenals\Core\QueryException($this->_conn->error);
 			}
-			return $insert ? $res : $res->fetch_all(MYSQLI_ASSOC);
+            if(method_exists('mysqli_result', 'fetch_all')){
+                return $insert ? $res : $res->fetch_all(MYSQLI_ASSOC);
+            }
+            if($insert){
+                return $res;
+            }
+            $r = array();
+            for(; $tmp = $res->fetch_array(MYSQLI_ASSOC);){
+            	$r[] = $tmp;
+            }
+			return $r;
 		}
+        
 		// 提供了参数数组，执行预处理
 		$stmt = $this->_conn->prepare($sql);
 		if($this->_conn->errno){

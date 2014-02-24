@@ -1,6 +1,17 @@
 <?php
 namespace Arsenals\Core;
 
+function SaeKv(){
+	static $kv = null;
+	if (is_null($kv)) {
+		$kv = new \SaeKv();
+        
+		if (!$kv->init()) {
+			throw new \Exception("Error Processing Request");
+		}
+	}
+	return $kv;
+}
 /**
  * 写文件
  * @param unknown $filename
@@ -10,22 +21,31 @@ namespace Arsenals\Core;
  * @return number
  */
 function file_put_contents($filename, $data, $flag = null, $context = null){
-	return \file_put_contents($filename, $data, $flag, $context);
+	if (!IS_SAE) {
+		return \file_put_contents($filename, $data, $flag, $context);
+	}
+	SaeKv()->add($filename, $data);
 }
 /**
  * 读取文件
  */ 
 function file_get_contents($filename, $use_include_path = false, $context = null, $offset = -1, $maxlen = null){
-	if (is_null($maxlen)) {
-		return \file_get_contents($filename, $use_include_path, $context, $offset);
+	if(\file_exists($filename)){
+		return \file_get_contenst($filename, $use_include_path, $context, $offset, $maxlen);
 	}
-	return \file_get_contents($filename, $use_include_path, $context, $offset, $maxlen);
+	
+	return SaeKv()->get($filename);
 }
 /**
  * 检查文件是否存在
  */ 
 function file_exists($filename){
-	return \file_exists($filename);
+	if (\file_exists($filename)) {
+		return true;
+	}
+	$kv = SaeKV();
+    
+	return !is_null($kv->get($filename));
 }
 /**
  * 打开目录

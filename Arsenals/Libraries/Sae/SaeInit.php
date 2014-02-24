@@ -5,14 +5,15 @@ namespace Arsenals\Libraries\Sae;
  */ 
 class SaeInit{
 	public function __construct(){
+		
 		// SAE环境检测
 		!defined('IS_SAE') && define('IS_SAE', isset($_SERVER['HTTP_APPCOOKIE']));
-		if (IS_SAE) {
-			require './Sae_Func.php';
-		}
+		
 	}
 
 	public function init(){
-		
+		if (IS_SAE) {
+			require realpath(dirname(__FILE__)) . DIRECTORY_SEPARATOR .'Sae_Func.php';
+		}
 	}
 }

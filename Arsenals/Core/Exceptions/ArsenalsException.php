@@ -7,7 +7,7 @@ namespace Arsenals\Core\Exceptions;
  * @author 管宜尧<mylxsw@126.com>
  *
  */
-abstract class ArsenalsException extends \Exception {
+class ArsenalsException extends \Exception {
 
 
 }
