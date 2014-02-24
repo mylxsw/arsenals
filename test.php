@@ -16,4 +16,6 @@ $img = array(
 				'url' => ''
 		)
 );
-echo serialize($img);
+echo json_encode($img);
+
+var_dump(json_decode(json_encode($img)));

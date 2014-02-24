@@ -177,5 +177,23 @@ window.o_fn = {
 			form.find("input[name=is_tmp]").val("0");
 			form.trigger("submit");
 		}
+	},
+	setting: {
+		add: function(){
+			f.dialog('setting/add', "添加配置", {}, function(){
+			});
+		},
+		del: function(){
+			o_fn.g.del('#setting_table', 'setting/del');
+		}, 
+		edit: function(){
+			var id = $("#setting_table").find('input.select_all_item:checked');
+			if(id.length != 1){
+				return f.alert("请选择一个要编辑的项!");
+			}
+			f.dialog('setting/edit', "编辑配置", {id: id.val()}, function(){
+
+			});
+		}
 	}
 };

@@ -128,10 +128,10 @@ function index_lunbo(){
 	return \Demo\common\CacheUtils::cacheFile('lunbo', function(){
 		$settingModel = Registry::load('Common\\models\\Setting');
 		$lunbos = $settingModel->getSetting('index_lunbo_imgs', 'plugin');
-		$lunbo_imgs = \unserialize($lunbos['setting_value']);
+		$lunbo_imgs = \json_decode($lunbos['setting_value']);
 		$html = "<div id='sliderPlay' style='visibility: hidden'>";
 		foreach ($lunbo_imgs as $key=>$val){
-			$html .= "<a href='" . url($val['url']) . "' target=\"_blank\"><img src='" . url($val['img']) . "' alt='" . $val['title'] . "' height='376px' width='940px'/></a>";
+			$html .= "<a href='" . url($val->url) . "' target=\"_blank\"><img src='" . url($val->img) . "' alt='" . $val->title . "' height='376px' width='940px'/></a>";
 		}
 		$html .= "</div>";
 		return $html;

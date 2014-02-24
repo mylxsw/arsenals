@@ -11,6 +11,58 @@ use Arsenals\Core\Abstracts\Model;
  */
 class Setting extends AdvanceModel {
 	/**
+	 * 添加配置项
+	 */ 
+	public function addSetting(array $data){
+		$entity = array();
+		$entity['setting_key'] = $data['setting_key'];
+		$entity['setting_value'] = $data['setting_value'];
+		$entity['namespace'] = $data['namespace'];
+		$entity['isvalid'] = $data['isvalid'];
+		$entity['info'] = $data['info'];
+		$entity['isserialise'] = $data['isserialise'];
+
+		return $this->save($entity);
+	}
+
+	public function updateSetting(array $data, $id){
+		$entity = array();
+		$entity['setting_key'] = $data['setting_key'];
+		$entity['setting_value'] = $data['setting_value'];
+		$entity['namespace'] = $data['namespace'];
+		$entity['isvalid'] = $data['isvalid'];
+		$entity['info'] = $data['info'];
+		$entity['isserialise'] = $data['isserialise'];
+
+		$this->update($entity, array('id'=>$id));
+	}
+	/**
+	 * 删除配置
+	 */ 
+	public function delSetting($id){
+		if(!is_array($id)){
+            $id = array($id);
+        }
+        foreach($id as $i){
+            $this->delete(array('id'=>$i));
+        }
+	}
+	/**
+	 * 根据条件列出
+	 * @param unknown $condition
+	 * @return Ambigous <multitype:, multitype:multitype: , unknown>
+	 */
+	public function listByCondition(array $condition = array() ){
+		$sql = "SELECT * FROM `" . $this->getTableName() . "` ";
+		if(count($condition) > 0){
+			$sql .= ' WHERE ' . $this->_init_conditions_no_prepare($condition);
+		}
+		
+		$sql .= " ORDER BY namespace ASC, id ASC";
+		
+		return $this->query($sql);
+	}
+	/**
 	 * 读取命名空间下的所有配置
 	 * @param string $namespace
 	 * @return array
