@@ -4,12 +4,8 @@ namespace Demo\hooks;
 
 class DemoHook {
 
-	public function beforeSystem1(){
-		echo "before1";
+	public function beforeSystem(){
+		$sae = new \Arsenals\Libraries\Sae\SaeInit();
+		$sae->init();
 	}
-	
-	public static function beforeSystem2(){
-		echo "before2";
-	}
-
 }

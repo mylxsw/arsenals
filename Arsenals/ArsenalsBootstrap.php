@@ -78,6 +78,11 @@ class ArsenalsBootstrap {
 		defined('CONTROLLER_NAMESPACE') || define('CONTROLLER_NAMESPACE', APP_NAME . '\\controllers\\');
 		defined('FILTER_NAMESPACE') || define('FILTER_NAMESPACE', APP_NAME . '\\filters\\');
 		
+		// 载入系统钩子，对系统进行扩展
+		$hook = Registry::load('Arsenals\\Core\\Hooks');
+		// 系统开始前
+		$hook->call('before_system');
+
 		// 载入系统函数库
 		require ARSENALS_CORE_PATH . 'Common.php';
 		// 配置统一的异常处理
@@ -96,12 +101,6 @@ class ArsenalsBootstrap {
 		
 		// 对用户输入进行预处理
 		Registry::register('Arsenals\\Core\\Input');
-		
-		// 载入系统钩子，对系统进行扩展
-		$hook = Registry::load('Arsenals\\Core\\Hooks');
-		// 系统开始前
-		$hook->call('before_system');
-		
 		// 注册Session
 		Registry::register('Arsenals\\Core\\Session');
 		

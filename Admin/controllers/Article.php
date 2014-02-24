@@ -30,7 +30,7 @@ class Article extends CoreController {
                 } else {
                     $dest_file = 'Resources/uploads/' . md5($_FILES[$field]['name'] . time()) . '.' 
                         . substr($_FILES[$field]['name'], strrpos($_FILES[$field]['name'], '.') + 1);
-                    move_uploaded_file($_FILES[$field]['tmp_name'], BASE_PATH . $dest_file);
+                    \Arsenals\Core\move_uploaded_file($_FILES[$field]['tmp_name'], BASE_PATH . $dest_file);
 
                     return $dest_file;
                 }

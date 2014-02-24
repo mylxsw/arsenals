@@ -39,8 +39,8 @@ class Cache extends CoreController {
 			foreach ($ids_array as $key => $value) {
 				$filename = intval($value) . '.html';
 
-				if (file_exists($cache_path . $filename)) {
-					unlink($cache_path . $filename);
+				if (\Arsenals\Core\file_exists($cache_path . $filename)) {
+					\Arsenals\Core\unlink($cache_path . $filename);
 				}
 			}
 		}
@@ -50,12 +50,12 @@ class Cache extends CoreController {
 
 	private function _clear($cache_path){
 
-		$handler = opendir($cache_path);
-		while(($filename = readdir($handler)) !== false){
-			if(is_file($cache_path . $filename) && $filename != '.' && $filename != '..'){
-				unlink($cache_path . $filename);
+		$handler = \Arsenals\Core\opendir($cache_path);
+		while(($filename = \Arsenals\Core\readdir($handler)) !== false){
+			if(\Arsenals\Core\is_file($cache_path . $filename) && $filename != '.' && $filename != '..'){
+				\Arsenals\Core\unlink($cache_path . $filename);
 			}
 		}
-		closedir($handler);
+		\Arsenals\Core\closedir($handler);
 	}
 }

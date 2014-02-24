@@ -22,19 +22,19 @@ class CacheFilter implements Filter {
 
 			// 如果存在文件，则读取缓存
 			// 这里实际上没有用了
-			// if (file_exists($cache_file)) {
-			// 	// 文件创建时间s
+			if (\Arsenals\Core\file_exists($cache_file)) {
+				// 文件创建时间s
 			// 	//$alive_time = time() - filectime($cache_file);
 				
-			// 	require $cache_file;
-			// 	return true;
-			// }
+				echo \Arsenals\Core\file_get_contents($cache_file);
+				return true;
+			}
 			// 如果不存在，则重新写入文件
 			ob_start();
 			$filterChain->doFilter();
 			$content = ob_get_contents();
 			ob_end_clean();
-			file_put_contents($cache_file, $content);
+			\Arsenals\Core\file_put_contents($cache_file, $content);
 			echo $content;
 			return true;
 		}
