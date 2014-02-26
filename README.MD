@@ -1,5 +1,5 @@
 #Arsenals 开发文档
-**版本号： 1.0**  
+**版本号： 1.0 DEV**  
 **作者： 管宜尧**  
 ***2014/1/4 0:04:56***
 
@@ -424,4 +424,35 @@ function _error_handler($errno, $errstr, $errfile, $errline){
 function _exception_handler(\Exception $exception){
 	_D("文件{$exception->getFile()}的第{$exception->getLine()}行抛出异常， 错误代码为 {$exception->getCode()}， 错误描述 ：{$exception->getMessage()}");
 }
+</pre>
+
+####SAE(新浪云计算平台)支持
+要启用SAE支持，可以通过钩子挂载系统启动前期，加入SAE支持库实现。   
+首先，需要在项目配置文件 ```config.php``` 中启用钩子， ```hook_enabled``` 为 ```true``` ；   
+其次，在hook.php配置文件中配置系统运行前钩子实现：   
+<pre>
+'before_system' => array( 
+		'Demo\\hooks\\DemoHook@beforeSystem'
+)
+</pre>
+在DemoHook类中，定义载入SAE支持类库：
+<pre>
+public function beforeSystem(){
+	$sae = new \Arsenals\Libraries\Sae\SaeInit();
+	$sae->init();
+}
+</pre>
+
+这样，就启用了对SAE的支持了，程序开发过程中，可以通过使用常量 ```IS_SAE``` 对是否是SAE环境进行判断。   
+为了实现SAE与传统环境之间的兼容，开发过程中注意不要使用本地文件系统操作函数，而使用系统内置的函数代替：
+<pre>
+\Arsenals\Core\file_put_contents
+\Arsenals\Core\file_get_contents
+\Arsenals\Core\file_exists
+\Arsenals\Core\opendir
+\Arsenals\Core\readdir
+\Arsenals\Core\unlink
+\Arsenals\Core\closedir
+\Arsenals\Core\is_file
+\Arsenals\Core\move_uploaded_file
 </pre>
