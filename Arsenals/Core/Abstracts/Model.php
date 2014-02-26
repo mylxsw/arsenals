@@ -246,8 +246,8 @@ abstract class Model extends Arsenals {
             if($insert){
                 return $res;
             }
-            $r = array();
-            for(; $tmp = $res->fetch_array(MYSQLI_ASSOC);){
+			$r = array();
+            while($tmp = $res->fetch_array(MYSQLI_ASSOC)){
             	$r[] = $tmp;
             }
 			return $r;
@@ -256,7 +256,7 @@ abstract class Model extends Arsenals {
 		// 提供了参数数组，执行预处理
 		$stmt = $this->_conn->prepare($sql);
 		if($this->_conn->errno){
-			throw new QueryException($this->_conn->error);
+			throw new \Arsenals\Core\Exceptions\QueryException($this->_conn->error);
 		}
 		$b_types = '';
 		$b_params = array();
@@ -300,9 +300,16 @@ abstract class Model extends Arsenals {
 					
 				$res = array();
 				while ($stmt->fetch()){
-					$res[] = $column;
+                    
+					$item = array();
+                    foreach($column as $k=>$v){
+                    	$item[$k] = $v;
+                    }
+                    
+                    $res[] = $item;
 				}
 			}
+            
 			return $res;
 		}
 	}
