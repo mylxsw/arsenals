@@ -1,12 +1,14 @@
 <?php
-use Arsenals\Core\file_put_contents;
+//use Arsenals\Core\file_put_contents;
 session_id($_GET['PHPSESSID']);
 session_start();
 $user = $_SESSION['user'];
 if($user['role'] != 'admin'){
-	echo '{"state":"禁止上传"}';
+    //echo '{"state":"' . $user['role'] . '"}';
+    echo '{"state":"禁止上传"}';
 	exit();
 }
+!defined('IS_SAE') && define('IS_SAE', isset($_SERVER['HTTP_APPCOOKIE']));
 /**
  * Created by JetBrains PhpStorm.
  * User: taoqili
@@ -52,6 +54,8 @@ class Uploader
         // "MOVE" => "文件保存时出错"
         'MOVE' => '\u6587\u4ef6\u4fdd\u5b58\u65f6\u51fa\u9519'
     );
+    
+    private $_saeStorage = null;
 
     /**
      * 构造函数
@@ -61,6 +65,12 @@ class Uploader
      */
     public function __construct( $fileField , $config , $base64 = false )
     {
+        if(defined('IS_SAE') && IS_SAE){
+        	$this->_saeStorage = new \SaeStorage();
+            if(!$this->_saeStorage){
+            	throw new \Exception("SAE Storage初始化失败!");
+            }
+        }
         $this->fileField = $fileField;
         $this->config = $config;
         $this->stateInfo = $this->stateMap[ 0 ];
@@ -110,8 +120,19 @@ class Uploader
         }
         $this->fullName = $this->getFolder() . '/' . $this->getName();
         if ( $this->stateInfo == $this->stateMap[ 0 ] ) {
-            if ( !move_uploaded_file( $file[ "tmp_name" ] , $this->fullName ) ) {
-                $this->stateInfo = $this->getStateInfo( "MOVE" );
+            // 根据是否是SAE环境进行不同的上传配置
+            if(defined('IS_SAE') && IS_SAE){
+            	$domain = 'arsenals';
+                $upload_url = $this->_saeStorage->upload($domain, $this->fullName, $file["tmp_name"]);
+                if(!$upload_url){
+                    //$this->stateInfo = $this->getStateInfo( "MOVE" );
+                	$this->stateInfo = $this->_saeStorage->errmsg();
+                }
+                $this->fullName = $upload_url;
+            }else{
+            	if ( !move_uploaded_file( $file[ "tmp_name" ] , $this->fullName ) ) {
+                    $this->stateInfo = $this->getStateInfo( "MOVE" );
+                }
             }
         }
     }
@@ -126,10 +147,20 @@ class Uploader
         $img = base64_decode( $base64Data );
         $this->fileName = time() . rand( 1 , 10000 ) . ".png";
         $this->fullName = $this->getFolder() . '/' . $this->fileName;
-        if ( !file_put_contents( $this->fullName , $img ) ) {
-            $this->stateInfo = $this->getStateInfo( "IO" );
-            return;
+        if(defined('IS_SAE') && IS_SAE){
+        	$upload_url = $this->_saeStorage->write('arsenals', $this->fullName, $img);
+            if(!$upload_url){
+            	$this->stateInfo = $this->_saeStorage->errmsg();
+                return;
+            }
+            $this->fullName = $upload_url;
+        }else{
+        	if ( !file_put_contents( $this->fullName , $img ) ) {
+                $this->stateInfo = $this->getStateInfo( "IO" );
+                return;
+            }
         }
+        
         $this->oriName = "";
         $this->fileSize = strlen( $img );
         $this->fileType = ".png";
@@ -242,12 +273,12 @@ class Uploader
      */
     private function getFolder()
     {
-        $pathStr = $this->config[ "savePath" ];
+        $pathStr = defined('IS_SAE') && IS_SAE ? '' : $this->config[ "savePath" ];
         if ( strrchr( $pathStr , "/" ) != "/" ) {
             $pathStr .= "/";
         }
-        $pathStr .= date( "Ymd" );
-        if ( !file_exists( $pathStr ) ) {
+        $pathStr .= date( "Y/m/d" );
+        if (!(defined('IS_SAE') && IS_SAE) && !file_exists( $pathStr ) ) {
             if ( !mkdir( $pathStr , 0777 , true ) ) {
                 return false;
             }

@@ -52,7 +52,7 @@
 window.UM = UE.getEditor('blog_textarea');
 $.Metro.initInputs();
 $(function(){
-	var feature_img = "<?php echo \Admin\site_url(), $art['feature_img'];?>";
+	var feature_img = "<?php echo \Admin\url($art['feature_img']);?>";
 	if (feature_img != '') {
 		$("#feature_img_area").html("<img src='" + feature_img + "' class='span4' /><div class=\"overlay-fluid\">" + feature_img + "</div>");
 	};

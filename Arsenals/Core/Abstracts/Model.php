@@ -81,7 +81,7 @@ abstract class Model extends Arsenals {
 			$args = $conditions_result[1];
 			$this->query($sql, $args, true);
 		}else{
-			throw new QueryException('执行删除操作必须指定查询条件!');
+			throw new \Arsenals\Core\Exceptions\QueryException('执行删除操作必须指定查询条件!');
 		}
 	}
 	
@@ -325,16 +325,13 @@ abstract class Model extends Arsenals {
 	public function lists($limit = null, $table = null){
 		$table = is_null($table) ? $this->_table_name : $this->getTableName($table);
 		
-		$sql = "SELECT * FROM `{$table}`";
+		$sql = "SELECT * FROM `{$table}` ";
 		// 添加查询记录数量限制
 		if(!\is_null($limit)){
 			$sql .= " LIMIT {$limit}";
 		}
-		$res = $this->_conn->query($sql);
-		if($this->_conn->errno){
-			throw new QueryException($this->_conn->error);
-		}
-		return $res;
+        
+		return $this->query($sql);
 	}
     /**
      * 初始化查询条件数组为字符串，无prepare

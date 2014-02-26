@@ -25,14 +25,15 @@ class Config extends Arsenals {
 		if(!isset(self::$_configs[$file_name])){
 			// 首先加载核心配置
 			$core_config_file = ARSENALS_CONFIG_PATH . $file_name . '.php';
-			if(file_exists($core_config_file)){
+           
+			if(\file_exists($core_config_file)){
 				$configs = include $core_config_file;
 			}else{
 				$configs = array();
 			}
 			
 			// 判断是否项目中含有配置文件，如果有则合并
-			if(file_exists(CONFIG_PATH . $file_name . '.php')){
+			if(\file_exists(CONFIG_PATH . $file_name . '.php')){
 				$app_configs = include CONFIG_PATH . $file_name . '.php';
 				$configs = array_merge($configs, $app_configs);
 			}

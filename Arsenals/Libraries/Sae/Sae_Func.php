@@ -45,7 +45,7 @@ function file_exists($filename){
 	}
 	$kv = SaeKV();
     
-	return !is_null($kv->get($filename));
+	return $kv->get($filename);
 }
 /**
  * 打开目录
@@ -94,5 +94,9 @@ function is_file($filename){
  * Moves an uploaded file to a new location
  */ 
 function move_uploaded_file($filename, $destination){
-	return \move_uploaded_file($filename, $destination);
+    if(!IS_SAE){
+		return \move_uploaded_file($filename, $destination);
+    }
+    $store = new \SaeStorage();
+    return $store->upload('arsenals', $destination, $filename);
 }

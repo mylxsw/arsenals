@@ -19,6 +19,9 @@ class Article extends CoreController {
 		
 		return $this->view('article/write');
 	}
+    /**
+     * 图片上传
+     */
     private function _imageUpload($field){
         if(isset($_FILES[$field]) && $_FILES[$field]['error'] == 0){
             if ((($_FILES[$field]["type"] == "image/gif")
@@ -30,8 +33,16 @@ class Article extends CoreController {
                 } else {
                     $dest_file = 'Resources/uploads/' . md5($_FILES[$field]['name'] . time()) . '.' 
                         . substr($_FILES[$field]['name'], strrpos($_FILES[$field]['name'], '.') + 1);
-                    \Arsenals\Core\move_uploaded_file($_FILES[$field]['tmp_name'], BASE_PATH . $dest_file);
-
+                    $up_status = \Arsenals\Core\move_uploaded_file($_FILES[$field]['tmp_name'], BASE_PATH . $dest_file);
+                    if($up_status === true){
+                    	return $dest_file;
+                    }else if($up_status === false){
+                    	throw new \Common\FileUploadException("文件上传失败!");
+                    }else{
+                        if(\is_string($up_status)){
+                        	return $up_status;
+                        }
+                    }
                     return $dest_file;
                 }
             } else {

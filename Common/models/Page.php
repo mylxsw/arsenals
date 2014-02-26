@@ -66,10 +66,7 @@ class Page extends Model {
         if(!\is_null($limit)){
             $sql .= " LIMIT {$limit}";
         }
-        $res = $this->_conn->query($sql);
-        if($this->_conn->errno){
-            throw new QueryException($this->_conn->error);
-        }
-        return $res;
+        
+        return $this->query($sql);
     }
 }

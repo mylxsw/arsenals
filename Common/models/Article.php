@@ -86,6 +86,7 @@ class Article extends Model {
 		if (!is_array($category)) {
 			$category = array($category);
 		}
+       
 		$sql = "SELECT * FROM " . $this->getTableName() . " WHERE id in (";
 		$sql .= "SELECT DISTINCT A.ARTICLE_ID FROM " . $this->getTableName('article_category') . " AS A WHERE A.CATEGORY_ID in (";
 		foreach ($category as $k){
