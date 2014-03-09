@@ -188,7 +188,7 @@ Arsenals采用了基于MVC的架构，同时支持Service层的扩展。
 		<td>mysql连接配置</td>
 	</tr>
 	<tr>
-		<td>pdo</td>
+		<td>pdo （暂未实现）</td>
 		<td>array('dsn','user','password')</td>
 		<td>PDO连接配置</td>
 	</tr>
@@ -327,6 +327,14 @@ Arsenals框架提供了字段校验功能，开发过程中，可以方便的使
 		<td>len</td>
 		<td>指定长度（最小长度,最大长度）</td>
 	</tr>
+	<tr>
+		<td>id</td>
+		<td>ID校验，默认为数字</td>
+	</tr>
+	<tr>
+		<td>in</td>
+		<td>指定在给定范围内， 如in:1,2,3 取值只允许1,2,3之一</td>
+	</tr>
 </tbody>
 </table>
 
@@ -425,6 +433,57 @@ function _exception_handler(\Exception $exception){
 	_D("文件{$exception->getFile()}的第{$exception->getLine()}行抛出异常， 错误代码为 {$exception->getCode()}， 错误描述 ：{$exception->getMessage()}");
 }
 </pre>
+####内置异常
+框架实现中包含了一些可能会常用到的异常，在开发过程中可以直接使用内置异常类。  
+系统内置异常统一在命名空间 ```Arsenals\Core\Exceptions``` 下，并且都继承了 ```Arsenals\Core\Exceptions\ArsenalsException``` 异常基类。   
+<table>
+<thead>
+	<tr><th>内置异常类</th><th>用途</th></tr>
+</thead>
+<tbody>
+	<tr>
+		<td>AccessDeniedException</td>
+		<td>拒绝访问异常，一般用于没有权限访问</td>
+	</tr>
+	<tr>
+		<td>ClassNotFoundException</td>
+		<td>找不到类</td>
+	</tr>
+	<tr>
+		<td>ClassTypeException</td>
+		<td>类不是合法的类型</td>
+	</tr>
+	<tr>
+		<td>FormInvalidException</td>
+		<td>表单异常，如表单校验异常</td>
+	</tr>
+	<tr>
+		<td>FuncParamException</td>
+		<td>函数，方法调用参数异常</td>
+	</tr>
+	<tr>
+		<td>NoRecoredException</td>
+		<td>没有查询到指定基类异常</td>
+	</tr>
+	<tr>
+		<td>PageNotFoundException</td>
+		<td>找不到要访问的页面异常</td>
+	</tr>
+	<tr>
+		<td>QueryException</td>
+		<td>查询异常</td>
+	</tr>
+	<tr>
+		<td>RedefineException</td>
+		<td>重复定义异常</td>
+	</tr>
+	<tr>
+		<td>TypeErrorException</td>
+		<td>错误的类型</td>
+	</tr>
+</tbody>
+</table>
+
 
 ####SAE(新浪云计算平台)支持
 要启用SAE支持，可以通过钩子挂载系统启动前期，加入SAE支持库实现。   
