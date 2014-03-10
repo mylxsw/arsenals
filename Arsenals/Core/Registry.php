@@ -34,12 +34,19 @@ class Registry extends Arsenals {
 	 * 如果该对象不存在，则创建该对象
 	 *
 	 * @param string $calss_name 类名
+	 * @param  bool $config 是否加载配置文件
 	 * @return object
 	 */
-	public static function load($class_name){
+	public static function load($class_name, $config = NULL){
 		$class_name = ucfirst($class_name);
 		if(!array_key_exists($class_name, self::$_cache_objects)){
-			self::$_cache_objects[$class_name] = new $class_name;
+			if(is_bool($config) && $config === true){
+				// 加载配置
+				// 
+				// 
+			}else{
+				self::$_cache_objects[$class_name] = new $class_name;
+			}
 		}
 		return self::$_cache_objects[$class_name];
 	}

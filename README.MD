@@ -484,6 +484,15 @@ function _exception_handler(\Exception $exception){
 </tbody>
 </table>
 
+###扩展类库
+####图形验证码
+扩展库中包含简单验证码实现，调用方式非常简单：
+<pre>
+$captcha = Registry::load('\Arsenals\Libraries\Images\Captcha');
+$code = $captcha->generageCode();
+$captcha->createImage($code);
+</pre>
+注意的是，```createImage``` 方法可以接收两个参数，第一个参数为验证码字符串，第二个参数为可选，如果为NULL，则验证码直接输出到浏览器，或者可以为要保存验证码的文件名。
 
 ####SAE(新浪云计算平台)支持
 要启用SAE支持，可以通过钩子挂载系统启动前期，加入SAE支持库实现。   
