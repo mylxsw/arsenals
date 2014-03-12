@@ -20,8 +20,8 @@ class ImageUtils{
 	 * @param array $config
 	 *	'source_file'	=> '', 		原图片
 	 *	'watermark'		=> '', 		水印图片
-	 *	'pos_x' 		=> '', 		水印起始横坐标
-	 *	'pos_y'			=> '', 		水印起始纵坐标
+	 *	'pos_x' 		=> '', 		水印左边距（负数为右边距）
+	 *	'pos_y'			=> '', 		水印上边距（负数为下边距）
 	 *	'dest_file'		=> null, 	目标存储文件
 	 *	'alpha'			=> 75  		水印透明度
 	 */ 
@@ -41,8 +41,8 @@ class ImageUtils{
 		$src_image = self::_imageCreateFrom($config['source_file'], $s_mime);
 		$watermark = self::_imageCreateFrom($config['watermark'], $w_mime);
 
-		$pos_x = $config['pos_x'] >= 0 ? $config['$pos_x'] : ($s_width + $config['pos_x']);
-		$pos_y = $config['pos_y'] >= 0 ? $config['pos_y'] : ($s_height + $config['pos_y']);
+		$pos_x = $config['pos_x'] >= 0 ? $config['$pos_x'] : ($s_width + $config['pos_x'] - $w_width);
+		$pos_y = $config['pos_y'] >= 0 ? $config['pos_y'] : ($s_height + $config['pos_y'] - $w_height);
 
 		imagecopymerge($src_image, // 原图片
 			$watermark, // 水印图片

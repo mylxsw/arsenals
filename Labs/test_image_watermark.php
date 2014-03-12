@@ -8,8 +8,8 @@ $filename = 'test.jpg';
 ImageUtils::watermark(array(
 	'source_file' => $filename, 
 	'watermark'=> 'test.gif', 
-	'pos_x'=>-500, 
-	'pos_y'=>-444
+	'pos_x'=>-40, 
+	'pos_y'=>-40
 ));
 
 
