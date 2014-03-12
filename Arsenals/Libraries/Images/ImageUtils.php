@@ -15,6 +15,51 @@ class ImageUtils{
 		'image/bmp'		=>	'bmp'
 		);
 	/**
+	 * 创建水印
+	 * 
+	 * @param array $config
+	 *	'source_file'	=> '', 		原图片
+	 *	'watermark'		=> '', 		水印图片
+	 *	'pos_x' 		=> '', 		水印起始横坐标
+	 *	'pos_y'			=> '', 		水印起始纵坐标
+	 *	'dest_file'		=> null, 	目标存储文件
+	 *	'alpha'			=> 75  		水印透明度
+	 */ 
+	public static function watermark(array $config){
+		$config = array_merge(array(
+			'source_file'	=> '', 
+			'watermark'		=> '', 
+			'pos_x' 		=> '', 
+			'pos_y'			=> '', 
+			'dest_file'		=> null, 
+			'alpha'			=> 75
+			), $config);
+		
+		list($s_width, $s_height, $s_mime) = self::getImageInfo($config['source_file']);
+		list($w_width, $w_height, $w_mime) = self::getImageInfo($config['watermark']);
+
+		$src_image = self::_imageCreateFrom($config['source_file'], $s_mime);
+		$watermark = self::_imageCreateFrom($config['watermark'], $w_mime);
+
+		$pos_x = $config['pos_x'] >= 0 ? $config['$pos_x'] : ($s_width + $config['pos_x']);
+		$pos_y = $config['pos_y'] >= 0 ? $config['pos_y'] : ($s_height + $config['pos_y']);
+
+		imagecopymerge($src_image, // 原图片
+			$watermark, // 水印图片
+			$pos_x, // 目标点的X坐标
+			$pos_y, // 目标点的Y坐标
+			0,  // 水印图的X坐标
+			0,  // 水印图的Y坐标
+			$w_width, // 水印图的宽度
+			$w_height,  // 水印图的高度
+			$config['alpha']); // alpha
+
+		self::_imageOutput($src_image, $s_mime);
+		
+		imagedestroy($src_image);
+		imagedestroy($watermark);
+	}
+	/**
 	 * 百分比调整图片尺寸
 	 * 
 	 * @param  string $source_filename 原文件名
@@ -110,7 +155,7 @@ class ImageUtils{
 	 * @param int $quailty 图片质量（0-100之间的整数）
 	 * 
 	 */ 
-	private static function _imageOutput($image, $mime_type, $dest_filename, $quailty){
+	private static function _imageOutput($image, $mime_type, $dest_filename = null, $quailty = 80){
 		if(is_null($dest_filename)){
 			header("Content-Type: {$mime_type}");
 		}
