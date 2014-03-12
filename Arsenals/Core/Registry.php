@@ -37,13 +37,28 @@ class Registry extends Arsenals {
 	 * @param  bool $config 是否加载配置文件
 	 * @return object
 	 */
-	public static function load($class_name, $config = NULL){
-		$class_name = ucfirst($class_name);
+	public static function load($class_name, $config = false){
+		// 如果类名不含有命名空间，则首字母默认大写
+		if(strpos($class_name, '\\') === false){
+			$class_name = ucfirst($class_name);
+		}
+		// 如果已经加载过了，则不再重复加载
 		if(!array_key_exists($class_name, self::$_cache_objects)){
-			if(is_bool($config) && $config === true){
+			$config_arr = array();
+			if($config !== false){
 				// 加载配置
-				// 
-				// 
+				$last_occr_pos = strrpos($class_name, '\\');
+				$config_file_name = strtolower(substr($class_name, $last_occr_pos === false ? 0 : $last_occr_pos));
+
+				$config_arr = Config::load($config_file_name);
+			}
+			// 如果参数config是数组，则合并为新的参数
+			if(is_array($config)){
+				$config_arr = array_merge($config_arr, $config);
+			}
+			// 根据config_arr是否为空进行不同的初始化创建工作
+			if (is_array($config_arr) && count($config_arr) > 0) {
+				self::$_cache_objects[$class_name] = new $class_name($config_arr);
 			}else{
 				self::$_cache_objects[$class_name] = new $class_name;
 			}
@@ -72,14 +87,40 @@ class Registry extends Arsenals {
 	 *
 	 * @param string $class_name 要注册的类名
 	 * @param object $object 要注册的对象，如果为null，则注册类名的对象
-	 *
+	 * @param  bool $config 是否加载配置文件
+	 * 
 	 * @return void
 	 */
-	public static function register($class_name, $object = null){
-		$class_name = ucfirst($class_name);
+	public static function register($class_name, $object = null, $config = false){
+		// 如果类名不含有命名空间，则首字母默认大写
+		if(strpos($class_name, '\\') === false){
+			$class_name = ucfirst($class_name);
+		}
+		// 如果已经加载过了，则不再重复加载
 		if(!array_key_exists($class_name, self::$_cache_objects)){
-			self::$_cache_objects[$class_name] = is_null($object) ? (new $class_name) : $object;
-			return ;
+			if(!is_null($object)){
+				self::$_cache_objects[$class_name] = $object;
+				return ;
+			}
+
+			$config_arr = array();
+			if($config !== false){
+				// 加载配置
+				$last_occr_pos = strrpos($class_name, '\\');
+				$config_file_name = strtolower(substr($class_name, $last_occr_pos === false ? 0 : $last_occr_pos));
+
+				$config_arr = Config::load($config_file_name);
+			}
+			// 如果参数config是数组，则合并为新的参数
+			if(is_array($config)){
+				$config_arr = array_merge($config_arr, $config);
+			}
+			// 根据config_arr是否为空进行不同的初始化创建工作
+			if (is_array($config_arr) && count($config_arr) > 0) {
+				self::$_cache_objects[$class_name] = new $class_name($config_arr);
+			}else{
+				self::$_cache_objects[$class_name] = new $class_name;
+			}
 		}else if(!is_null($object)){
 			throw new RedefineException('该类名已经注册，无法再次注册不同的对象!');
 		}
