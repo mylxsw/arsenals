@@ -124,6 +124,8 @@ class ArsenalsBootstrap {
 		$log = Registry::load('Arsenals\\Core\\Log');
 		$log->debug("The system has been running : {$benchMark->elapsedTime('system_start', 'system_end')}", 'system');
 		$log->debug("The controller has been running : {$benchMark->elapsedTime('controller_start', 'controller_end')}", 'system');
+		
+		$this->clear();
 	}
 	/**
 	 * 自动加载文件
@@ -144,4 +146,6 @@ class ArsenalsBootstrap {
 	 * 子类覆写该方法，实现系统的自定义初始化工作
 	 */
 	public function run(){}
+
+	public function clear(){}
 }
