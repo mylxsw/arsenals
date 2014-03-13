@@ -78,7 +78,7 @@ abstract class Controller extends Service {
 	 */
 	protected function assign($key, $data){
 		if(!is_string($key)){
-			throw new TypeErrorException("key必须为字符串格式！");
+			throw new TypeErrorException("The key must be string!");
 		}
 		$this->_view_datas[$key] = $data;
 	}

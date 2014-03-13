@@ -63,7 +63,7 @@ class ViewAndModel extends Arsenals {
 				ValueStack::addAll($view_name->getDatas());
 				return $view->parse($view_name);
 			}else{
-				throw new \Exception('指定的视图类必须实现Arsenals\\Core\\Views\\View接口!');
+				throw new \Exception('The view class must implement the interface : Arsenals\\Core\\Views\\View!');
 			}
 		}else{
 			$vm = new ViewAndModel($view_name, $view_datas);

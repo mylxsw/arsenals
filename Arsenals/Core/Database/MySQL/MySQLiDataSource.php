@@ -24,7 +24,7 @@ class MySQLiDataSource extends Arsenals implements DataSource {
 					$config['mysql']['port']);
 		
 		if(mysqli_connect_errno()){
-			throw new \Exception('数据库连接失败!原因：' . mysqli_connect_error());
+			throw new \Exception('Database connection failed! Error：' . mysqli_connect_error());
 		}
 		$mysqli->query('SET NAMES ' . $config['mysql']['char_set']);
 		

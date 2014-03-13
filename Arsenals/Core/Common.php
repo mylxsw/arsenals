@@ -26,6 +26,64 @@ if(!function_exists('\\Arsenals\\Core\\_D')){
 		echo '</pre>';
 	}
 }
+/**
+ * 检查当前语言配置
+ */ 
+if(!function_exists('\\Arsenals\\Core\\detect_lang')){
+	function detect_lang(){
+		return 'cn';
+	}
+}
+/**
+ * 多语言支持
+ * 
+ * @param string $code 语言转换代码
+ * @param array $replace 代替值
+ * @param string $default 默认值，在找不到代码代表值的时候使用
+ * @param string $file 语言文件，默认为basic,不需要扩展名
+ */ 
+if(!function_exists('\\Arsenals\\Core\\L')){
+	function L($code, $replace = null, $default = null, $file = 'basic'){
+		// 缓存已经加载的语言文件
+		static $langs = array();
+
+		// 如果没有缓存过，则先缓存
+		if(!array_key_exists($file, $langs)){
+			$current_lang = detect_lang();
+			$lang_file_sys = ARSENALS_LANG_PATH . $current_lang . DIRECTORY_SEPARATOR . $file . '.php';
+			$lang_kv = array();
+			// 首先读取系统内置语言
+			if(\file_exists($lang_file_sys)){
+				$lang_kv = include $lang_file_sys;
+			}
+			// 读取项目配置语言
+			$lang_file = LANG_PATH . $current_lang . DIRECTORY_SEPARATOR . $file . '.php';
+			if(\file_exists($lang_file)){
+				$lang_kv_prog = include $lang_file;
+				$lang_kv = array_merge($lang_kv, $lang_kv_prog);
+			}
+
+			$langs[$file] = $lang_kv;
+		}
+		// 判断是否是存在该代码对应的翻译，如果存在，则处理翻译，否则，返回默认值
+		if(array_key_exists($code, $langs[$file])){
+			// 如果没有提供替换变量， 则直接返回翻译语言
+			if (is_null($replace)) {
+				return $langs[$file][$code];
+			}
+			// 正则替换需要翻译的变量
+			$lang_trans = $langs[$file][$code];
+			foreach ($replace as $key => $value) {
+				$lang_trans = preg_replace('/#{' . $key . '}/', $value, $lang_trans);
+			}
+			return $lang_trans;
+		}
+
+		// 返回提供的默认值
+		return $default;
+	}
+}
+
 
 /**
  * 字符串函数： 判断字符串是否以另一字符串结尾
@@ -227,7 +285,7 @@ if(!function_exists('\\Arsenals\\Core\\move_uploaded_file')){
  */
 if(!function_exists('\\Arsenals\\Core\\_error_handler')){
 	function _error_handler($errno, $errstr, $errfile, $errline){
-		_D("文件{$errfile}的第{$errline}行有一个错误，错误代码为{$errno}, 错误描述:{$errstr}");
+		_D("File {$errfile} , Line {$errline} has an error occer，error code : {$errno}, description :{$errstr}");
 	}
 }
 /**
@@ -241,7 +299,7 @@ if(!function_exists('\\Arsenals\\Core\\_exception_handler')){
 			$output = Registry::load('\\Arsenals\\Core\\Output');
 			$output->render(new Ajax(array('info'=>$exception->getMessage(), 'status'=>0)));
 		}else{
-			_D("文件{$exception->getFile()}的第{$exception->getLine()}行抛出异常， 错误代码为 {$exception->getCode()}， 错误描述 ：{$exception->getMessage()}");
+			_D("File {$exception->getFile()}, Line {$exception->getLine()} has an exception occer， error code : {$exception->getCode()}， description ：{$exception->getMessage()}");
 		}
 	}
 }

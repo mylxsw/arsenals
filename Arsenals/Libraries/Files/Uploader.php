@@ -22,7 +22,13 @@ class Uploader{
 			$this->$key = $value;
 		}
 	}
-
+	/**
+	 * 执行文件上传
+	 * 注意： 只支持单文件上传
+	 * 
+	 * @param string $field 上传字段
+	 * @param string $dest_filename 要保存的文件名
+	 */ 
 	public function upload($field, $dest_filename){
 
 		// 检查文件是否存在

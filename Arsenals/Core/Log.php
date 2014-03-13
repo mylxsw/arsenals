@@ -21,7 +21,7 @@ class Log{
 			$logImpl = LOG_IMPL;
 			self::$_log_instance = new $logImpl;
 			if (!self::$_log_instance instanceof Logs) {
-				throw new ClassTypeException('日志实现类必须实现Logs接口！');
+				throw new ClassTypeException('Log implementation class must implement the interface Logs!');
 			}
 		}
 		$this->_conf = Config::load('log');

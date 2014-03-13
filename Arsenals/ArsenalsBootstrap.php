@@ -42,14 +42,14 @@ class ArsenalsBootstrap {
 				define('MAGIC_QUOTES_GPC', false);
 			}
 		}else{
-			throw new \Exception('PHP版本不能小于5.3.0！');
+			throw new \Exception('The version of PHP can not be less than 5.3.0 !');
 		}
 		// 检查是否完成了必须的配置
 		if(!defined('APP_NAME')){
-			throw new \Exception('APP_NAME必须定义！');
+			throw new \Exception('The constant APP_NAME not defined ！');
 		}
 		if(!defined('BASE_PATH')){
-			throw new \Exception('BASE_PATH必须定义！');
+			throw new \Exception('The constant BASE_PATH not defined ！');
 		}
 		// 定义系统常量
 		defined('ERROR_HANDLER') || define('ERROR_HANDLER', 'Arsenals\\Core\\_error_handler');
@@ -60,6 +60,7 @@ class ArsenalsBootstrap {
 		define('ARSENALS_CORE_PATH', ARSENALS_PATH . 'Core' . DIRECTORY_SEPARATOR);
 		define('ARSENALS_CONFIG_PATH', ARSENALS_PATH . 'Configs' . DIRECTORY_SEPARATOR);
 		define('ARSENALS_LIBRARIES_PATH', ARSENALS_PATH . 'Libraries' . DIRECTORY_SEPARATOR);
+		define('ARSENALS_LANG_PATH', ARSENALS_PATH . 'Langs' . DIRECTORY_SEPARATOR);
 		
 		// 是否调试模式和记录日志
 		defined('DEBUG') || define('DEBUG', false);
@@ -72,6 +73,7 @@ class ArsenalsBootstrap {
 		defined('VIEW_PATH') || define('VIEW_PATH', APP_PATH . 'views' . DIRECTORY_SEPARATOR);
 		defined('VIEW_LAYER') || define('VIEW_LAYER', 'Arsenals\\Core\\Views\\SimpleView');
 		defined('CACHE_PATH') || define('CACHE_PATH', APP_PATH . 'caches' . DIRECTORY_SEPARATOR);
+		defined('LANG_PATH') || define('LANG_PATH', APP_PATH . 'langs' . DIRECTORY_SEPARATOR);
 		
 		defined('MODEL_NAMESPACE') || define('MODEL_NAMESPACE', APP_NAME . '\\models\\');
 		defined('SERVICE_NAMESPACE') || define('SERVICE_NAMESPACE', APP_NAME . '\\services\\');
@@ -120,8 +122,8 @@ class ArsenalsBootstrap {
 		$benchMark->mark('system_end');
 		
 		$log = Registry::load('Arsenals\\Core\\Log');
-		$log->debug("系统运行时间: {$benchMark->elapsedTime('system_start', 'system_end')}", 'system');
-		$log->debug("控制器执行时间: {$benchMark->elapsedTime('controller_start', 'controller_end')}", 'system');
+		$log->debug("The system has been running : {$benchMark->elapsedTime('system_start', 'system_end')}", 'system');
+		$log->debug("The controller has been running : {$benchMark->elapsedTime('controller_start', 'controller_end')}", 'system');
 	}
 	/**
 	 * 自动加载文件

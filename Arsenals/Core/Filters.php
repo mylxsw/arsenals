@@ -32,7 +32,7 @@ class Filters extends Arsenals {
 		$filterName = FILTER_NAMESPACE . array_shift(self::$_filters);
 		$filter = new $filterName();
 		if(!$filter instanceof Filter){
-			throw new ClassTypeException("过滤器{$filterName}必须实现Arsenals\\Core\\Abstracts\\Filter接口！");
+			throw new ClassTypeException("The filter {$filterName} must implement the interface : Arsenals\\Core\\Abstracts\\Filter！");
 		}
 		
 		$filter->doFilter($this, $this->_router);

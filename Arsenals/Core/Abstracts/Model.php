@@ -81,7 +81,7 @@ abstract class Model extends Arsenals {
 			$args = $conditions_result[1];
 			$this->query($sql, $args, true);
 		}else{
-			throw new \Arsenals\Core\Exceptions\QueryException('执行删除操作必须指定查询条件!');
+			throw new \Arsenals\Core\Exceptions\QueryException('Perform the delete operation must specify the query criteria!');
 		}
 	}
 	

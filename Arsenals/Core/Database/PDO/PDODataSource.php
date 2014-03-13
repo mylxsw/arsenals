@@ -38,7 +38,7 @@ class PDODataSource extends Arsenals implements DataSource {
 					$config['mysql']['user'],
 					$config['mysql']['password']);
 		}catch (\PDOException $e){
-			throw new \Exception('数据库连接失败!原因:' . $e->getMessage());
+			throw new \Exception('Database connection failed! Error：' . $e->getMessage());
 		}
 		
 	}

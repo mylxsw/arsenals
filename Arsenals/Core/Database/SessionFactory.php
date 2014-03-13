@@ -34,7 +34,7 @@ class SessionFactory extends Arsenals {
 				// 创建数据源
 				$ds = new $data_source_class();
 				if(!$ds instanceof DataSource){
-					throw new \Exception('数据源必须实现DataSource接口!');
+					throw new \Exception('Data source must implement the DataSource interface!');
 				}
 				$ds->init();
 				
@@ -52,7 +52,7 @@ class SessionFactory extends Arsenals {
 				// 创建指定的数据源
 				$ds = new $data_source();
 				if(!$ds instanceof DataSource){
-					throw new \Exception('数据源必须实现DataSource接口!');
+					throw new \Exception('Data source must implement the DataSource interface!');
 				}
 				$ds->init();
 				
@@ -61,7 +61,7 @@ class SessionFactory extends Arsenals {
 			}
 			return self::$_last_connection;
 		}
-		throw new \Exception('没有查找到该数据源!');
+		throw new \Exception('No data source found!');
 	}
 	
 }

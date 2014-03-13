@@ -122,7 +122,7 @@ class Registry extends Arsenals {
 				self::$_cache_objects[$class_name] = new $class_name;
 			}
 		}else if(!is_null($object)){
-			throw new RedefineException('该类名已经注册，无法再次注册不同的对象!');
+			throw new RedefineException('This class name is already registered, different objects can not be registered again!');
 		}
 	}
 	
@@ -151,7 +151,7 @@ class Registry extends Arsenals {
 	public static function remove($class_name){
 		$class_name = ucfirst($class_name);
 		if(!array_key_exists($class_name, self::$_cache_objects)){
-			throw new ClassNotFoundException('没有找到该类的对象!');
+			throw new ClassNotFoundException('No object of that class be found!');
 		}
 		unset(self::$_cache_objects[$calss_name]);
 	}

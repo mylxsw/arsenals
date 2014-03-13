@@ -122,7 +122,7 @@ class Router extends Arsenals {
 			$this->_hook->call('after_controller');
 		}else{
 			if(!class_exists($this->_controller)){
-				throw new PageNotFoundException('指定的控制器不存在！');
+				throw new PageNotFoundException('The controller does not exist!');
 			}
 			// 创建控制器并执行动作
 			$this->_hook->call('before_controller');
@@ -131,7 +131,7 @@ class Router extends Arsenals {
 			$controller = new $this->_controller();
 			
 			if(!method_exists($controller, $this->_action)) {
-				throw new PageNotFoundException('指定的控制器方法不存在！');
+				throw new PageNotFoundException('Controller method specified does not exist!');
 			}
 			
 			$view = $controller->{$this->_action}(Registry::load('\\Arsenals\\Core\\Input'));

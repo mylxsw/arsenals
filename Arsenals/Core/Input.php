@@ -231,7 +231,7 @@ class Input extends Arsenals {
 			// 如果规则类型为正则表达式，则使用正则表达式进行校验
 			if ($type == self::REGEXP) {
 				if(!preg_match($optionals, $var)){
-					throw new TypeErrorException("字段类型有误！");
+					throw new TypeErrorException(self::L('FIELD_TYPE_INVALID', null, 'Field type invalid!'));
 				}
 				return $var;
 			}
@@ -250,10 +250,10 @@ class Input extends Arsenals {
 					$validate_res = call_user_func_array($validate_entity, 
 							array($var, substr($filter, intval(strpos($filter, ':')) + 1)));
 					if($validate_res === FALSE){
-						throw new TypeErrorException("字段类型有误！");
+						throw new TypeErrorException(self::L('FIELD_TYPE_INVALID', null, 'Field type invalid!'));
 					}
 				}else{
-					throw new FuncParamException("校验规则{$filter}不存在！");
+					throw new FuncParamException("Validation rule {$filter} not exist！");
 				}
 			}
 			return $var;
@@ -262,7 +262,7 @@ class Input extends Arsenals {
 		if(is_callable($type)){
 			return call_user_func($type, $var);
 		}
-		throw new FuncParamException("字段类型校验规则有误！");
+		throw new FuncParamException("Validation rule has something wrong!");
 	}
 	/**
 	 * 注册验证规则
@@ -284,7 +284,7 @@ class Input extends Arsenals {
 	private static function _filter_var($var, $type, $optionals){
 		$filtered = filter_var($var, is_numeric($type) ? $type : filter_id($type), $optionals);
 		if($filtered === FALSE){
-			throw new TypeErrorException("字段类型有误！");
+			throw new TypeErrorException(self::L('FIELD_TYPE_INVALID', null, 'Field type invalid!'));
 		}
 		return $filtered;
 	}
@@ -297,7 +297,7 @@ class Input extends Arsenals {
 	 */
 	private static function _rule_required($var, $rule){
 		if (is_null($var) || $var == ''){
-			throw new TypeErrorException("字段必须！");
+			throw new TypeErrorException(self::L('FIELD_REQUIRED', null, 'Field required!'));
 		}
 		
 		return TRUE;
@@ -317,7 +317,7 @@ class Input extends Arsenals {
 	 */
 	private static function _rule_number($var, $rule){
 		if(!is_numeric($var)){
-			throw new TypeErrorException("字段不是一个合法的数字！");
+			throw new TypeErrorException(self::L('FIELD_NOT_VALID_NUM', null, 'Field is not a valid number!'));
 		}
 		
 		return self::_rule_range($var, $rule);
@@ -336,10 +336,10 @@ class Input extends Arsenals {
 			$max = $dot_pos === FALSE ? null : intval(substr($rule, $dot_pos + 1));
 				
 			if($var < $min){
-				throw new TypeErrorException("字段不能小于{$min}！");
+				throw new TypeErrorException(self::L("FIELD_NOT_LESS_MIN", array('min'=>$min), "Field can not be less than {$min}") );
 			}
 			if(!is_null($max) && $var > $max){
-				throw new TypeErrorException("字段不能大于{$max}！");
+				throw new TypeErrorException(self::L("FIELD_NOT_MORE_MAX", array('max'=>$max), "Field can not be greater than {$max}"));
 			}
 		}
 		return TRUE;
@@ -352,7 +352,7 @@ class Input extends Arsenals {
 		if (!is_null($rule) && $rule != ''){
 			$rul_arr = preg_split('/,/', $rule);
 			if (!in_array($var, $rul_arr)) {
-				throw new TypeErrorException("字段必须为{$rule}之一！");
+				throw new TypeErrorException(self::L('FIELD_MUST_ON_OF', array('rule'=>$rule), "Field must one of {$rule}！"));
 			}
 		}
 		return TRUE;
@@ -364,7 +364,7 @@ class Input extends Arsenals {
 	 */
 	private static function _rule_int($var, $rule){
 		if($var != (int) $var){
-			throw new TypeErrorException("字段不是一个合法的整数！");
+			throw new TypeErrorException(self::L('FIELD_NOT_VALID_INTEGER', null, 'Field is not a valid integer!'));
 		}
 		return self::_rule_range($var, $rule);
 	}
@@ -375,7 +375,7 @@ class Input extends Arsenals {
 	 */
 	private static function _rule_float($var, $rule){
 		if(is_float($var)){
-			throw new TypeErrorException("字段不是一个合法的浮点数！");
+			throw new TypeErrorException(self::L('FIELD_NOT_VALID_FLOAT', null, 'Field is not a valid float!'));
 		}
 		return self::_rule_range($var, $rule);
 	}
@@ -392,10 +392,10 @@ class Input extends Arsenals {
 			
 			$var_len = strlen($var);
 			if($var_len < $len_min){
-				throw new TypeErrorException("字段长度不能小于{$len_min}个字符！");
+				throw new TypeErrorException(self::L('FIELD_LEN_LESS', array('len_min'), "Field length can not be less than {$len_min} characters!"));
 			}
 			if(!is_null($len_max) && $var_len > $len_max){
-				throw new TypeErrorException("字段长度不能大于{$len_max}个字符！");
+				throw new TypeErrorException(self::L('FIELD_LEN_MORE', array('len_max'), "Field length can not be greater than {$len_max} characters!"));
 			}	
 		}
 		return TRUE;
@@ -410,7 +410,7 @@ class Input extends Arsenals {
 	private static function _rule_id($var, $rule){
 		self::_rule_int($var, $rule);
 		if($var <= 0){
-			throw new TypeErrorException("字段不是一个合法的ID！");
+			throw new TypeErrorException(self::L('FIELD_NOT_ID', null, 'Field is not a valid ID!'));
 		}
 		return TRUE;
 	}
