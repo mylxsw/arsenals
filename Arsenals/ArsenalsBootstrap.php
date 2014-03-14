@@ -52,9 +52,9 @@ class ArsenalsBootstrap {
 			throw new \Exception('The constant BASE_PATH not defined ！');
 		}
 		// 定义系统常量
-		defined('ERROR_HANDLER') || define('ERROR_HANDLER', 'Arsenals\\Core\\_error_handler');
-		defined('EXCEPTION_HANDLER') || define('EXCEPTION_HANDLER', 'Arsenals\\Core\\_exception_handler');
-		defined('LOG_IMPL') || define('LOG_IMPL', 'Arsenals\\Core\\Logs\\FileLogImpl');// 日志实现
+		defined('ERROR_HANDLER') || define('ERROR_HANDLER', 'Arsenals\Core\_error_handler');
+		defined('EXCEPTION_HANDLER') || define('EXCEPTION_HANDLER', 'Arsenals\Core\_exception_handler');
+		defined('LOG_IMPL') || define('LOG_IMPL', 'Arsenals\Core\Logs\FileLogImpl');// 日志实现
 		
 		define('ARSENALS_PATH', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 		define('ARSENALS_CORE_PATH', ARSENALS_PATH . 'Core' . DIRECTORY_SEPARATOR);
@@ -71,17 +71,17 @@ class ArsenalsBootstrap {
 		defined('APP_PATH') || define('APP_PATH', BASE_PATH . APP_NAME . DIRECTORY_SEPARATOR);
 		defined('CONFIG_PATH') || define('CONFIG_PATH', APP_PATH . 'configs' . DIRECTORY_SEPARATOR);
 		defined('VIEW_PATH') || define('VIEW_PATH', APP_PATH . 'views' . DIRECTORY_SEPARATOR);
-		defined('VIEW_LAYER') || define('VIEW_LAYER', 'Arsenals\\Core\\Views\\SimpleView');
+		defined('VIEW_LAYER') || define('VIEW_LAYER', 'Arsenals\Core\Views\SimpleView');
 		defined('CACHE_PATH') || define('CACHE_PATH', APP_PATH . 'caches' . DIRECTORY_SEPARATOR);
 		defined('LANG_PATH') || define('LANG_PATH', APP_PATH . 'langs' . DIRECTORY_SEPARATOR);
 		
-		defined('MODEL_NAMESPACE') || define('MODEL_NAMESPACE', APP_NAME . '\\models\\');
-		defined('SERVICE_NAMESPACE') || define('SERVICE_NAMESPACE', APP_NAME . '\\services\\');
-		defined('CONTROLLER_NAMESPACE') || define('CONTROLLER_NAMESPACE', APP_NAME . '\\controllers\\');
-		defined('FILTER_NAMESPACE') || define('FILTER_NAMESPACE', APP_NAME . '\\filters\\');
+		defined('MODEL_NAMESPACE') || define('MODEL_NAMESPACE', APP_NAME . '\models\\');
+		defined('SERVICE_NAMESPACE') || define('SERVICE_NAMESPACE', APP_NAME . '\services\\');
+		defined('CONTROLLER_NAMESPACE') || define('CONTROLLER_NAMESPACE', APP_NAME . '\controllers\\');
+		defined('FILTER_NAMESPACE') || define('FILTER_NAMESPACE', APP_NAME . '\filters\\');
 		
 		// 载入系统钩子，对系统进行扩展
-		$hook = Registry::load('Arsenals\\Core\\Hooks');
+		$hook = Registry::load('Arsenals\Core\Hooks');
 		// 系统开始前
 		$hook->call('before_system');
 
@@ -93,7 +93,7 @@ class ArsenalsBootstrap {
 		
 		
 		// 开始计算系统运行时间
-		$benchMark = Registry::load('Arsenals\\Core\\Benchmark');
+		$benchMark = Registry::load('Arsenals\Core\Benchmark');
 		$benchMark->mark('system_start');
 		
 		// 设置时区
@@ -102,18 +102,18 @@ class ArsenalsBootstrap {
 		$this->run();
 		
 		// 对用户输入进行预处理
-		Registry::register('Arsenals\\Core\\Input');
+		Registry::register('Arsenals\Core\Input');
 		// 注册Session
-		Registry::register('Arsenals\\Core\\Session');
+		Registry::register('Arsenals\Core\Session');
 		
 		// 执行安全检查
-		$security = Registry::load('Arsenals\\Core\\Security');
+		$security = Registry::load('Arsenals\Core\Security');
 		
 		// 路由转发
-		$router = Registry::load('Arsenals\\Core\\Router');
+		$router = Registry::load('Arsenals\Core\Router');
 		
 		// 增加过滤器控制
-		$filter = Registry::load('Arsenals\\Core\\Filters');
+		$filter = Registry::load('Arsenals\Core\Filters');
 		$filter->init($router);
 		
 		// 进行路由调度
@@ -121,7 +121,7 @@ class ArsenalsBootstrap {
 		// 记录系统运行结束时间
 		$benchMark->mark('system_end');
 		
-		$log = Registry::load('Arsenals\\Core\\Log');
+		$log = Registry::load('Arsenals\Core\Log');
 		$log->debug("The system has been running : {$benchMark->elapsedTime('system_start', 'system_end')}", 'system');
 		$log->debug("The controller has been running : {$benchMark->elapsedTime('controller_start', 'controller_end')}", 'system');
 		

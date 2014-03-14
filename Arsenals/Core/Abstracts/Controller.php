@@ -41,7 +41,7 @@ abstract class Controller extends Service {
 	 * @param string $type
 	 */
 	protected function get($key, $default = null, $type = null){
-		$input = Registry::load('\\Arsenals\\Core\\Input');
+		$input = Registry::load('\Arsenals\Core\Input');
 		return $input->get($key, $default, $type);
 	}
 	/**
@@ -51,7 +51,7 @@ abstract class Controller extends Service {
 	 * @param string $type
 	 */
 	protected function post($key, $default = null, $type = null){
-		$input = Registry::load('\\Arsenals\\Core\\Input');
+		$input = Registry::load('\Arsenals\Core\Input');
 		return $input->post($key, $default, $type);
 	}
 	/**

@@ -52,7 +52,7 @@ class Router extends Arsenals {
 	public function __construct(){
 		// 加载配置文件
 		$this->_routers = Config::load('router');
-		$uri = Registry::load('Arsenals\\Core\\Uri');
+		$uri = Registry::load('Arsenals\Core\Uri');
 		
 		$this->_path_info = $uri->getPathInfo();
 		$this->_controller = CONTROLLER_NAMESPACE . ($uri->getModuleName() == '' ? 
@@ -60,7 +60,7 @@ class Router extends Arsenals {
 				:($uri->getModuleName() . '\\' . $uri->getControllerName())) ;
 		$this->_action = $uri->getActionName();
 		// 钩子
-		$this->_hook = Registry::load('Arsenals\\Core\\Hooks');
+		$this->_hook = Registry::load('Arsenals\Core\Hooks');
 		
 		// 配置文件定义的路由
 		self::$_router_defined = array_merge(self::$_router_defined, $this->_routers['route']);
@@ -108,9 +108,9 @@ class Router extends Arsenals {
 			if ($reflectionParameter != null && count($reflectionParameter) > 0){
 				if ($reflectionParameter[0] instanceof \ReflectionParameter 
 					&& !is_null($reflectionParameter[0]->getClass()) 
-					&& $reflectionParameter[0]->getClass()->getName() == 'Arsenals\\Core\\Input') {
+					&& $reflectionParameter[0]->getClass()->getName() == 'Arsenals\Core\Input') {
 					// 第一个参数设为$input,INPUT类的实例
-					array_unshift($matches, Registry::load('\\Arsenals\\Core\\Input'));
+					array_unshift($matches, Registry::load('\Arsenals\Core\Input'));
 				}
 			}
 			$this->_hook->call('before_controller');
@@ -134,7 +134,7 @@ class Router extends Arsenals {
 				throw new PageNotFoundException('Controller method specified does not exist!');
 			}
 			
-			$view = $controller->{$this->_action}(Registry::load('\\Arsenals\\Core\\Input'));
+			$view = $controller->{$this->_action}(Registry::load('\Arsenals\Core\Input'));
 			
 			$this->_benchMark->mark('controller_end');
 			$this->_hook->call('after_controller');
@@ -147,7 +147,7 @@ class Router extends Arsenals {
 		}
 		
 		// 处理输出
-		$output = Registry::load('Arsenals\\Core\\Output');
+		$output = Registry::load('Arsenals\Core\Output');
 		// 根据返回类型进行创建相应的视图对象
 		$output->render($view);
 	}

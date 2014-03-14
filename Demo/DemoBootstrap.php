@@ -15,7 +15,7 @@ class DemoBootstrap extends \Arsenals\ArsenalsBootstrap {
 
 	public function clear(){
 		
-		$classStr = "<?php class Category_Override extends \\Common\\models\\Category{";
+		$classStr = "<?php class Category_override extends \\Common\\models\\Category{";
 		$reflectionClass = new \ReflectionClass('\Common\models\Category');
 		$methods = $reflectionClass->getMethods(\ReflectionMethod::IS_PUBLIC);
 

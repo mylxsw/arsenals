@@ -11,7 +11,7 @@ use Arsenals\Core\Views\Ajax;
  *
  * @return void
  */
-if(!function_exists('\\Arsenals\\Core\\_D')){
+if(!function_exists('\Arsenals\Core\_D')){
 	function _D($var , $dump = false){
 		echo '<pre style="border:1px solid #D0D0D0; background:#F9F9F9; padding:10px;">';
 		if($dump || is_object($var)){
@@ -29,7 +29,7 @@ if(!function_exists('\\Arsenals\\Core\\_D')){
 /**
  * 检查当前语言配置
  */ 
-if(!function_exists('\\Arsenals\\Core\\detect_lang')){
+if(!function_exists('\Arsenals\Core\detect_lang')){
 	function detect_lang(){
 		return 'cn';
 	}
@@ -42,7 +42,7 @@ if(!function_exists('\\Arsenals\\Core\\detect_lang')){
  * @param string $default 默认值，在找不到代码代表值的时候使用
  * @param string $file 语言文件，默认为basic,不需要扩展名
  */ 
-if(!function_exists('\\Arsenals\\Core\\L')){
+if(!function_exists('\Arsenals\Core\L')){
 	function L($code, $replace = null, $default = null, $file = 'basic'){
 		// 缓存已经加载的语言文件
 		static $langs = array();
@@ -94,7 +94,7 @@ if(!function_exists('\\Arsenals\\Core\\L')){
  *
  * @return bool
  */
-if(!function_exists('\\Arsenals\\Core\\str_end_with')){	
+if(!function_exists('\Arsenals\Core\str_end_with')){	
 	function str_end_with($string, $suffix, $case_sensitive = TRUE){
 		//return substr_compare($string, $suffix,
 		//	strlen($string) - strlen($suffix), strlen($string), $case_sensitive) === 0;
@@ -114,7 +114,7 @@ if(!function_exists('\\Arsenals\\Core\\str_end_with')){
  *
  * @return bool
  */
-if(!function_exists('\\Arsenals\\Core\\str_start_with')){	
+if(!function_exists('\Arsenals\Core\str_start_with')){	
 	function str_start_with($string, $prefix, $case_sensitive = TRUE){
 		if(strlen($string) < strlen($prefix)){
 			return false;
@@ -131,7 +131,7 @@ if(!function_exists('\\Arsenals\\Core\\str_start_with')){
  * @param string $content 要插入的内容
  * @return string 修改后的源码
  */
-if(!function_exists('\\Arsenals\\Core\\source_insert')){	
+if(!function_exists('\Arsenals\Core\source_insert')){	
 	function source_insert($object_file, $content){
 		$source_code = php_strip_whitespace($object_file);
 		if(str_end_with($source_code, '?>')){
@@ -152,7 +152,7 @@ if(!function_exists('\\Arsenals\\Core\\source_insert')){
  * @param string $content
  * @return string
  */
-if(!function_exists('\\Arsenals\\Core\\strip_whitespace')){
+if(!function_exists('\Arsenals\Core\strip_whitespace')){
 	function strip_whitespace($content){
 		$source = '';
 		$last_space = false;
@@ -191,7 +191,7 @@ if(!function_exists('\\Arsenals\\Core\\strip_whitespace')){
  * @param string $context
  * @return number
  */
-if(!function_exists('\\Arsenals\\Core\\file_put_contents')){
+if(!function_exists('\Arsenals\Core\file_put_contents')){
 	function file_put_contents($filename, $data, $flag = null, $context = null){
 		return \file_put_contents($filename, $data, $flag, $context);
 	}
@@ -199,7 +199,7 @@ if(!function_exists('\\Arsenals\\Core\\file_put_contents')){
 /**
  * 读取文件
  */ 
-if(!function_exists('\\Arsenals\\Core\\file_get_contents')){
+if(!function_exists('\Arsenals\Core\file_get_contents')){
 	function file_get_contents($filename, $use_include_path = false, $context = null, $offset = -1, $maxlen = null){
 		if (is_null($maxlen)) {
 			return \file_get_contents($filename, $use_include_path, $context, $offset);
@@ -210,7 +210,7 @@ if(!function_exists('\\Arsenals\\Core\\file_get_contents')){
 /**
  * 检查文件是否存在
  */ 
-if(!function_exists('\\Arsenals\\Core\\file_exists')){
+if(!function_exists('\Arsenals\Core\file_exists')){
 	function file_exists($filename){
 		return \file_exists($filename);
 	}
@@ -218,7 +218,7 @@ if(!function_exists('\\Arsenals\\Core\\file_exists')){
 /**
  * 打开目录
  */ 
-if(!function_exists('\\Arsenals\\Core\\opendir')){
+if(!function_exists('\Arsenals\Core\opendir')){
 	function opendir($path, $resource = null){
 		if(is_null($resource)){
 			return \opendir($path);
@@ -229,7 +229,7 @@ if(!function_exists('\\Arsenals\\Core\\opendir')){
 /**
  * 读取目录
  */ 
-if(!function_exists('\\Arsenals\\Core\\readdir')){
+if(!function_exists('\Arsenals\Core\readdir')){
 	function readdir($handle = null){
 		if (is_null($handle)) {
 			return \readdir();
@@ -240,7 +240,7 @@ if(!function_exists('\\Arsenals\\Core\\readdir')){
 /**
  * 删除文件
  */ 
-if(!function_exists('\\Arsenals\\Core\\unlink')){
+if(!function_exists('\Arsenals\Core\unlink')){
 	function unlink($filename, $context = null){
 		if(is_null($context)){
 			return \unlink($filename);
@@ -251,7 +251,7 @@ if(!function_exists('\\Arsenals\\Core\\unlink')){
 /**
  * 关闭目录
  */ 
-if(!function_exists('\\Arsenals\\Core\\closedir')){
+if(!function_exists('\Arsenals\Core\closedir')){
 	function closedir($handle = null){
 		if (is_null($handle)) {
 			\closedir();
@@ -263,7 +263,7 @@ if(!function_exists('\\Arsenals\\Core\\closedir')){
 /**
  * 是否是文件
  */ 
-if(!function_exists('\\Arsenals\\Core\\is_file')){
+if(!function_exists('\Arsenals\Core\is_file')){
 	function is_file($filename){
 		return \is_file($filename);
 	}
@@ -271,7 +271,7 @@ if(!function_exists('\\Arsenals\\Core\\is_file')){
 /**
  * Moves an uploaded file to a new location
  */ 
-if(!function_exists('\\Arsenals\\Core\\move_uploaded_file')){
+if(!function_exists('\Arsenals\Core\move_uploaded_file')){
 	function move_uploaded_file($filename, $destination){
 		return \move_uploaded_file($filename, $destination);
 	}
@@ -283,7 +283,7 @@ if(!function_exists('\\Arsenals\\Core\\move_uploaded_file')){
  * @param unknown $errfile
  * @param unknown $errline
  */
-if(!function_exists('\\Arsenals\\Core\\_error_handler')){
+if(!function_exists('\Arsenals\Core\_error_handler')){
 	function _error_handler($errno, $errstr, $errfile, $errline){
 		_D("File {$errfile} , Line {$errline} has an error occer，error code : {$errno}, description :{$errstr}");
 	}
@@ -292,11 +292,11 @@ if(!function_exists('\\Arsenals\\Core\\_error_handler')){
  * 异常处理
  * @param unknown $exception
  */
-if(!function_exists('\\Arsenals\\Core\\_exception_handler')){
+if(!function_exists('\Arsenals\Core\_exception_handler')){
 	function _exception_handler(\Exception $exception){
-		$input = Registry::load('\\Arsenals\\Core\\Input');
+		$input = Registry::load('\Arsenals\Core\Input');
 		if($input->server('HTTP_X_REQUESTED_WITH', '') == 'XMLHttpRequest'){
-			$output = Registry::load('\\Arsenals\\Core\\Output');
+			$output = Registry::load('\Arsenals\Core\Output');
 			$output->render(new Ajax(array('info'=>$exception->getMessage(), 'status'=>0)));
 		}else{
 			_D("File {$exception->getFile()}, Line {$exception->getLine()} has an exception occer， error code : {$exception->getCode()}， description ：{$exception->getMessage()}");

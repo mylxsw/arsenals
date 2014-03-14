@@ -231,7 +231,7 @@ abstract class Model extends Arsenals {
             $args = array();
         }
         // 日志记录
-        $log = Registry::load('Arsenals\\Core\\Log');
+        $log = Registry::load('Arsenals\Core\Log');
 		$log->debug("执行SQL：{$sql}", 'system');
 		
 		// 如果没有提供参数数组，则执行普通查询
