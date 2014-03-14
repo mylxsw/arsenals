@@ -56,12 +56,7 @@ class Registry extends Arsenals {
 			if(is_array($config)){
 				$config_arr = array_merge($config_arr, $config);
 			}
-			// 根据config_arr是否为空进行不同的初始化创建工作
-			if (is_array($config_arr) && count($config_arr) > 0) {
-				self::$_cache_objects[$class_name] = new $class_name($config_arr);
-			}else{
-				self::$_cache_objects[$class_name] = new $class_name;
-			}
+			self::$_cache_objects[$class_name] = new $class_name($config_arr);
 		}
 		return self::$_cache_objects[$class_name];
 	}
@@ -115,12 +110,7 @@ class Registry extends Arsenals {
 			if(is_array($config)){
 				$config_arr = array_merge($config_arr, $config);
 			}
-			// 根据config_arr是否为空进行不同的初始化创建工作
-			if (is_array($config_arr) && count($config_arr) > 0) {
-				self::$_cache_objects[$class_name] = new $class_name($config_arr);
-			}else{
-				self::$_cache_objects[$class_name] = new $class_name;
-			}
+			self::$_cache_objects[$class_name] = new $class_name($config_arr);
 		}else if(!is_null($object)){
 			throw new RedefineException('This class name is already registered, different objects can not be registered again!');
 		}

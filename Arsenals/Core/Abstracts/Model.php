@@ -532,4 +532,20 @@ abstract class Model extends Arsenals {
 	protected function queryException($message){
 		throw new \Arsenals\Core\Exceptions\QueryException($message);	
 	}
+	/**
+	 * 自动启用事务支持
+	 * 注意： 该方法有待测试！！！！
+	 */ 
+	protected function transaction($callback){
+		$this->_conn->autocommit(false);
+		try{
+			$args = func_get_args();
+			array_shift($args);
+			call_user_func_array($callback, $args);
+			$this->_conn->commit();
+		} catch(\Exception $e){
+			$this->_conn->rollback();
+			throw new $e;
+		}
+	}
 }

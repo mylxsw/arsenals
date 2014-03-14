@@ -87,6 +87,7 @@ class ArsenalsBootstrap {
 
 		// 载入系统函数库
 		require ARSENALS_CORE_PATH . 'Common.php';
+
 		// 配置统一的异常处理
 		set_error_handler(\Arsenals\Core\Utils\CommonUtils::convStringToCallUserFuncParam(ERROR_HANDLER));
 		set_exception_handler(\Arsenals\Core\Utils\CommonUtils::convStringToCallUserFuncParam(EXCEPTION_HANDLER));
