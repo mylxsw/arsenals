@@ -26,6 +26,7 @@ if(!function_exists('\Arsenals\Core\_D')){
 		echo '</pre>';
 	}
 }
+
 /**
  * 检查当前语言配置
  */ 
@@ -276,6 +277,30 @@ if(!function_exists('\Arsenals\Core\move_uploaded_file')){
 		return \move_uploaded_file($filename, $destination);
 	}
 }
+/**
+ * 递归创建目录
+ * 
+ */ 
+if(!function_exists('\Arsenals\Core\create_dir')){
+	function create_dir($path){
+		// 如果目录存在，则直接返回
+		if(is_dir($path)){
+			return ;
+		}
+		// 获取当前目录的上级目录
+		$dirname = dirname($path);
+		// 如果上级目录存在，则创建当前目录
+		if(is_dir($dirname)){
+			mkdir($path);
+		}
+		// 如果上级目录不存在，则递归调用创建上级目录
+		if(!is_dir($dirname)){
+			create_dir($dirname);
+			mkdir($path);
+		}
+	}
+}
+
 /**
  * 错误处理
  * @param unknown $errno

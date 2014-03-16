@@ -15,7 +15,7 @@ define('CACHE_PATH', BASE_PATH . 'Temp' . DIRECTORY_SEPARATOR);
 
 //define('ERROR_HANDLER', 'Demo\\common\\ExceptionHandler@error');
 //define('EXCEPTION_HANDLER', 'Demo\\common\\ExceptionHandler@exception');
-
+define('VIEW_LAYER', 'Arsenals\Core\Views\ArsenalsTemplates');
 
 // 项目入口
 require BASE_PATH . 'Demo/DemoBootstrap.php';

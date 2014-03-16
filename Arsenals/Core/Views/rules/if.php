@@ -1,6 +1,9 @@
 <?php
+/**
+ * 参数： test
+ */ 
 $callback = function($matches){
-	$params = Arsenals\Core\Views\TemplateCompiler::parse_params($matches['content']);
+	$params = \Arsenals\Core\Views\TemplateCompiler::parseParams($matches['content']);
 	if(array_key_exists('test', $params)){
 		return "<?php if ({$params['test']}) { ?>";
 	}

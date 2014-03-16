@@ -13,7 +13,7 @@ class ArsenalsTemplates extends Arsenals implements View {
 	 * 模板文件后缀
 	 * @var unknown
 	 */
-	private $suffix = '.tpl';
+	private $suffix = '.html';
 	/**
 	 * 模板目录
 	 * @var unknown
@@ -28,7 +28,7 @@ class ArsenalsTemplates extends Arsenals implements View {
 	 * 编译后文件后缀
 	 * @var unknown
 	 */
-	private $compile_suffix = '';
+	private $compile_suffix = '.php';
 	/**
 	 * 是否编译成html
 	 * @var unknown
@@ -50,6 +50,11 @@ class ArsenalsTemplates extends Arsenals implements View {
 	 * @var unknown
 	 */
 	private $_compiler_instance = null;
+	/**
+	 * 是否加载过了视图函数库
+	 * @var
+	 */ 
+	private static $is_func_loaded = false;
 	
 	public function __construct(array $config = array()){
 		// 读取视图相关配置信息
@@ -66,10 +71,10 @@ class ArsenalsTemplates extends Arsenals implements View {
 	 */
 	private function _initCompiler(){
 		if(is_null($this->_compiler_instance)){
-			if(!$this->compiler instanceof Compiler){
+			$this->_compiler_instance = Registry::load($this->compiler, true);
+			if(!$this->_compiler_instance instanceof Compiler){
 				throw new ClassTypeException('The compiler must implement the Arsenals\Core\Views\Compiler interface');
 			}
-			$this->_compiler_instance = Registry::load($this->compiler, true);
 		}
 	}
 	
@@ -80,23 +85,35 @@ class ArsenalsTemplates extends Arsenals implements View {
 		if(!$vm instanceof ViewAndModel){
 			return FALSE;
 		}
-		// 给视图传递的数据
-		//@extract($vm->getDatas());
 		
 		// 加载视图函数库
-		if(file_exists("{$this->template_dir}functions.php")){
+		if(!self::$is_func_loaded && file_exists("{$this->template_dir}functions.php")){
 			include "{$this->template_dir}functions.php";
+			self::$is_func_loaded = true;
 		}
-		// 加载视图
-		$template_content = \file_get_contents($this->template_dir . $vm->getView() . $this->suffix);
-		
-		// 初始话模板编译器
-		$this->_initCompiler();
-		
-		// 编译模板
-		$compiled_content = $this->compiler->complie($template_content);
-		
-		
-		return $compiled_content;
+		$template_file = $vm->getView() . $this->suffix;
+		$cache_file = CACHE_PATH . 'views' . DIRECTORY_SEPARATOR . $vm->getView() . $this->compile_suffix;
+
+		ob_start();
+		if(!file_exists($cache_file)){
+			// 加载视图
+			$template_content = \file_get_contents($this->template_dir . $vm->getView() . $this->suffix);
+			// 初始话模板编译器
+			$this->_initCompiler();
+			// 编译模板
+			$compiled_content = $this->_compiler_instance->compile($template_content);
+			if(!file_exists(dirname($cache_file))){
+				\Arsenals\Core\create_dir(dirname($cache_file));
+			}
+			file_put_contents($cache_file, $compiled_content);
+		}
+		// 给视图传递的数据
+		@extract($vm->getDatas());
+		include $cache_file;
+
+		$buffer = ob_get_contents();
+		ob_end_clean();
+
+		return $buffer;
 	}
 }

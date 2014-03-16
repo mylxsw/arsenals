@@ -12,14 +12,18 @@ namespace Arsenals\Core\Views;
 class TemplateCompiler extends \Arsenals\Core\Abstracts\Arsenals implements Compiler {
 	private $namespace = 'c';
 	private $rule_files = array(
-		'./rules/if', 
-		'./rules/else',
-		'./rules/end_any',
-		'./rules/out',
-		'./rules/elif',
-		'./rules/foreach',
-		'./rules/while',
+		'rules/include',
+		'rules/if', 
+		'rules/else',
+		'rules/end_any',
+		'rules/out',
+		'rules/elif',
+		'rules/foreach',
+		'rules/while',
+		'rules/function',
 	);
+
+	private $_inited = false;
 	/**
 	 * 构造函数
 	 * 
@@ -37,6 +41,9 @@ class TemplateCompiler extends \Arsenals\Core\Abstracts\Arsenals implements Comp
 	 * 	'标签名', 是否闭合, 回调函数[, 是否自定义正则表达式]
 	 */
 	private function init(){
+		if($this->_inited){
+			return ;
+		}
 		// 遍历所有的规则文件并初始化编译规则
 		foreach($this->rule_files as $rule){
 			// 导入规则文件
@@ -51,11 +58,12 @@ class TemplateCompiler extends \Arsenals\Core\Abstracts\Arsenals implements Comp
 				$data[0] = '#<__namespace__:' . $data[0] . '\s+(?<content>.*?)' . ($data[1] ? '/' : '') . '>#';
 			}
 			// 替换命名空间为用户配置的命名空间
-			$data[0] = str_replace('__namespace__', $this->_namespace , $data[0]);
+			$data[0] = str_replace('__namespace__', $this->namespace , $data[0]);
 			
 			// 完成规则初始化
 			$this->_rules[$data[0]] = $data[2];
 		}
+		$this->_inited = true;
 	}
 	
 	/* (non-PHPdoc)
