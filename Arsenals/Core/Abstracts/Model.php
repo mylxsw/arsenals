@@ -238,7 +238,7 @@ abstract class Model extends Arsenals {
 		if(\count($args) == 0){
 			$res = $this->_conn->query($sql);
 			if($this->_conn->errno){
-				throw new \Arsenals\Core\QueryException($this->_conn->error);
+				throw new \Arsenals\Core\Exceptions\QueryException($this->_conn->error);
 			}
             if(method_exists('mysqli_result', 'fetch_all')){
                 return $insert ? $res : $res->fetch_all(MYSQLI_ASSOC);
@@ -247,7 +247,7 @@ abstract class Model extends Arsenals {
                 return $res;
             }
 			$r = array();
-            while($tmp = $res->fetch_array(MYSQLI_ASSOC)){
+            while(($tmp = $res->fetch_array(MYSQLI_ASSOC)) != false){
             	$r[] = $tmp;
             }
 			return $r;
@@ -524,7 +524,7 @@ abstract class Model extends Arsenals {
 	 * 没有记录异常
 	 */ 
 	protected function noRecoredException($message){
-		throw new \Arsenals\Core\Exceptions\NoRecordException($message);
+		throw new \Arsenals\Core\Exceptions\NoRecoredException($message);
 	}
 	/**
 	 * 查询异常

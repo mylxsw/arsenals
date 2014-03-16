@@ -3,6 +3,7 @@
 namespace Demo\filters;
 
 use Arsenals\Core\Abstracts\Filter;
+use Arsenals\Core\Exceptions\InnerException;
 /**
  *
  * @author guan
@@ -15,14 +16,11 @@ class DemoFilter implements Filter {
 	public function doFilter(\Arsenals\Core\Filters $filterChain,\Arsenals\Core\Router $router) {
 		try{
 			$filterChain->doFilter();
-		}catch (\Arsenals\Core\Exceptions\ArsenalsException $e){
-			if($e instanceof \Arsenals\Core\Exceptions\TypeErrorException){
-				echo "字段类型异常：{$e->getMessage()} ";
-			}else if($e instanceof \Arsenals\Core\Exceptions\PageNotFoundException){
-				echo "页面不存在 404 : {$e->getMessage()}";
-			}else{
-				throw $e;
+		}catch (\Exception $e){
+			if(!$e instanceof \Arsenals\Core\Exceptions\ArsenalsException){
+				throw new InnerException($e->getMessage());
 			}
+			throw $e;
 		}
 	}
 

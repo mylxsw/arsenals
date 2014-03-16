@@ -13,22 +13,31 @@ use Arsenals\Core\Exceptions\ClassTypeException;
 class Filters extends Arsenals {
 	private static $_filters;
 	private $_router;
+	private $_bootstrap;
 	
 	/**
 	 * 过滤器初始化
 	 */
-	public function init(Router $router){
+	public function init(){
 		self::$_filters = Config::load('filter');
-		$this->_router = $router;
+		$this->_router = Registry::load('Arsenals\Core\Router');
 	}
 	/**
 	 * 执行过滤器
 	 * @throws ClassTypeException
 	 */
 	public function doFilter(){
+		// 如果过滤器链已经遍历完成，则执行最后路由调度
 		if(count(self::$_filters) == 0){
-			return $this->run();
+			// 执行路由调度
+			$this->_bootstrap->run();
+			// 如果没有匹配的规则，则执行基于惯例的路由调度
+			if (!Router::$_stop) {
+				$this->_router->dispatch_convention();
+			}
+			return true;
 		}
+		// 遍历过滤器链
 		$filterName = FILTER_NAMESPACE . array_shift(self::$_filters);
 		$filter = new $filterName();
 		if(!$filter instanceof Filter){
@@ -41,48 +50,9 @@ class Filters extends Arsenals {
 	/**
 	 * 执行路由调度
 	 */
-	public function dispatch(){
+	public function dispatch($bootstrap){
+		$this->_bootstrap = $bootstrap;
 		$this->doFilter();
 	}
-	/**
-	 * 执行具体的请求
-	 */
-	private function run(){
-		$this->_before();
-		try{
-			ob_start();
-				
-			$this->_router->dispatch();
-				
-			$content = ob_get_contents();
-			ob_end_clean();
-		}catch (\Exception $e){
-			$this->_afterThrowException($e);
-		}
-		
-		$this->_after(isset($content) ? $content : '');
-	}
-	
-	/**
-	 * 控制器方法执行之前
-	 */
-	private function _before(){
-		
-	}
-	/**
-	 * 控制器、视图渲染之后
-	 * @param Router $router
-	 * @param string $content
-	 */
-	private function _after($content){
-		echo $content;
-	}
-	/**
-	 * 处理过程出现异常
-	 * @param Router $router
-	 * @param Exception $e
-	 */
-	private function _afterThrowException(\Exception $e){
-		throw $e;
-	}
+
 }
