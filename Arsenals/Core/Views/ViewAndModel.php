@@ -19,6 +19,11 @@ class ViewAndModel extends Arsenals {
 	 */
 	private $view_datas;
 	/**
+	 * 视图实现实例
+	 * @var unknown
+	 */
+	private static $_view_instance = null;
+	/**
 	 * 构造函数，初始化视图对象
 	 *
 	 * @param string $view_name 视图名称
@@ -56,12 +61,15 @@ class ViewAndModel extends Arsenals {
 	 */
 	public static function make($view_name, $view_datas = array()){
 		if ($view_name instanceof ViewAndModel) {
-			$view_layer = VIEW_LAYER;
-			$view = new $view_layer();
-			if($view instanceof View){
+			if(is_null(self::$_view_instance)){
+				$view_layer = VIEW_LAYER;
+				self::$_view_instance = new $view_layer();
+			}
+			
+			if(self::$_view_instance instanceof View){
 				// 将数据添加到值栈，以便随时访问
 				ValueStack::addAll($view_name->getDatas());
-				return $view->parse($view_name);
+				return self::$_view_instance->parse($view_name);
 			}else{
 				throw new \Exception('The view class must implement the interface : Arsenals\\Core\\Views\\View!');
 			}

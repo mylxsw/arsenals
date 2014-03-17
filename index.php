@@ -8,7 +8,7 @@ use Demo\DemoBootstrap;
 define('APP_NAME', 'Demo');
 define('BASE_PATH', realpath(dirname(__FILE__)) . DIRECTORY_SEPARATOR);
 // 调试模式
-define('DEBUG', false);
+define('DEBUG', true);
 define('LOG', false);
 // 定义缓存文件路径
 define('CACHE_PATH', BASE_PATH . 'Temp' . DIRECTORY_SEPARATOR);

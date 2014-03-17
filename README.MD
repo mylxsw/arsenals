@@ -356,6 +356,43 @@ Arsenals框架提供了字段校验功能，开发过程中，可以方便的使
 
 ```define('VIEW_LAYER', 'Arsenals\Core\Views\SimpleView');```  
 
+
+####内置模板引擎ArsenalsTemplates
+如果需要使用模板引擎，可以采用系统内置模板引擎 ```ArsenalsTemplates``` , 采用该模板引擎后，视图代码中可以使用内置标签，标签语法类似于Java EE中的JSTL语法。
+
+使用前需要先配置使用该模板引擎，在项目入口文件中定义常量：   
+<pre>define('VIEW_LAYER', 'Arsenals\Core\Views\ArsenalsTemplates');</pre>
+该模板引擎默认是使用 ```.html``` 作为模板文件扩展名，因此，所有的模板文件均为 *.html格式。   
+在模板中可以使用内置标签库语法进行模板编写。   
+#####标签库
+- out 		
+- if
+- elif
+- else
+- include
+- while
+- foreach/loop
+- func
+
+例如：
+模板文件index.html中：
+<pre>
+	&lt;html&gt;
+		&lt;head&gt;
+			&lt;title&gt;样例&lt;/title&gt;
+		&lt;/head&gt;
+		&lt;body&gt;
+			&lt;div&gt;
+				&lt;c:out value="$value" escape="true" default="hello" &gt;
+			&lt;/div&gt;
+		&lt;/body&gt;
+	&lt;/html&gt;
+</pre>
+#####模板编译缓存
+为了提高效率，模板文件在第一次运行时会编译成 ```.php``` 的缓存文件，以使得在程序运行过程中省略掉模板编译过程，提高运行效率。   
+默认编译缓存在缓存目录下的views文件夹中，并且保持了模板文件的原始文件结构以及文件名称（除扩展名之外）。   
+
+####第三方模板引擎
 系统还提供了一个基于Twig的模板引擎，不过需要手动加入Twig的类库才可以使用。加入Twig的类库之后，需要在项目的入口文件中定义Twig的Autoloader.php文件的路径常量，如下所示：  
 
 ```define('TWIG_LIB', 'Twig所在目录/Autoloader.php');```

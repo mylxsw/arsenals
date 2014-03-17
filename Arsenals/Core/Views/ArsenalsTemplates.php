@@ -40,6 +40,11 @@ class ArsenalsTemplates extends Arsenals implements View {
 	 */
 	private $cache_time = 7200;
 	/**
+	 * 是否是debug模式
+	 * @var unknown
+	 */
+	private $debug = false;
+	/**
 	 * 采用的编译器
 	 * @var unknown
 	 */
@@ -60,11 +65,12 @@ class ArsenalsTemplates extends Arsenals implements View {
 		// 读取视图相关配置信息
 		$config = Config::load('config');
 		$this->template_dir = VIEW_PATH . ($config['multi_theme'] ? $config['theme'] . DIRECTORY_SEPARATOR : '');
-		
 		// 配置信息
 		foreach ($config as $k=>$v){
 			$this->{$k} = $v;
 		}
+		// 是否是调试模式
+		$this->debug = DEBUG;
 	}
 	/**
 	 * 初始化模板编译器
@@ -87,7 +93,7 @@ class ArsenalsTemplates extends Arsenals implements View {
 		}
 		
 		// 加载视图函数库
-		if(!self::$is_func_loaded && file_exists("{$this->template_dir}functions.php")){
+		if(!self::$is_func_loaded && \Arsenals\Core\file_exists("{$this->template_dir}functions.php")){
 			include "{$this->template_dir}functions.php";
 			self::$is_func_loaded = true;
 		}
@@ -95,17 +101,17 @@ class ArsenalsTemplates extends Arsenals implements View {
 		$cache_file = CACHE_PATH . 'views' . DIRECTORY_SEPARATOR . $vm->getView() . $this->compile_suffix;
 
 		ob_start();
-		if(!file_exists($cache_file)){
+		if($this->debug || !\Arsenals\Core\file_exists($cache_file)){
 			// 加载视图
-			$template_content = \file_get_contents($this->template_dir . $vm->getView() . $this->suffix);
+			$template_content = \Arsenals\Core\file_get_contents($this->template_dir . $vm->getView() . $this->suffix);
 			// 初始话模板编译器
 			$this->_initCompiler();
 			// 编译模板
 			$compiled_content = $this->_compiler_instance->compile($template_content);
-			if(!file_exists(dirname($cache_file))){
+			if(!\Arsenals\Core\file_exists(dirname($cache_file))){
 				\Arsenals\Core\create_dir(dirname($cache_file));
 			}
-			file_put_contents($cache_file, $compiled_content);
+			\Arsenals\Core\file_put_contents($cache_file, $compiled_content);
 		}
 		// 给视图传递的数据
 		@extract($vm->getDatas());
