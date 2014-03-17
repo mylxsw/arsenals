@@ -2,7 +2,7 @@
 /**
  * 视图函数库
  */
-namespace Demo\views\inkTpl;
+namespace Demo;
 use Arsenals\Core\Config;
 use Arsenals\Core\Registry;
 use Arsenals\Core\Views\ValueStack;
@@ -27,6 +27,9 @@ function resource_path(){
  */
 function public_resource_path(){
 	return SITE_URL . 'Public/';
+}
+function site_url(){
+	return SITE_URL;
 }
 /**
  * 页面头部内容

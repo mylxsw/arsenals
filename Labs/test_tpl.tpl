@@ -7,6 +7,9 @@
 		<c:out value="$hello" escape='true' />
 		<c:if test="$a gt 5">
 		</c:if>
+
+		{$hello}
+		{func:\Demo.ink.escape($abc, null)}
 	</body>
 	
 </html>

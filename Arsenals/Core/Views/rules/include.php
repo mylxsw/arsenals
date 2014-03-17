@@ -7,7 +7,7 @@ $callback = function($matches){
 	if(isset($params['file'])){
 		return "<?php echo \Arsenals\Core\Views\ViewAndModel::make(\"{$params['file']}\"); ?>";
 	}
-	return "模板错误！";
+	return "<!-- Template Syntax Error! -->";
 };
 
 return array('include', true, $callback);

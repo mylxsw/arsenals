@@ -7,7 +7,7 @@ $callback = function($matches){
 	if(array_key_exists('test', $params)){
 		return "<?php } else if ({$params['test']}) { ?>";
 	}
-	return "模板错误！";
+	return "<!-- Template Syntax Error! -->";
 };
 
 return array('(elif|elseif)', false, $callback);

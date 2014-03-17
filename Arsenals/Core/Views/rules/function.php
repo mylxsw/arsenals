@@ -7,7 +7,7 @@ $callback = function($matches){
 	if(isset($params['func'])){
 		return "<?php echo {$params['func']};  ?>";
 	}
-	return "模板错误！";
+	return "<!-- Template Syntax Error! -->";
 };
 
 return array('func', true, $callback);

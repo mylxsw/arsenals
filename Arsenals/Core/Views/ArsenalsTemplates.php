@@ -35,11 +35,6 @@ class ArsenalsTemplates extends Arsenals implements View {
 	 */
 	private $cache_html = false;
 	/**
-	 * 缓存有效时间
-	 * @var unknown
-	 */
-	private $cache_time = 7200;
-	/**
 	 * 是否是debug模式
 	 * @var unknown
 	 */

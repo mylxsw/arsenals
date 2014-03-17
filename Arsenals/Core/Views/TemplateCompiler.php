@@ -11,6 +11,7 @@ namespace Arsenals\Core\Views;
  */
 class TemplateCompiler extends \Arsenals\Core\Abstracts\Arsenals implements Compiler {
 	private $namespace = 'c';
+	private $el_delim = array('{', '}');
 	private $rule_files = array(
 		'rules/include',
 		'rules/if', 
@@ -33,6 +34,7 @@ class TemplateCompiler extends \Arsenals\Core\Abstracts\Arsenals implements Comp
 		isset($config['namespace']) && $this->namespace = $config['namespace'];
 		isset($config['rule_files']) && is_array($config['rule_files']) 
 			&& $this->rule_files = array_merge($this->rule_files, $config['rule_files']);
+		isset($config['el_delim']) && $this->el_delim = $config['el_delim'];
 	}
 	/**
 	 * 初始化编译器
@@ -76,6 +78,16 @@ class TemplateCompiler extends \Arsenals\Core\Abstracts\Arsenals implements Comp
 		foreach ($this->_rules as $k=>$v){// k 正则， v 回调函数
 			$content = preg_replace_callback($k, $v, $content);
 		}
+		// 提供类似于EL表达式的语法支持
+		// {$abc }
+		// {func:函数名(参数)}
+		$content = preg_replace('#' . $this->el_delim[0] . '\$([a-zA-Z_\x7f-\xff]*)\s*' . $this->el_delim[1] . '#' , '<?php echo $\1;?>', $content);
+		$content = preg_replace_callback('#{func:\s*(?<funcname>[\\a-zA-Z_\x7f-\xff]+)\s*\((?<params>.*?)\)\s*}#' , 
+			function($matches){
+				$matches['funcname'] = str_replace('.', '\\', $matches['funcname']);
+				return "<?php echo {$matches['funcname']}(${matches['params']});?>";
+			}, $content);
+		
 		return $content;
 	}
 	

@@ -1,7 +1,7 @@
 <?php
 class TemplateCompiler  {
 	private $_namespace = 'c';
-	
+	private $el_delim = array('{', '}');
 	private $_rules = array();
 	
 	/**
@@ -12,9 +12,9 @@ class TemplateCompiler  {
 	 */
 	private function init(){
 		$rules = array(
-			'../Arsenals/Core/Views/rules/out.php',
-			'../Arsenals/Core/Views/rules/if.php',
-			'../Arsenals/Core/Views/rules/end_any.php',
+			//'../Arsenals/Core/Views/rules/out.php',
+			//'../Arsenals/Core/Views/rules/if.php',
+			//'../Arsenals/Core/Views/rules/end_any.php',
 		);
 		foreach($rules as $rule){
 			$data = include $rule;
@@ -37,6 +37,13 @@ class TemplateCompiler  {
 		foreach ($this->_rules as $k=>$v){
 			$content = preg_replace_callback($k, $v, $content);
 		}
+		// 提供类似于EL表达式的语法支持
+		$content = preg_replace('#{\$([a-zA-Z_\x7f-\xff]*)\s*}#', '<?php echo $\1;?>', $content);
+		$content = preg_replace_callback('#{func:\s*(?<funcname>[\\a-zA-Z_\x7f-\xff]+)\s*\((?<params>.*?)\)\s*}#' , 
+			function($matches){
+				$matches['funcname'] = str_replace('.', '\\', $matches['funcname']);
+				return "<?php echo {$matches['funcname']}(${matches['params']});?>";
+			}, $content);		
 		return $content;
 	}
 	

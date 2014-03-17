@@ -10,7 +10,7 @@ $callback = function($matches){
 		}
 		return "<?php foreach({$params['data']} as \${$params['var']} ) {";
 	}
-	return "模板错误！";
+	return "<!-- Template Syntax Error! -->";
 };
 
 return array('(foreach|loop)', false, $callback);
