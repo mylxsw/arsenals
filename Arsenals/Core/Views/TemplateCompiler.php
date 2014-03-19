@@ -22,6 +22,7 @@ class TemplateCompiler extends \Arsenals\Core\Abstracts\Arsenals implements Comp
 		'rules/foreach',
 		'rules/while',
 		'rules/function',
+		'rules/set',
 	);
 
 	private $_inited = false;
@@ -79,15 +80,14 @@ class TemplateCompiler extends \Arsenals\Core\Abstracts\Arsenals implements Comp
 			$content = preg_replace_callback($k, $v, $content);
 		}
 		// 提供类似于EL表达式的语法支持
-		// {$abc }
+		// ${abc }
 		// {func:函数名(参数)}
-		$content = preg_replace('#' . $this->el_delim[0] . '\$([a-zA-Z_\x7f-\xff]*)\s*' . $this->el_delim[1] . '#' , '<?php echo $\1;?>', $content);
 		$content = preg_replace_callback('#{func:\s*(?<funcname>[\\a-zA-Z_\x7f-\xff]+)\s*\((?<params>.*?)\)\s*}#' , 
 			function($matches){
 				$matches['funcname'] = str_replace('.', '\\', $matches['funcname']);
 				return "<?php echo {$matches['funcname']}(${matches['params']});?>";
 			}, $content);
-		
+		$content = preg_replace('#\$' . $this->el_delim[0] . '(.*?)\s*' . $this->el_delim[1] . '#' , '<?php echo $\1;?>', $content);
 		return $content;
 	}
 	

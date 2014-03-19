@@ -16,25 +16,27 @@
 	<!--[if IE]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	<link rel="stylesheet" type="text/css" href="Resources/ink/css/ink.css" />
+	<link rel="stylesheet" type="text/css" href="Public/ink/css/ink.css" />
   	<!--[if lte IE 7 ]>
-  		<link rel="stylesheet" type="text/css" href="Resources/ink/css/ink-ie7.css" />
+  		<link rel="stylesheet" type="text/css" href="Public/ink/css/ink-ie7.css" />
   	<![endif]-->
+  	<?php $resource_path = \Demo\resource_path() ; ?>
+  	<?php $resource = \Demo\resources() ; ?>
   	
-  	<link rel="stylesheet" type="text/css" href="<?php echo \Demo\resource_path();?>css/custom.css" />
-  	<link rel="stylesheet" type="text/css" href="<?php echo \Demo\resource_path();?>css/style.css" />
+  	<link rel="stylesheet" type="text/css" href="<?php echo $resource_path;?>css/custom.css" />
+  	<link rel="stylesheet" type="text/css" href="<?php echo $resource_path;?>css/style.css" />
 	<!--
-	<link rel="stylesheet/less" type="text/css" href="<?php echo \Demo\resource_path();?>css/custom.css" />
-  	<link rel="stylesheet/less" type="text/css" href="<?php echo \Demo\resource_path();?>css/style.css" />
-	<script type="text/javascript" src="Resources/less-1.4.2.min.js" ></script>
+	<link rel="stylesheet/less" type="text/css" href="<?php echo $resource_path;?>css/custom.css" />
+  	<link rel="stylesheet/less" type="text/css" href="<?php echo $resource_path;?>css/style.css" />
+	<script type="text/javascript" src="Public/less-1.4.2.min.js" ></script>
 	-->
-	<?php echo \Demo\views\inkTpl\custom_css();  ?>
+	<?php echo \Demo\custom_css();  ?>
 	
-	<script type="text/javascript" src="Resources/ink/js/holder.js"></script>
-	<script type="text/javascript" src="Resources/ink/js/ink.min.js"></script>
-	<script type="text/javascript" src="Resources/ink/js/ink-ui.min.js"></script>
-	<script type="text/javascript" src="Resources/ink/js/autoload.js"></script>
-	<script type="text/javascript" src="Resources/require.js" ></script>
+	<script type="text/javascript" src="Public/ink/js/holder.js"></script>
+	<script type="text/javascript" src="Public/ink/js/ink.min.js"></script>
+	<script type="text/javascript" src="Public/ink/js/ink-ui.min.js"></script>
+	<script type="text/javascript" src="Public/ink/js/autoload.js"></script>
+	<script type="text/javascript" src="Public/require.js" ></script>
 	<script type="text/javascript">
 		window.onerror = function(err){
 			alert("您的页面加载时出现了异常，可能影响部分功能的正常使用，建议使用Chrome浏览器。");
@@ -42,8 +44,8 @@
 		};
 
 		var global = {
-			view_resources_path: "<?php echo \Demo\resource_path();?>",
-			public_resources_path: "Resources/" 
+			view_resources_path: "<?php echo $resource_path;?>",
+			public_resources_path: "Public/" 
 		};
 		require.config({
 			baseUrl: global.view_resources_path + "js/",
@@ -70,10 +72,10 @@
 <![endif]-->
 <div class="ink-grid" id="main">
 	<header id="header">
-		<h1><img class="left-img" src="<?php echo \Demo\views\inkTpl\resources();  ?>uploads/logo.jpg" /><img class="right-img" src="<?php echo \Demo\views\inkTpl\resources();  ?>uploads/logo-right.jpg" /></h1>
+		<h1><img class="left-img" src="<?php echo $resource;?>uploads/logo.jpg" /><img class="right-img" src="<?php echo $resource;?>uploads/logo-right.jpg" /></h1>
 		<nav class="ink-navigation vspace">
 		<ul class="menu horizontal grey rounded ">
-			<?php echo Demo\views\inkTpl\top_nav(isset($current_nav) ? $current_nav : '');  ?>
+			<?php echo Demo\top_nav(isset($current_nav) ? $current_nav : '');  ?>
 		</ul>
 		</nav>
 	</header>

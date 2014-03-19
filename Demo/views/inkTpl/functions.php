@@ -20,7 +20,7 @@ function resources(){
  * 资源文件路径
  */
 function resource_path(){
-	return SITE_URL . 'Demo/views/ink/public/';
+	return SITE_URL . 'Demo/views/inkTpl/public/';
 }
 /**
  * 公共资源路径
