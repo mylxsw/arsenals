@@ -12,29 +12,29 @@
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<base href="" target="_blank, _self, _parent, _top">
+	<base href="<?php echo \Demo\site_url();?>" target="_blank, _self, _parent, _top">
 	<!--[if IE]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	<link rel="stylesheet" type="text/css" href="<?php echo \Demo\views\inkTpl\public_resource_path();  ?>ink/css/ink.css" />
+	<link rel="stylesheet" type="text/css" href="Resources/ink/css/ink.css" />
   	<!--[if lte IE 7 ]>
-  		<link rel="stylesheet" type="text/css" href="<?php echo \Demo\views\inkTpl\public_resource_path();  ?>ink/css/ink-ie7.css" />
+  		<link rel="stylesheet" type="text/css" href="Resources/ink/css/ink-ie7.css" />
   	<![endif]-->
   	
-  	<link rel="stylesheet" type="text/css" href="<?php echo \Demo\views\inkTpl\resource_path();  ?>css/custom.css" />
-  	<link rel="stylesheet" type="text/css" href="<?php echo \Demo\views\inkTpl\resource_path();  ?>css/style.css" />
+  	<link rel="stylesheet" type="text/css" href="<?php echo \Demo\resource_path();?>css/custom.css" />
+  	<link rel="stylesheet" type="text/css" href="<?php echo \Demo\resource_path();?>css/style.css" />
 	<!--
-	<link rel="stylesheet/less" type="text/css" href="<?php echo \Demo\views\inkTpl\resource_path();  ?>css/custom.css" />
-  	<link rel="stylesheet/less" type="text/css" href="<?php echo \Demo\views\inkTpl\resource_path();  ?>css/style.css" />
-	<script type="text/javascript" src="<?php echo \Demo\views\inkTpl\public_resource_path();  ?>less-1.4.2.min.js" ></script>
+	<link rel="stylesheet/less" type="text/css" href="<?php echo \Demo\resource_path();?>css/custom.css" />
+  	<link rel="stylesheet/less" type="text/css" href="<?php echo \Demo\resource_path();?>css/style.css" />
+	<script type="text/javascript" src="Resources/less-1.4.2.min.js" ></script>
 	-->
 	<?php echo \Demo\views\inkTpl\custom_css();  ?>
 	
-	<script type="text/javascript" src="<?php echo \Demo\views\inkTpl\public_resource_path();  ?>ink/js/holder.js"></script>
-	<script type="text/javascript" src="<?php echo \Demo\views\inkTpl\public_resource_path();  ?>ink/js/ink.min.js"></script>
-	<script type="text/javascript" src="<?php echo \Demo\views\inkTpl\public_resource_path();  ?>ink/js/ink-ui.min.js"></script>
-	<script type="text/javascript" src="<?php echo \Demo\views\inkTpl\public_resource_path();  ?>ink/js/autoload.js"></script>
-	<script type="text/javascript" src="<?php echo \Demo\views\inkTpl\public_resource_path();  ?>require.js" ></script>
+	<script type="text/javascript" src="Resources/ink/js/holder.js"></script>
+	<script type="text/javascript" src="Resources/ink/js/ink.min.js"></script>
+	<script type="text/javascript" src="Resources/ink/js/ink-ui.min.js"></script>
+	<script type="text/javascript" src="Resources/ink/js/autoload.js"></script>
+	<script type="text/javascript" src="Resources/require.js" ></script>
 	<script type="text/javascript">
 		window.onerror = function(err){
 			alert("您的页面加载时出现了异常，可能影响部分功能的正常使用，建议使用Chrome浏览器。");
@@ -42,8 +42,8 @@
 		};
 
 		var global = {
-			view_resources_path: "<?php echo \Demo\views\inkTpl\resource_path();  ?>",
-			public_resources_path: "<?php echo \Demo\views\inkTpl\public_resource_path();  ?>" 
+			view_resources_path: "<?php echo \Demo\resource_path();?>",
+			public_resources_path: "Resources/" 
 		};
 		require.config({
 			baseUrl: global.view_resources_path + "js/",
