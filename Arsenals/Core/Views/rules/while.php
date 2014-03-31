@@ -10,4 +10,4 @@ $callback = function($matches){
 	return "<!-- Template Syntax Error! -->";
 };
 
-return array('if', false, $callback);
+return array('while', false, $callback);

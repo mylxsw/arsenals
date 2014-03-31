@@ -98,7 +98,7 @@ class TemplateCompiler extends \Arsenals\Core\Abstracts\Arsenals implements Comp
 	 * @return array 键值对形式数组[key=>$value]
 	 */
 	public static function parseParams($content){
-		preg_match_all('#(?<key>\w+)\s*=(?<quote>"|\')(?<value>.*?)(?<!\\\\)\k<quote>#', trim($content), $cmd_arr);
+		preg_match_all('#(?<key>\w+)\s*=\s*(?<quote>"|\')(?<value>.*?)(?<!\\\\)\k<quote>#', trim($content), $cmd_arr);
 		$params = array();
 		foreach ($cmd_arr['key'] as $k=>$v){
 			
@@ -106,10 +106,10 @@ class TemplateCompiler extends \Arsenals\Core\Abstracts\Arsenals implements Comp
 			$_v = str_replace(' gte ', ' >= ', $_v);
 			$_v = str_replace(' lt ', ' < ', $_v);
 			$_v = str_replace(' lte ', ' <= ', $_v);
-			$_v = str_replace(' eq ', ' = ', $_v);
+			$_v = str_replace(' eq ', ' == ', $_v);
 			$_v = str_replace(' neq ', ' != ', $_v);
 		
-			$params[$v] = $_v;
+			$params[$v] = html_entity_decode(str_replace('', '', $_v));
 		}
 		return $params;
 	}

@@ -1,6 +1,6 @@
 <?php
 /**
- * 参数： test
+ * 参数： func
  */ 
 $callback = function($matches){
 	$params = \Arsenals\Core\Views\TemplateCompiler::parseParams($matches['content']);

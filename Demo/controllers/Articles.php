@@ -42,7 +42,9 @@ class Articles extends CoreController {
 		$this->assign('article', $article);
 		
 		$this->assign('id', $id);
-		$this->assign('breadcrumbs', array('首页'=>'', $article['cate'][0]['name']=> "articles/lists/{$article['cate'][0]['id']}.html" , $article['title'] => $article['id'] ));
+		$this->assign('breadcrumbs', array('首页'=>'', 
+			$article['cate'][0]['name'] => "articles/lists/{$article['cate'][0]['id']}.html" , 
+			$article['title'] => $article['id'] ));
 		
 		return $this->view('articles/show');
 	}

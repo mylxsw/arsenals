@@ -22,6 +22,7 @@
   	<![endif]-->
   	<c:set var="resource_path" value="\Demo\resource_path()" />
   	<c:set var="resource" value="\Demo\resources()" />
+  	<c:set var="site_url" value="\Demo\site_url()" />
   	
   	<link rel="stylesheet" type="text/css" href="${resource_path}css/custom.css" />
   	<link rel="stylesheet" type="text/css" href="${resource_path}css/style.css" />
@@ -38,14 +39,14 @@
 	<script type="text/javascript" src="Public/ink/js/autoload.js"></script>
 	<script type="text/javascript" src="Public/require.js" ></script>
 	<script type="text/javascript">
-		window.onerror = function(err){
+		/*window.onerror = function(err){
 			alert("您的页面加载时出现了异常，可能影响部分功能的正常使用，建议使用Chrome浏览器。");
 			return true;
-		};
+		};*/
 
 		var global = {
 			view_resources_path: "${resource_path}",
-			public_resources_path: "Public/" 
+			public_resources_path: "${site_url}Public/" 
 		};
 		require.config({
 			baseUrl: global.view_resources_path + "js/",
