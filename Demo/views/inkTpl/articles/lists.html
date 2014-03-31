@@ -1,16 +1,16 @@
 <c:include file="@templates/header" />
 <div id="main-left">
-	<c:func func="\Demo\breadcrumbs(isset($breadcrumbs) ? $breadcrumbs: array())" />
+	<c:func func="Demo.breadcrumbs(isset($breadcrumbs) ? $breadcrumbs: array())" />
 	<c:loop items = "$articles['data']" var = "art" >
 		<div class="article-list">
-			<div class="picture"><img src="{func:\Demo\url($art['feature_img'] == '' ? 'Resources/uploads/noimg.jpg' : $art['feature_img'])}"/></div>
+			<div class="picture"><img src="{func:Demo.url($art['feature_img'] == '' ? 'Resources/uploads/noimg.jpg' : $art['feature_img'])}"/></div>
 			<div class="content">
 				<h5 class="title">
-					<a href="{func:\Demo\url("articles/show/{$art['id']}.html")}">
+					<a href="{func:Demo.url("articles/show/{$art['id']}.html")}">
 						${art['title']}
 					</a>
 				</h5>
-				<div class="intro"><c:func func="Demo\htmlToText($art['intro'])" /></div>
+				<div class="intro"><c:func func="Demo.htmlToText($art['intro'])" /></div>
 			</div>
 			<div class="ink-clear"></div>
 		</div>
@@ -18,7 +18,7 @@
 	<c:if test="count($articles['data']) eq 0" >
 		<div>这里暂时没有文章哦~</div>
 	</c:if>
-	<c:func func="\Demo\pagination('articles/lists/{$cat}.html', $articles['total'], $articles['page'], $p)" />
+	<c:func func="Demo.pagination('articles/lists/{$cat}.html', $articles['total'], $articles['page'], $p)" />
 </div>
 <script>
 require(['page/home'], function(home){

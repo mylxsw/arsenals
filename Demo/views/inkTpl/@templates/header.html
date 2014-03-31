@@ -12,7 +12,7 @@
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<base href="{func:\Demo\site_url()}" target="_blank, _self, _parent, _top">
+	<base href="{func:Demo.site_url()}" target="_blank, _self, _parent, _top">
 	<!--[if IE]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -20,9 +20,9 @@
   	<!--[if lte IE 7 ]>
   		<link rel="stylesheet" type="text/css" href="Public/ink/css/ink-ie7.css" />
   	<![endif]-->
-  	<c:set var="resource_path" value="\Demo\resource_path()" />
-  	<c:set var="resource" value="\Demo\resources()" />
-  	<c:set var="site_url" value="\Demo\site_url()" />
+  	<c:set var="resource_path" value="Demo.resource_path()" />
+  	<c:set var="resource" value="Demo.resources()" />
+  	<c:set var="site_url" value="Demo.site_url()" />
   	
   	<link rel="stylesheet" type="text/css" href="${resource_path}css/custom.css" />
   	<link rel="stylesheet" type="text/css" href="${resource_path}css/style.css" />
@@ -31,7 +31,7 @@
   	<link rel="stylesheet/less" type="text/css" href="${resource_path}css/style.css" />
 	<script type="text/javascript" src="Public/less-1.4.2.min.js" ></script>
 	-->
-	<c:func func="\Demo\custom_css()" />
+	<c:func func="Demo.custom_css()" />
 	
 	<script type="text/javascript" src="Public/ink/js/holder.js"></script>
 	<script type="text/javascript" src="Public/ink/js/ink.min.js"></script>
@@ -76,7 +76,7 @@
 		<h1><img class="left-img" src="${resource}uploads/logo.jpg" /><img class="right-img" src="${resource}uploads/logo-right.jpg" /></h1>
 		<nav class="ink-navigation vspace">
 		<ul class="menu horizontal grey rounded ">
-			<c:func func="Demo\top_nav(isset($current_nav) ? $current_nav : '')" />
+			<c:func func="Demo.top_nav(isset($current_nav) ? $current_nav : '')" />
 		</ul>
 		</nav>
 	</header>

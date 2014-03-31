@@ -109,7 +109,7 @@ class TemplateCompiler extends \Arsenals\Core\Abstracts\Arsenals implements Comp
 			$_v = str_replace(' eq ', ' == ', $_v);
 			$_v = str_replace(' neq ', ' != ', $_v);
 		
-			$params[$v] = html_entity_decode(str_replace('', '', $_v));
+			$params[$v] = preg_replace('#(?<!\\\\)\.#', '\\', html_entity_decode(stripslashes($_v)));
 		}
 		return $params;
 	}
