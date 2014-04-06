@@ -137,7 +137,7 @@ class ArsenalsBootstrap {
 		$log = Registry::load('Arsenals\Core\Log');
 		$log->debug("The system has been running : {$benchMark->elapsedTime('system_start', 'system_end')}", 'system');
 		$log->debug("The controller has been running : {$benchMark->elapsedTime('controller_start', 'controller_end')}", 'system');
-		echo $benchMark->elapsedTime('system_start', 'system_end');
+		
 		// 项目定义的清理操作
 		$this->clear();
 	}

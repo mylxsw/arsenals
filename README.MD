@@ -391,6 +391,56 @@ Arsenals框架提供了字段校验功能，开发过程中，可以方便的使
 #####模板编译缓存
 为了提高效率，模板文件在第一次运行时会编译成 ```.php``` 的缓存文件，以使得在程序运行过程中省略掉模板编译过程，提高运行效率。   
 默认编译缓存在缓存目录下的views文件夹中，并且保持了模板文件的原始文件结构以及文件名称（除扩展名之外）。   
+#####标签变量规范
+模板引擎是基于文本解析的，因此，对标签项的配置比较严格，因此，需要按照标签变量规范进行标签内容录入。如下变量必须进行替换：
+<table>
+<thead>
+	<tr><th>原始字符</th><th>替换字符</th></tr>
+</thead>
+<tbody>
+	<tr>
+		<td>&gt;</td>
+		<td>gt</td>
+	</tr>
+	<tr>
+		<td>&lt;</td>
+		<td>lt</td>
+	</tr>
+	<tr>
+		<td>==</td>
+		<td>eq</td>
+	</tr>
+	<tr>
+		<td>!=</td>
+		<td>neq</td>
+	</tr>
+	<tr>
+		<td>&gt;=</td>
+		<td>gte</td>
+	</tr>
+	<tr>
+		<td>&lt;=</td>
+		<td>lte</td>
+	</tr>
+	<tr>
+		<td>\</td>
+		<td>.（这里指的是命名空间分隔符）</td>
+	</tr>
+</tbody>
+</table>
+例如：
+<pre>
+	&lt;c:func func="Demo.hello()" /&gt;
+	输出为：&lt;?php echo Demo\hello(); ?&gt;
+
+	&lt;c:if test="$a gt 5"&gt;
+		${var}
+	&lt;/c:if&gt;
+	输出为：
+		&lt;?php if($a &gt 5) { ?&gt;
+		&lt;?php echo $var; ?&gt;
+		&lt;?php } ?&gt;
+</pre>
 
 ####第三方模板引擎
 系统还提供了一个基于Twig的模板引擎，不过需要手动加入Twig的类库才可以使用。加入Twig的类库之后，需要在项目的入口文件中定义Twig的Autoloader.php文件的路径常量，如下所示：  

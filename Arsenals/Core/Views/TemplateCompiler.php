@@ -22,6 +22,7 @@ class TemplateCompiler extends \Arsenals\Core\Abstracts\Arsenals implements Comp
 		'rules/foreach',
 		'rules/while',
 		'rules/function',
+		'rules/set',
 	);
 
 	private $_inited = false;
@@ -79,15 +80,14 @@ class TemplateCompiler extends \Arsenals\Core\Abstracts\Arsenals implements Comp
 			$content = preg_replace_callback($k, $v, $content);
 		}
 		// 提供类似于EL表达式的语法支持
-		// {$abc }
+		// ${abc }
 		// {func:函数名(参数)}
-		$content = preg_replace('#' . $this->el_delim[0] . '\$([a-zA-Z_\x7f-\xff]*)\s*' . $this->el_delim[1] . '#' , '<?php echo $\1;?>', $content);
 		$content = preg_replace_callback('#{func:\s*(?<funcname>[\\a-zA-Z_\x7f-\xff]+)\s*\((?<params>.*?)\)\s*}#' , 
 			function($matches){
 				$matches['funcname'] = str_replace('.', '\\', $matches['funcname']);
 				return "<?php echo {$matches['funcname']}(${matches['params']});?>";
 			}, $content);
-		
+		$content = preg_replace('#\$' . $this->el_delim[0] . '(.*?)\s*' . $this->el_delim[1] . '#' , '<?php echo $\1;?>', $content);
 		return $content;
 	}
 	
@@ -98,7 +98,7 @@ class TemplateCompiler extends \Arsenals\Core\Abstracts\Arsenals implements Comp
 	 * @return array 键值对形式数组[key=>$value]
 	 */
 	public static function parseParams($content){
-		preg_match_all('#(?<key>\w+)\s*=(?<quote>"|\')(?<value>.*?)(?<!\\\\)\k<quote>#', trim($content), $cmd_arr);
+		preg_match_all('#(?<key>\w+)\s*=\s*(?<quote>"|\')(?<value>.*?)(?<!\\\\)\k<quote>#', trim($content), $cmd_arr);
 		$params = array();
 		foreach ($cmd_arr['key'] as $k=>$v){
 			
@@ -106,10 +106,10 @@ class TemplateCompiler extends \Arsenals\Core\Abstracts\Arsenals implements Comp
 			$_v = str_replace(' gte ', ' >= ', $_v);
 			$_v = str_replace(' lt ', ' < ', $_v);
 			$_v = str_replace(' lte ', ' <= ', $_v);
-			$_v = str_replace(' eq ', ' = ', $_v);
+			$_v = str_replace(' eq ', ' == ', $_v);
 			$_v = str_replace(' neq ', ' != ', $_v);
 		
-			$params[$v] = $_v;
+			$params[$v] = preg_replace('#(?<!\\\\)\.#', '\\', html_entity_decode(stripslashes($_v)));
 		}
 		return $params;
 	}
