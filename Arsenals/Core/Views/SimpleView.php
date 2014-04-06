@@ -4,6 +4,7 @@ namespace Arsenals\Core\Views;
 
 use Arsenals\Core\Config;
 use Arsenals\Core\Abstracts\Arsenals;
+if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * 简单的视图实现
  * 

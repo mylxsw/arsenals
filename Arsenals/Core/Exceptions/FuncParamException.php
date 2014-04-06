@@ -1,6 +1,7 @@
 <?php
 
 namespace Arsenals\Core\Exceptions;
+if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * 函数参数异常
  * 

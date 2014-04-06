@@ -1,6 +1,7 @@
 <?php
 
 namespace Arsenals\Core\Logs;
+if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * 日志接口
  * 

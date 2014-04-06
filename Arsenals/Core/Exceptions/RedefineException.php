@@ -1,7 +1,7 @@
 <?php
 
 namespace Arsenals\Core\Exceptions;
-
+if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * 类或者对象重复定义或者引入异常
  * 

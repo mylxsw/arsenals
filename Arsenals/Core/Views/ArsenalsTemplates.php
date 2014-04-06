@@ -6,7 +6,7 @@ use Arsenals\Core\Abstracts\Arsenals;
 use Arsenals\Core\Config;
 use Arsenals\Core\Exceptions\ClassTypeException;
 use Arsenals\Core\Registry;
-
+if (!defined('APP_NAME')) exit('Access Denied!');
 class ArsenalsTemplates extends Arsenals implements View {
 	
 	/**

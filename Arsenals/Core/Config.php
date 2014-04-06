@@ -3,6 +3,7 @@
 namespace Arsenals\Core;
 
 use Arsenals\Core\Abstracts\Arsenals;
+if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * 配置管理类
  * 

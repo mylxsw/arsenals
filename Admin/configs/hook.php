@@ -1,6 +1,6 @@
 <?php
 return array(
 	'before_system' => array( 
-			'Demo\\hooks\\DemoHook@beforeSystem'
+			'Admin\\hooks\\AdminHook@beforeSystem'
 	),	
 );

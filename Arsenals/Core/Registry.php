@@ -4,6 +4,8 @@ namespace Arsenals\Core;
 use Arsenals\Core\Exceptions\RedefineException;
 use Arsenals\Core\Exceptions\ClassNotFoundException;
 use Arsenals\Core\Abstracts\Arsenals;
+
+if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * 载入类对象注册器
  * 

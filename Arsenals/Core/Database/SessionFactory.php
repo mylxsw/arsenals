@@ -4,6 +4,7 @@ namespace Arsenals\Core\Database;
 
 use Arsenals\Core\Config;
 use Arsenals\Core\Abstracts\Arsenals;
+if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * 数据库会话工厂，用于产生数据库连接
  * 

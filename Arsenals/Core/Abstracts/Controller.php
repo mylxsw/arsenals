@@ -7,6 +7,7 @@ use Arsenals\Core\Registry;
 use Arsenals\Core\Views\ViewAndModel;
 use Arsenals\Core\Views\Ajax;
 use Arsenals\Core\Exceptions\TypeErrorException;
+if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * 抽象控制器
  * 

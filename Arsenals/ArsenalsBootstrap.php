@@ -1,9 +1,11 @@
 <?php
-
 namespace Arsenals;
 
 use Arsenals\Core\Registry;
 use Arsenals\Core\Abstracts\Arsenals;
+
+if (!defined('APP_NAME')) exit('Access Denied!');
+
 /**
  * Arsenals框架入口
  * 
@@ -57,6 +59,7 @@ class ArsenalsBootstrap {
 		defined('LOG') || define('LOG', false);
 		
 		// 定义系统常量
+		define('ARSENALS_VERSION', '1.0 dev');// 框架版本
 		defined('ERROR_HANDLER') || define('ERROR_HANDLER', 'Arsenals\Core\_error_handler');
 		defined('EXCEPTION_HANDLER') || define('EXCEPTION_HANDLER', 'Arsenals\Core\_exception_handler');
 		defined('LOG_IMPL') || define('LOG_IMPL', 'Arsenals\Core\Logs\FileLogImpl');// 日志实现

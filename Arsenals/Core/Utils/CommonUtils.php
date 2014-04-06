@@ -3,6 +3,7 @@
 namespace Arsenals\Core\Utils;
 
 use Arsenals\Core\Registry;
+if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * 实用功能方法
  * 

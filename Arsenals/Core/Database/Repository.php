@@ -1,7 +1,7 @@
 <?php
 
 namespace Arsenals\Core\Database;
-
+if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * 数据仓库操作接口
  * 

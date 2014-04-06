@@ -4,6 +4,8 @@ namespace Arsenals\Core;
 
 use Arsenals\Core\Abstracts\Arsenals;
 use Arsenals\Core\Utils\CommonUtils;
+
+if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * 系统钩子
  * 

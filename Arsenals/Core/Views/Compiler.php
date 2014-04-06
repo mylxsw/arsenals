@@ -1,6 +1,7 @@
 <?php
 
 namespace Arsenals\Core\Views;
+if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * 模板编译器接口
  * 

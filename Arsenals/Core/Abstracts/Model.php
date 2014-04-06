@@ -6,6 +6,8 @@ use Arsenals\Core\Database\SessionFactory;
 use Arsenals\Core\Config;
 use Arsenals\Core\Exceptions\QueryException;
 use Arsenals\Core\Registry;
+
+if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * 抽象模型
  * 

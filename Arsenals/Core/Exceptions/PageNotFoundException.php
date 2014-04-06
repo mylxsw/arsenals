@@ -1,7 +1,7 @@
 <?php
 
 namespace Arsenals\Core\Exceptions;
-
+if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * 找不到页面异常404
  * 

@@ -3,6 +3,8 @@
 namespace Arsenals\Core\Views;
 
 use Arsenals\Core\Abstracts\Arsenals;
+
+if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * 核心视图
  * 

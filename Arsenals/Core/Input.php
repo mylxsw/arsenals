@@ -6,6 +6,8 @@ use Arsenals\Core\Abstracts\Arsenals;
 use Arsenals\Core\Exceptions\TypeErrorException;
 use Arsenals\Core\Exceptions\FuncParamException;
 use Arsenals\Core\Utils\CommonUtils;
+
+if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * 输入处理类
  * 

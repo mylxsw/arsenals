@@ -3,6 +3,7 @@
 namespace Arsenals\Core\Views;
 
 use Arsenals\Core\Abstracts\Arsenals;
+if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * Ajax返回值
  * @author 管宜尧<mylxsw@126.com>

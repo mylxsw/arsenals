@@ -1,4 +1,4 @@
-<?php
+<?php if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * 参数： value[, escape=false][, default=null] 
  */ 

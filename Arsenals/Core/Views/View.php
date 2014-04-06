@@ -2,6 +2,8 @@
 
 namespace Arsenals\Core\Views;
 
+if (!defined('APP_NAME')) exit('Access Denied!');
+
 /**
  * 视图接口
  * 

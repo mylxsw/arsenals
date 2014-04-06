@@ -23,8 +23,8 @@ class Articles extends CoreController {
 
 		$category = $this->model('Category')->load(array('id'=>$category_id));
 		
-		$this->assign('breadcrumbs', array('首页'=>'', $category['name']=> "articles/list/{$category['id']}.html" ));
-        $this->assign('current_nav', "articles/lists/{$category_id}.html");
+		$this->assign('breadcrumbs', array('首页'=>'', $category['name']=> "category_/{$category['id']}.html" ));
+        $this->assign('current_nav', "category_{$category_id}.html");
 		$this->assign('cat', $category_id);
 		$this->assign('p', $p);
         $this->assign('_page_title', $category['name']);
@@ -43,9 +43,9 @@ class Articles extends CoreController {
 		$this->assign('article', $article);
 		
 		$this->assign('id', $id);
-        $this->assign('breadcrumbs', count($article['cate']) > 0 ? array('首页'=>'', $article['cate'][0]['name']=> "articles/lists/{$article['cate'][0]['id']}.html" , $article['title'] => $article['id'] ) : '');
+        $this->assign('breadcrumbs', count($article['cate']) > 0 ? array('首页'=>'', $article['cate'][0]['name']=> "category_{$article['cate'][0]['id']}.html" , $article['title'] => $article['id'] ) : '');
         if(count($article['cate']) > 0){
-            $this->assign('current_nav', "articles/lists/{$article['cate'][0]['id']}.html");
+            $this->assign('current_nav', "category_{$article['cate'][0]['id']}.html");
         }
         
         $this->assign('_page_title', $article['title']);

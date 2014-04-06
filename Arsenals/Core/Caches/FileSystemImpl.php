@@ -1,7 +1,7 @@
 <?php
 
 namespace Arsenals\Core\Caches;
-
+if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * 文件系统的缓存实现
  * 

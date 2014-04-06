@@ -5,6 +5,7 @@ namespace Arsenals\Core\Database\MySQL;
 use Arsenals\Core\Database\DataSource;
 use Arsenals\Core\Config;
 use Arsenals\Core\Abstracts\Arsenals;
+if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * MySQL数据源mysqli方式
  * 

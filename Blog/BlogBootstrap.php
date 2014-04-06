@@ -13,10 +13,10 @@ class BlogBootstrap extends \Arsenals\ArsenalsBootstrap {
 		Route::map("^$", '\Demo\controllers\Index@basic');
 		Route::map(".html$", '\Demo\controllers\Index@basic');
 		*/
-        Route::map("^category_(:num)\.html$", '\\Demo\\controllers\\Articles@lists');
-		Route::map('^home.html$', '\Demo\controllers\Index@index');
-		Route::map('^article_(:num)\.html$', '\\Demo\\controllers\\Articles@show');
-		Route::map('^page_(:num)\.html$', '\\Demo\\controllers\\Page@show');
+        Route::map("^category_(:num)\.html$", '\Blog\controllers\Articles@lists');
+		Route::map('^home.html$', '\Blog\controllers\Index@index');
+		Route::map('^article_(:num)\.html$', '\Blog\controllers\Articles@show');
+		Route::map('^page_(:num)\.html$', '\Blog\controllers\Page@show');
 	}
 
 }

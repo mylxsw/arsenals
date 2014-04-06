@@ -5,6 +5,8 @@ namespace Arsenals\Core;
 use Arsenals\Core\Views\Ajax;
 use Arsenals\Core\Abstracts\Arsenals;
 use Demo\views\ink\header;
+
+if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * 输出控制类
  * 
