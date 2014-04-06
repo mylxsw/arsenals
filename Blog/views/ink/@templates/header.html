@@ -1,0 +1,113 @@
+<c:set var="_page_title" value="$_page_title" default="爱生活，爱代码" />
+<c:set var="resource_path" value="Blog.resource_path()" />
+<c:set var="resource" value="Blog.resources()" />
+<c:set var="site_url" value="Blog.site_url()" />
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>AiCode - ${_page_title}</title>
+    
+	<meta name="description" content="AiCode出品, ${_page_title}">
+	<meta name="author" content="管宜尧, mylxsw, code.404, arsenals">
+    <meta name="keywords" content="AiCode, ${_page_title}, 管宜尧 , Arsenals">
+    
+    <meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<base href="${site_url}" target="_blank, _self, _parent, _top">
+	<!-- 百度站长平台验证 -->
+	<meta name="baidu-site-verification" content="s8TRe7Z7Yg" />
+	
+	<!--  为IE8提供对HTML5的支持，以及对CSS3 media query的支持 -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+	
+	<!-- Ink 样式库 -->
+	<link rel="stylesheet" type="text/css" href="Public/ink/css/ink.css" />
+  	<!--[if lte IE 7 ]>
+  		<link rel="stylesheet" type="text/css" href="Public/ink/css/ink-ie7.css" />
+  	<![endif]-->
+
+  	<!-- 自定义样式库, 由LESS解析 -->
+	<link rel="stylesheet" type="text/css" href="${resource_path}css/custom.css" />
+  	<link rel="stylesheet" type="text/css" href="${resource_path}css/style.css" />
+
+	<script type="text/javascript" src="Public/jquery-1.8.3.min.js" ></script>
+	
+	<!-- 通过后台定制的附加CSS样式 -->
+	<c:func func="Blog.custom_css()" />
+    <!-- 由requirejs完成事件控制 -->
+	<script type="text/javascript">
+        window.onerror = function(err, url, line){
+			alert("您的页面加载时出现了异常，可能影响部分功能的正常使用，建议使用Chrome浏览器。");
+            try{console.log("第" + line + "行， " + url + "， 发生了错误： " + err);}catch(e){}
+			return true;
+		};
+	</script>
+</head>
+<body class="agile">
+<!--[if lt IE 8]>
+	<div class="browser-invalid-tip ink-alert basic">
+		<p>您正在使用一款<strong>过期</strong>的浏览器，请<a href="http://browsehappy.com/">升级您的浏览器</a>或者<a href="http://www.google.com/chromeframe/?redirect=true">下载谷歌浏览器</a>以获取最佳体验效果。</p>
+		<p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+	</div>
+	<script>
+		window.setTimeout(function(){
+			document.getElementById("main").style.display = "none";
+			document.getElementById("footer").style.display = "none";
+		}, 0);
+	</script>
+<![endif]-->
+<div class="ink-grid" id="main">
+	<header id="header">
+        <div class="top-banner">
+        	<h1><img class="left-img" src="${resource}logo.png" /><div class="ink-clear"></div></h1>
+           	
+           	<div class="search-panel">
+                <form class="ink-form">
+                    <div class="control-group">
+                        <div class="column-group gutters">
+                            <div class="control append-symbol">
+                                <span>
+                                    <input type="text" name="keyword" id="search_input" placeholder="搜索...">
+                                    <i class="icon-search search-btn" ></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+             
+            <!--
+            <div class="search-panel-google no-trans">
+            	<script>
+				  (function() {
+				    var cx = '008236493394798117794:dsz50md13yc';
+				    var gcse = document.createElement('script');
+				    gcse.type = 'text/javascript';
+				    gcse.async = true;
+				    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+				        '//www.google.com/cse/cse.js?cx=' + cx;
+				    var s = document.getElementsByTagName('script')[0];
+				    s.parentNode.insertBefore(gcse, s);
+				  })();
+				</script>
+				<gcse:search></gcse:search>
+            </div>
+           -->
+        </div>
+        <div class="ink-clear"></div>
+		<nav class="ink-navigation vspace">
+		<ul class="menu horizontal rounded shadowed black ">
+			<c:func func="Blog.top_nav(isset($current_nav) ? $current_nav : '')" />
+		</ul>
+		</nav>
+	</header>
+	<div class="column-group" id="main-content">

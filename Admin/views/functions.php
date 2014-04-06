@@ -5,7 +5,7 @@ use Arsenals\Core\Registry;
 
 $config = Config::load('config');
 define('TMP_FUNC', VIEW_PATH . $config['theme'] . DIRECTORY_SEPARATOR . '@templates' . DIRECTORY_SEPARATOR);
-define('SITE_URL', $config['site_url']);
+define('SITE_URL', IS_SAE ? 'http://agiledev.sinaapp.com/' : $config['site_url']);
 /**
  * 资源文件路径
 */
@@ -242,4 +242,21 @@ function tags($id, $join_str = ','){
 	}
 
 	return implode($join_str, $tag_arr);
+}
+
+/**
+ * 文章来源数据来源
+ */ 
+function article_source_list($id){
+	$settingModel = Registry::load('Common\\models\\Setting');
+	$source_list = $settingModel->getSetting('source_list', 'system');
+	$source_lists = \json_decode($source_list['setting_value']);
+
+	$html = "<datalist id='{$id}'>";
+	foreach($source_lists as $k=>$v){
+		$html .= "<option label='{$v->label}' value='{$v->value}' />";
+	}
+
+	$html .= "</datalist>";
+	return $html;
 }

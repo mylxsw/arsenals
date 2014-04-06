@@ -22,7 +22,7 @@ class Account extends CoreController {
 	 * @return \Arsenals\Core\Views\Ajax
 	 */
 	public function loginPost(){
-		$username = $this->post('username', null, 'required|len:5,30');
+		$username = $this->post('username', null, 'required|len:3,30');
 		$password = $this->post('password', null, 'required|len:5,30');
 		
 		// 检查用户名密码是否合法

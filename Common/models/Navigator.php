@@ -47,7 +47,7 @@ class Navigator extends Model {
 			if (is_null($pnav)) {
 				throw new \Arsenals\Core\Exceptions\NoRecoredException('上级菜单不存在！');
 			}
-			if ($pnav['pid'] = $id) {
+			if ($data['pid'] == $id) {
 				throw new \Arsenals\Core\Exceptions\QueryException('上级菜单不能是菜单本身!');
 			}
 		}

@@ -25,7 +25,7 @@
 	<div class="ribbed-cyan" id="login-body">
 		<div id="login-area" class="ribbed-amber">
 			<div class="box">
-				<h1>AgileDEV<sup>dev</sup></h1>
+				<h1>AiCode<sup>dev</sup></h1>
 				<form id="login-form" action="<?php echo \Admin\url('account/loginPost');?>" method="post">
 					<fieldset>
 						<label for="account">账号:</label>

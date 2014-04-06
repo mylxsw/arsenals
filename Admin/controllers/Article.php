@@ -20,34 +20,66 @@ class Article extends CoreController {
 		return $this->view('article/write');
 	}
     /**
+     * 图片封面列表
+     */ 
+    public function image_covers(){
+    	$this->assign('covers', $this->_imageCoverList());
+        return $this->view('article/image_cover');
+    }
+    /**
+     * 图片封面
+     * @return [type] [description]
+     */
+    private function _imageCoverList(){
+        $file_str = array();
+        if(IS_SAE){
+            $saeStorage = new \SaeStorage();
+            $files = $saeStorage->getListByPath('arsenals', 'cover', 1000 );
+
+            foreach($files['files'] as $k=>$file){
+                $file_str[] = $saeStorage->getUrl('arsenals', $file['fullName']);
+            }
+        }else{
+
+            $handle = \opendir(BASE_PATH . 'Resources/uploads/cover/');
+            while ( false !== ( $file = \readdir( $handle ) ) ) {
+                if ( $file != '.' && $file != '..' ) {
+                    
+                    if ( preg_match( "/\.(gif|jpeg|jpg|png|bmp)$/i" , $file ) ) {
+                        
+                        //!!!此处需要读取配置文件获取网站url并拼接上去
+                        $file_str[] = 'Resources/uploads/cover/'. $file;
+                    }
+                }
+            }
+        }
+        
+        return $file_str;
+    }
+    /**
      * 图片上传
      */
     private function _imageUpload($field){
         if(isset($_FILES[$field]) && $_FILES[$field]['error'] == 0){
-            if ((($_FILES[$field]["type"] == "image/gif")
-                || ($_FILES[$field]["type"] == "image/jpeg")
-                || ($_FILES[$field]["type"] == "image/pjpeg"))
-                && ($_FILES[$field]["size"] < 1000000)) {
-                if ($_FILES[$field]["error"] > 0) {
-                    throw new \Common\FileUploadException("错误: " . $_FILES[$field]["error"]);
-                } else {
-                    $dest_file = 'Resources/uploads/' . md5($_FILES[$field]['name'] . time()) . '.' 
-                        . substr($_FILES[$field]['name'], strrpos($_FILES[$field]['name'], '.') + 1);
-                    $up_status = \Arsenals\Core\move_uploaded_file($_FILES[$field]['tmp_name'], BASE_PATH . $dest_file);
-                    if($up_status === true){
-                    	return $dest_file;
-                    }else if($up_status === false){
-                    	throw new \Common\FileUploadException("文件上传失败!");
-                    }else{
-                        if(\is_string($up_status)){
-                        	return $up_status;
-                        }
-                    }
-                    return $dest_file;
+            $dest_file = 'cover/' . md5($_FILES[$field]['name'] . time()) . '.' 
+                . substr($_FILES[$field]['name'], strrpos($_FILES[$field]['name'], '.') + 1);
+
+            $uploader = \Arsenals\Core\Registry::load('\\Arsenals\\Libraries\\Files\\Uploader');
+            $up_status = $uploader->upload($field, IS_SAE ? $dest_file : (BASE_PATH . 'Resources/uploads/' . $dest_file));
+
+            if($up_status === true){
+            	return $dest_file;
+            }else if($up_status === false){
+            	throw new \Common\FileUploadException("文件上传失败!");
+            }else{
+                if(\is_string($up_status)){
+                	return $up_status;
                 }
-            } else {
-                throw new \Common\FileUploadException("错误: 文件不合法");
             }
+            return $dest_file;
+        }
+        if (isset($_FILES[$field]) && $_FILES[$field]["error"] > 0) {
+            throw new \Common\FileUploadException("错误: " . $_FILES[$field]["error"]);
         }
         return '';
     }
@@ -60,6 +92,9 @@ class Article extends CoreController {
         $data = array();
         // 处理文件上传
         $data['feature_img'] = $this->_imageUpload('feature_img');
+        if($data['feature_img'] == ''){
+            $data['feature_img'] = $this->post('feature_img_selected');
+        }
 
         // 处理表单
 		$data['title'] = $this->post('blog_title', null, 'required|len:1,100');
@@ -68,6 +103,7 @@ class Article extends CoreController {
 		$data['tag'] = $this->post('tag', null);
 		$data['category_id'] = $this->post('category_id', 'required');
 		$data['author'] = $user['username'];
+        $data['source'] = $this->post('sources', null, 'required|len:1,200');
 		
 		$this->model('Article')->addArticle($data);
 		
@@ -184,7 +220,9 @@ class Article extends CoreController {
         $data = array();
         
         $data['feature_img'] = $this->_imageUpload('feature_img');
-
+		if($data['feature_img'] == ''){
+            $data['feature_img'] = $this->post('feature_img_selected', null);
+        }
         $data['title'] = $this->post('blog_title', null, 'required|len:1,100');
         $data['content'] = $this->post('blog_textarea', null, 'len:0,80000');
         $data['intro'] = $this->post('intro', null, 'len:0, 500');
@@ -192,6 +230,7 @@ class Article extends CoreController {
         $data['category_id'] = $this->post('category_id', 'required');
         //$data['author'] = $user['username'];
         $data['updator'] = $user['username'];
+        $data['source'] = $this->post('sources', null, 'required|len:1,200');
         //
         $id = $this->post('id', null, 'required|int');
         

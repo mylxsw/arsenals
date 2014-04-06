@@ -1,0 +1,31 @@
+<c:include file="@templates/header" />
+<div id="main-left">
+	<c:loop items="$articles['data']" var="art" >
+		<div class="article-list">
+			<div class="picture">
+                <img src="{func:Blog.url($art['feature_img'] == '' ? 'Resources/uploads/noimg.jpg' : $art['feature_img'])}"/>
+            	<div class="img-tip">${art['title']}</div>
+            </div>
+			<div class="content">
+				<h5 class="title">
+                    <span class="ink-label success invert">
+                    	<c:if test="$art['source'] neq '' ">
+                    		[ <c:out value="$art['source']" /> ]
+                    	</c:if>	
+                    </span> 
+                    <a href="{func:Blog.url("article_{$art['id']}.html")}">
+                    	<c:out value="$art['title']" />
+					</a>
+				</h5>
+				<div class="intro"><c:func func="Blog.htmlToText($art['intro'])" /></div>
+                <div class="meta">作者： ${art['author']} &nbsp;&nbsp;&nbsp;&nbsp; 发布时间: {func:date('Y-m-d', $art['publish_date'])} &nbsp;&nbsp;&nbsp;&nbsp; <span class="ds-thread-count"  data-thread-key="art_${art['id']}"></span></div>
+			</div>
+			<div class="ink-clear"></div>
+		</div>
+	</c:foreach>
+	<c:if test="count($articles['data']) eq 0">
+		<div>这里暂时没有文章哦~</div>
+	</c:if>
+	<c:func func="Blog.pagination('', $articles['total'], $articles['page'], $p)" />
+</div>
+<c:include file="@templates/footer" />

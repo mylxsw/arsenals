@@ -176,7 +176,17 @@ window.o_fn = {
 			var form = _this.parents("form");
 			form.find("input[name=is_tmp]").val("0");
 			form.trigger("submit");
-		}
+		},
+        select_image_cover: function(_this){
+            f.dialog('article/image_covers', '选择封面', {}, function(){
+                $("a[data-pop-event='select-cover']").click( function(e){
+                	e.preventDefault();
+                    var path = $(this).attr('data-id');
+           			$("input[name='feature_img_selected']").val(path);
+                    $("#feature_img_area").html("<img src='" + path + "' class='span4' /><div class=\"overlay-fluid\">" + path + "</div>").show();
+                });
+            });
+        }
 	},
 	setting: {
 		add: function(){
@@ -192,6 +202,24 @@ window.o_fn = {
 				return f.alert("请选择一个要编辑的项!");
 			}
 			f.dialog('setting/edit', "编辑配置", {id: id.val()}, function(){
+
+			});
+		}
+	},
+	user: {
+		add: function(){
+			f.dialog('user/addUser', "添加用户", {}, function(){
+				});
+		},
+		del: function(){
+			o_fn.g.del('#user_table', 'user/delUser');
+		}, 
+		edit: function(){
+			var id = $("#user_table").find('input.select_all_item:checked');
+			if(id.length != 1){
+				return f.alert("请选择一个要编辑的项!");
+			}
+			f.dialog('user/updateUser', "编辑用户", {id: id.val()}, function(){
 
 			});
 		}

@@ -83,16 +83,21 @@ class Article extends Model {
 	 * @return array
 	 */
 	public function getNewArticlesInCategory($category, $count = 1){
-		if (!is_array($category)) {
+		if (!is_null($category) && !is_array($category)) {
 			$category = array($category);
 		}
        
-		$sql = "SELECT * FROM " . $this->getTableName() . " WHERE id in (";
-		$sql .= "SELECT DISTINCT A.ARTICLE_ID FROM " . $this->getTableName('article_category') . " AS A WHERE A.CATEGORY_ID in (";
-		foreach ($category as $k){
-			$sql .= intval($k) . ' ,';
+		$sql = "SELECT * FROM `" . $this->getTableName() . "` "; 
+		if(!is_null($category)){
+			$sql .= " WHERE id in (";
+			$sql .= "SELECT DISTINCT A.ARTICLE_ID FROM " . $this->getTableName('article_category') . " AS A WHERE A.CATEGORY_ID in (";
+			foreach ($category as $k){
+				$sql .= intval($k) . ' ,';
+			}
+			$sql = rtrim($sql, ',') . '))';
 		}
-		$sql = rtrim($sql, ',') . ')) ORDER BY PUBLISH_DATE DESC LIMIT ' . intval($count);
+
+		$sql .= ' ORDER BY PUBLISH_DATE DESC LIMIT ' . intval($count);
 		
 		return $this->query($sql);
 	}
@@ -138,6 +143,7 @@ class Article extends Model {
 		$save_data['creator'] = $data['author'];
 		$save_data['publish_date'] = time();
 		$save_data['feature_img'] = $data['feature_img'];
+        $save_data['source'] = $data['source'];
 		
 		$article_id = $this->save($save_data);
 		// 保存分类信息
@@ -158,7 +164,8 @@ class Article extends Model {
 		$save_data['updator'] = $data['updator'];
 		$save_data['update_date'] = time();
 		isset($data['feature_img']) && $data['feature_img'] != '' && $save_data['feature_img'] = $data['feature_img'];
-
+		$save_data['source'] = $data['source'];
+        
 		$this->update($save_data, array('id'=>$id));
 		// 保存分类信息
 		$this->mapArtToCate($id, $data['category_id']);

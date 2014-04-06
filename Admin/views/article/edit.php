@@ -16,6 +16,12 @@
 				<?php endforeach;?>
 			</select>
 		</div>
+        <label for="sources">来源</label>
+     	<div class="input-control text size3">
+            <input type="text" name="sources" list="sources_list" value="<?php echo $art['source'];?>" />
+            <?php echo \Admin\article_source_list("sources_list");?>
+		</div>
+	     	
 		<label for="tag">标签</label>
 		<div class="input-control text size4">
 		   <input type="text" name="tag" id="tag" placeholder="标签" value="<?php echo \Admin\tags($art['id']);?>"/>
@@ -36,9 +42,10 @@
 		<div class="input-control textarea size 10">
 		    <script name="blog_textarea"  type="text/plain" id="blog_textarea"><?php echo $art['content'];?></script>
 		</div>
-		<label for="feature_img">封面图片</label>
+		<label for="feature_img">封面图片 <a href="#" data-event="blog.select_image_cover">选择</a></label>
 		<div class="input-control file size4" data-role="input-control">
 			<input type="file" name="feature_img" id="feature_img" data-role="input-control" />
+            <input type="hidden" name="feature_img_selected" />
 			<button class="btn-file"></button>
 		</div>
 		<div id="feature_img_area" class="image-container"></div>

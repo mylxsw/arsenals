@@ -12,15 +12,20 @@ class Cache extends CoreController {
 	 * 清理全局缓存
 	 */ 
 	public function clear(){
-		$DIR_S = DIRECTORY_SEPARATOR;
-		$cache_path = array(
-			BASE_PATH . "articles{$DIR_S}show{$DIR_S}",
-			CACHE_PATH
-			);
-
-		foreach ($cache_path as $v) {
-			$this->_clear($v);
-		}
+        if(defined('IS_SAE') && IS_SAE){
+           
+            
+        }else{
+        	$DIR_S = DIRECTORY_SEPARATOR;
+            $cache_path = array(
+                BASE_PATH . "articles{$DIR_S}show{$DIR_S}",
+                CACHE_PATH
+                );
+    
+            foreach ($cache_path as $v) {
+                $this->_clear($v);
+            }
+        }
 
 		return Ajax::ajaxReturn('缓存已经清理完毕!', Ajax::SUCCESS);
 	}

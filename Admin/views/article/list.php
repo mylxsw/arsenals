@@ -16,6 +16,7 @@
 				<th class="text-left">标题</th>
 				<th class="text-left">分类</th>
 				<th class="text-left">作者</th>
+                <th class="text-left">来源</th>
 				<th class="text-left">发布时间</th>
 				<th class="text-left">是否可用</th>
 			</tr>
@@ -28,6 +29,7 @@
 					<td><?php echo $art['title'];?></td>
 					<td><?php echo \Admin\category($art['id']);?></td>
 					<td><?php echo $art['author'];?></td>
+                    <td><?php echo $art['source'];?></td>
 					<td><?php echo date('Y-m-d H:i:s', $art['publish_date']);?></td>
 					<td><?php echo $art['isvalid'] == 1 ? '是' : '否';?></td>
 				</tr>

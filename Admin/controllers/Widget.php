@@ -41,8 +41,11 @@ class Widget extends CoreController {
 					'add' => array('<i class="icon-file"></i>新增页面', 'page/add'),
 					'lists' => array('<i class="icon-new"></i>所有页面', 'page/page_list')
 				),
+			'personal' => array(
+					'user_info'	=>	array('<i class="icon-user"></i>个人信息', 'user/userInfo')
+				),
 			'system' => array(
-					'users' => array('<i class="icon-user"></i>用户', 'user/user_info'),
+					'users' => array('<i class="icon-user"></i>用户', 'user/userList'),
 					'settings' => array('<i class="icon-cog"></i>配置', 'setting/lists'),
 					'navigator' => array('<i class="icon-arrow-up-right"></i>导航', 'navigator/lists'),
 					'logs' => array('<i class="icon-yelp"></i>日志', 'log/lists')

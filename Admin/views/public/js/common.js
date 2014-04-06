@@ -11,6 +11,8 @@ window.f = {
 	ui: {
 		// 默认UI事件绑定
 		eventBind: function(selector){
+			// 初始化Metro界面INPUT元素
+			$.Metro.initInputs();
 			// SELECT默认值选定
 			$(selector + " select[default]").val(function(){return $(this).attr('default');});
 			$(selector + " table:not(.table)").addClass("table").addClass("bordered");
@@ -348,22 +350,20 @@ window.f = {
 		// 默认success事件
 		if(typeof after != 'function'){
 			after = _this.attr("success");
-			if(_.isEmpty(after)){
-				success = function(data){
-					if(data.status == '1'){
-						//Messenger().hideAll();
-						__this__.tip(data.info, "success");
-						__this__.page_update("#main-area", $("#main-area").data("link"));
-						$.Dialog.close();
-					}else{
-						__this__.tip(data.info, "error");
-					}
-				};
-			}else{
-				success = function(data){
-					return eval(after + "(data)");
-				};
-			}
+			
+            success = function(data){
+                if(!_.isEmpty(after)){
+                    eval(after + "(data)");
+                }
+                if(data.status == '1'){
+                    //Messenger().hideAll();
+                    __this__.tip(data.info, "success");
+                    __this__.page_update("#main-area", $("#main-area").data("link"));
+                    $.Dialog.close();
+                }else{
+                    __this__.tip(data.info, "error");
+                }
+            };
 		}else{
 			success = after;
 		}

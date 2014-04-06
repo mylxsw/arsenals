@@ -49,6 +49,10 @@ class Log extends AdvanceModel {
 	 * @return bool
 	 */
 	private function _checkLogLevel($action_type){
+		$config = \Arsenals\Core\Config::load('admin');
+		if(!$config['log_enabled']){
+			return false;
+		}
 		return in_array($action_type, $this->_log_level);
 	}
 	/**

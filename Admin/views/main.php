@@ -15,6 +15,8 @@
 	<link rel="stylesheet/less" type="text/css" href="<?php \Admin\resource_path()?>css/custom.less">
 	<link rel="stylesheet/less" type="text/css" href="<?php \Admin\resource_path()?>css/style.less">
 
+	<base href="<?php echo SITE_URL;?>" target="_blank, _self, _parent, _top">
+
 	<script src="<?php \Admin\public_resource_path()?>less-1.4.2.min.js"></script>
 	<script type="text/javascript">
 		var basePath = "<?php echo SITE_URL;?>";
@@ -35,6 +37,7 @@
 					<!--<li><a href="remarks">评论</a></li>
 					<li><a href="photos">相册</a></li>-->
 					<li><a href="pages">页面</a></li>
+					<li><a href="personal">个人中心</a></li>
 					<li><a href="system">系统</a></li>
 					<li><a href="help">帮助</a></li>
 		        </ul>
@@ -75,14 +78,14 @@
 	<!-- <footer class="screen-size-helper">
 		<p class="title">Design By AgileDEV.pw</p>
 	</footer> -->
-	<script src="<?php \Admin\public_resource_path()?>jquery/jquery.min.js"></script>
-	<script src="<?php \Admin\public_resource_path()?>jquery/jquery.cookie.js"></script>
-	<script src="<?php \Admin\public_resource_path()?>jquery/jquery.widget.min.js"></script>
-	<script src="<?php \Admin\public_resource_path()?>metro-ui-css/metro.min.js"></script>
-	<script src="<?php \Admin\public_resource_path()?>jquery.form.js"></script>	
+	<script src="<?php \Admin\public_resource_path();?>jquery/jquery.min.js"></script>
+	<script src="<?php \Admin\public_resource_path();?>jquery/jquery.cookie.js"></script>
+	<script src="<?php \Admin\public_resource_path();?>jquery/jquery.widget.min.js"></script>
+	<script src="<?php \Admin\public_resource_path();?>metro-ui-css/metro.min.js"></script>
+	<script src="<?php \Admin\public_resource_path();?>jquery.form.js"></script>	
 
-	<script src="<?php \Admin\public_resource_path()?>underscore-1.4.4.js"></script>
-
+	<script src="<?php \Admin\public_resource_path();?>underscore-1.4.4.js"></script>
+    <script src="<?php \Admin\public_resource_path();?>storage.js"></script>
 	<script src="<?php \Admin\resource_path()?>js/common.js"></script>
 	<script src="<?php \Admin\resource_path()?>js/page.js"></script>
 	<script src="<?php \Admin\resource_path()?>js/init.js"></script>

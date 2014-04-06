@@ -10,7 +10,7 @@
 			</div>
 			<label for="template">页面模板</label>
 			<div class="input-control textarea size9">
-		    	<?php \Admin\code_editor('templates', htmlentities($page['templates']));?>
+		    	<?php \Admin\code_editor('templates', htmlspecialchars($page['templates']));?>
 			</div>
 			
 			<div class="o-clear"></div>
