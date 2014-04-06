@@ -15,7 +15,7 @@ class BlogBootstrap extends \Arsenals\ArsenalsBootstrap {
 		*/
         Route::map("^category_(:num)\.html$", '\Blog\controllers\Articles@lists');
 		Route::map('^home.html$', '\Blog\controllers\Index@index');
-		Route::map('^article_(:num)\.html$', '\Blog\controllers\Articles@show');
+		Route::map('^article/(:num)\.html$', '\Blog\controllers\Articles@show');
 		Route::map('^page_(:num)\.html$', '\Blog\controllers\Page@show');
 	}
 

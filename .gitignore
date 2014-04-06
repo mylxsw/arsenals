@@ -1,3 +1,4 @@
 article_*.html
+article/*
 Temp/*
 .settings/*
