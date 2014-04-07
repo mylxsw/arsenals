@@ -38,7 +38,7 @@ Arsenals采用了基于MVC的架构，同时支持Service层的扩展。
 本章主要介绍如何快速开始一个Arsenals项目的开发。  
 为了方便快速建立一个项目，框架提供了项目构建工具，用于快速创建一个项目，该工具位于Tools目录下，使用方式如下：
 <pre>
-php init.php -n Demo
+php app.php -n Demo
 </pre>
 命令具体用法参见 [杂项-快速构建项目骨架](#other-quickbuild) 部分。
 
@@ -513,7 +513,7 @@ public function getLogs($level = null);
 <h4 id="other-quickbuild">快速构建项目骨架</h4>
 通过使用Tools下的快速构建工具可以快速的构建一个基本项目的骨架，构建命令如下：
 <pre>
-	php init.php -n 项目名称 [额外参数]
+	php app.php -n 项目名称 [额外参数]
 </pre>
 可选参数如下:
 <table>
