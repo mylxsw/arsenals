@@ -52,7 +52,12 @@ if(isset($opts['n'])){
 
 
 // initialize the project name and path
-$proj_path = dirname($proj_name) . DIRECTORY_SEPARATOR;
+$proj_path = dirname($proj_name);
+if($proj_path == '.'){
+	$proj_path = '.' . DIRECTORY_SEPARATOR . 'output';
+}
+
+$proj_path = $proj_path . DIRECTORY_SEPARATOR;
 $proj_name = basename($proj_name);
 
 // parameters
@@ -89,13 +94,15 @@ $dirs = array(
 	'models',
 	'views' . DIRECTORY_SEPARATOR . $view_theme,
 );
+
+$index_file = '..' . DIRECTORY_SEPARATOR . strtolower($proj_name) . '.php';
 $files = array(
 	'Bootstrap.php'				=> 'templates/Bootstrap.tpl',
 	'configs/config.php' 		=> 'templates/configs/config.tpl',
 	'configs/database.php' 		=> 'templates/configs/database.tpl',
 	'configs/router.php'		=> 'templates/configs/router.tpl',
 	'controllers/Index.php'		=> 'templates/controllers/Index.tpl',
-	
+	$index_file					=> 'templates/index.tpl',
 );
 
 // create project directories
