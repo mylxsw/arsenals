@@ -42,6 +42,15 @@ abstract class Model extends Arsenals {
 		parent::__construct();
 	}
 	/**
+	 * 获取数据库连接对象
+	 * 
+	 * 要获取真是对象需要调用getConn()->getRealConnection()
+	 */
+	public function getConn(){
+		return $this->_conn;
+	}
+	
+	/**
 	 * 载入单个数据对象
 	 *
 	 * @param mixed $conditions 条件
@@ -61,7 +70,7 @@ abstract class Model extends Arsenals {
 			$sql .= $conditions_result[0];
 			$args = $conditions_result[1];
 		}
-		$result = $this->query($sql, $args);
+		$result = $this->_conn->query($sql, $args);
 		if(count($result) > 0){
 			return $result[0];
 		}
@@ -81,7 +90,7 @@ abstract class Model extends Arsenals {
 			$conditions_result = $this->_init_conditions($conditions);
 			$sql .= $conditions_result[0];
 			$args = $conditions_result[1];
-			$this->query($sql, $args, true);
+			$this->_conn->query($sql, $args, true);
 		}else{
 			throw new \Arsenals\Core\Exceptions\QueryException('Perform the delete operation must specify the query criteria!');
 		}
@@ -120,7 +129,7 @@ abstract class Model extends Arsenals {
 		
 		// $index 为FALSE，则不分页，直接查询所有数据
 		if($index === FALSE){
-			return $this->query("SELECT * {$sql}", $args);
+			return $this->_conn->query("SELECT * {$sql}", $args);
 		}
 		// 分页查询
 		return $this->select($sql, $args, $index, $per);
@@ -143,7 +152,7 @@ abstract class Model extends Arsenals {
         $sql = trim($sql, ',');
         $sql .= ' WHERE ' . $this->_init_conditions_no_prepare($conditions);
         
-        $this->query($sql, null, true);
+        $this->_conn->query($sql, null, true);
         
 // 		$table_datas = array_merge($this->_datas_, $data);
 // 		$pk = $table_datas[$this->getPk()];
@@ -161,7 +170,7 @@ abstract class Model extends Arsenals {
 // 		}
 // 		$sql = trim(trim($sql), ',') . ' WHERE ' . $this->getPk() . '= ? ';
 // 		array_push($args, $pk);
-// 		return $this->query($sql, $args);
+// 		return $this->_conn->query($sql, $args);
 	}
 	/**
 	 * 保存数据
@@ -186,7 +195,7 @@ abstract class Model extends Arsenals {
 		$sql = trim(trim($sql), ',') . ') VALUES(' 
 			. implode(array_fill(0, count($args), '?'), ',') . ')';
 
-		$this->query($sql, $args, true);
+		$this->_conn->query($sql, $args, true);
 		return $this->getLastInsertId();
 	}
 	/**
@@ -201,7 +210,7 @@ abstract class Model extends Arsenals {
 	 */
 	public function select($sql, $args = array(), $index = FALSE, $per = 15){
 		if($index === FALSE){
-			return $this->query($sql, $args );
+			return $this->_conn->query($sql, $args );
 		}
 		$sql = trim($sql);
 		$index = intval($index);
@@ -209,7 +218,7 @@ abstract class Model extends Arsenals {
 	
 		// 分页查询
 		// 首先查询出总记录数量
-		$count_res = $this->query( 'SELECT COUNT(*) AS C ' . substr($sql, strpos(strtoupper($sql), ' FROM ')), $args);
+		$count_res = $this->_conn->query( 'SELECT COUNT(*) AS C ' . substr($sql, strpos(strtoupper($sql), ' FROM ')), $args);
 		$this->page_record_counts = $count_res[0]['C'];
 		// 总页数
 		$this->page_counts = $this->page_record_counts / $per + 1;
@@ -219,102 +228,9 @@ abstract class Model extends Arsenals {
 		}
 		$sql .= ' LIMIT ' . ($index - 1) * $per . ', ' . $per;
 		
-		return $this->query($sql, $args);
+		return $this->_conn->query($sql, $args);
 	}
-	/**
-	 * 执行sql语句
-	 *
-	 * @param string $sql 要执行的sql语句
-	 * @param array $args 预处理的变量
-	 * @return array | int
-	 */
-	public function query($sql, $args = array(), $insert = false){
-        if(is_null($args)){
-            $args = array();
-        }
-        // 日志记录
-        $log = Registry::load('Arsenals\Core\Log');
-		$log->debug("执行SQL：{$sql}", 'system');
-		
-		// 如果没有提供参数数组，则执行普通查询
-		if(\count($args) == 0){
-			$res = $this->_conn->query($sql);
-			if($this->_conn->errno){
-				throw new \Arsenals\Core\Exceptions\QueryException($this->_conn->error);
-			}
-            if(method_exists('mysqli_result', 'fetch_all')){
-                return $insert ? $res : $res->fetch_all(MYSQLI_ASSOC);
-            }
-            if($insert){
-                return $res;
-            }
-			$r = array();
-            while(($tmp = $res->fetch_array(MYSQLI_ASSOC)) != false){
-            	$r[] = $tmp;
-            }
-			return $r;
-		}
-        
-		// 提供了参数数组，执行预处理
-		$stmt = $this->_conn->prepare($sql);
-		if($this->_conn->errno){
-			throw new \Arsenals\Core\Exceptions\QueryException($this->_conn->error);
-		}
-		$b_types = '';
-		$b_params = array();
-		foreach ($args as $k => $v){
-			if(\is_integer($v)){
-				$type = 'i';
-			}else if(\is_float($v) || \is_double($v)){
-				$type = 'd';
-			}else{
-				$type = 's';
-			}
-			$b_types .= $type;
-			// bind_param第二个参数之后必须是引用
-			// 同时注意的是，这里必须用$args，而不能用$v
-			// 因为每次引用$v，都是传递的引用，$v最后只有一个相同的值
-			$b_params[$k] = &$args[$k];
-		}
-		
-		call_user_func_array(array($stmt, 'bind_param'), array_merge(array($b_types), $b_params));
-		if(!$stmt->execute() ){
-			throw new QueryException($this->_conn->error);
-		}
-		if(!$insert){
-			if(method_exists($stmt, 'get_result')){
-				$res = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-			}else{
-				$stmt->store_result();
-					
-				$fileds = $stmt->result_metadata()->fetch_fields();
-				$statementParams = '';
-				$column = array();
-				foreach ($fileds as $field){
-					if(empty($statementParams)){
-						$statementParams .= "\$column['" . $field->name . "']";
-					}else{
-						$statementParams .= ", \$column['" . $field->name . "']";
-					}
-				}
-				$statement = "\$stmt->bind_result($statementParams);";
-				eval($statement);
-					
-				$res = array();
-				while ($stmt->fetch()){
-                    
-					$item = array();
-                    foreach($column as $k=>$v){
-                    	$item[$k] = $v;
-                    }
-                    
-                    $res[] = $item;
-				}
-			}
-            
-			return $res;
-		}
-	}
+	
 	
 	/**
 	 * 查询出表中所有数据
@@ -333,7 +249,17 @@ abstract class Model extends Arsenals {
 			$sql .= " LIMIT {$limit}";
 		}
         
-		return $this->query($sql);
+		return $this->_conn->query($sql);
+	}
+	/**
+	 * 执行sql语句
+	 * 
+	 * @param string $sql 要执行的sql语句
+	 * @param array $args 预处理的变量
+	 * @return array | int
+	 */
+	public function query($sql, $args = array(), $insert = false){
+		return $this->_conn->query($sql, $args, $insert);
 	}
     /**
      * 初始化查询条件数组为字符串，无prepare
@@ -481,7 +407,7 @@ abstract class Model extends Arsenals {
 // 				show_error("调用的方法{$name}不存在!");
 // 		}
 	
-// 		return $this->query($sql, $arguments);
+// 		return $this->_conn->query($sql, $arguments);
 	}
 	/**
 	 * 字符串转义，安全处理sql值
@@ -489,7 +415,7 @@ abstract class Model extends Arsenals {
 	 * @return string
 	 */
 	protected function escape($str){
-		return $this->_conn->real_escape_string($str);
+		return $this->_conn->escape($str);
 	}
 	/**
 	 * 获取表名
@@ -519,8 +445,8 @@ abstract class Model extends Arsenals {
 	/**
 	 * 最后一次执行插入操作的ID
 	 */
-	protected function getLastInsertId(){
-		return $this->_conn->insert_id;
+	public function getLastInsertId(){
+		return $this->_conn->lastInsertId();
 	}
 	/**
 	 * 没有记录异常
@@ -539,7 +465,7 @@ abstract class Model extends Arsenals {
 	 * 注意： 该方法有待测试！！！！
 	 */ 
 	protected function transaction($callback){
-		$this->_conn->autocommit(false);
+		$this->_conn->beginTrans();
 		try{
 			$args = func_get_args();
 			array_shift($args);

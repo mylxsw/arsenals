@@ -2,7 +2,6 @@
 
 namespace Admin\controllers;
 
-use Demo\controllers\CoreController;
 use Admin\utils\Ajax;
 
 /**

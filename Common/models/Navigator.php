@@ -104,7 +104,6 @@ class Navigator extends Model {
 				'pos'	=> $nav_pos,
 				'isvalid' => 1
 		), 'sort DESC');
-			
 		$level --;
 			
 		$menus = array();
