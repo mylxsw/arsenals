@@ -510,7 +510,7 @@ public function getLogs($level = null);
 然后再入口文件中定义日志实现就可以了。   
 <pre>define('LOG_IMPL', '你的日志实现类（包含命名空间）');</pre>
 ###杂项
-<h4 id="#other-quickbuild">快速构建项目骨架</h4>
+<h4 id="other-quickbuild">快速构建项目骨架</h4>
 通过使用Tools下的快速构建工具可以快速的构建一个基本项目的骨架，构建命令如下：
 <pre>
 	php init.php -n 项目名称 [额外参数]
