@@ -1,8 +1,8 @@
 <?php
 namespace Arsenals\Libraries\Twig;
 
-use Arsenals\Core\Views\View;
-use Arsenals\Core\Config;
+use \Arsenals\Core\Views\View;
+use \Arsenals\Core\Config;
 /**
  * Twig 视图层实现
  * 

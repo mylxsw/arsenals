@@ -2,10 +2,9 @@
 
 namespace Arsenals\Core\Abstracts;
 
-use Arsenals\Core\Database\SessionFactory;
-use Arsenals\Core\Config;
-use Arsenals\Core\Exceptions\QueryException;
-use Arsenals\Core\Registry;
+use \Arsenals\Core\Database\SessionFactory;
+use \Arsenals\Core\Config;
+use \Arsenals\Core\Exceptions\QueryException;
 
 if (!defined('APP_NAME')) exit('Access Denied!');
 /**

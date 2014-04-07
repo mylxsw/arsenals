@@ -2,7 +2,7 @@
 
 namespace Arsenals\Core;
 
-use Arsenals\Core\Views\Ajax;
+use \Arsenals\Core\Views\Ajax;
 if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * DEBUG用于调试程序，打印变量

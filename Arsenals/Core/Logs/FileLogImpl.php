@@ -1,8 +1,7 @@
 <?php
 
 namespace Arsenals\Core\Logs;
-use Arsenals\Core\file_put_contents;
-use Arsenals\Core\Abstracts\Arsenals;
+use \Arsenals\Core\file_put_contents;
 if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * 基于文件的Log实现

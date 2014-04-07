@@ -87,7 +87,7 @@ class TemplateCompiler extends \Arsenals\Core\Abstracts\Arsenals implements Comp
 		$content = preg_replace_callback('#{func:\s*(?<funcname>[\\a-zA-Z_\x7f-\xff]+)\s*\((?<params>.*?)\)\s*}#' , 
 			function($matches){
 				$matches['funcname'] = str_replace('.', '\\', $matches['funcname']);
-				return "<?php echo {$matches['funcname']}(${matches['params']});?>";
+				return "<?php echo {$matches['funcname']}({$matches['params']});?>";
 			}, $content);
 		$content = preg_replace('#\$' . $this->el_delim[0] . '(.*?)\s*' . $this->el_delim[1] . '#' , '<?php echo $\1;?>', $content);
 		return $content;

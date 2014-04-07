@@ -36,6 +36,11 @@ Arsenals采用了基于MVC的架构，同时支持Service层的扩展。
 
 ##第三章 快速开始
 本章主要介绍如何快速开始一个Arsenals项目的开发。  
+为了方便快速建立一个项目，框架提供了项目构建工具，用于快速创建一个项目，该工具位于Tools目录下，使用方式如下：
+<pre>
+php init.php -n Demo
+</pre>
+命令具体用法参见 [杂项-快速构建项目骨架](#other-quickbuild) 部分。
 
 - **目录结构**  
 	建立你的项目目录，本例以Demo为例。
@@ -505,6 +510,53 @@ public function getLogs($level = null);
 然后再入口文件中定义日志实现就可以了。   
 <pre>define('LOG_IMPL', '你的日志实现类（包含命名空间）');</pre>
 ###杂项
+<h4 id="#other-quickbuild">快速构建项目骨架</h4>
+通过使用Tools下的快速构建工具可以快速的构建一个基本项目的骨架，构建命令如下：
+<pre>
+	php init.php -n 项目名称 [额外参数]
+</pre>
+可选参数如下:
+<table>
+	<thead>
+		<tr>
+			<th>参数</th><th>功能</th><th>默认值</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>author</td><td>开发者姓名</td><td>操作系统用户</td>
+		</tr>
+		<tr>
+			<td>db_prefix</td><td>数据库表前缀</td><td>项目名称小写_</td>
+		</tr>
+		<tr>
+			<td>db_dbname</td><td>数据库名称</td><td>db_项目名称小写</td>
+		</tr>
+		<tr>
+			<td>db_user</td><td>数据库用户名</td><td>root</td>
+		</tr>
+		<tr>
+			<td>db_password</td><td>数据库密码</td><td>空</td>
+		</tr>
+		<tr>
+			<td>db_host</td><td>数据库地址</td><td>localhost</td>
+		</tr>
+		<tr>
+			<td>db_port</td><td>数据库端口号</td><td>3306</td>
+		</tr>
+		<tr>
+			<td>view_theme</td><td>默认视图主题</td><td>default</td>
+		</tr>
+	</tbody>
+</table>
+
+例如：    
+需要构建一个示例程序Demo。
+<pre>
+D:\xampp\htdocs>php init.php -n CMS --db_prefix demo_ --author developer --db_
+dbname test
+</pre>
+上面的命令构建了一个项目，名称为CMS， 数据表前缀为demo_, 开发者为developer, 数据库名称为test, 其它配置项使用的是默认值。
 ####异常处理/错误处理
 可以在项目入口文件index.php中通过定义常量 ```ERROR_HANDLER``` 和 ```EXCEPTION_HANDLER``` 使用自定义的异常处理。  
 例如：

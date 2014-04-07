@@ -2,9 +2,9 @@
 
 namespace Arsenals\Core;
 
-use Arsenals\Core\Abstracts\Arsenals;
-use Arsenals\Core\Abstracts\Filter;
-use Arsenals\Core\Exceptions\ClassTypeException;
+use \Arsenals\Core\Abstracts\Arsenals;
+use \Arsenals\Core\Abstracts\Filter;
+use \Arsenals\Core\Exceptions\ClassTypeException;
 if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * 过滤器实现

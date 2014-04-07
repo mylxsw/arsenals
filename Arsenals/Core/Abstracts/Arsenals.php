@@ -2,7 +2,7 @@
 
 namespace Arsenals\Core\Abstracts;
 
-use Arsenals\Core\Registry;
+use \Arsenals\Core\Registry;
 if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * Arsenals 抽象类

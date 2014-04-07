@@ -2,9 +2,9 @@
 
 namespace Arsenals\Libraries\Authorization;
 
-use Arsenals\Core\Config;
-use Arsenals\Libraries\Authorization\exceptions\AuthException;
-use Arsenals\Core\Utils\CommonUtils;
+use \Arsenals\Core\Config;
+use \Arsenals\Libraries\Authorization\exceptions\AuthException;
+use \Arsenals\Core\Utils\CommonUtils;
 /**
  * 认证授权功能
  * 

@@ -1,8 +1,7 @@
 <?php
 namespace Arsenals;
 
-use Arsenals\Core\Registry;
-use Arsenals\Core\Abstracts\Arsenals;
+use \Arsenals\Core\Registry;
 
 if (!defined('APP_NAME')) exit('Access Denied!');
 

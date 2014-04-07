@@ -2,9 +2,8 @@
 
 namespace Arsenals\Core;
 
-use Arsenals\Core\Abstracts\Arsenals;
-use Arsenals\Core\Logs\Logs;
-use Arsenals\Core\Exceptions\ClassTypeException;
+use \Arsenals\Core\Logs\Logs;
+use \Arsenals\Core\Exceptions\ClassTypeException;
 
 if (!defined('APP_NAME')) exit('Access Denied!');
 /**

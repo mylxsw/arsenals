@@ -2,8 +2,8 @@
 
 namespace Arsenals\Core\Abstracts;
 
-use Arsenals\Core\Filters;
-use Arsenals\Core\Router;
+use \Arsenals\Core\Filters;
+use \Arsenals\Core\Router;
 
 if (!defined('APP_NAME')) exit('Access Denied!');
 /**

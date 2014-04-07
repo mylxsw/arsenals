@@ -2,11 +2,10 @@
 
 namespace Arsenals\Core\Database\PDO;
 
-use Arsenals\Core\Database\DataSource;
-use Arsenals\Core\Config;
-use Arsenals\Core\Abstracts\Arsenals;
-use Arsenals\Core\Exceptions\QueryException;
-use Arsenals\Core\Registry;
+use \Arsenals\Core\Database\DataSource;
+use \Arsenals\Core\Config;
+use \Arsenals\Core\Abstracts\Arsenals;
+use \Arsenals\Core\Registry;
 if (!defined('APP_NAME')) exit('Access Denied!');
 /**
  * PDO 数据源
