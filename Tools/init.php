@@ -77,6 +77,7 @@ $replace_var = array(
 	'#\[\[db_password\]\]#'		=> $db_password,
 	'#\[\[db_host\]\]#'		=> $db_host,
 	'#\[\[db_port\]\]#'		=> $db_port,
+	'#\[\[view_theme\]\]#'		=> $view_theme,
 );
 
 $dirs = array(
