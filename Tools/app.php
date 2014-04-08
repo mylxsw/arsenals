@@ -6,11 +6,7 @@
  * 
  * 
  */ 
-require 'libs.php';
-// If not in CLI mode, exit
-if(!is_cli()){
-	exit();
-}
+require 'BuildTools.php';
 
 $usage = <<<USAGE
  * Usage:
@@ -25,56 +21,60 @@ $usage = <<<USAGE
  *      --db_host
  *      --db_port
  *		--view_theme
+ *		--model
+ *		--controller
+ *		--cache
+ *		--filter
 USAGE;
 
-cli_opt_init('n:', array(
-	'author:', 'db_prefix:', 'db_dbname:', 'db_user:', 'db_password:', 'db_host:', 'db_port:', 'view_theme:'
-	));
+BuildTools::isCLI() || exit($usage);
 
-// get the project name from command line
-$proj_meta = get_project_meta($usage);
-// initialize the project name and path
-$proj_name = $proj_meta['proj_name'];
-$proj_path = $proj_meta['proj_path'];
-
-$parameters = array();
-$parameters['author'] = get_arg('author', get_current_user());// current user
-$parameters['db_prefix'] = get_arg('db_prefix', strtolower($proj_name) . '_');// database prefix
-$parameters['db_dbname'] = get_arg('db_dbname', 'db_' . strtolower($proj_name));// database name
-$parameters['db_username'] = get_arg('db_user', 'root');// database user name
-$parameters['db_password'] = get_arg('db_password', '');// database password
-$parameters['db_host'] = get_arg('db_host', 'localhost');// database host
-$parameters['db_port'] = get_arg('db_port', '3306');// database port
-$parameters['view_theme'] = get_arg('view_theme', 'default');// theme
-$parameters['namespace'] = $proj_name;
-
-
-$dirs = array(
-	'caches',
-	'configs',
-	'controllers',
-	'filters',
-	'hoooks',
-	'models',
-	'views' . DIRECTORY_SEPARATOR . $parameters['view_theme'],
+$opts = array(
+	'author' 		=> get_current_user(),
+	'db_prefix'		=> '',
+	'db_host'		=> 'localhost',
+	'db_user'		=> 'root',
+	'db_password'	=> '',
+	'db_dbname'		=> '',
+	'db_port'		=> '3306',
+	'view_name'		=> 'default',
+	'model'			=> 'models',
+	'controller'	=> 'controllers',
+	'filter'		=> 'filters',
+	'cache'			=> 'caches'
 );
-
-$index_file = '..' . DIRECTORY_SEPARATOR . strtolower($proj_name) . '.php';
-$files = array(
-	'Bootstrap.php'				=> 'templates/Bootstrap.tpl',
-	'configs/config.php' 		=> 'templates/configs/config.tpl',
-	'configs/database.php' 		=> 'templates/configs/database.tpl',
-	'configs/router.php'		=> 'templates/configs/router.tpl',
-	'controllers/Index.php'		=> 'templates/controllers/Index.tpl',
-	$index_file					=> 'templates/index.tpl',
-);
-
-$base_path = $proj_path . $proj_name . DIRECTORY_SEPARATOR;
-
-// create project directories
-create_dir_from_array($dirs, $base_path);
-
-// create project template files
-create_file_from_array($files, $parameters, $base_path);
-
-output("\nThe Project {$proj_name} has been created ");
+try{
+	$tools = new BuildTools($opts);
+	
+	$dirs = array(
+		$tools->getParam('cache'),
+		'configs',
+		$tools->getParam('controller'),
+		$tools->getParam('filter'),
+		'hooks',
+		$tools->getParam('model'),
+		'views' . DIRECTORY_SEPARATOR . $tools->getParam('view_theme'),
+	);
+	
+	$index_file = '..' . DIRECTORY_SEPARATOR . strtolower($tools->getProjectName()) . '.php';
+	$index_controller = $tools->getParam('controller') . DIRECTORY_SEPARATOR . 'Index.php';
+	$files = array(
+		'Bootstrap.php'										=> 'templates/Bootstrap.tpl',
+		'configs/config.php' 								=> 'templates/configs/config.tpl',
+		'configs/database.php' 								=> 'templates/configs/database.tpl',
+		'configs/router.php'								=> 'templates/configs/router.tpl',
+		$index_controller									=> 'templates/controllers/Index.tpl',
+		$index_file											=> 'templates/index.tpl',
+	);
+	
+	$tools->addReplaceVar('db_prefix', strtolower($tools->getProjectName()) . '_');
+	$tools->addReplaceVar('db_dbname', 'db_' . strtolower($tools->getProjectName()));
+	$tools->addReplaceVar('namespace', $tools->getProjectName());
+	
+	$tools->createDirs($dirs);
+	$tools->createFiles($files);
+	
+	$tools->createConfigFile();
+} catch (Exception $e){
+	BuildTools::output($usage);
+}

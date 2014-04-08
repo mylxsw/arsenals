@@ -113,7 +113,8 @@ function mkdirs($dir){
  * @return string
  */ 
 function get_arg($arg_name, $default = null){
-	return get_cli_param($arg_name, $default);
+	$val = get_cli_param($arg_name, $default);
+	return PHP_OS == 'WINNT' ? iconv('GBK', 'UTF-8', $val) : $val;
 }
 /**
  * create directories from directory array
