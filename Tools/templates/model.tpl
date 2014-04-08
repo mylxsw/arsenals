@@ -4,7 +4,7 @@ namespace [[namespace]];
 
 use \Arsenals\Core\Abstracts\Model;
 /**
- * Model
+ * [[model_name]] Model
  * 
  * @author [[author]]
  *

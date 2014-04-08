@@ -1,5 +1,5 @@
 <?php
-namespace Blog\controllers;
+namespace [[namespace]]\controllers;
 
 use \Arsenals\Core\Abstracts\Controller;
 
