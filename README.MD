@@ -547,6 +547,18 @@ public function getLogs($level = null);
 		<tr>
 			<td>view_theme</td><td>默认视图主题</td><td>default</td>
 		</tr>
+		<tr>
+			<td>model</td><td>模型目录</td><td>models</td>
+		</tr>
+		<tr>
+			<td>controller</td><td>控制器目录</td><td>controllers</td>
+		</tr>
+		<tr>
+			<td>cache</td><td>缓存目录</td><td>caches</td>
+		</tr>
+		<tr>
+			<td>filter</td><td>Filter目录</td><td>filters</td>
+		</tr>
 	</tbody>
 </table>
 

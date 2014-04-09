@@ -7,6 +7,6 @@ use \Arsenals\Core\Abstracts\Controller;
  * @author [[author]]
  *        
  */
-class [[controller]] extends Controller{
+class [[controller_name]] extends Controller{
 	
 }

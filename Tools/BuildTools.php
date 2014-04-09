@@ -1,4 +1,5 @@
 <?php
+use Arsenals\Core\file_exists;
 class BuildTools{
 	private $opts = null;
 	private $project_name;
@@ -14,6 +15,29 @@ class BuildTools{
 	public function __construct( Array $longopts = array()){
 		// 执行初始化
 		$this->_init($longopts);
+	}
+	/**
+	 * 读取项目配置文件
+	 * @param $filename
+	 */
+	public function readConfig($filename = 'project.cfg.php'){
+		$cfg_filename = $this->getBasePath() . $filename;
+		if (file_exists($cfg_filename)){
+			$cfgs = include $cfg_filename;
+			$this->opts = array_merge($cfgs, $this->opts);
+			$this->addReplaceVars($this->opts);
+			return ;
+		}
+		throw new Exception();
+	}
+	/**
+	 * 路径转化为命名空间
+	 * @param unknown_type $path
+	 */
+	public static function convPath2Namespace($path){
+		$namespace = preg_replace('#/#', '\\', $path);
+		
+		return preg_replace('#\\\w+\\\.\.#', '', $namespace);
 	}
 	
 	/**
@@ -204,6 +228,7 @@ class BuildTools{
 		
 		// 创建默认替换变量列表
 		$this->addReplaceVars($this->opts);
+		
 	}
 	
 }
