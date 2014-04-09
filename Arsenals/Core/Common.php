@@ -195,6 +195,10 @@ if(!function_exists('\Arsenals\Core\strip_whitespace')){
  */
 if(!function_exists('\Arsenals\Core\file_put_contents')){
 	function file_put_contents($filename, $data, $flag = null, $context = null){
+		$dir = dirname($filename);
+		if(!file_exists($dir)){
+			create_dir($dir);
+		}
 		return \file_put_contents($filename, $data, $flag, $context);
 	}
 }

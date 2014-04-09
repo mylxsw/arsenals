@@ -21,9 +21,6 @@ function SaeKv(){
  * @return number
  */
 function file_put_contents($filename, $data, $flag = null, $context = null){
-	if (!IS_SAE) {
-		return \file_put_contents($filename, $data, $flag, $context);
-	}
 	SaeKv()->add($filename, $data);
 }
 /**
@@ -94,9 +91,6 @@ function is_file($filename){
  * Moves an uploaded file to a new location
  */ 
 function move_uploaded_file($filename, $destination){
-    if(!IS_SAE){
-		return \move_uploaded_file($filename, $destination);
-    }
     $store = new \SaeStorage();
     return $store->upload('arsenals', $destination, $filename);
 }
@@ -107,11 +101,6 @@ function move_uploaded_file($filename, $destination){
  * $datas为传递给页面的数据
  */
 function include_file($filename, Array $datas = array()){
-	if(!IS_SAE){
-		@extract($datas);
-		include $filename;
-		return ;
-	}
 	$content = file_get_contents($filename);
 	@extract($datas);
 	eval("?>{$content}");

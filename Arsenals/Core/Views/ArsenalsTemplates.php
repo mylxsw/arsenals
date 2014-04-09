@@ -103,12 +103,10 @@ class ArsenalsTemplates extends Arsenals implements View {
 			$this->_initCompiler();
 			// 编译模板
 			$compiled_content = $this->_compiler_instance->compile($template_content);
-			if(!\Arsenals\Core\file_exists(dirname($cache_file))){
-				\Arsenals\Core\create_dir(dirname($cache_file));
-			}
+			// 写入缓存
 			\Arsenals\Core\file_put_contents($cache_file, $compiled_content);
 		}
-		
+		// 读取缓存内容
 		\Arsenals\Core\include_file($cache_file, $vm->getDatas());
 
 		$buffer = ob_get_contents();
