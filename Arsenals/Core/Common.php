@@ -301,6 +301,17 @@ if(!function_exists('\Arsenals\Core\create_dir')){
 		}
 	}
 }
+/**
+ * 包含文件
+ * 
+ * $datas为传递给页面的数据
+ */
+if(!function_exists('\Arsenals\Core\include_file')){
+	function include_file($filename, Array $datas = array()){
+		@extract($datas);
+		include $filename;
+	}
+}
 
 /**
  * 错误处理

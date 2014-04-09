@@ -108,9 +108,8 @@ class ArsenalsTemplates extends Arsenals implements View {
 			}
 			\Arsenals\Core\file_put_contents($cache_file, $compiled_content);
 		}
-		// 给视图传递的数据
-		@extract($vm->getDatas());
-		include $cache_file;
+		
+		\Arsenals\Core\include_file($cache_file, $vm->getDatas());
 
 		$buffer = ob_get_contents();
 		ob_end_clean();

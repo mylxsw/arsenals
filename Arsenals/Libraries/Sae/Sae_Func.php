@@ -100,3 +100,19 @@ function move_uploaded_file($filename, $destination){
     $store = new \SaeStorage();
     return $store->upload('arsenals', $destination, $filename);
 }
+
+/**
+ * 包含文件
+ * 
+ * $datas为传递给页面的数据
+ */
+function include_file($filename, Array $datas = array()){
+	if(!IS_SAE){
+		@extract($datas);
+		include $filename;
+		return ;
+	}
+	$content = file_get_contents($filename);
+	@extract($datas);
+	eval("?>{$content}");
+}

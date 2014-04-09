@@ -10,9 +10,10 @@ class Bootstrap extends ArsenalsBootstrap{
 	 * @see \Arsenals\ArsenalsBootstrap::run()
 	 */
 	public function run() {
+		/*
 		Route::map('', function(){
 
 		});
-		
+		*/
 	}
 }
