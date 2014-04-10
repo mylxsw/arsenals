@@ -1,6 +1,6 @@
 <?php
 namespace Blog\common;
-use Arsenals\Core\Views\ViewAndModel;
+use \Arsenals\Core\Views\ViewAndModel;
 
 class ExceptionHandler{
 	public function exception(\Exception $exception){

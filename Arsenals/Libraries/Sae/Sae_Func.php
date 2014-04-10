@@ -21,17 +21,17 @@ function SaeKv(){
  * @return number
  */
 function file_put_contents($filename, $data, $flag = null, $context = null){
-	SaeKv()->add($filename, $data);
+	SaeKv()->add(md5($filename), $data);
 }
 /**
  * 读取文件
  */ 
 function file_get_contents($filename, $use_include_path = false, $context = null, $offset = -1, $maxlen = null){
 	if(\file_exists($filename)){
-		return \file_get_contenst($filename, $use_include_path, $context, $offset, $maxlen);
+		return \file_get_contents($filename);
 	}
-	
-	return SaeKv()->get($filename);
+    
+	return SaeKv()->get(md5($filename));
 }
 /**
  * 检查文件是否存在
@@ -42,7 +42,7 @@ function file_exists($filename){
 	}
 	$kv = SaeKV();
     
-	return $kv->get($filename);
+	return $kv->get(md5($filename));
 }
 /**
  * 打开目录

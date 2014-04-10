@@ -94,24 +94,27 @@ class ArsenalsTemplates extends Arsenals implements View {
 		}
 		$template_file = $vm->getView() . $this->suffix;
 		$cache_file = CACHE_PATH . 'views' . DIRECTORY_SEPARATOR . $vm->getView() . $this->compile_suffix;
-
-		ob_start();
+		
+        ob_start();
 		if($this->debug || !\Arsenals\Core\file_exists($cache_file)){
+            
 			// 加载视图
 			$template_content = \Arsenals\Core\file_get_contents($this->template_dir . $vm->getView() . $this->suffix);
+            
 			// 初始话模板编译器
 			$this->_initCompiler();
 			// 编译模板
 			$compiled_content = $this->_compiler_instance->compile($template_content);
+            
 			// 写入缓存
 			\Arsenals\Core\file_put_contents($cache_file, $compiled_content);
 		}
 		// 读取缓存内容
 		\Arsenals\Core\include_file($cache_file, $vm->getDatas());
 
-		$buffer = ob_get_contents();
-		ob_end_clean();
-
+        $buffer = ob_get_contents();
+        ob_end_clean();
+        
 		return $buffer;
 	}
 }

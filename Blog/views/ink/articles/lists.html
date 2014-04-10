@@ -27,6 +27,6 @@
 	<c:if test="count($articles['data']) eq 0">
 		<div>这里暂时没有文章哦~</div>
 	</c:if>
-	<c:func func="Blog.pagination('category_{$cat}.html', $articles['total'], $articles['page'], $p)" />
+    <c:func func="Blog.pagination('category/{$cat}.html', $articles['total'], $articles['page'], $p)" />
 </div>
 <c:include file="@templates/footer" />

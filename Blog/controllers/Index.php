@@ -9,6 +9,7 @@ namespace Blog\controllers;
  */
 class Index extends CoreController{
 	public function index(){
+        
 		$p = $this->get('p', 1);
 		
 		$articleModel = $this->model('Article');
@@ -20,6 +21,7 @@ class Index extends CoreController{
 
 		$this->assign('current_nav', 'home');
         $this->assign('_page_title', '爱代码，爱生活');
+        
 		return $this->view('home');
 	}
 

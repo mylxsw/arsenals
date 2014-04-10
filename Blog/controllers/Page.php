@@ -23,7 +23,7 @@ class Page extends CoreController {
 			$page_res['attr'] = unserialize($page_res['attr']);
 		}
 		
-        $this->assign('current_nav',"page_{$id}.html");
+        $this->assign('current_nav',"page/{$id}.html");
         $this->assign('_page_title', isset($page_res['attr']['title']) ? $page_res['attr']['title'] : '爱生活，爱代码，爱我所爱');
         
         
