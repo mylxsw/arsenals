@@ -12,6 +12,16 @@ if (!defined('APP_NAME')) exit('Access Denied!');
  *
  */
 abstract class Service extends Arsenals {
+	private static $_inner_module = array(
+		'Input'					=> '\Arsenals\Core\Input',
+		'Output'				=> '\Arsenals\Core\Output', 
+		'Router'				=> '\Arsenals\Core\Router', 
+		'Security'				=> '\Arsenals\Core\Security', 
+		'Session'				=> '\Arsenals\Core\Session', 
+		'Uri'					=> '\Arsenals\Core\Uri',
+		'ViewAndModel'			=> '\Arsenals\Core\Views\ViewAndModel'
+	);
+	
 	/**
 	 * 加载模型
 	 * 
@@ -29,5 +39,15 @@ abstract class Service extends Arsenals {
 			Registry::register($model_name, new $model);
 		}
 		return Registry::get($model_name);
+	}
+	/**
+	 * 载入模块
+	 * @param $module_name
+	 */
+	protected function load($module_name){
+		if (array_key_exists($module_name, self::$_inner_module)){
+			return Registry::load(self::$_inner_module[$module_name]);
+		}
+		return Registry::load($module_name);
 	}
 }
