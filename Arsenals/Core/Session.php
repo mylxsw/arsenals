@@ -11,14 +11,9 @@ if (!defined('APP_NAME')) exit('Access Denied!');
  * @author 管宜尧<mylxsw@126.com>
  *
  */
+// 放在开头，一旦SESSION类被加载，自动初始化SESSION
+session_start();
 class Session extends Arsenals {
-	/**
-	 * 构造函数，完成初始化Session
-	 */
-	public function __construct(){
-		session_start();
-		parent::__construct();
-	}
 	/**
 	 * 获取当前Session的ID
 	 * @return string
