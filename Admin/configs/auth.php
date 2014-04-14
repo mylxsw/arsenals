@@ -51,7 +51,9 @@ return array(
 		// 匿名用户规则（游客）
 		'anonymous' => array(
 				'access' => array(
-						'account/login',
+					'^account/login$',
+                    '^account/loginPost$',
+                    '^account/verifyCode$'
 				)
 		)
 	)

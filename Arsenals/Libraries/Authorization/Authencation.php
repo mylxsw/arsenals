@@ -102,6 +102,6 @@ class Authencation {
 	 * 确定用户是否具有访问权限
 	 */
 	private function _generatePermissionSignature($path_info){
-		return strtolower($path_info);
+		return $path_info;
 	}
 }

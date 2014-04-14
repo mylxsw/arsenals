@@ -54,7 +54,7 @@ class CommonUtils {
 	 */
 	public static function array_exists_regexp($search, $array){
 		foreach ($array as $arr){
-			$reg = '/' . str_replace('/', '\/', $arr) . '/';
+			$reg = '#' .  $arr . '#';
 			if(preg_match($reg, $search)){
 				return true;
 			}

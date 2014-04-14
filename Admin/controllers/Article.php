@@ -238,4 +238,69 @@ class Article extends CoreController {
         
         return Ajax::ajaxReturn('修改成功！', Ajax::SUCCESS);
     }
+	/**
+	 * 标签列表
+	 */    
+    public function tags(){
+    	$tagModel = $this->model('Tag');
+    	$this->assign('tags', $tagModel->lists(null));
+    	return $this->view('article/tags');
+    }
+    /**
+     * 添加标签显示
+     */
+	public function tagAdd(){
+		return $this->view('article/tag_add');
+	}
+	/**
+	 * 标签添加提交
+	 * Enter description here ...
+	 */
+    public function tagAddPost(){
+        $data = array();
+        $data['name'] = $this->post('name', null, 'len:1,100|required');
+        $data['isvalid'] = 1;
+        
+        $categoryModel = $this->model('Tag');
+        $categoryModel->addTag($data);
+        
+        return Ajax::ajaxReturn('添加成功！', Ajax::SUCCESS);
+    }
+ 	/**
+ 	 * 标签编辑显示
+ 	 * Enter description here ...
+ 	 */   
+    public function tagEdit(){
+    	$id = $this->get('id', null, 'required|int');
+
+    	$tagModel = $this->model('Tag');
+    	$this->assign('tag', $tagModel->load(array('id'=>$id)));
+
+    	return $this->view('article/tag_edit');
+    }
+    /**
+     * 编辑标签提交
+     */
+    public function tagEditPost(){
+    	$data = array();
+    	$data['name'] = $this->post('name', null, 'len:1, 100|required');
+
+    	$tagModel = $this->model('Tag');
+    	$tagModel->updateTag($data, $this->post('id', null , 'required|int'));
+
+    	return Ajax::ajaxReturn('修改成功！', Ajax::SUCCESS);
+    }
+    /**
+     * 删除标签
+     */
+    public function tagDel(){
+    	$ids = str_replace(' ', '', $this->post('ids', null, 'required|len:1,100'));
+    	$ids_array = preg_split('/,/', $ids);
+
+    	$tagModel = $this->model('Tag');
+    	$tagModel->delTag($ids_array);
+
+    	return Ajax::ajaxReturn('删除成功!', Ajax::SUCCESS);
+    }
+    
 }

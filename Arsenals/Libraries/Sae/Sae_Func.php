@@ -21,7 +21,12 @@ function SaeKv(){
  * @return number
  */
 function file_put_contents($filename, $data, $flag = null, $context = null){
-	SaeKv()->add(md5($filename), $data);
+	$file = md5($filename);
+    if(SaeKv()->get($file)){
+    	SaeKv()->set($file, $data);
+    }else{
+    	SaeKv()->add($file, $data);
+    }
 }
 /**
  * 读取文件

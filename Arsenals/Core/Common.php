@@ -46,6 +46,7 @@ if(!function_exists('\Arsenals\Core\detect_lang')){
  */ 
 if(!function_exists('\Arsenals\Core\L')){
 	function L($code, $replace = null, $default = null, $file = 'basic'){
+        
 		// 缓存已经加载的语言文件
 		static $langs = array();
 
@@ -75,12 +76,14 @@ if(!function_exists('\Arsenals\Core\L')){
 			}
 			// 正则替换需要翻译的变量
 			$lang_trans = $langs[$file][$code];
+            
 			foreach ($replace as $key => $value) {
 				$lang_trans = preg_replace('/#{' . $key . '}/', $value, $lang_trans);
 			}
+            
 			return $lang_trans;
 		}
-
+        
 		// 返回提供的默认值
 		return $default;
 	}

@@ -16,7 +16,13 @@ window.o_fn = {
 			});
 		},
 		// 退出系统
-		exit: function(){
+		exit: function(e){
+             
+            if(e && e.preventDefault){
+            	e.preventDefault();
+            }else{
+            	e.returnValue = false;
+            }
 			f.confirm("您确定要退出系统？", function(){
 				f.async('account/logout', {}, function(data){
 					f.tip(data.info, data.status == 1 ? 'success':'error');
@@ -112,6 +118,27 @@ window.o_fn = {
 			// 删除分类
 			del: function(){
 				o_fn.g.del('#category_table', 'article/categoryDel');
+			}
+		},
+		tag: {
+			// 添加分类
+			add: function(){
+				f.dialog('article/tagAdd', "添加标签", {}, function(){
+				});
+			},
+			// 编辑分类
+			edit: function(){
+				var id = $("#tag_table").find('input.select_all_item:checked');
+				if(id.length != 1){
+					return f.alert("请选择一个要编辑的项!");
+				}
+				f.dialog('article/tagEdit', "编辑标签", {id: id.val()}, function(){
+
+				});
+			},
+			// 删除分类
+			del: function(){
+				o_fn.g.del('#tag_table', 'article/tagDel');
 			}
 		}
 	},

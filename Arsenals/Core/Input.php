@@ -391,13 +391,14 @@ class Input extends Arsenals {
 			$dot_pos = strpos($rule, ',');
 			$len_min = $dot_pos === 0 ? 0 : intval(substr($rule, 0, $dot_pos === FALSE ? strlen($rule) : $dot_pos));
 			$len_max = $dot_pos === FALSE ? null : intval(substr($rule, $dot_pos + 1));
-			
+            
 			$var_len = strlen($var);
+            
 			if($var_len < $len_min){
-				throw new TypeErrorException(self::L('FIELD_LEN_LESS', array('len_min'), "Field length can not be less than {$len_min} characters!"));
+				throw new TypeErrorException(self::L('FIELD_LEN_LESS', array('len_min'=>$len_min), "Field length can not be less than {$len_min} characters!"));
 			}
 			if(!is_null($len_max) && $var_len > $len_max){
-				throw new TypeErrorException(self::L('FIELD_LEN_MORE', array('len_max'), "Field length can not be greater than {$len_max} characters!"));
+				throw new TypeErrorException(self::L('FIELD_LEN_MORE', array('len_max'=>$len_max), "Field length can not be greater than {$len_max} characters!"));
 			}	
 		}
 		return TRUE;

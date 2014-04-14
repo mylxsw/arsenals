@@ -37,4 +37,44 @@ class Tag extends Model {
 		$sql = "SELECT * FROM `" . $this->getTableName() . "` WHERE id in (SELECT tag_id FROM `" . $this->getTableName('article_tag') . "` WHERE article_id='" . intval($id) . "' )";
         return $this->query($sql);
 	}
+	/**
+	 * 添加标签
+	 * @param unknown_type $data
+	 */
+    public function addTag($data){
+        return $this->save($data);
+    }
+    /**
+     * 更新标签
+     * @param $data
+     * @param $id
+     */
+    public function updateTag($data, $id){
+        $entity = array();
+        $entity['name'] = $data['name'];
+
+        $this->update($entity, array('id' => intval($id)));
+    }
+    /**
+     * 删除标签
+     * @param $id
+     */
+    public function delTag($id){
+        if(!is_array($id)){
+            $id = array($id);
+        }
+        foreach($id as $i){
+            // 删除文章关联
+            $this->delTagArts($i);
+            // 删除该分类
+            $this->delete(array('id'=>$i));
+        }
+    }
+    /**
+     * 删除标签与文章的关联
+     * @param $tag_id
+     */
+	public function delTagArts($tag_id){
+        $this->delete(array('tag_id'=>$tag_id), 'article_tag');
+    }
 }

@@ -17,6 +17,16 @@ class Account extends CoreController {
 	public function login(){
 		return $this->view('account/login');
 	}
+    
+    public function verifyCode(){
+    	$captcha = new \Arsenals\Libraries\Images\Captcha();
+       
+        $code = $captcha->generateCode();
+        Session::add('captcha', strtolower($code));
+        
+        $captcha->createImage($code);
+    }
+    
 	/**
 	 * 用户登陆提交
 	 * @return \Arsenals\Core\Views\Ajax
@@ -24,7 +34,16 @@ class Account extends CoreController {
 	public function loginPost(){
 		$username = $this->post('username', null, 'required|len:3,30');
 		$password = $this->post('password', null, 'required|len:5,30');
+        $captcha = $this->post('verify_code', null, 'required|len:4,4');
 		
+        // 检查验证码是否正确
+        $sess_captcha = Session::get('captcha');
+        Session::remove('captcha');
+        
+        if(is_null($sess_captcha) || $sess_captcha == '' || $sess_captcha != strtolower($captcha)){
+        	return Ajax::ajaxReturn('验证码错误！', Ajax::FAILED);
+        }
+        
 		// 检查用户名密码是否合法
 		$userModel = $this->model('User');
 		if(($user = $userModel->getUser($username, $password)) != null){

@@ -38,6 +38,12 @@
 							<input type="password" id="password" requried name="password" placeholder="请输入密码">
 							<button class="btn-reveal" tabindex="-1" type="button"></button>
 						</div>
+                        <label for="verify_code">验证码</label>
+                        <div class="input-control text size2">
+                            <input type="text" id="verify_code" required name="verify_code" placeholder="验证码" />
+                            <button class="btn-clear" tabindex="-1" type="button"></button>
+                        </div>
+                        <img id="verify_code_img" style="cursor: pointer" title="点击刷新" src="<?php echo \Admin\url('account/verifyCode');?>" />
 						<div><button class="primary" id="login-btn" type="submit"><i class="icon-rocket on-left"></i>登陆</button></div>
 					</fieldset>
 				</form>
@@ -57,6 +63,10 @@
 	<script src="<?php \Admin\resource_path()?>js/page.js"></script>
 	<script>
 		$(function(){
+            $("#verify_code_img").click(function(){
+            	$(this).attr("src", "<?php echo \Admin\url('account/verifyCode');?>?r=" + Math.random());
+            });
+            
 			var login_form = $("#login-form");
 
 			login_form.ajaxForm({
@@ -70,6 +80,7 @@
 					}
 				},
 				success: function(data){
+                    $("#verify_code_img").trigger("click");
 					f.tip(data.info, data.status == 1 ? 'success' : 'error');
 					if(data.status == 1){
 						window.setTimeout(function(){

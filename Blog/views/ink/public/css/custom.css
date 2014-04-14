@@ -1,3 +1,9 @@
 .ink-clear{
 	clear: both;
 }
+.share-area{
+	padding: 10px;
+	background: #EEE;
+	border-radius: 4px;
+	margin-top: 20px;
+}

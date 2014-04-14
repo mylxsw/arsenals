@@ -23,7 +23,6 @@ class Widget extends CoreController {
 			'articles' => array(
 					'article' => array('<i class="icon-pencil"></i>写文章', 'article/write'),
 					'archive' =>array('<i class="icon-folder"></i>归档', 'article/lists'),
-					'draft' => array('<i class="icon-remove"></i>草稿', 'article/temp'),
 					'#others' => array(
 							'其它',
 							array('<i class="icon-bookmark"></i>分类','article/category'),
@@ -42,7 +41,8 @@ class Widget extends CoreController {
 					'lists' => array('<i class="icon-new"></i>所有页面', 'page/page_list')
 				),
 			'personal' => array(
-					'user_info'	=>	array('<i class="icon-user"></i>个人信息', 'user/userInfo')
+					'user_info'	=>	array('<i class="icon-user"></i>个人信息', 'user/userInfo'),
+                'message'	=>	array('<i class="icon-comments-4"></i>消息', 'message/lists')
 				),
 			'system' => array(
 					'users' => array('<i class="icon-user"></i>用户', 'user/userList'),

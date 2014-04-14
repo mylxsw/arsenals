@@ -52,7 +52,7 @@
 						</a>
 						<ul class="dropdown-menu place-right" data-role="dropdown">
 							<li>
-								<a href="#" class="exit-sys" onclick="o_fn.g.exit()" title="退出">
+								<a href="#" class="exit-sys" onclick="o_fn.g.exit(event)" title="退出">
 									<span class="icon-exit">退出</span>
 								</a>
 							</li>

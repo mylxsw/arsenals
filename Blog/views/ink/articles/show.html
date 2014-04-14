@@ -1,4 +1,5 @@
 <c:include file="@templates/header" />
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 <div id="main-left">
 	<c:func func="Blog.breadcrumbs(isset($breadcrumbs) ? $breadcrumbs:array())" />
 	<div class="article">
@@ -24,6 +25,9 @@
 			</div>
 		</c:if>
 	</div>
+    <div class="share-area">
+    	<wb:share-button appkey="4tg0Ag" addition="full" type="button" ralateUid="2508316741"></wb:share-button>
+    </div>
 	<div class="remark-area">
 		<c:func func="Blog.remark($article['id'])" />
         <div class="right-img">

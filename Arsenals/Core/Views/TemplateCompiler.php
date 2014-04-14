@@ -112,6 +112,7 @@ class TemplateCompiler extends \Arsenals\Core\Abstracts\Arsenals implements Comp
 			$_v = str_replace(' neq ', ' != ', $_v);
 		
 			$params[$v] = preg_replace('#(?<!\\\\)\.#', '\\', html_entity_decode(stripslashes($_v)));
+			$params[$v] = preg_replace('#\\\\\\.#', '.', $params[$v]);
 		}
 		return $params;
 	}

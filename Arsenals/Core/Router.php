@@ -215,6 +215,9 @@ class Router extends Arsenals {
 	 * @param unknown $view
 	 */
 	private function view($view){
+        if(is_null($view)){
+        	return ;
+        }
 		// 处理输出
 		$output = Registry::load('Arsenals\Core\Output');
 		// 根据返回类型进行创建相应的视图对象
