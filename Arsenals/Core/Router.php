@@ -2,7 +2,6 @@
 
 namespace Arsenals\Core;
 use \Arsenals\Core\Abstracts\Arsenals;
-use \Arsenals\Core\Utils\CommonUtils;
 use \Arsenals\Core\Exceptions\PageNotFoundException;
 if (!defined('APP_NAME')) exit('Access Denied!');
 /**
@@ -43,12 +42,12 @@ class Router extends Arsenals {
 	 * @param unknown $route
 	 */
 	public static function map($url, $route){
-		// 如果一定调度过了，则再次调用该方法直接返回
+		// 如果调度过了，则再次调用该方法直接返回
 		if(self::$_stop){
 			return false;
 		}
 		// 路由实例，本方法为静态方法，需要获取实例后在进行操作
-		$_instance = self::$_instance == null ? Registry::load('Arsenals\Core\Router') : self::$_instance;
+		$_instance = self::$_instance == null ? Registry::load('\Arsenals\Core\Router') : self::$_instance;
 
 		// 替换路由规则为标准正则表达式
 		$key = str_replace(
@@ -73,15 +72,24 @@ class Router extends Arsenals {
 		}
 	}
 	/**
+	 * 停止路由解析
+	 */
+	public static function stop(){
+		if (!self::$_stop){
+			self::$_stop;
+			throw new PageNotFoundException("您访问的页面不存在！");
+		}
+	}
+	/**
 	 * 构造函数
 	 */
 	public function __construct(){
 		// 加载配置文件
 		$this->_routers = Config::load('router');
-		$uri = Registry::load('Arsenals\Core\Uri');
+		$uri = Registry::load('\Arsenals\Core\Uri');
 		
 		$this->_path_info = $uri->getPathInfo();
-		$this->_controller = CONTROLLER_NAMESPACE . ($uri->getModuleName() == '' ? 
+		$this->_controller = conv_path_to_ns(CONTROLLER_PATH) . ($uri->getModuleName() == '' ? 
 				$uri->getControllerName() 
 				:($uri->getModuleName() . '\\' . $uri->getControllerName())) ;
 		$this->_action = $uri->getActionName();
@@ -102,7 +110,7 @@ class Router extends Arsenals {
 	 */
 	public function dispatch_convention(){
 		if(!class_exists($this->_controller)){
-			throw new PageNotFoundException('The controller does not exist!');
+			throw new PageNotFoundException('找到不到指定控制器!');
 		}
 		// 创建控制器并执行动作
 		$this->_hook->call('before_controller');
@@ -111,7 +119,7 @@ class Router extends Arsenals {
 		$controller = new $this->_controller();
 		
 		if(!method_exists($controller, $this->_action)) {
-			throw new PageNotFoundException('Controller method specified does not exist!');
+			throw new PageNotFoundException('访问的动作不存在!');
 		}
 		
 		$view = $controller->{$this->_action}(Registry::load('\Arsenals\Core\Input'));
@@ -136,7 +144,7 @@ class Router extends Arsenals {
 	 */
 	public function dispatch_map($callback_funcs, $args){
 		// 返回值 [0] 正则 [1] 回调函数
-		//$callback_funcs = CommonUtils::array_val_by_key_regexp(self::$_router_defined, $this->_path_info);
+		//$callback_funcs = array_val_by_key_regexp(self::$_router_defined, $this->_path_info);
 		// 捕获正则组
 		$matches = array();
 		preg_match($callback_funcs[0], $this->_path_info, $matches);
@@ -152,7 +160,7 @@ class Router extends Arsenals {
 		}
 		
 		// 调用函数OR控制器
-		$controller_func = CommonUtils::convStringToCallUserFuncParam($callback_funcs[1]);
+		$controller_func = conv_str_to_call_user_func_param($callback_funcs[1]);
 		// 如果第一个参数为Input类型，则注入Input对象
 		$reflectionParameter = null;
 		if(is_array($controller_func)){// 如果为数组，则第一个参数为对象，第二个为方法名
@@ -219,7 +227,7 @@ class Router extends Arsenals {
         	return ;
         }
 		// 处理输出
-		$output = Registry::load('Arsenals\Core\Output');
+		$output = Registry::load('\Arsenals\Core\Output');
 		// 根据返回类型进行创建相应的视图对象
 		$output->render($view);
 	}

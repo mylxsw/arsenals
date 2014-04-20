@@ -2,6 +2,8 @@
 
 namespace Arsenals\Core\Abstracts;
 
+use Arsenals\Core\conv_path_to_ns;
+
 use \Arsenals\Core\Config;
 use \Arsenals\Core\Registry;
 use \Arsenals\Core\Views\ViewAndModel;
@@ -30,10 +32,7 @@ abstract class Controller extends Service {
 	 * @return object
 	 */
 	public function __get($name){
-		$config = Config::load('config');
-		$class_name = preg_replace('/\./', '\\', SERVICE_NAMESPACE . '.' . ucfirst($name));
-		$this->$name = new $class_name;
-		return $this->$name;
+		return Registry::load(conv_path_to_ns(MODEL_PATH) . ucfirst($name));
 	}
 	/**
 	 * 获取get值
@@ -55,6 +54,17 @@ abstract class Controller extends Service {
 		$input = Registry::load('\Arsenals\Core\Input');
 		return $input->post($key, $default, $type);
 	}
+	/**
+	 * 获取request值
+	 * @param unknown $key
+	 * @param string $default
+	 * @param string $type
+	 */
+	protected function request($key, $default = null, $type = null){
+		$input = Registry::load('\Arsenals\Core\Input');
+		return $input->request($key, $default, $type);
+	}
+	
 	/**
 	 * 返回模型视图
 	 * @param string $view_name

@@ -5,7 +5,6 @@ namespace Arsenals\Core;
 use \Arsenals\Core\Abstracts\Arsenals;
 use \Arsenals\Core\Exceptions\TypeErrorException;
 use \Arsenals\Core\Exceptions\FuncParamException;
-use \Arsenals\Core\Utils\CommonUtils;
 
 if (!defined('APP_NAME')) exit('Access Denied!');
 /**
@@ -247,7 +246,7 @@ class Input extends Arsenals {
 				}else if(array_key_exists(($filter_name = substr($filter, 0, ($mpos = intval(strpos($filter, ':'))) == 0 ? strlen($filter) : $mpos ))
 						, self::$_validate_rules)){
 					
-					$validate_entity = CommonUtils::convStringToCallUserFuncParam(self::$_validate_rules[$filter_name]);
+					$validate_entity = conv_str_to_call_user_func_param(self::$_validate_rules[$filter_name]);
 					
 					$validate_res = call_user_func_array($validate_entity, 
 							array($var, substr($filter, intval(strpos($filter, ':')) + 1)));

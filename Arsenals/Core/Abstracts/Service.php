@@ -2,6 +2,8 @@
 
 namespace Arsenals\Core\Abstracts;
 
+use Arsenals\Core\conv_path_to_ns;
+
 use \Arsenals\Core\Registry;
 
 if (!defined('APP_NAME')) exit('Access Denied!');
@@ -34,7 +36,7 @@ abstract class Service extends Arsenals {
 			if (\Arsenals\Core\str_start_with($model_name, '\\')){
 				$model = $model_name;
 			}else{
-				$model = MODEL_NAMESPACE . ucfirst($model_name);
+				$model = conv_path_to_ns(MODEL_PATH) . ucfirst($model_name);
 			}
 			Registry::register($model_name, new $model);
 		}

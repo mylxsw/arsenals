@@ -21,7 +21,7 @@ class Filters extends Arsenals {
 	 */
 	public function init(){
 		self::$_filters = Config::load('filter');
-		$this->_router = Registry::load('Arsenals\Core\Router');
+		$this->_router = Registry::load('\Arsenals\Core\Router');
 	}
 	/**
 	 * 执行过滤器
@@ -39,10 +39,10 @@ class Filters extends Arsenals {
 			return true;
 		}
 		// 遍历过滤器链
-		$filterName = FILTER_NAMESPACE . array_shift(self::$_filters);
+		$filterName = conv_path_to_ns(FILTER_PATH) . array_shift(self::$_filters);
 		$filter = new $filterName();
 		if(!$filter instanceof Filter){
-			throw new ClassTypeException("The filter {$filterName} must implement the interface : Arsenals\\Core\\Abstracts\\Filter！");
+			throw new ClassTypeException("过滤器 {$filterName} 必须实现\\Arsenals\\Core\\Abstracts\\Filter接口！");
 		}
 		
 		$filter->doFilter($this, $this->_router);

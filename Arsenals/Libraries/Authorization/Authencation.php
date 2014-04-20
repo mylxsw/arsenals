@@ -4,7 +4,6 @@ namespace Arsenals\Libraries\Authorization;
 
 use \Arsenals\Core\Config;
 use \Arsenals\Libraries\Authorization\exceptions\AuthException;
-use \Arsenals\Core\Utils\CommonUtils;
 /**
  * 认证授权功能
  * 
@@ -76,7 +75,7 @@ class Authencation {
 		// 获取角色的权限列表，判断是否具备访问权限
 		$access_list = $this->_mergeInheritPermission($user['role']);
 		
-		if(CommonUtils::array_exists_regexp($this->_generatePermissionSignature($path_info),
+		if(array_exists_regexp($this->_generatePermissionSignature($path_info),
 				$access_list)){
 			return TRUE;
 		}

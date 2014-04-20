@@ -3,7 +3,6 @@
 namespace Arsenals\Core;
 
 use \Arsenals\Core\Abstracts\Arsenals;
-use \Arsenals\Core\Utils\CommonUtils;
 
 if (!defined('APP_NAME')) exit('Access Denied!');
 /**
@@ -47,7 +46,7 @@ class Hooks extends Arsenals {
 		if(array_key_exists($point, $this->_hooks)){
 			$hooks = $this->_hooks[$point];
 			foreach ($hooks as $hook){
-				call_user_func(CommonUtils::convStringToCallUserFuncParam($hook));
+				call_user_func(conv_str_to_call_user_func_param($hook));
 			}
 		}
 		

@@ -14,8 +14,8 @@ abstract class Arsenals {
 	protected $_benchMark = null;
 	
 	public function __construct(){
-		$this->_log = Registry::load('Arsenals\Core\Log');
-		$this->_benchMark = Registry::load('Arsenals\Core\Benchmark');
+		$this->_log = Registry::load('\Arsenals\Core\Log');
+		$this->_benchMark = Registry::load('\Arsenals\Core\Benchmark');
 		
 		$this->_log->info('Class loaded!', get_class($this));
 	}
