@@ -1,0 +1,145 @@
+ul li,
+ol li {
+  margin: auto;
+}
+div + address,
+div + article,
+div + aside,
+div + audio,
+div + blockquote,
+div + canvas,
+div + details,
+div + dl,
+div + figure,
+div + footer,
+div + form,
+div + header,
+div + hr,
+div + img,
+div + nav,
+div + ol,
+div + p,
+div + pre,
+div + table,
+div + ul,
+div + video,
+address + div,
+article + div,
+aside + div,
+audio + div,
+blockquote + div,
+canvas + div,
+details + div,
+dl + div,
+figure + div,
+footer + div,
+form + div,
+header + div,
+hr + div,
+img + div,
+nav + div,
+ol + div,
+p + div,
+pre + div,
+table + div,
+ul + div,
+video + div {
+  margin: auto;
+}
+.screen-size-helper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  font-size: 1em;
+  padding: 3px 0.8em;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9990;
+  text-align: center;
+}
+.screen-size-helper .title,
+.screen-size-helper ul {
+  color: white;
+  text-shadow: 0 1px 0 #000000;
+}
+.screen-size-helper .title {
+  font-size: inherit;
+  line-height: inherit;
+  /*text-transform: uppercase;*/
+  font-weight: 500;
+  float: none;
+}
+.screen-size-helper ul {
+  float: right;
+  margin: 0;
+  padding: 0;
+  line-height: inherit !important;
+}
+.screen-size-helper ul li {
+  padding: 0;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: inherit !important;
+}
+.screen-size-helper ul li.small {
+  color: #80c431;
+}
+.screen-size-helper ul li.medium {
+  color: #80c431;
+}
+.screen-size-helper ul li.large {
+  color: #80c431;
+}
+.screen-size-helper ul li.extra-large {
+  color: #80c431;
+}
+/* 编辑器 */
+.o-editor-text .o-editor-panel {
+  margin-left: 10px;
+}
+.o-editor-text .o-editor-panel i {
+  margin-right: 8px;
+  cursor: pointer;
+}
+textarea {
+  font-size: 14px;
+}
+.markdown-preview {
+  border: 1px solid #ccc;
+  margin-top: 18px;
+  padding: 11px;
+}
+.edui-default {
+  line-height: 0;
+}
+.o-hide {
+  display: none;
+}
+.o-show {
+  display: block;
+}
+.o-clear {
+  clear: both;
+}
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+}
+a.select-cover:hover {
+  border: 2px solid red;
+}
+a.select-cover {
+  display: block;
+  float: left;
+}
+.metro div,
+.metro span,
+.metro p {
+  font-family: Tahoma, Helvetica, "Microsoft Yahei", "微软雅黑", Arial, STHeiti;
+}

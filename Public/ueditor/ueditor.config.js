@@ -58,16 +58,16 @@
             ['fullscreen', 'source', '|',
                 'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor',  'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
                 'paragraph', 'fontfamily', 'fontsize','indent','|',
-                'link', 'unlink', 'anchor', '|', 
+                'link', 'unlink', 'anchor', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify',
                 'insertimage', 'emotion', 'scrawl', 'insertvideo', 'music', 'attachment', 'map', 'gmap', 'insertframe','webapp', 'pagebreak', 'template', 'background', '|',
-                'horizontal', 'spechars', '|',
-                //'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', '|',
+                'horizontal', 'spechars', '|','insertcode',
+                'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', '|',
                 'print', 'preview', 'searchreplace']
         ]
         ,webAppKey:"fI42qGCMe3w2wX65bulfyOfi"
         ,initialContent:''    //初始化编辑器的内容,也可以通过textarea/script给值，看官网例子
 
-        ,initialFrameWidth:945  //初始化编辑器宽度,默认1000
+        ,initialFrameWidth:900  //初始化编辑器宽度,默认1000
         ,initialFrameHeight:500  //初始化编辑器高度,默认320
 
         ,zIndex : 900     //编辑器层级的基数,默认是900

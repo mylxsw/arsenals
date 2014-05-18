@@ -51,7 +51,7 @@
 		</div>
 	</div>
 	<footer class="screen-size-helper">
-		<p class="title">Design By AgileDEV.pw</p>
+		<p class="title">Design By AiCode.cc</p>
 	</footer>
 	<script src="<?php \Admin\public_resource_path()?>jquery/jquery.min.js"></script>
 	<script src="<?php \Admin\public_resource_path()?>jquery/jquery.widget.min.js"></script>

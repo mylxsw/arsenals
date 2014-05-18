@@ -64,7 +64,7 @@ class ViewAndModel extends Arsenals {
 	public static function make($view_name, $view_datas = array()){
 		if ($view_name instanceof ViewAndModel) {
 			if(is_null(self::$_view_instance)){
-				$view_layer = VIEW_LAYER;
+				$view_layer = VIEW_IMPL;
 				self::$_view_instance = new $view_layer();
 			}
 			

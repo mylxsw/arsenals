@@ -75,7 +75,7 @@ class Authencation {
 		// 获取角色的权限列表，判断是否具备访问权限
 		$access_list = $this->_mergeInheritPermission($user['role']);
 		
-		if(array_exists_regexp($this->_generatePermissionSignature($path_info),
+		if(\Arsenals\Core\array_exists_regexp($this->_generatePermissionSignature($path_info),
 				$access_list)){
 			return TRUE;
 		}

@@ -26,7 +26,7 @@ var i = {
         
         $(".search-panel input[name='keyword']").keydown(function(event){
             if(event.keyCode == 13){
-                window.open("http://www.baidu.com/baidu?word=site:blog.aicode.cc%20" + $(this).val() + "&ie=utf-8");
+                window.open("?keyword=" + $(this).val());
             }
         
         });

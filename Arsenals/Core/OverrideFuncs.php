@@ -106,6 +106,15 @@ if(!function_exists('\Arsenals\Core\file_put_contents')){
 	}
 }
 /**
+ * 写文件
+ */
+if(!function_exists('\Arsenals\Core\write_file')){
+    function write_file($filename, $data, $flag = null, $context = null){
+        return file_put_contents($filename, $data, $flag, $context);
+    }
+}
+
+/**
  * 读取文件
  */ 
 if(!function_exists('\Arsenals\Core\file_get_contents')){
@@ -182,7 +191,8 @@ if(!function_exists('\Arsenals\Core\is_file')){
  */ 
 if(!function_exists('\Arsenals\Core\move_uploaded_file')){
 	function move_uploaded_file($filename, $destination){
-		return \move_uploaded_file($filename, $destination);
+		\move_uploaded_file($filename, $destination);
+        return $destination;
 	}
 }
 /**

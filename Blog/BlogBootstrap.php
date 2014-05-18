@@ -1,6 +1,7 @@
 <?php
 
 namespace Blog;
+use Arsenals\Core\Registry;
 use \Arsenals\Core\Router as Route;
 
 require BASE_PATH . 'Arsenals' . DIRECTORY_SEPARATOR . 'ArsenalsBootstrap.php';
@@ -18,6 +19,8 @@ class BlogBootstrap extends \Arsenals\ArsenalsBootstrap {
 		Route::map('^article/(:num)\.html$', '\Blog\controllers\Articles@show');
         Route::map('^page/(:num)\.html$', '\Blog\controllers\Page@show');
         Route::map('^kuaijianli\.html$', '\Blog\controllers\Open@kuaijianli');
+        Route::map('^photos\.html$', '\Blog\controllers\Photos@lists');
+        Route::map('^photos/(:num)\.html$', '\Blog\controllers\Photos@show');
         Route::map("^$", '\Blog\controllers\Index@index');
         Route::stop();
 	}

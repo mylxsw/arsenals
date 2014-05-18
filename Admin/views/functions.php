@@ -5,7 +5,7 @@ use Arsenals\Core\Registry;
 
 $config = Config::load('config');
 define('TMP_FUNC', VIEW_PATH . $config['theme'] . DIRECTORY_SEPARATOR . '@templates' . DIRECTORY_SEPARATOR);
-define('SITE_URL', IS_SAE ? 'http://agiledev.sinaapp.com/' : $config['site_url']);
+define('SITE_URL', IS_SAE ? 'http://aicode.cc/' : $config['site_url']);
 /**
  * 资源文件路径
 */
@@ -244,6 +244,18 @@ function tags($id, $join_str = ','){
 	return implode($join_str, $tag_arr);
 }
 
+function tags_str($tags, $join_str = ','){
+	if(is_null($tags) || strlen($tags) == 0){
+		return '';
+	}
+
+	$tags_arr = explode(',', $tags);
+
+	return implode(',', array_map(function($a){
+		return "<a href='#{$a}'>{$a}</a>";
+	}, $tags_arr));
+}
+
 /**
  * 文章来源数据来源
  */ 
@@ -259,4 +271,19 @@ function article_source_list($id){
 
 	$html .= "</datalist>";
 	return $html;
+}
+
+/**
+ * 为文件名添加前缀
+ * @param $filename
+ * @param $prefix
+ */
+function filename_prefix($filename, $prefix){
+    $filename = str_replace('\\', '/', $filename);
+    $last_pos = strrpos($filename, '/');
+
+    $path = substr($filename, 0, $last_pos + 1);
+    $name = substr($filename, $last_pos + 1);
+
+    return $path . $prefix . $name;
 }

@@ -379,5 +379,17 @@ window.f = {
 			}
 		});
 		return false;
-	}
+	},
+    /**
+     * 文件名添加前缀
+     * @param filename
+     * @param prefix
+     */
+    filename_prefix: function(filename, prefix){
+        filename = filename.replace(/\\/g, '/');
+        var path = filename.substr(0, filename.lastIndexOf('/') + 1);
+        var name = filename.substr(filename.lastIndexOf('/') + 1);
+
+        return path + prefix + name;
+    }
 };

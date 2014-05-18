@@ -11,9 +11,10 @@ class Index extends CoreController{
 	public function index(){
         
 		$p = $this->get('p', 1);
+        $keyword = $this->get('keyword', '', 'len:1:40');
 		
 		$articleModel = $this->model('Article');
-		$this->assign('articles', $articleModel->getAllArticles($p, null));
+		$this->assign('articles', $articleModel->getAllArticles($p, null, $keyword));
 
         //$category = $this->model('Category')->load(array('id'=>$category_id));
 

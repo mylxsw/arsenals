@@ -43,12 +43,42 @@ class Article extends Model {
 	 * @param unknown $category
 	 * @return NULL
 	 */
-	public function getAllArticles($p = 1, $cat = null){
+	public function getAllArticles($p = 1, $cat = null, $keyword = ''){
 		if (!is_null($cat) && $cat > 0){
-			return $this->getAllArticlesInCate($cat, $p);
+			return $this->getAllArticlesInCate($cat, $p, $keyword);
 		}
 		
-		$sql = "SELECT * FROM `" . $this->getTableName() . "` ORDER BY PUBLISH_DATE DESC";
+        $condition = '';
+        if($keyword != '' && strlen($keyword) > 2){
+            // 如果使用的是SAE的话，将启用分词服务
+            if(IS_SAE){
+                // 创建分词服务对象
+                $seg = new \SaeSegment();
+                $ret = $seg->segment($keyword,1);
+
+                // 存放分词后的所有名词到可查询关键字列表中
+                $query_keywords = array($keyword);
+                foreach($ret as $r){
+                    if($r['word_tag'] == \SaeSegment::POSTAG_ID_N){
+                        array_push($query_keywords, $r['word']);
+                    }
+                }
+
+                // 创建查询条件
+                $condition = " WHERE ";
+                $query_keywords_cnt = count($query_keywords);
+                foreach($query_keywords as $i => $qk){
+                    $condition .= " `title` like '%" . $this->escape($qk) . "%' ";
+                    if($i < $query_keywords_cnt - 1){
+                        $condition .= ' or ';
+                    }
+                }
+
+            }else{
+                $condition = " WHERE `title` like '%" . $this->escape($keyword) . "%' ";
+            }
+        }
+        $sql = "SELECT * FROM `" . $this->getTableName() . "` {$condition} ORDER BY PUBLISH_DATE DESC";
 		return array(
 			'data' => $this->select($sql, array(), $p),
 			'total' => $this->getPageRecordCounts(),
@@ -60,7 +90,7 @@ class Article extends Model {
 	 * @param unknown $category
 	 * @return NULL
 	 */
-	public function getAllArticlesInCate($category, $p = 1){
+	public function getAllArticlesInCate($category, $p = 1, $keyword = ''){
 		if (!is_array($category)) {
 			$category = array($category);
 		}
@@ -69,13 +99,44 @@ class Article extends Model {
 		foreach ($category as $k){
 			$sql .= intval($k) . ' ,';
 		}
-		$sql = rtrim($sql, ',') . ")) ORDER BY PUBLISH_DATE DESC";
+        $condition = '';
+        if($keyword != '' && strlen($keyword) > 2){
+        	$condition = " AND `title` like '%" . $this->escape($keyword) . "%' ";
+        }
+        
+        $sql = rtrim($sql, ',') . ")) {$condition} ORDER BY PUBLISH_DATE DESC";
 		return array(
 			'data' => $this->select($sql, array(), $p),
 			'total' => $this->getPageRecordCounts(),
 			'page'	=> $this->getPageCounts()
 		);
 	}
+
+    /**
+     * 随机根据标签查出来指定数量的文章列表
+     * @param array $tags
+     * @param $count
+     * @param $except
+     * @return array|int
+     */
+    public function getArticleRandomByTag(array $tags, $count, $except = -1){
+        $sql = "SELECT id, title FROM `" . $this->getTableName() . "` ";
+        if(count($tags) > 0){
+            $sql .= " WHERE id in (";
+            $sql .= " SELECT DISTINCT A.ARTICLE_ID FROM " . $this->getTableName('article_tag') . " AS A WHERE A.TAG_ID IN(";
+            foreach($tags as $tag){
+                $sql .= intval($tag) . " ,";
+            }
+            $exp = '';
+            if($except != -1){
+                $exp = ' and A.ARTICLE_ID != ' . intval($except);
+            }
+            $sql = rtrim($sql, ',') . ')' . $exp . ')';
+        }
+        $sql .= ' LIMIT ' . intval($count);
+
+        return $this->query($sql);
+    }
 	/**
 	 * 查询指定数量指定分类下的最新文章
 	 * @param array|number $category
@@ -144,12 +205,15 @@ class Article extends Model {
 		$save_data['publish_date'] = time();
 		$save_data['feature_img'] = $data['feature_img'];
         $save_data['source'] = $data['source'];
+        $save_data['model'] = $data['model'];
 		
 		$article_id = $this->save($save_data);
 		// 保存分类信息
 		$this->mapArtToCate($article_id, $data['category_id']);
 		// 保存标签信息
 		$this->mapArtToTags($article_id, $data['tag']);
+
+        return $article_id;
 	}
 	public function updateArticle($data, $id){
 		$id = intval($id);

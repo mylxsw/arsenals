@@ -3,7 +3,11 @@
 <div id="main-left">
 	<c:func func="Blog.breadcrumbs(isset($breadcrumbs) ? $breadcrumbs:array())" />
 	<div class="article">
-		<h5 class="title">${article['title']}</h5>
+		<h5 class="title"><span class="ink-label success invert">
+                    	<c:if test="$article['source'] neq '' ">
+                            [ <c:out value="$article['source']" /> ]
+                        </c:if>
+                    </span> ${article['title']}</h5>
 		<div class="info">( ${article['author']} 发布于 {func:date('Y-m-d', $article['publish_date'])} 
 			<span class="ds-thread-count" data-thread-key="art_${article['id']}" data-count-type="comments"></span> )
 		</div>
@@ -15,7 +19,16 @@
 			</div>
 		</c:if>
 		<div class="intro">${article['intro']}</div>
-		<div class="content">${article['content']}</div>
+		<div class="content">
+			<c:if test="$article['model'] eq 'markdown' ">
+				<?php 
+					$markdown = \Arsenals\Core\Registry::load('\\Common\\MarkdownParser');
+					echo $markdown->parse($article['content']);
+				?>
+			<c:else />
+				${article['content']}
+			</c:if>
+		</div>
 		<c:if test="isset($article['cate']) && count($article['cate']) gt 0">
 			<div class="category">
 			所属分类： 
@@ -31,8 +44,22 @@
 	<div class="remark-area">
 		<c:func func="Blog.remark($article['id'])" />
         <div class="right-img">
-            <iframe width="100%" height="400" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=400&fansRow=1&ptype=1&speed=50&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=2508316741&verifier=1d07a1a0&dpc=1"></iframe>
+            <!--<iframe width="100%" height="400" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=400&fansRow=1&ptype=1&speed=50&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=2508316741&verifier=1d07a1a0&dpc=1"></iframe>-->
+            <!--cnzz tui-->
+            <script>
+                var aliyun_recommend_opts={
+                    'url':'http://aicode.cc/article/${article['id']}.html', //网页的永久链接
+                    'title':'${article['title']}', //网页的标题
+                    'thumb':'${article['feature_img']}', //网页的主题图片地址
+                    'tags':'{func:Blog.tags_str($article['tag'])}' //网页的关键词，多个时用英文逗号分割
+                };
+            </script>
+            <script  type="text/javascript" c=gd  charset="utf-8"  src="http://tui.cnzz.net/cs.php?id=1000077408"></script>
+            <!--cnzz tui-->
         </div>
     </div>
 </div>
+
+
+
 <c:include file="@templates/footer" />

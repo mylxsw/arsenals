@@ -6,10 +6,8 @@
   -ms-text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
   /* Opera */
-
-  -moz-binding: url("http://localhost/ArBlog/Demo/views/ink/public/css/ellipsis.xml#ellipsis");
+  -moz-binding: url("ellipsis.xml#ellipsis");
   /*FireFox*/
-
 }
 .agile .white-box {
   border-radius: 4px;
@@ -108,7 +106,6 @@ html {
   width: 350px;
   margin-top: 13px;
   /* 对Google站内搜索工具样式调整 */
-
 }
 #header .top-banner .search-panel-google .cse .gsc-control-cse,
 #header .top-banner .search-panel-google .gsc-control-cse {
@@ -157,10 +154,8 @@ html {
   -ms-text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
   /* Opera */
-
-  -moz-binding: url("http://localhost/ArBlog/Demo/views/ink/public/css/ellipsis.xml#ellipsis");
+  -moz-binding: url("ellipsis.xml#ellipsis");
   /*FireFox*/
-
 }
 #main #main-content .article-list .content .title a {
   color: #353535;
@@ -249,10 +244,16 @@ html {
 #main #main-content .article .tags label {
   font-weight: bold;
 }
-#main #main-content .article .content {
-  /*width: 670px;*/
-
+#main #main-content .article .content p {
   text-indent: 20px;
+}
+#main #main-content .article .photo img {
+  padding: 10px;
+  border: 1px solid #ccc;
+  max-width: 880px;
+}
+#main #main-content .article .photo .comment {
+  margin-top: 20px;
 }
 #main #main-content .remark-area {
   margin-top: 20px;
@@ -272,6 +273,14 @@ html {
   margin: 10px;
   background: #fff;
   border: 1px solid #ccc;
+}
+#main #main-content .remark-area .right-img .relate-articles h4 {
+  margin-bottom: 10px;
+}
+#main #main-content .remark-area .right-img .relate-articles li {
+  padding-left: 15px;
+  line-height: 1.4;
+  list-style: none;
 }
 #main #main-content .proj-list {
   margin: 30px 10px;
@@ -312,15 +321,11 @@ html {
   z-index: 100;
   text-align: center;
   /* min-height: 100px; */
-
   /* border-top: 1px solid #71b43a;*/
-
   *background: #696969;
   /*IE6,7*/
-
   background: #696969\9;
   /*IE8*/
-
 }
 .footer .title {
   color: white;

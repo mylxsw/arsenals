@@ -21,12 +21,12 @@ abstract class Model extends Arsenals {
 	/**
 	 * @var 最后一次分页查询到的总记录数量
 	 */
-	private $page_record_counts = 0;
+	protected $page_record_counts = 0;
 	/**
 	 * 最后一次查询的总页数
 	 * @var number
 	 */
-	private $page_counts = 1;
+	protected $page_counts = 1;
 	
 	public function __construct(){
 		// 初始化当前模型对应的数据表名称

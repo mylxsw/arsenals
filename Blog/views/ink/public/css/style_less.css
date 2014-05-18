@@ -268,6 +268,16 @@ html{
                 /*width: 670px;*/
                 text-indent: 20px;
             }
+            .photo{
+                img{
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    max-width: 880px;
+                }
+                .comment{
+                    margin-bottom: 20px;
+                }
+            }
         }
         .remark-area{
             margin-top: 20px;
@@ -285,6 +295,16 @@ html{
                     margin: 10px;
                     background: #fff;
                     border: 1px solid #ccc;
+                }
+                .relate-articles{
+                    h4{
+                        margin-bottom: 10px;
+                    }
+                    li{
+                        padding-left: 15px;
+                        line-height: 1.4;
+                        list-style: none;
+                    }
                 }
             }
         }

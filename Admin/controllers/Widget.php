@@ -20,9 +20,11 @@ class Widget extends CoreController {
 					// 'photo' => array('传相片', 'photos/addPhoto'),
 					// 'weibo' => array('写微博', 'twitter/weibo')
 			),
-			'articles' => array(
+			'documents' => array(
 					'article' => array('<i class="icon-pencil"></i>写文章', 'article/write'),
+					'article-markdown' => array('<i class="icon-newspaper"></i>写文章Markdown', 'article/writeMarkdown'),
 					'archive' =>array('<i class="icon-folder"></i>归档', 'article/lists'),
+					'photos'  => array('<i class="icon-pictures"></i>图库', 'photos/lists'),
 					'#others' => array(
 							'其它',
 							array('<i class="icon-bookmark"></i>分类','article/category'),
@@ -48,6 +50,7 @@ class Widget extends CoreController {
 					'users' => array('<i class="icon-user"></i>用户', 'user/userList'),
 					'settings' => array('<i class="icon-cog"></i>配置', 'setting/lists'),
 					'navigator' => array('<i class="icon-arrow-up-right"></i>导航', 'navigator/lists'),
+					'model' => array('<i class="icon-cube"></i>文档模型', 'document/doc_model'),
 					'logs' => array('<i class="icon-yelp"></i>日志', 'log/lists')
 			),
 			'help' => array(

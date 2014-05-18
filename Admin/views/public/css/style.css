@@ -1,0 +1,141 @@
+.white-box {
+  border-radius: 4px;
+  -webkit-box-shadow: 0 2px 3px 0 #dddddd;
+  -moz-box-shadow: 0 2px 3px 0 #dddddd;
+  box-shadow: 0 2px 3px 0 #dddddd;
+  border: 1px solid #BBB;
+  background-color: #FFF;
+  padding: 1em;
+}
+.metro .toolbar:after {
+  clear: none;
+}
+.metro .window {
+  overflow-y: auto!important;
+}
+#main {
+  max-width: 100%;
+  padding: 0;
+  padding-top: 10px;
+}
+#main #left-nav {
+  float: left;
+  margin-left: 10px;
+  width: 200px;
+}
+#main #main-area {
+  margin: 0 10px 50px 220px;
+  padding-top: 15px;
+}
+#main #main-area blockquote.block-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+#login-body {
+  height: 100%;
+  width: 100%;
+  padding-top: 40px;
+}
+#login-body #login-area {
+  margin: 0 auto;
+  width: 400px;
+  padding: 2px;
+}
+#login-body #login-area .box {
+  margin: 15px;
+  padding: 10px;
+  background: #F1F1F1;
+  padding-left: 40px;
+}
+#login-body #login-area #login-btn {
+  line-height: 1.8;
+}
+.o-button-panel {
+  margin: 10px;
+  position: absolute;
+  right: 10px;
+}
+.page-section {
+  margin-top: 10px;
+}
+.page-section .dataTable {
+  clear: none;
+}
+.code-area {
+  position: relative;
+  min-width: 650px;
+  height: 300px;
+  border: 1px solid #B6B6B6;
+}
+.code-area .ace-editor {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.code-area * {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace !important;
+}
+#edui1_toolbarbox,
+#edui1 {
+  top: 0!important;
+}
+/* 图片上传部分 */
+.upload-image-area {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+}
+.upload-image-area .image {
+  width: 200px;
+  float: left;
+  height: 270px;
+  margin: 5px;
+  padding: 5px;
+  position: relative;
+  border: 1px solid #ccc;
+}
+.upload-image-area .image img {
+  max-height: 190px;
+  padding: 5px;
+}
+.upload-image-area .image .set-index {
+  display: block;
+  position: relative;
+}
+.upload-image-area .image .set-index .image-tip {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  width: 178px;
+  margin: 6px;
+  text-align: center;
+  height: 29px;
+  line-height: 2.1;
+  margin-bottom: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+.upload-image-area .image .icon-cancel {
+  display: block;
+  position: absolute;
+  right: -6px;
+  top: -4px;
+  padding: 2px;
+  border-radius: 17px;
+  cursor: pointer;
+}
+.upload-image-area .image .icon-cancel:hover {
+  border: 1px solid #000;
+}
+.upload-image-area .image .intro textarea {
+  height: 60px;
+  border: none;
+  margin-top: 5px;
+  width: 190px;
+}

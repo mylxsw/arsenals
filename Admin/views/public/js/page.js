@@ -2,15 +2,30 @@ window.o_fn = {
 	// 全局
 	g:{
 		// 返回
-		back: function(){
+		back: function(e){
+			if(e && e.preventDefault){
+		    	e.preventDefault();
+		    }else{
+		    	e.returnValue = false;
+		    }
 			f.page_update("#main-area", $("#main-area").data("old-link"));
 		}, 
 		// 页面刷新
-		refresh: function(){
+		refresh: function(e){
+			if(e && e.preventDefault){
+            	e.preventDefault();
+            }else if(e){
+            	e.returnValue = false;
+            }
 			f.page_update("#main-area", $("#main-area").data("link"));
 		},
 		// 清空缓存
-		clear_cache: function(){
+		clear_cache: function(e){
+			if(e && e.preventDefault){
+            	e.preventDefault();
+            }else{
+            	e.returnValue = false;
+            }
 			f.async('cache/clear', {}, function(data){
 				f.tip(data.info, data.status == 1 ? 'success':'error');
 			});
@@ -64,7 +79,15 @@ window.o_fn = {
 					}
 				}, 'post');
 			});
-		}
+		},
+        // 统一的编辑页面，在新页面中打开
+        edit: function(table_id, url){
+            var id = $(table_id).find("input.select_all_item:checked");
+            if(id.length != 1){
+                return f.alert("请选择一个要编辑的项!");
+            }
+            f.page_update("#main-area", url + '??id=' + id.val());
+        }
 	},
 	// 一次性事件
 	once: function(){
@@ -83,6 +106,20 @@ window.o_fn = {
 
 			f.page_update("#main-area", 'article/edit??id=' + id.val());
 		},
+        ping: function(){
+            $('#article_table').find('input.select_all_item:checked').map(function(){
+                var that = $(this);
+                f.async('article/ping', {id: that.val()}, function(data){
+                    f.tip(data.info);
+                    if(data.status == 1){
+                        that.parents("tr").removeClass("warning").addClass("success");
+                    }else{
+                        that.parents("tr").removeClass("success").addClass("warning");
+                    }
+                }, 'get');
+                return $(this).val();
+            });
+        },
 		// 清理文章缓存
 		clear_cache: function(){
 			var ids = $('#article_table').find('input.select_all_item:checked').map(function(){
@@ -250,5 +287,81 @@ window.o_fn = {
 
 			});
 		}
-	}
+	},
+	// 文档模型
+	document_model:{
+		add: function(){
+			f.page_update("#main-area", 'document/doc_model_add');
+		},
+		del: function(){
+			o_fn.g.del('#doc_model_table', 'document/doc_model_del');
+		},
+		edit: function(){
+			var id = $("#doc_model_table").find("input.select_all_item:checked");
+			if(id.length != 1){
+				return f.alert("请选择一个要编辑的项!");
+			}
+			f.page_update("#main-area", 'document/doc_model_update??id=' + id.val());
+		}
+	},
+    photo:{
+        init: function(template_id, field_id, upload_url){
+            var template = _.template($(template_id).html());
+            $(field_id).uploadify({
+                'method'         : 'POST',
+                'fileObjName'    : 'upload_file',
+                'formData'       : {},
+                'swf'            : "Public/uploadify/uploadify.swf",
+                'uploader'       : upload_url,
+                'fileSizeLimit'  : '2MB',
+                'uploadLimit'    : 15,
+                'queueId'        : 'queue',
+                'height'         : 26,
+                'multi'          : true,
+                'buttonText'     : '选择文件',
+                'removeCompleted': true,
+                'fileTypeExts'   : '*.gif; *.jpg; *.png; *.jpeg',
+                'onUploadStart'  : function(file){
+
+                },
+                'onUploadError'   : function(file, errorCode, errormsg, errorString){
+                    f.alert(file.name + '上传失败！');
+                },
+                'onUploadSuccess': function(file, data, response){
+                    if(response){
+                        try{
+                            var result = eval("(" + data + ")");
+                            if(result.status != '1'){
+                                return f.alert(result.info);
+                            }
+                            $(".upload-image-area").prepend(template({url: result.info, thumb_url: f.filename_prefix(result.info, 'thumb_small/')}));
+
+                        } catch(exception){
+                            f.alert('上传过程中出现错误!' + exception);
+                        }
+                    }
+                }
+            });
+            // 移除已经上传的图片
+            $(".upload-image-area").delegate(".icon-cancel", 'click', function(){
+                $(this).parents('.image').remove();
+            }).delegate(".set-index", "click", function(e){// 设置图片为封面
+                e.preventDefault();
+                $(this).parents(".image").prependTo('.upload-image-area');
+            }).delegate(".set-index","mouseenter mouseleave", function(event){
+                if(event.type == 'mouseenter'){
+                    $(this).find("div.image-tip").fadeIn('fast');
+                }else{
+                    $(this).find("div.image-tip").hide();
+                }
+            });
+
+        },
+        edit: function(){
+            o_fn.g.edit("#photos_table", 'photos/edit');
+        },
+        del: function(){
+            o_fn.g.del('#photos_table', 'photos/del');
+        }
+    }
 };

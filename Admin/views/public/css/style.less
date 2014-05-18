@@ -14,6 +14,9 @@
 .metro .toolbar:after{
 	clear: none;
 }
+.metro .window{
+	overflow-y: auto!important;
+}
 #main{
 	max-width: 100%;
 	padding: 0;
@@ -21,10 +24,10 @@
 	#left-nav{
 		float:left;
 		margin-left: 10px;
-		width: 300px;
+		width: 200px;
 	}
 	#main-area{
-		margin: 0 10px 50px 320px;
+		margin: 0 10px 50px 220px;
 		padding-top: 15px;
 		blockquote.block-title{
 			font-weight: bold;
@@ -83,4 +86,64 @@
 }
 #edui1_toolbarbox, #edui1 {
 	top: 0!important;
+}
+
+/* 图片上传部分 */
+.upload-image-area{
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  .image{
+    width: 200px;
+    float: left;
+    height: 270px;
+    margin: 5px;
+    padding: 5px;
+    position:relative;
+    border: 1px solid #ccc;
+    img{
+      max-height: 190px;
+      padding: 5px;
+    }
+    .set-index{
+      display: block;
+      position: relative;
+
+      .image-tip{
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        background: rgba(0,0,0,0.6);
+        width: 178px;
+        margin: 6px;
+        text-align: center;
+        height: 29px;
+        line-height: 2.1;
+        margin-bottom: 5px;
+        color: #fff;
+        cursor: pointer;
+        display: none;
+      }
+    }
+    .icon-cancel{
+      display: block;
+      position: absolute;
+      right: -6px;
+      top: -4px;
+      padding: 2px;
+      border-radius: 17px;
+      cursor: pointer;
+
+      &:hover{
+        border: 1px solid #000;
+      }
+    }
+    .intro textarea{
+      height: 60px;
+      border: none;
+      margin-top: 5px;
+      width: 190px;
+    }
+  }
 }

@@ -28,6 +28,19 @@ function file_put_contents($filename, $data, $flag = null, $context = null){
     	SaeKv()->add($file, $data);
     }
 }
+
+/**
+ * 写文件，存储到storage
+ * @param $filename
+ * @param $data
+ * @param null $flag
+ * @param null $context
+ * @return mixed
+ */
+function write_file($filename, $data, $flag = null, $context = null){
+    $store = new \SaeStorage();
+    return $store->write('arsenals', $filename, $data);
+}
 /**
  * 读取文件
  */ 
@@ -46,7 +59,7 @@ function file_exists($filename){
 		return true;
 	}
 	$kv = SaeKV();
-    
+
 	return $kv->get(md5($filename));
 }
 /**
@@ -71,10 +84,7 @@ function readdir($handle = null){
  * 删除文件
  */ 
 function unlink($filename, $context = null){
-	if(is_null($context)){
-		return \unlink($filename);
-	}
-	return \unlink($filename, $context);
+	return SaeKv()->delete(md5($filename));
 }
 /**
  * 关闭目录
@@ -109,4 +119,12 @@ function include_file($filename, Array $datas = array()){
 	$content = file_get_contents($filename);
 	@extract($datas);
 	eval("?>{$content}");
+}
+
+/**
+ * 创建目录
+ * @param $path
+ */
+function create_dir($path){
+    // 留空即可，SaeStorage会在上传时自动创建目录
 }

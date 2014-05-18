@@ -1,4 +1,5 @@
 article_*.html
 article/*
 Temp/*
+Resources/uploads/*
 .settings/*

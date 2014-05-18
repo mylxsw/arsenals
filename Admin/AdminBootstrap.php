@@ -16,7 +16,7 @@ class AdminBootstrap extends \Arsenals\ArsenalsBootstrap {
 			}
 			throw new PageNotFoundException('您访问的Widget不存在！');
 		});
-		Route::map('^$', 'Admin\\controllers\\Index@main');
+		Route::map('^$', '\Admin\controllers\Index@main');
 	}
 
 }

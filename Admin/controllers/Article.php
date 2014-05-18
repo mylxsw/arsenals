@@ -10,6 +10,16 @@ use Admin\utils\Ajax;
  *        
  */
 class Article extends CoreController {
+	
+	/**
+	 * 文章发布页面 Markdown
+	 */
+	public function writeMarkdown(){
+		$this->assign('categorys', $this->model('Category')->lists());
+		$this->assign('tags', $this->model('Tag')->lists());
+		
+		return $this->view('article/write-markdown');
+	}
 	/**
 	 * 文章发布页面
 	 */
@@ -19,6 +29,93 @@ class Article extends CoreController {
 		
 		return $this->view('article/write');
 	}
+	/**
+	 * 文章发布提交
+	 * @return \Arsenals\Core\Views\Ajax
+	 */
+	public function writePost(){
+        $user = Session::get('user');
+        $data = array();
+        // 处理文件上传
+        $data['feature_img'] = $this->_imageUpload('feature_img');
+        if($data['feature_img'] == ''){
+            $data['feature_img'] = $this->post('feature_img_selected');
+        }
+
+        // 处理表单
+		$data['title'] = $this->post('blog_title', null, 'required|len:1,100');
+		$data['content'] = $this->post('blog_textarea', null, 'len:0,80000');
+		$data['intro'] = $this->post('intro', null, 'len:0, 500');
+		$data['tag'] = $this->post('tag', null);
+		$data['category_id'] = $this->post('category_id', 'required');
+		$data['author'] = $user['username'];
+        $data['source'] = $this->post('sources', null, 'required|len:1,200');
+        $data['model'] = $this->post('model', 'html', 'len:0, 20');
+		
+		$id = $this->model('Article')->addArticle($data);
+
+        $this->ping($id);
+
+		return Ajax::ajaxReturn('保存成功！', Ajax::SUCCESS);
+	}
+	/**
+     * 删除文章
+     */ 
+    public function del(){
+        $ids = str_replace(' ', '', $this->post('ids', null, 'required|len:1,100'));
+        $ids_array = preg_split('/,/', $ids);
+
+        $articleModel = $this->model('Article');
+        $articleModel->deleteArticle($ids_array);
+
+        return Ajax::ajaxReturn('删除成功!', Ajax::SUCCESS);
+    }
+	/**
+	 * 编辑文章
+	 */
+    public function edit(){
+        $id = $this->get('id', null, 'int|required');
+
+        $articleModel = $this->model('Article');
+        $art = $articleModel->load(array('id' => $id));
+        $this->assign('art', $art);
+        
+        $this->assign('categorys', $this->model('Category')->lists());
+        $this->assign('tags', $this->model('Tag')->lists());
+		if($art['model'] == 'markdown'){
+			return $this->view('article/edit-markdown');
+		}
+        return $this->view('article/edit');
+    }
+	/**
+	 * 编辑文章Post
+	 */
+    public function editPost(){
+        $user = Session::get('user');
+        
+        $data = array();
+        
+        $data['feature_img'] = $this->_imageUpload('feature_img');
+		if($data['feature_img'] == ''){
+            $data['feature_img'] = $this->post('feature_img_selected', null);
+        }
+        $data['title'] = $this->post('blog_title', null, 'required|len:1,100');
+        $data['content'] = $this->post('blog_textarea', null, 'len:0,80000');
+        $data['intro'] = $this->post('intro', null, 'len:0, 500');
+        $data['tag'] = $this->post('tag', null);
+        $data['category_id'] = $this->post('category_id', 'required');
+        //$data['author'] = $user['username'];
+        $data['updator'] = $user['username'];
+        $data['source'] = $this->post('sources', null, 'required|len:1,200');
+        //
+        $id = $this->post('id', null, 'required|int');
+        
+        $this->model('Article')->updateArticle($data, $id);
+
+        $this->ping($id);
+        
+        return Ajax::ajaxReturn('修改成功！', Ajax::SUCCESS);
+    }
     /**
      * 图片封面列表
      */ 
@@ -83,32 +180,7 @@ class Article extends CoreController {
         }
         return '';
     }
-	/**
-	 * 文章发布提交
-	 * @return \Arsenals\Core\Views\Ajax
-	 */
-	public function writePost(){
-        $user = Session::get('user');
-        $data = array();
-        // 处理文件上传
-        $data['feature_img'] = $this->_imageUpload('feature_img');
-        if($data['feature_img'] == ''){
-            $data['feature_img'] = $this->post('feature_img_selected');
-        }
-
-        // 处理表单
-		$data['title'] = $this->post('blog_title', null, 'required|len:1,100');
-		$data['content'] = $this->post('blog_textarea', null, 'len:0,80000');
-		$data['intro'] = $this->post('intro', null, 'len:0, 500');
-		$data['tag'] = $this->post('tag', null);
-		$data['category_id'] = $this->post('category_id', 'required');
-		$data['author'] = $user['username'];
-        $data['source'] = $this->post('sources', null, 'required|len:1,200');
-		
-		$this->model('Article')->addArticle($data);
-		
-		return Ajax::ajaxReturn('保存成功！', Ajax::SUCCESS);
-	}
+	
 	/**
 	 * 文章分类列表页面
 	 */
@@ -189,55 +261,7 @@ class Article extends CoreController {
     public function temp(){
         return $this->view('article/temp');
     }
-    /**
-     * 删除文章
-     */ 
-    public function del(){
-        $ids = str_replace(' ', '', $this->post('ids', null, 'required|len:1,100'));
-        $ids_array = preg_split('/,/', $ids);
-
-        $articleModel = $this->model('Article');
-        $articleModel->deleteArticle($ids_array);
-
-        return Ajax::ajaxReturn('删除成功!', Ajax::SUCCESS);
-    }
-
-    public function edit(){
-        $id = $this->get('id', null, 'int|required');
-
-        $articleModel = $this->model('Article');
-        $this->assign('art', $articleModel->load(array('id' => $id)));
-        
-        $this->assign('categorys', $this->model('Category')->lists());
-        $this->assign('tags', $this->model('Tag')->lists());
-
-        return $this->view('article/edit');
-    }
-
-    public function editPost(){
-        $user = Session::get('user');
-        
-        $data = array();
-        
-        $data['feature_img'] = $this->_imageUpload('feature_img');
-		if($data['feature_img'] == ''){
-            $data['feature_img'] = $this->post('feature_img_selected', null);
-        }
-        $data['title'] = $this->post('blog_title', null, 'required|len:1,100');
-        $data['content'] = $this->post('blog_textarea', null, 'len:0,80000');
-        $data['intro'] = $this->post('intro', null, 'len:0, 500');
-        $data['tag'] = $this->post('tag', null);
-        $data['category_id'] = $this->post('category_id', 'required');
-        //$data['author'] = $user['username'];
-        $data['updator'] = $user['username'];
-        $data['source'] = $this->post('sources', null, 'required|len:1,200');
-        //
-        $id = $this->post('id', null, 'required|int');
-        
-        $this->model('Article')->updateArticle($data, $id);
-        
-        return Ajax::ajaxReturn('修改成功！', Ajax::SUCCESS);
-    }
+    
 	/**
 	 * 标签列表
 	 */    
@@ -302,5 +326,23 @@ class Article extends CoreController {
 
     	return Ajax::ajaxReturn('删除成功!', Ajax::SUCCESS);
     }
-    
+
+    /**
+     * Ping
+     * @param $id
+     * @return \Arsenals\Core\Views\Ajax
+     */
+    public function ping($id = null){
+        if(is_null($id) || $id instanceof \Arsenals\Core\Input){
+            $id = $this->get('id', null, 'required|int');
+        }
+
+        $baidu = $this->load('\Arsenals\Libraries\Ping\BaiduPing');
+        $res = $baidu->ping('AiCode', 'http://aicode.cc', 'http://aicode.cc/article/' . $id . '.html', "");
+
+        if($res){
+            return Ajax::success('操作成功!');
+        }
+        return Ajax::failed('操作失败！');
+    }
 }

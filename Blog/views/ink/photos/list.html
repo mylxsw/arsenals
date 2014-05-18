@@ -1,0 +1,32 @@
+<c:include file="@templates/header" />
+<div id="main-left">
+    <c:func func="Blog.breadcrumbs(isset($breadcrumbs) ? $breadcrumbs:array())" />
+    <div>
+        <a href="http://photos.aicode.cc" target="_blank">
+            <img src="Resources/uploads/sheying.jpg"/>
+        </a>
+    </div>
+    <c:loop items="$photos['data']" var="pho" >
+        <div class="article-list">
+            <div class="picture">
+                <img src="{func:Blog.url($pho['url'] == '' ? 'Resources/uploads/noimg.jpg' : Blog.filename_prefix($pho['url'], 'thumb_small/'))}"/>
+                <div class="img-tip"><c:out value="$pho['title']" /></div>
+            </div>
+            <div class="content">
+                <h5 class="title">
+                    <a href="{func:Blog.url("photos/{$pho['id']}.html")}">
+                    <c:out value="$pho['title']" /> <strong>［${pho['c']} P］</strong>
+                    </a>
+                </h5>
+                <div class="intro"><c:func func="Blog.htmlToText($pho['intro'])" /></div>
+                <div class="meta">发布时间: {func:date('Y-m-d', $pho['create_time'])} &nbsp;&nbsp;&nbsp;&nbsp; <span class="ds-thread-count"  data-thread-key="pho_${pho['id']}"></span></div>
+            </div>
+            <div class="ink-clear"></div>
+        </div>
+    </c:loop>
+    <c:if test="count($photos['data']) eq 0">
+        <div>这里暂时没有文章哦~</div>
+    </c:if>
+    <c:func func="Blog.pagination('photos\\.html', $photos['total'], $photos['page'], $p)" />
+</div>
+<c:include file="@templates/footer" />

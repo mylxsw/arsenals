@@ -275,3 +275,52 @@ function custom_css(){
 		return $css;
 	});
 }
+
+/**
+ * 相关文章
+ * @param $tags
+ * @param $count
+ * @return string
+ */
+function relate_article($article, $count){
+    $tag_arr = array();
+    foreach($article['tag'] as $tag){
+        $tag_arr[] = $tag['id'];
+    }
+
+    $articleModel = Registry::load('Common\models\Article');
+    $articles = $articleModel->getArticleRandomByTag($tag_arr, $count, $article['id']);
+
+    $html = '';
+    foreach($articles as $k=>$v){
+        $html .= "<li><a href='" . url("article/{$v['id']}.html") . "'>{$v['title']}</a></li>";
+    }
+    if($html == ''){
+        $html = '没有相关文章!';
+    }
+    return "<div class='relate-articles'><h4>相关文章</h4>{$html}</div>";
+}
+/**
+ * 为文件名添加前缀
+ * @param $filename
+ * @param $prefix
+ */
+function filename_prefix($filename, $prefix){
+    $filename = str_replace('\\', '/', $filename);
+    $last_pos = strrpos($filename, '/');
+
+    $path = substr($filename, 0, $last_pos + 1);
+    $name = substr($filename, $last_pos + 1);
+
+    return $path . $prefix . $name;
+}
+
+function tags_str($tags, $join_str = ','){
+    if(is_null($tags) || count($tags) == 0){
+        return '';
+    }
+
+    return implode($join_str, array_map(function($a){
+        return $a['name'];
+    }, $tags));
+}

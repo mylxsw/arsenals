@@ -13,7 +13,27 @@ class Cache extends CoreController {
 	 */ 
 	public function clear(){
         if(defined('IS_SAE') && IS_SAE){
-           
+           if(function_exists('\Arsenals\Core\SaeKv')){
+               $kv = \Arsenals\Core\SaeKv();
+               $ret = $kv->pkrget('', \SaeKv::MAX_PKRGET_SIZE);
+               while(true){
+                   //var_dump(array_keys($ret));
+                   // 删除所有的key
+                   $keys = array_keys($ret);
+                   foreach($keys as $k=>$v){
+                       //echo $v . "\n";
+                       $kv->delete($v);
+                   }
+
+                   // 判断是否读取完毕，若未完成则继续循环读取
+                   end($ret);
+                   $start_key = key($ret);
+                   //\Arsenals\Core\_D($start_key);
+                   $i = count($ret);
+                   if($i < \SaeKv::MAX_PKRGET_SIZE ) break;
+                   $ret = $kv->pkrget('', \SaeKv::MAX_PKRGET_SIZE, $start_key);
+               }
+           }
             
         }else{
         	$DIR_S = DIRECTORY_SEPARATOR;
@@ -33,8 +53,7 @@ class Cache extends CoreController {
 	 * 清理单篇文章缓存
 	 */ 
 	public function clear_article_cache(){
-		$DIR_S = DIRECTORY_SEPARATOR;
-		$cache_path = BASE_PATH . "articles{$DIR_S}show{$DIR_S}";
+		$cache_path = BASE_PATH . "article/";
 
 		$ids = $this->get('ids', null);
 

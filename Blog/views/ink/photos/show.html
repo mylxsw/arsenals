@@ -1,0 +1,31 @@
+<c:include file="@templates/header" />
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+<div id="main-left">
+    <c:func func="Blog.breadcrumbs(isset($breadcrumbs) ? $breadcrumbs:array())" />
+    <div class="article">
+        <h5 class="title">${photo['title']}</h5>
+        <div class="info">( 发布于 {func:date('Y-m-d', $photo['create_time'])}
+            <span class="ds-thread-count" data-thread-key="art_${photo['id']}" data-count-type="comments"></span> )
+        </div>
+
+        <div class="intro">${photo['intro']}</div>
+        <div class="content">
+            <c:loop items="$photo['images']" var="pho" >
+                <div class="photo">
+                    <div class="comment">${pho['intro']}</div>
+                    <img src="{func:Blog.filename_prefix($pho['url'], 'thumb_large/')}" />
+                </div>
+            </c:loop>
+        </div>
+    </div>
+    <div class="share-area">
+        <wb:share-button appkey="4tg0Ag" addition="full" type="button" ralateUid="2508316741"></wb:share-button>
+    </div>
+    <div class="remark-area">
+        <c:func func="Blog.remark($photo['id'])" />
+        <div class="right-img">
+            <iframe width="100%" height="400" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=400&fansRow=1&ptype=1&speed=50&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=2508316741&verifier=1d07a1a0&dpc=1"></iframe>
+        </div>
+    </div>
+</div>
+<c:include file="@templates/footer" />

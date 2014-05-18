@@ -24,8 +24,8 @@ class CacheFilter implements Filter {
 			$cache_file = BASE_PATH . $path_info;
 			
 			// 如果存在文件，则读取缓存
-			if (!DEBUG && \Arsenals\Core\file_exists($cache_file)) {	
-				echo \Arsenals\Core\file_get_contents($cache_file);
+			if (!DEBUG && \Arsenals\Core\file_exists($cache_file)) {
+                echo \Arsenals\Core\file_get_contents($cache_file);
 				return true;
 			}
             
