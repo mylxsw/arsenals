@@ -645,6 +645,44 @@ $captcha->createImage($code);
 </pre>
 注意的是，```createImage``` 方法可以接收两个参数，第一个参数为验证码字符串，第二个参数为可选，如果为NULL，则验证码直接输出到浏览器，或者可以为要保存验证码的文件名。
 
+
+####文件上传
+框架扩展库中集成了一个简易的文件上传类，该类位于 ```\Arsenals\Libraries\Files\Uploader.php```。   
+使用该类可以简单的实现文件上传操作，使用示例如下：   
+<pre>
+$uploader = \Arsenals\Core\Registry::load('\Arsenals\Libraries\Files\Uploader');
+$up_status = $uploader->upload(上传字段, 目标文件名);
+</pre>
+需要注意的是，```upload``` 方法再上传完成后的返回值up_status在上传成功时为文件的访问地址。
+
+####图像处理
+框架扩展库中内置了一个简易的图像处理工具类```\Arsenals\Libraries\Image\ImageUtils```, 使用该工具类可以轻松的完成对图片的缩放，创建缩略图，添加水印等。
+要创建一个图片的缩略图，使用如下方法：
+<pre>
+use \Arsenals\Libraries\Image\ImageUtils;
+ImageUtils::thumb(原文件名，最大宽度， 最大高度［， 目标文件名［，压缩率＝80］］)
+</pre>
+注意的是，目标文件名如果为空的话，则会将处理后的图片文件内容发送到浏览器（直接输出）。
+
+如果要添加水印，则使用如下方法：
+<pre>
+use \Arsenals\Libraries\Images\ImageUtils;
+ImageUtils::watermark(array(
+	'source_file' => $filename, 
+	'watermark'=> 'test.gif', 
+	'pos_x'=>-40, 
+	'pos_y'=>-40
+));
+</pre>
+可选属性为如下： 
+  
+- source_file 源文件
+- watermark 水印图片文件
+- pos_x  水印左边距（负数为右边距）
+- pos_y  水印上边距（负数为下边距）
+- dest_file 存储为目标文件，默认不存储，直接输出
+- alpha 水印透明度，默认75
+
 ####SAE(新浪云计算平台)支持
 要启用SAE支持，可以通过钩子挂载系统启动前期，加入SAE支持库实现。   
 首先，需要在项目配置文件 ```config.php``` 中启用钩子， ```hook_enabled``` 为 ```true``` ；   
