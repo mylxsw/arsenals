@@ -40,7 +40,7 @@
 		</div>
 		<label for="blog_textarea">文章正文 </label>
 		<div class="input-control textarea size 10">
-			<textarea name="blog_textarea" style="min-height: 350px;" id="blog_textarea"><?php echo $art['content'];?></textarea>
+			<textarea name="blog_textarea" style="min-height: 350px;" id="blog_textarea"><?php echo htmlspecialchars($art['content']);?></textarea>
 			<h5>预览</h5>
 			<div id="blog_textarea_preview" class="markdown-preview"></div>
 		</div>
@@ -55,6 +55,7 @@
       	<button type="button" class="primary" onclick="f.submit('#o-form-edit-article')" >提交</button>
 	</fieldset>
 </form>
+<script src="<?php \Admin\public_resource_path();?>showdown-master/src/showdown.js"></script>
 <script type="text/javascript">
 $.Metro.initInputs();
 $(function(){

@@ -8,8 +8,14 @@
         </div>
         <label for="photos-tags">标签</label>
         <div class="input-control text size4">
-            <input type="text" name="tags" id="photos-tags" placeholder="标签" value="<?php echo $photo['tag'];?>"/>
-            <button class="btn-clear" tabindex="-1" type="button"></button>
+            <input type="text" name="tags" id="photos-tags" placeholder="标签" value="<?php echo trim($photo['tag'], ',');?>"/>
+        </div>
+        <div id="selectLabels">
+            <?php foreach ($tags as $k => $v): ?>
+                <a href="<?php echo $v;?>" class="o-add-label direct" data-target="#photos-tags">
+                    <?php echo $v; ?>
+                </a>
+            <?php endforeach;?>
         </div>
         <label for="photos-intro">概要 </label>
         <div class="input-control textarea size8">
@@ -44,7 +50,7 @@
         <span class="icon-cancel"></span>
         <div class="intro">
             <input type="hidden" name="image[]" value="<%=url%>" />
-            <textarea name="image_intro[]" placeholder="图片介绍"></textarea>
+            <textarea name="image_intro[]" placeholder="图片介绍"><%=filename%></textarea>
         </div>
     </div>
 </script>

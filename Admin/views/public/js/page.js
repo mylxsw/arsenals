@@ -334,7 +334,7 @@ window.o_fn = {
                             if(result.status != '1'){
                                 return f.alert(result.info);
                             }
-                            $(".upload-image-area").prepend(template({url: result.info, thumb_url: f.filename_prefix(result.info, 'thumb_small/')}));
+                            $(".upload-image-area").prepend(template({url: result.info, filename: result.data.filename, thumb_url: f.filename_prefix(result.info, 'thumb_small/')}));
 
                         } catch(exception){
                             f.alert('上传过程中出现错误!' + exception);

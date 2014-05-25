@@ -126,7 +126,11 @@ class ImageUtils{
 		self::resizeTo($source_filename, $width, $height, $dest_filename, $quailty);
 	}
 
-	private static function getImageInfo($filename){
+    /**
+     * @param $filename
+     * @return array 宽度， 高度， mime类型
+     */
+    public static function getImageInfo($filename){
 		$image_info = getimagesize($filename);
 		return array($image_info[0], $image_info[1], $image_info['mime']);
 	}

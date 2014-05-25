@@ -112,7 +112,11 @@ class Article extends CoreController {
         
         $this->model('Article')->updateArticle($data, $id);
 
+        // ping通知百度，文章内容更新
         $this->ping($id);
+
+        // 通知更新文章缓存
+        $this->load('\Admin\controllers\Cache')->clear_article_cache($id);
         
         return Ajax::ajaxReturn('修改成功！', Ajax::SUCCESS);
     }

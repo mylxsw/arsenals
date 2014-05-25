@@ -25,6 +25,7 @@ class Widget extends CoreController {
 					'article-markdown' => array('<i class="icon-newspaper"></i>写文章Markdown', 'article/writeMarkdown'),
 					'archive' =>array('<i class="icon-folder"></i>归档', 'article/lists'),
 					'photos'  => array('<i class="icon-pictures"></i>图库', 'photos/lists'),
+                    'photos-manager' => array('<i class="icon-picassa"></i>图片管理', 'photos/manager'),
 					'#others' => array(
 							'其它',
 							array('<i class="icon-bookmark"></i>分类','article/category'),

@@ -44,8 +44,8 @@
 	<div class="remark-area">
 		<c:func func="Blog.remark($article['id'])" />
         <div class="right-img">
-            <!--<iframe width="100%" height="400" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=400&fansRow=1&ptype=1&speed=50&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=2508316741&verifier=1d07a1a0&dpc=1"></iframe>-->
-            <!--cnzz tui-->
+
+            {func:Blog.relate_article($article, 8)}
             <script>
                 var aliyun_recommend_opts={
                     'url':'http://aicode.cc/article/${article['id']}.html', //网页的永久链接
@@ -54,8 +54,7 @@
                     'tags':'{func:Blog.tags_str($article['tag'])}' //网页的关键词，多个时用英文逗号分割
                 };
             </script>
-            <script  type="text/javascript" c=gd  charset="utf-8"  src="http://tui.cnzz.net/cs.php?id=1000077408"></script>
-            <!--cnzz tui-->
+            <script  type="text/javascript" c="gd"  charset="utf-8"  src="http://tui.cnzz.net/cs.php?id=1000077408"></script>
         </div>
     </div>
 </div>

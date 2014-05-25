@@ -52,10 +52,12 @@ class Cache extends CoreController {
 	/**
 	 * 清理单篇文章缓存
 	 */ 
-	public function clear_article_cache(){
+	public function clear_article_cache($ids = null){
 		$cache_path = BASE_PATH . "article/";
 
-		$ids = $this->get('ids', null);
+        if(is_null($ids) || $ids instanceof \Arsenals\Core\Input){
+            $ids = $this->get('ids', null);
+        }
 
 		if (!is_null($ids)) {
 			$ids_array = preg_split('/,/', str_replace(' ', '', $ids));

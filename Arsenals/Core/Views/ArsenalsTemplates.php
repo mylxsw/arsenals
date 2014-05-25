@@ -92,8 +92,8 @@ class ArsenalsTemplates extends Arsenals implements View {
 			include "{$this->template_dir}functions.php";
 			self::$is_func_loaded = true;
 		}
-		$template_file = $vm->getView() . $this->suffix;
-		$cache_file = CACHE_PATH . 'views' . DIRECTORY_SEPARATOR . $vm->getView() . $this->compile_suffix;
+		//$template_file = $vm->getView() . $this->suffix;
+		$cache_file = CACHE_PATH . 'views' . DIRECTORY_SEPARATOR . APP_NAME . DIRECTORY_SEPARATOR .  $vm->getView() . $this->compile_suffix;
        
         ob_start();
 		if($this->debug || !\Arsenals\Core\file_exists($cache_file)){

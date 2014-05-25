@@ -298,7 +298,7 @@ function relate_article($article, $count){
     if($html == ''){
         $html = '没有相关文章!';
     }
-    return "<div class='relate-articles'><h4>相关文章</h4>{$html}</div>";
+    return "<div class='relate-articles'><h5>相关文章</h5>{$html}</div>";
 }
 /**
  * 为文件名添加前缀
@@ -315,12 +315,18 @@ function filename_prefix($filename, $prefix){
     return $path . $prefix . $name;
 }
 
+/**
+ * 以最简单的连接方式现实标签（数组－>字符串)
+ * @param $tags
+ * @param string $join_str
+ * @return string
+ */
 function tags_str($tags, $join_str = ','){
     if(is_null($tags) || count($tags) == 0){
         return '';
     }
 
     return implode($join_str, array_map(function($a){
-        return $a['name'];
+        return strtolower($a['name']);
     }, $tags));
 }

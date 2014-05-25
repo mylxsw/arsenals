@@ -115,13 +115,14 @@ abstract class Model extends Arsenals {
 		
 		$args = array();
 		$sql = " FROM {$table} ";
+
 		if(count($conditions) > 0){
 			$sql .= ' WHERE ';
 			$conditions_result = $this->_init_conditions($conditions);
 			$sql .= $conditions_result[0];
 			$args = $conditions_result[1];
 		}
-		
+
 		if($order != ''){
 			$sql .= ' ORDER BY ' . $order;
 		}
@@ -130,8 +131,9 @@ abstract class Model extends Arsenals {
 		if($index === FALSE){
 			return $this->_conn->query("SELECT * {$sql}", $args);
 		}
+
 		// 分页查询
-		return $this->select($sql, $args, $index, $per);
+		return $this->select("SELECT * {$sql}", $args, $index, $per);
 	}
 	/**
 	 * 更新单个数据对象

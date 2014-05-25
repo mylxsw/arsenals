@@ -18,7 +18,13 @@ class Photos extends Model {
         $entity['title'] = $data['title'];
         $entity['intro'] = $data['intro'];
         $entity['url'] = '#';
-        $entity['tag'] = $data['tags'];
+        $tag = trim(trim($data['tags']), ',');
+        $tag_arr = explode(',', $tag);
+        foreach($tag_arr as $k=>$v){
+            $tag_arr[$k] = trim($v);
+        }
+        $tag = ',' . implode(',', $tag_arr) . ',';
+        $entity['tag'] = $tag;
         $entity['isvalid'] = 1;
         $entity['create_time'] = time();
         $entity['pid'] = 0;
@@ -55,7 +61,13 @@ class Photos extends Model {
         $entity = array();
         $entity['title'] = $data['title'];
         $entity['intro'] = $data['intro'];
-        $entity['tag'] = $data['tags'];
+        $tag = trim(trim($data['tags']), ',');
+        $tag_arr = explode(',', $tag);
+        foreach($tag_arr as $k=>$v){
+            $tag_arr[$k] = trim($v);
+        }
+        $tag = ',' . implode(',', $tag_arr) . ',';
+        $entity['tag'] = $tag;
         $entity['isvalid'] = 1;
         $entity['update_time'] = time();
         $entity['url'] = isset($data['images']) && count($data['images']) > 0 ? $data['images'][0][0] : '';
@@ -124,14 +136,15 @@ class Photos extends Model {
      * @param int $p
      * @param null $tag
      * @param string $keyword
+     * @param int $per_nums
      * @return array
      */
-    public function getAllPhotos($p = 1, $tag = null, $keyword = ''){
+    public function getAllPhotos($p = 1, $tag = null, $keyword = '', $per_nums = 15){
 		
         $condition = ' WHERE pid=0 ';
         
         if(!is_null($tag) && $tag != '' && strlen($tag) > 1){
-        	$condition .= " and `tag` like '%" . $this->escape($keyword) . "%' ";
+        	$condition .= " and `tag` like '%," . $this->escape($tag) . ",%' ";
         }
 
         if($keyword != '' && strlen($keyword) > 2){
@@ -142,7 +155,7 @@ class Photos extends Model {
 		//echo $sql;
 		//$sql = "SELECT t.*, (select count(m.*) from `ar_photos` m where m.pid=t.id) as c FROM `ar_photos` t WHERE pid=0 ORDER BY CREATE_TIME DESC";
 		return array(
-			'data' => $this->_select("SELECT t.*, (select count(*) from `" . $this->getTableName() . "` m where m.pid=t.id) as c ", $sql, array(), $p),
+			'data' => $this->_select("SELECT t.*, (select count(*) from `" . $this->getTableName() . "` m where m.pid=t.id) as c ", $sql, array(), $p, $per_nums),
 			'total' => $this->getPageRecordCounts(),
 			'page' => $this->getPageCounts()
 			);

@@ -249,7 +249,7 @@ function tags_str($tags, $join_str = ','){
 		return '';
 	}
 
-	$tags_arr = explode(',', $tags);
+	$tags_arr = explode(',', trim($tags, ','));
 
 	return implode(',', array_map(function($a){
 		return "<a href='#{$a}'>{$a}</a>";

@@ -137,9 +137,38 @@ a.select-cover:hover {
 a.select-cover {
   display: block;
   float: left;
+  border: 2px solid #ffffff;
 }
 .metro div,
 .metro span,
 .metro p {
   font-family: Tahoma, Helvetica, "Microsoft Yahei", "微软雅黑", Arial, STHeiti;
+}
+.markdown-preview {
+  min-height: 350px;
+  max-height: 450px;
+  overflow-y: auto;
+}
+.image-item {
+  height: 110px;
+}
+.image-item .file-meta {
+  float: left;
+  margin-left: 20px;
+}
+.image-item .file-meta .filename {
+  font-size: 16px;
+  font-weight: bold;
+}
+.image-item .file-meta .image-url {
+  line-height: 1.5;
+  margin-top: 20px;
+}
+.image-item img {
+  width: 150px;
+  height: 100px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  display: block;
+  float: left;
 }

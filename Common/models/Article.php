@@ -144,12 +144,12 @@ class Article extends Model {
 	 * @return array
 	 */
 	public function getNewArticlesInCategory($category, $count = 1){
-		if (!is_null($category) && !is_array($category)) {
+		if (!is_null($category) && !is_array($category) && $category != '') {
 			$category = array($category);
 		}
        
 		$sql = "SELECT * FROM `" . $this->getTableName() . "` "; 
-		if(!is_null($category)){
+		if(!is_null($category) && $category != ''){
 			$sql .= " WHERE id in (";
 			$sql .= "SELECT DISTINCT A.ARTICLE_ID FROM " . $this->getTableName('article_category') . " AS A WHERE A.CATEGORY_ID in (";
 			foreach ($category as $k){
