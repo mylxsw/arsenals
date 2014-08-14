@@ -93,4 +93,28 @@ abstract class Controller extends Service {
 		}
 		$this->_view_datas[$key] = $data;
 	}
+
+    /**
+     * 判断请求是否是POST
+     * @return bool
+     */
+    protected function isPostReq(){
+        return isset($_SERVER['REQUEST_METHOD']) && !strcasecmp($_SERVER['REQUEST_METHOD'], 'POST');
+    }
+
+    /**
+     * 判断请求是否是GET
+     * @return bool
+     */
+    protected function isGetReq(){
+        return !$this->isPostReq();
+    }
+
+    /**
+     * 判断请求是否是Ajax请求
+     * @return bool
+     */
+    protected function isAjaxReq(){
+        return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest';
+    }
 }
