@@ -1,45 +1,33 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Arsenals : 基于PHP的MVC开发框架。">
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Arsenals</title>
+    <meta charset="UTF-8">
+    <title>Arsenals by mylxsw</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
+    <section class="page-header">
+      <h1 class="project-name">Arsenals</h1>
+      <h2 class="project-tagline">基于PHP的MVC开发框架。</h2>
+      <a href="https://github.com/mylxsw/arsenals" class="btn">View on GitHub</a>
+      <a href="https://github.com/mylxsw/arsenals/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/mylxsw/arsenals/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/mylxsw/arsenals">View on GitHub</a>
-
-          <h1 id="project_title">Arsenals</h1>
-          <h2 id="project_tagline">基于PHP的MVC开发框架。</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/mylxsw/arsenals/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/mylxsw/arsenals/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a name="arsenals-%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3" class="anchor" href="#arsenals-%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3"><span class="octicon octicon-link"></span></a>Arsenals 开发文档</h1>
+    <section class="main-content">
+      <h1>
+<a id="arsenals-开发文档" class="anchor" href="#arsenals-%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Arsenals 开发文档</h1>
 
 <p><strong>版本号： 1.0 DEV</strong><br>
 <strong>作者： 管宜尧</strong><br>
 <strong><em>2014/1/4 0:04:56</em></strong></p>
 
 <h2>
-<a name="%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%9E%B6%E6%9E%84%E6%8C%87%E5%8D%97" class="anchor" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%9E%B6%E6%9E%84%E6%8C%87%E5%8D%97"><span class="octicon octicon-link"></span></a>第一章 架构指南</h2>
+<a id="第一章-架构指南" class="anchor" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%9E%B6%E6%9E%84%E6%8C%87%E5%8D%97" aria-hidden="true"><span class="octicon octicon-link"></span></a>第一章 架构指南</h2>
 
 <p>Arsenals采用了基于MVC的架构，同时支持Service层的扩展。  </p>
 
@@ -68,10 +56,10 @@
 <p>系统采用了 <em>PHP 5.3</em> 开始支持的 <strong>命名空间</strong> ，在开发过程中，可以实现业务代码的灵活组织，非常简单的实现 <strong><em>HMVC</em></strong> 架构，以便对业务逻辑进行分离，更加清晰的实现模块化的开发。  </p>
 
 <h2>
-<a name="%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83" class="anchor" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83"><span class="octicon octicon-link"></span></a>第二章 开发规范</h2>
+<a id="第二章-开发规范" class="anchor" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83" aria-hidden="true"><span class="octicon octicon-link"></span></a>第二章 开发规范</h2>
 
 <h4>
-<a name="%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83" class="anchor" href="#%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83"><span class="octicon octicon-link"></span></a>命名规范</h4>
+<a id="命名规范" class="anchor" href="#%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83" aria-hidden="true"><span class="octicon octicon-link"></span></a>命名规范</h4>
 
 <ol>
 <li>对于类，采用驼峰命名法进行命名，如<code>SessionUtils</code>
@@ -90,7 +78,7 @@
 </ol>
 
 <h2>
-<a name="%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B" class="anchor" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B"><span class="octicon octicon-link"></span></a>第三章 快速开始</h2>
+<a id="第三章-快速开始" class="anchor" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B" aria-hidden="true"><span class="octicon octicon-link"></span></a>第三章 快速开始</h2>
 
 <p>本章主要介绍如何快速开始一个Arsenals项目的开发。<br>
 为了方便快速建立一个项目，框架提供了项目构建工具，用于快速创建一个项目，该工具位于Tools目录下，使用方式如下：</p>
@@ -181,10 +169,10 @@ class Index extends Controller{
 </ul>
 
 <h2>
-<a name="%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3" class="anchor" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="octicon octicon-link"></span></a>第四章 参考文档</h2>
+<a id="第四章-参考文档" class="anchor" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3" aria-hidden="true"><span class="octicon octicon-link"></span></a>第四章 参考文档</h2>
 
 <h3>
-<a name="%E5%B8%B8%E9%87%8F%E5%AE%9A%E4%B9%89" class="anchor" href="#%E5%B8%B8%E9%87%8F%E5%AE%9A%E4%B9%89"><span class="octicon octicon-link"></span></a>常量定义</h3>
+<a id="常量定义" class="anchor" href="#%E5%B8%B8%E9%87%8F%E5%AE%9A%E4%B9%89" aria-hidden="true"><span class="octicon octicon-link"></span></a>常量定义</h3>
 
 <table>
     <thead>
@@ -230,10 +218,10 @@ class Index extends Controller{
 </table>
 
 <h3>
-<a name="%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE" class="anchor" href="#%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE"><span class="octicon octicon-link"></span></a>项目配置</h3>
+<a id="项目配置" class="anchor" href="#%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE" aria-hidden="true"><span class="octicon octicon-link"></span></a>项目配置</h3>
 
 <h4>
-<a name="%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AEconfigphp" class="anchor" href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AEconfigphp"><span class="octicon octicon-link"></span></a>基本配置config.php</h4>
+<a id="基本配置configphp" class="anchor" href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AEconfigphp" aria-hidden="true"><span class="octicon octicon-link"></span></a>基本配置config.php</h4>
 
 <table>
 <thead>
@@ -263,7 +251,7 @@ class Index extends Controller{
 </table>
 
 <h4>
-<a name="%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AEdatabasephp" class="anchor" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AEdatabasephp"><span class="octicon octicon-link"></span></a>数据库配置database.php</h4>
+<a id="数据库配置databasephp" class="anchor" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AEdatabasephp" aria-hidden="true"><span class="octicon octicon-link"></span></a>数据库配置database.php</h4>
 
 <table>
 <thead>
@@ -298,7 +286,7 @@ class Index extends Controller{
 </table>
 
 <h4>
-<a name="%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AErouterphp" class="anchor" href="#%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AErouterphp"><span class="octicon octicon-link"></span></a>路由配置router.php</h4>
+<a id="路由配置routerphp" class="anchor" href="#%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AErouterphp" aria-hidden="true"><span class="octicon octicon-link"></span></a>路由配置router.php</h4>
 
 <p>下面是默认的路由配置。</p>
 
@@ -354,7 +342,7 @@ Route::map('^原创音乐$', function($media, $action){
 <p><strong>小提示</strong> ： <em>如果方法或者回调函数 *</em>第一个** 参数为Input类型的对象，则可以自动注入Input对象，其它参数顺序后移一位。*</p>
 
 <h3>
-<a name="%E9%92%A9%E5%AD%90" class="anchor" href="#%E9%92%A9%E5%AD%90"><span class="octicon octicon-link"></span></a>钩子</h3>
+<a id="钩子" class="anchor" href="#%E9%92%A9%E5%AD%90" aria-hidden="true"><span class="octicon octicon-link"></span></a>钩子</h3>
 
 <p>Arsenals框架提供了系统运行各个阶段的钩子函数功能，使对系统的扩展成为了可能，要使用钩子功能，需要在 <code>config.php</code> 配置文件中配置 <code>hook_enabled</code> 为 <code>true</code>。  </p>
 
@@ -404,7 +392,7 @@ return array(
 </table>
 
 <h3>
-<a name="%E5%AD%97%E6%AE%B5%E6%A0%A1%E9%AA%8C%E8%A7%84%E5%88%99" class="anchor" href="#%E5%AD%97%E6%AE%B5%E6%A0%A1%E9%AA%8C%E8%A7%84%E5%88%99"><span class="octicon octicon-link"></span></a>字段校验规则</h3>
+<a id="字段校验规则" class="anchor" href="#%E5%AD%97%E6%AE%B5%E6%A0%A1%E9%AA%8C%E8%A7%84%E5%88%99" aria-hidden="true"><span class="octicon octicon-link"></span></a>字段校验规则</h3>
 
 <p>Arsenals框架提供了字段校验功能，开发过程中，可以方便的使用框架提供的字段校验功能对来自用户的输入信息进行校验。</p>
 
@@ -424,7 +412,7 @@ return array(
 </ul>
 
 <h4>
-<a name="%E7%B3%BB%E7%BB%9F%E5%86%85%E7%BD%AE%E6%A0%A1%E9%AA%8C%E8%A7%84%E5%88%99" class="anchor" href="#%E7%B3%BB%E7%BB%9F%E5%86%85%E7%BD%AE%E6%A0%A1%E9%AA%8C%E8%A7%84%E5%88%99"><span class="octicon octicon-link"></span></a>系统内置校验规则：</h4>
+<a id="系统内置校验规则" class="anchor" href="#%E7%B3%BB%E7%BB%9F%E5%86%85%E7%BD%AE%E6%A0%A1%E9%AA%8C%E8%A7%84%E5%88%99" aria-hidden="true"><span class="octicon octicon-link"></span></a>系统内置校验规则：</h4>
 
 <ul>
 <li>正则表达式(指定type为Input::REGEXP)， 第三个参数optionals为正则表达式</li>
@@ -485,7 +473,7 @@ int, boolean, float, validate_url, validate_email, validate_ip, string, stripped
 <p><code>$rule_name</code> 为定义的规则名称，<code>$entity_name</code> 为规则实现（使用系统约定的对象指定方式）。</p>
 
 <h3>
-<a name="%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E" class="anchor" href="#%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E"><span class="octicon octicon-link"></span></a>模板引擎</h3>
+<a id="模板引擎" class="anchor" href="#%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E" aria-hidden="true"><span class="octicon octicon-link"></span></a>模板引擎</h3>
 
 <p>默认是采用系统内置的简单模板的，该模板使用纯PHP。<br>
 在控制器中渲染模板引擎只需要执行 <code>ViewAndModel::make()</code> 或者 <code>VM::make()</code> 方法即可获取解析之后的模板内容。</p>
@@ -496,7 +484,7 @@ int, boolean, float, validate_url, validate_email, validate_ip, string, stripped
 <p><code>define('VIEW_LAYER', 'Arsenals\Core\Views\SimpleView');</code>  </p>
 
 <h4>
-<a name="%E5%86%85%E7%BD%AE%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8Earsenalstemplates" class="anchor" href="#%E5%86%85%E7%BD%AE%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8Earsenalstemplates"><span class="octicon octicon-link"></span></a>内置模板引擎ArsenalsTemplates</h4>
+<a id="内置模板引擎arsenalstemplates" class="anchor" href="#%E5%86%85%E7%BD%AE%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8Earsenalstemplates" aria-hidden="true"><span class="octicon octicon-link"></span></a>内置模板引擎ArsenalsTemplates</h4>
 
 <p>如果需要使用模板引擎，可以采用系统内置模板引擎 <code>ArsenalsTemplates</code> , 采用该模板引擎后，视图代码中可以使用内置标签，标签语法类似于Java EE中的JSTL语法。</p>
 
@@ -508,7 +496,7 @@ int, boolean, float, validate_url, validate_email, validate_ip, string, stripped
 在模板中可以使用内置标签库语法进行模板编写。   </p>
 
 <h5>
-<a name="%E6%A0%87%E7%AD%BE%E5%BA%93" class="anchor" href="#%E6%A0%87%E7%AD%BE%E5%BA%93"><span class="octicon octicon-link"></span></a>标签库</h5>
+<a id="标签库" class="anchor" href="#%E6%A0%87%E7%AD%BE%E5%BA%93" aria-hidden="true"><span class="octicon octicon-link"></span></a>标签库</h5>
 
 <ul>
 <li>out<br>
@@ -539,13 +527,13 @@ int, boolean, float, validate_url, validate_email, validate_ip, string, stripped
 </pre>
 
 <h5>
-<a name="%E6%A8%A1%E6%9D%BF%E7%BC%96%E8%AF%91%E7%BC%93%E5%AD%98" class="anchor" href="#%E6%A8%A1%E6%9D%BF%E7%BC%96%E8%AF%91%E7%BC%93%E5%AD%98"><span class="octicon octicon-link"></span></a>模板编译缓存</h5>
+<a id="模板编译缓存" class="anchor" href="#%E6%A8%A1%E6%9D%BF%E7%BC%96%E8%AF%91%E7%BC%93%E5%AD%98" aria-hidden="true"><span class="octicon octicon-link"></span></a>模板编译缓存</h5>
 
 <p>为了提高效率，模板文件在第一次运行时会编译成 <code>.php</code> 的缓存文件，以使得在程序运行过程中省略掉模板编译过程，提高运行效率。<br>
 默认编译缓存在缓存目录下的views文件夹中，并且保持了模板文件的原始文件结构以及文件名称（除扩展名之外）。   </p>
 
 <h5>
-<a name="%E6%A0%87%E7%AD%BE%E5%8F%98%E9%87%8F%E8%A7%84%E8%8C%83" class="anchor" href="#%E6%A0%87%E7%AD%BE%E5%8F%98%E9%87%8F%E8%A7%84%E8%8C%83"><span class="octicon octicon-link"></span></a>标签变量规范</h5>
+<a id="标签变量规范" class="anchor" href="#%E6%A0%87%E7%AD%BE%E5%8F%98%E9%87%8F%E8%A7%84%E8%8C%83" aria-hidden="true"><span class="octicon octicon-link"></span></a>标签变量规范</h5>
 
 <p>模板引擎是基于文本解析的，因此，对标签项的配置比较严格，因此，需要按照标签变量规范进行标签内容录入。如下变量必须进行替换：</p>
 
@@ -604,7 +592,7 @@ int, boolean, float, validate_url, validate_email, validate_ip, string, stripped
 </pre>
 
 <h4>
-<a name="%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E" class="anchor" href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E"><span class="octicon octicon-link"></span></a>第三方模板引擎</h4>
+<a id="第三方模板引擎" class="anchor" href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E" aria-hidden="true"><span class="octicon octicon-link"></span></a>第三方模板引擎</h4>
 
 <p>系统还提供了一个基于Twig的模板引擎，不过需要手动加入Twig的类库才可以使用。加入Twig的类库之后，需要在项目的入口文件中定义Twig的Autoloader.php文件的路径常量，如下所示：  </p>
 
@@ -613,7 +601,7 @@ int, boolean, float, validate_url, validate_email, validate_ip, string, stripped
 <p>接下来再配置VIEW_LAWER值为 <strong>'Arsenals\Libraries\Twig\TwigView'</strong> 即可。</p>
 
 <h4>
-<a name="%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E" class="anchor" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E"><span class="octicon octicon-link"></span></a>自定义模板引擎</h4>
+<a id="自定义模板引擎" class="anchor" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E" aria-hidden="true"><span class="octicon octicon-link"></span></a>自定义模板引擎</h4>
 
 <p>除了使用内置模板引擎之外，开发者可以使用自定义的模板引擎，使用自定义的模板引擎也很简单，只需要实现自定义的视图解析类，自定义视图解析类实现 <strong>Arsenals\Core\Views\View</strong> 接口即可。  </p>
 
@@ -642,7 +630,7 @@ class DemoView implements View{
 <p>配置常量VIEW_LAWE为 <code>Demo\DemoViews\DemoView</code>即可。</p>
 
 <h3>
-<a name="%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F" class="anchor" href="#%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F"><span class="octicon octicon-link"></span></a>日志系统</h3>
+<a id="日志系统" class="anchor" href="#%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F" aria-hidden="true"><span class="octicon octicon-link"></span></a>日志系统</h3>
 
 <p>开发过程中要进行日志记录，可以通过使用内置的 <code>\Arsenals\Core\Log</code> 类进行日志记录，默认情况下，系统日志功能是关闭的。<br>
 如果要启用日志功能，需要在项目入口文件中定义常量 <code>LOG</code> 为 <code>true</code> 。<br>
@@ -668,7 +656,7 @@ return array(
  
 
 <h4>
-<a name="%E8%87%AA%E5%AE%9A%E4%B9%89%E6%97%A5%E5%BF%97%E5%AE%9E%E7%8E%B0" class="anchor" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%97%A5%E5%BF%97%E5%AE%9E%E7%8E%B0"><span class="octicon octicon-link"></span></a>自定义日志实现</h4>
+<a id="自定义日志实现" class="anchor" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%97%A5%E5%BF%97%E5%AE%9E%E7%8E%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>自定义日志实现</h4>
 
 <p>要使用自定义的日志实现，需要实现 <code>Arsenals\Core\Logs</code> 接口， 该接口含有两个方法：   </p>
 
@@ -682,10 +670,10 @@ public function getLogs($level = null);
 <pre>define('LOG_IMPL', '你的日志实现类（包含命名空间）');</pre>
 
 <h3>
-<a name="%E6%9D%82%E9%A1%B9" class="anchor" href="#%E6%9D%82%E9%A1%B9"><span class="octicon octicon-link"></span></a>杂项</h3>
+<a id="杂项" class="anchor" href="#%E6%9D%82%E9%A1%B9" aria-hidden="true"><span class="octicon octicon-link"></span></a>杂项</h3>
 
-<h4>
-<a name="%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE%E9%AA%A8%E6%9E%B6" class="anchor" href="#%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE%E9%AA%A8%E6%9E%B6"><span class="octicon octicon-link"></span></a>快速构建项目骨架</h4>
+<h4 id="other-quickbuild">
+<a id="快速构建项目骨架" class="anchor" href="#%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE%E9%AA%A8%E6%9E%B6" aria-hidden="true"><span class="octicon octicon-link"></span></a>快速构建项目骨架</h4>
 
 <p>通过使用Tools下的快速构建工具可以快速的构建一个基本项目的骨架，构建命令如下：</p>
 
@@ -778,7 +766,7 @@ dbname test
 <p>上面的命令构建了一个项目，名称为CMS， 数据表前缀为demo_, 开发者为developer, 数据库名称为test, 其它配置项使用的是默认值。</p>
 
 <h4>
-<a name="%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86" class="anchor" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="octicon octicon-link"></span></a>异常处理/错误处理</h4>
+<a id="异常处理错误处理" class="anchor" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86" aria-hidden="true"><span class="octicon octicon-link"></span></a>异常处理/错误处理</h4>
 
 <p>可以在项目入口文件index.php中通过定义常量 <code>ERROR_HANDLER</code> 和 <code>EXCEPTION_HANDLER</code> 使用自定义的异常处理。<br>
 例如：</p>
@@ -797,7 +785,7 @@ function _exception_handler(\Exception $exception){
 </pre>
 
 <h4>
-<a name="%E5%86%85%E7%BD%AE%E5%BC%82%E5%B8%B8" class="anchor" href="#%E5%86%85%E7%BD%AE%E5%BC%82%E5%B8%B8"><span class="octicon octicon-link"></span></a>内置异常</h4>
+<a id="内置异常" class="anchor" href="#%E5%86%85%E7%BD%AE%E5%BC%82%E5%B8%B8" aria-hidden="true"><span class="octicon octicon-link"></span></a>内置异常</h4>
 
 <p>框架实现中包含了一些可能会常用到的异常，在开发过程中可以直接使用内置异常类。<br>
 系统内置异常统一在命名空间 <code>Arsenals\Core\Exceptions</code> 下，并且都继承了 <code>Arsenals\Core\Exceptions\ArsenalsException</code> 异常基类。   </p>
@@ -854,10 +842,10 @@ function _exception_handler(\Exception $exception){
 </table>
 
 <h3>
-<a name="%E6%89%A9%E5%B1%95%E7%B1%BB%E5%BA%93" class="anchor" href="#%E6%89%A9%E5%B1%95%E7%B1%BB%E5%BA%93"><span class="octicon octicon-link"></span></a>扩展类库</h3>
+<a id="扩展类库" class="anchor" href="#%E6%89%A9%E5%B1%95%E7%B1%BB%E5%BA%93" aria-hidden="true"><span class="octicon octicon-link"></span></a>扩展类库</h3>
 
 <h4>
-<a name="%E5%9B%BE%E5%BD%A2%E9%AA%8C%E8%AF%81%E7%A0%81" class="anchor" href="#%E5%9B%BE%E5%BD%A2%E9%AA%8C%E8%AF%81%E7%A0%81"><span class="octicon octicon-link"></span></a>图形验证码</h4>
+<a id="图形验证码" class="anchor" href="#%E5%9B%BE%E5%BD%A2%E9%AA%8C%E8%AF%81%E7%A0%81" aria-hidden="true"><span class="octicon octicon-link"></span></a>图形验证码</h4>
 
 <p>扩展库中包含简单验证码实现，调用方式非常简单：</p>
 
@@ -870,7 +858,7 @@ $captcha-&gt;createImage($code);
 <p>注意的是，<code>createImage</code> 方法可以接收两个参数，第一个参数为验证码字符串，第二个参数为可选，如果为NULL，则验证码直接输出到浏览器，或者可以为要保存验证码的文件名。</p>
 
 <h4>
-<a name="%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0" class="anchor" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"><span class="octicon octicon-link"></span></a>文件上传</h4>
+<a id="文件上传" class="anchor" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0" aria-hidden="true"><span class="octicon octicon-link"></span></a>文件上传</h4>
 
 <p>框架扩展库中集成了一个简易的文件上传类，该类位于 <code>\Arsenals\Libraries\Files\Uploader.php</code>。<br>
 使用该类可以简单的实现文件上传操作，使用示例如下：   </p>
@@ -883,7 +871,7 @@ $up_status = $uploader-&gt;upload(上传字段, 目标文件名);
 <p>需要注意的是，<code>upload</code> 方法再上传完成后的返回值up_status在上传成功时为文件的访问地址。</p>
 
 <h4>
-<a name="%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86" class="anchor" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86"><span class="octicon octicon-link"></span></a>图像处理</h4>
+<a id="图像处理" class="anchor" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86" aria-hidden="true"><span class="octicon octicon-link"></span></a>图像处理</h4>
 
 <p>框架扩展库中内置了一个简易的图像处理工具类<code>\Arsenals\Libraries\Image\ImageUtils</code>, 使用该工具类可以轻松的完成对图片的缩放，创建缩略图，添加水印等。
 要创建一个图片的缩略图，使用如下方法：</p>
@@ -919,7 +907,7 @@ ImageUtils::watermark(array(
 </ul>
 
 <h4>
-<a name="sae%E6%96%B0%E6%B5%AA%E4%BA%91%E8%AE%A1%E7%AE%97%E5%B9%B3%E5%8F%B0%E6%94%AF%E6%8C%81" class="anchor" href="#sae%E6%96%B0%E6%B5%AA%E4%BA%91%E8%AE%A1%E7%AE%97%E5%B9%B3%E5%8F%B0%E6%94%AF%E6%8C%81"><span class="octicon octicon-link"></span></a>SAE(新浪云计算平台)支持</h4>
+<a id="sae新浪云计算平台支持" class="anchor" href="#sae%E6%96%B0%E6%B5%AA%E4%BA%91%E8%AE%A1%E7%AE%97%E5%B9%B3%E5%8F%B0%E6%94%AF%E6%8C%81" aria-hidden="true"><span class="octicon octicon-link"></span></a>SAE(新浪云计算平台)支持</h4>
 
 <p>要启用SAE支持，可以通过钩子挂载系统启动前期，加入SAE支持库实现。<br>
 首先，需要在项目配置文件 <code>config.php</code> 中启用钩子， <code>hook_enabled</code> 为 <code>true</code> ；<br>
@@ -954,18 +942,16 @@ public function beforeSystem(){
 \Arsenals\Core\is_file
 \Arsenals\Core\move_uploaded_file
 </pre>
-      </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Arsenals maintained by <a href="https://github.com/mylxsw">mylxsw</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/mylxsw/arsenals">Arsenals</a> is maintained by <a href="https://github.com/mylxsw">mylxsw</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
 
-    
+    </section>
 
+  
   </body>
 </html>
+
