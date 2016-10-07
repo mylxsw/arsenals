@@ -1,4 +1,4 @@
-<?php \Admin\block_header('归档');?>
+<?php \Admin\block_header('归档'); ?>
 <div class="page-section">
 	<div class="toolbar transparent">
 	    <div class="toolbar-group">
@@ -24,16 +24,16 @@
 		<tbody>
 			<?php foreach ($articles['data'] as $art):?>
 				<tr>
-					<td><input type="checkbox" name="id" class="select_all_item" value="<?php echo $art['id'];?>" /></td>
-					<td><?php echo $art['id'];?></td>
-					<td><?php echo $art['title'];?></td>
-					<td><?php echo $art['model'];?></td>
-					<td><?php echo \Admin\category($art['id']);?></td>
-                    <td><?php echo $art['source'];?></td>
-					<td><?php echo date('Y-m-d H:i:s', $art['publish_date']);?></td>
+					<td><input type="checkbox" name="id" class="select_all_item" value="<?php echo $art['id']; ?>" /></td>
+					<td><?php echo $art['id']; ?></td>
+					<td><?php echo $art['title']; ?></td>
+					<td><?php echo $art['model']; ?></td>
+					<td><?php echo \Admin\category($art['id']); ?></td>
+                    <td><?php echo $art['source']; ?></td>
+					<td><?php echo date('Y-m-d H:i:s', $art['publish_date']); ?></td>
 				</tr>
-			<?php endforeach;?>
+			<?php endforeach; ?>
 		</tbody>
 	</table>
-	<?php echo \Admin\pagination('article/lists' . (isset($cat) && !is_null($cat) ? "?cat={$cat}" : ''), $articles['total'], $articles['page'], $p); ?>
+	<?php echo \Admin\pagination('article/lists'.(isset($cat) && !is_null($cat) ? "?cat={$cat}" : ''), $articles['total'], $articles['page'], $p); ?>
 </div>

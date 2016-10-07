@@ -1,4 +1,4 @@
-<form action="<?php echo \Admin\url('navigator/addPost');?>" method="post" id="navigatorAddPost">
+<form action="<?php echo \Admin\url('navigator/addPost'); ?>" method="post" id="navigatorAddPost">
 	<fieldset>
 		<label for="nav_name">导航名称</label>
 		<div class="input-control text size4" data-role="input-control">
@@ -14,9 +14,9 @@
 		<div class="input-control select size4">
 	     	<select name="pid" id="nav_pid">
 				<option value="0" selected>-- 没有上级 --</option>
-				<?php foreach($navs as $nav):?>
-					<option value="<?php echo $nav['id'];?>"><?php \Admin\escape($nav['pos']);?> - <?php \Admin\escape($nav['name']);?></option>
-				<?php endforeach;?>
+				<?php foreach ($navs as $nav):?>
+					<option value="<?php echo $nav['id']; ?>"><?php \Admin\escape($nav['pos']); ?> - <?php \Admin\escape($nav['name']); ?></option>
+				<?php endforeach; ?>
 			</select>
 		</div>
 		<label for="nav_sort">排序 (值越大越靠前, 0-999)</label>

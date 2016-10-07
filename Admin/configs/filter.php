@@ -1,2 +1,2 @@
 <?php
-return array('AuthFilter');
+return ['AuthFilter'];

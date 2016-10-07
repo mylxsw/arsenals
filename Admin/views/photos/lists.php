@@ -1,4 +1,4 @@
-<?php \Admin\block_header('图库');?>
+<?php \Admin\block_header('图库'); ?>
 <div class="page-section">
 	<div class="toolbar transparent">
 	    <div class="toolbar-group">
@@ -21,15 +21,15 @@
 		<tbody>
 			<?php foreach ($photos['data'] as $pic):?>
 				<tr>
-					<td><input type="checkbox" name="id" class="select_all_item" value="<?php echo $pic['id'];?>" /></td>
-					<td><?php echo $pic['id'];?></td>
-					<td><?php echo $pic['title'];?></td>
-					<td><?php echo $pic['c'];?></td>
-					<td><?php echo \Admin\tags_str($pic['tag']);?></td>
-					<td><?php echo date('Y-m-d H:i:s', $pic['create_time']);?></td>
+					<td><input type="checkbox" name="id" class="select_all_item" value="<?php echo $pic['id']; ?>" /></td>
+					<td><?php echo $pic['id']; ?></td>
+					<td><?php echo $pic['title']; ?></td>
+					<td><?php echo $pic['c']; ?></td>
+					<td><?php echo \Admin\tags_str($pic['tag']); ?></td>
+					<td><?php echo date('Y-m-d H:i:s', $pic['create_time']); ?></td>
 				</tr>
-			<?php endforeach;?>
+			<?php endforeach; ?>
 		</tbody>
 	</table>
-	<?php echo \Admin\pagination('photos/lists' . (isset($tag) && !is_null($tag) ? "?tag={$tag}" : ''), $photos['total'], $photos['page'], $p); ?>
+	<?php echo \Admin\pagination('photos/lists'.(isset($tag) && !is_null($tag) ? "?tag={$tag}" : ''), $photos['total'], $photos['page'], $p); ?>
 </div>

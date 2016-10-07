@@ -1,7 +1,8 @@
-<?php 
+<?php
+
 /**
- * 钩子配置
- * 
+ * 钩子配置.
+ *
  * '挂载点' => array(
  * 	array(
  * 		'class'=>'类',
@@ -9,7 +10,7 @@
  * 		'static'=> false
  * 	)
  * )
- */ 
-return array(
-	
-);
+ */
+return [
+
+];

@@ -1,60 +1,61 @@
 <?php
-return array(
-	
-	'rules'	=>	array(
-		// 普通用户组规则
-		'normal' => array(
-				'enabled' => TRUE,
-				'remark' => '普通用户组',
-				'order'	=> 1,
-				'inherit' => FALSE,
-				'access' => array(
-						'home.dashboard'
-				),
-				'deny' => array()
-		),
 
-		// 教师用户组规则
-		'teacher' => array(
-				'enabled' => TRUE,
-				'remark' => '教师用户组',
-				'order'	=> 1,
-				'inherit' => 'normal',
-				'access' => array(
-							
-				),
-				'deny' => array()
-		),
+return [
 
-		// 学生用户组规则
-		'student' => array(
-				'enabled' => TRUE,
-				'remark' => '学生用户组',
-				'order'	=> 1,
-				'inherit' => 'normal',
-				'access' => array(
-							
-				),
-				'deny' => array()
-		),
+    'rules'    => [
+        // 普通用户组规则
+        'normal' => [
+                'enabled'  => true,
+                'remark'   => '普通用户组',
+                'order'    => 1,
+                'inherit'  => false,
+                'access'   => [
+                        'home.dashboard',
+                ],
+                'deny' => [],
+        ],
 
-		// 超级管理员规则
-		'admin' => array(
-				'enabled' => TRUE,
-				'remark' => '管理员',
-				'order' => 1,
-				'inherit' => FALSE,
-				'access' => array('^[\w\.]*'),
-				'deny' => array()
-		),
+        // 教师用户组规则
+        'teacher' => [
+                'enabled'  => true,
+                'remark'   => '教师用户组',
+                'order'    => 1,
+                'inherit'  => 'normal',
+                'access'   => [
 
-		// 匿名用户规则（游客）
-		'anonymous' => array(
-				'access' => array(
-					'^account/login$',
+                ],
+                'deny' => [],
+        ],
+
+        // 学生用户组规则
+        'student' => [
+                'enabled'  => true,
+                'remark'   => '学生用户组',
+                'order'    => 1,
+                'inherit'  => 'normal',
+                'access'   => [
+
+                ],
+                'deny' => [],
+        ],
+
+        // 超级管理员规则
+        'admin' => [
+                'enabled' => true,
+                'remark'  => '管理员',
+                'order'   => 1,
+                'inherit' => false,
+                'access'  => ['^[\w\.]*'],
+                'deny'    => [],
+        ],
+
+        // 匿名用户规则（游客）
+        'anonymous' => [
+                'access' => [
+                    '^account/login$',
                     '^account/loginPost$',
-                    '^account/verifyCode$'
-				)
-		)
-	)
-);
+                    '^account/verifyCode$',
+                ],
+        ],
+    ],
+];

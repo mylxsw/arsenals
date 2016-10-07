@@ -13,10 +13,10 @@
 	<link rel="stylesheet" type="text/css" href="<?php \Admin\resource_path()?>css/custom.css">
 	<link rel="stylesheet" type="text/css" href="<?php \Admin\resource_path()?>css/style.css">
 
-	<base href="<?php echo SITE_URL;?>" target="_blank, _self, _parent, _top">
+	<base href="<?php echo SITE_URL; ?>" target="_blank, _self, _parent, _top">
 
 	<script type="text/javascript">
-		var basePath = "<?php echo SITE_URL;?>";
+		var basePath = "<?php echo SITE_URL; ?>";
 		window.UEDITOR_HOME_URL = basePath + "Public/ueditor/";
 	</script>
 </head>
@@ -75,14 +75,14 @@
 	<!-- <footer class="screen-size-helper">
 		<p class="title">Design By Aicode.cc</p>
 	</footer> -->
-	<script src="<?php \Admin\public_resource_path();?>jquery/jquery.min.js"></script>
-	<script src="<?php \Admin\public_resource_path();?>jquery/jquery.cookie.js"></script>
-	<script src="<?php \Admin\public_resource_path();?>jquery/jquery.widget.min.js"></script>
-	<script src="<?php \Admin\public_resource_path();?>metro-ui-css/metro.min.js"></script>
-	<script src="<?php \Admin\public_resource_path();?>jquery.form.js"></script>	
+	<script src="<?php \Admin\public_resource_path(); ?>jquery/jquery.min.js"></script>
+	<script src="<?php \Admin\public_resource_path(); ?>jquery/jquery.cookie.js"></script>
+	<script src="<?php \Admin\public_resource_path(); ?>jquery/jquery.widget.min.js"></script>
+	<script src="<?php \Admin\public_resource_path(); ?>metro-ui-css/metro.min.js"></script>
+	<script src="<?php \Admin\public_resource_path(); ?>jquery.form.js"></script>	
 
-	<script src="<?php \Admin\public_resource_path();?>underscore-1.4.4.js"></script>
-    <script src="<?php \Admin\public_resource_path();?>storage.js"></script>
+	<script src="<?php \Admin\public_resource_path(); ?>underscore-1.4.4.js"></script>
+    <script src="<?php \Admin\public_resource_path(); ?>storage.js"></script>
 	<script src="<?php \Admin\resource_path()?>js/common.js"></script>
 	<script src="<?php \Admin\resource_path()?>js/page.js"></script>
 	<script src="<?php \Admin\resource_path()?>js/init.js"></script>

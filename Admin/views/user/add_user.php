@@ -1,4 +1,4 @@
-<form action="<?php echo \Admin\url('user/addUserPost');?>" method="post" id="userAddPost" autocomplete="off">
+<form action="<?php echo \Admin\url('user/addUserPost'); ?>" method="post" id="userAddPost" autocomplete="off">
 	<fieldset>
 		<label for="username">用户名</label>
 		<div class="input-control text size4" data-role="input-control">

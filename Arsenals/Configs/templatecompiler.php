@@ -1,5 +1,6 @@
 <?php
-return array(
-	'namespace'	=> 'c',
-	'rule_files'=> array()
-);
+
+return [
+    'namespace'    => 'c',
+    'rule_files'   => [],
+];

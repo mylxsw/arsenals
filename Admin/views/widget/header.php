@@ -24,7 +24,7 @@
 				</a>
 				<ul class="dropdown-menu place-right" data-role="dropdown">
 					<li>
-						<a href="<?php echo \Admin\url('account/logout');?>" class="exit-sys">
+						<a href="<?php echo \Admin\url('account/logout'); ?>" class="exit-sys">
 							<span class="icon-exit">退出</span>
 						</a>
 					</li>

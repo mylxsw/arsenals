@@ -1,4 +1,4 @@
-<?php \Admin\block_header('所有页面');?>
+<?php \Admin\block_header('所有页面'); ?>
 <div class="page-section">
 	<div class="toolbar transparent">
 	    <div class="toolbar-group">
@@ -19,12 +19,12 @@
 		<tbody>
 			<?php foreach ($pages as $p):?>
 				<tr>
-					<td><input type="checkbox" name="id" class="select_all_item" value="<?php echo $p['id'];?>" /></td>
-					<td><?php echo $p['id'];?></td>
-					<td><?php echo $p['title'];?></td>
-					<td><?php echo $p['isvalid'] == 1 ? '是' : '否';?></td>
+					<td><input type="checkbox" name="id" class="select_all_item" value="<?php echo $p['id']; ?>" /></td>
+					<td><?php echo $p['id']; ?></td>
+					<td><?php echo $p['title']; ?></td>
+					<td><?php echo $p['isvalid'] == 1 ? '是' : '否'; ?></td>
 				</tr>
-			<?php endforeach;?>
+			<?php endforeach; ?>
 		</tbody>
 	</table>
 </div>

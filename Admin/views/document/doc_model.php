@@ -19,12 +19,12 @@
 		<tbody>
 			<?php foreach ($docs as $se):?>
 				<tr>
-					<td><input type="checkbox" name="id" class="select_all_item" value="<?php echo $se['id'];?>" /></td>
-					<td><?php echo $se['model_name'];?></td>
-					<td><?php echo $se['intro'];?></td>
-					<td><?php echo $se['isvalid'] == 1 ? '<span style="color: green">是</span>' : '<span style="color: red">否</span>';?></td>
+					<td><input type="checkbox" name="id" class="select_all_item" value="<?php echo $se['id']; ?>" /></td>
+					<td><?php echo $se['model_name']; ?></td>
+					<td><?php echo $se['intro']; ?></td>
+					<td><?php echo $se['isvalid'] == 1 ? '<span style="color: green">是</span>' : '<span style="color: red">否</span>'; ?></td>
 				</tr>
-			<?php endforeach;?>
+			<?php endforeach; ?>
 		</tbody>
 	</table>
 </div>

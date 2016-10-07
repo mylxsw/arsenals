@@ -1,4 +1,5 @@
 <?php
-return array(
-	'log_levels' => array('info', 'error', 'warning', 'debug')
-);
+
+return [
+    'log_levels' => ['info', 'error', 'warning', 'debug'],
+];

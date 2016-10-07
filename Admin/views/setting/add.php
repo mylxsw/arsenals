@@ -1,4 +1,4 @@
-<form action="<?php echo \Admin\url('setting/addPost');?>" method="post" id="settingAddPost">
+<form action="<?php echo \Admin\url('setting/addPost'); ?>" method="post" id="settingAddPost">
 	<fieldset>
 		<label for="setting_key">配置名称</label>
 		<div class="input-control text size4" data-role="input-control">

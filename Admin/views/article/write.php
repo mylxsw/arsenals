@@ -1,5 +1,5 @@
 <blockquote class="block-title">写文章</blockquote>
-<form action="<?php echo \Admin\url('article/writePost');?>" method="post" success="form_after" id="o-form-write-article" enctype="multipart/form-data">
+<form action="<?php echo \Admin\url('article/writePost'); ?>" method="post" success="form_after" id="o-form-write-article" enctype="multipart/form-data">
 	<input type="hidden" name="id" value="" />
 	<input type="hidden" name="act" value="" />
 	<fieldset>
@@ -11,15 +11,15 @@
 		<label for="category">分类 (Ctrl多选)</label>
 		<div class="input-control select size4">
 	     	<select name="category_id[]" id="category" multiple>
-				<?php foreach($categorys as $k=>$v): ?>
-					<option value="<?php echo $v['id'];?>"><?php echo $v['name']; ?></option>
-				<?php endforeach;?>
+				<?php foreach ($categorys as $k => $v): ?>
+					<option value="<?php echo $v['id']; ?>"><?php echo $v['name']; ?></option>
+				<?php endforeach; ?>
 			</select>
 		</div>
         <label for="sources">来源</label>
 		<div class="input-control text size3">
             <input type="text" name="sources" list="sources_list" />
-            <?php echo \Admin\article_source_list("sources_list");?>
+            <?php echo \Admin\article_source_list('sources_list'); ?>
 		</div>
 		<label for="tag">标签</label>
 		<div class="input-control text size4">
@@ -28,10 +28,10 @@
 		</div>
 		<div class="o-hide" id="selectLabels">
 			<?php foreach ($tags as $k => $v): ?>
-				<a href="<?php echo $v['name'];?>" class="o-add-label direct" data-target="#tag">
+				<a href="<?php echo $v['name']; ?>" class="o-add-label direct" data-target="#tag">
 					<?php echo $v['name']; ?>
 				</a>
-			<?php endforeach;?>
+			<?php endforeach; ?>
 		</div>
 		<label for="blog_intro">内容概要 </label>
 		<div class="input-control textarea size8">
@@ -52,8 +52,8 @@
       	<button type="button" class="primary" data-event="blog.submit_to_blog" id="submit_to_blog">提交</button>
 	</fieldset>
 </form>
-<script src="<?php \Admin\public_resource_path();?>ueditor/ueditor.config.js"></script>
-<script src="<?php \Admin\public_resource_path();?>ueditor/ueditor.all.min.js"></script>
+<script src="<?php \Admin\public_resource_path(); ?>ueditor/ueditor.config.js"></script>
+<script src="<?php \Admin\public_resource_path(); ?>ueditor/ueditor.all.min.js"></script>
 <script type="text/javascript">
 	
     // 表单提价之后的事件

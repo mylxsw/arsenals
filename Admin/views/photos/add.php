@@ -1,5 +1,5 @@
-<?php \Admin\block_header('添加图片库');?>
-<form action="<?php echo \Admin\url('photos/addPost');?>" method="post" id="o-form-add-photo">
+<?php \Admin\block_header('添加图片库'); ?>
+<form action="<?php echo \Admin\url('photos/addPost'); ?>" method="post" id="o-form-add-photo">
     <fieldset>
         <label for="photos-title">标题</label>
         <div class="input-control text size4">
@@ -12,10 +12,10 @@
         </div>
         <div id="selectLabels">
             <?php foreach ($tags as $k => $v): ?>
-                <a href="<?php echo $v;?>" class="o-add-label direct" data-target="#photos-tags">
+                <a href="<?php echo $v; ?>" class="o-add-label direct" data-target="#photos-tags">
                     <?php echo $v; ?>
                 </a>
-            <?php endforeach;?>
+            <?php endforeach; ?>
         </div>
         <label for="photos-intro">概要 </label>
         <div class="input-control textarea size8">
@@ -44,7 +44,7 @@
 </script>
 <script>
     $(function(){
-        o_fn.photo.init('#image-upload-template', '#file-upload', '<?php echo \Admin\url('photos/upload');?>');
+        o_fn.photo.init('#image-upload-template', '#file-upload', '<?php echo \Admin\url('photos/upload'); ?>');
     });
 
 </script>

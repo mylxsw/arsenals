@@ -1,6 +1,6 @@
 <?php
 /**
- *  认证授权配置
+ *  认证授权配置.
  */
 // 授权管理规则
 // '角色名'=> array(
@@ -13,7 +13,7 @@
 // 		'deny' => array(		不允许的权限列表
 // 			)
 // 		),
-return array(
-	'enabled'			=>	TRUE, // 是否开启授权管理
-	'rules'				=>	array()
-);
+return [
+    'enabled'              => true, // 是否开启授权管理
+    'rules'                => [],
+];

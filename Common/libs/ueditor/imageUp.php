@@ -1,58 +1,56 @@
 <?php
-	
+
 
     /**
      * Created by JetBrains PhpStorm.
      * User: taoqili
      * Date: 12-7-18
-     * Time: 上午10:42
+     * Time: 上午10:42.
      */
-    header("Content-Type: text/html; charset=utf-8");
+    header('Content-Type: text/html; charset=utf-8');
     error_reporting(E_ERROR | E_WARNING);
-    date_default_timezone_set("Asia/chongqing");
-    include "Uploader.class.php";
+    date_default_timezone_set('Asia/chongqing');
+    include 'Uploader.class.php';
     //上传图片框中的描述表单名称，
     $title = htmlspecialchars($_POST['pictitle'], ENT_QUOTES);
     $path = htmlspecialchars($_POST['dir'], ENT_QUOTES);
-    $globalConfig = include( "config.php" );
-    $imgSavePathConfig = $globalConfig[ 'imageSavePath' ];
+    $globalConfig = include 'config.php';
+    $imgSavePathConfig = $globalConfig['imageSavePath'];
 
     //获取存储目录
-    if ( isset( $_GET[ 'fetch' ] ) ) {
+    if (isset($_GET['fetch'])) {
+        header('Content-Type: text/javascript');
+        echo 'updateSavePath('.json_encode($imgSavePathConfig).');';
 
-        header( 'Content-Type: text/javascript' );
-        echo 'updateSavePath('. json_encode($imgSavePathConfig) .');';
         return;
-
     }
 
     //上传配置
-    $config = array(
-        "savePath" => $imgSavePathConfig,
-        "maxSize" => 1000, //单位KB
-        "allowFiles" => array(".gif", ".png", ".jpg", ".jpeg", ".bmp"),
-        "fileNameFormat" => $_POST['fileNameFormat']
-    );
+    $config = [
+        'savePath'       => $imgSavePathConfig,
+        'maxSize'        => 1000, //单位KB
+        'allowFiles'     => ['.gif', '.png', '.jpg', '.jpeg', '.bmp'],
+        'fileNameFormat' => $_POST['fileNameFormat'],
+    ];
 
-    if ( empty( $path ) ) {
-
-        $path = $config[ 'savePath' ][ 0 ];
-
+    if (empty($path)) {
+        $path = $config['savePath'][0];
     }
 
     //上传目录验证
-    if ( !in_array( $path, $config[ 'savePath' ] ) ) {
+    if (!in_array($path, $config['savePath'])) {
         //非法上传目录
         echo '{"state":"\u975e\u6cd5\u4e0a\u4f20\u76ee\u5f55"}';
+
         return;
     }
 
-    $config[ 'savePath' ] = $path . '/';
+    $config['savePath'] = $path.'/';
 
     //生成上传实例对象并完成上传
-    $up = new Uploader("upfile", $config);
+    $up = new Uploader('upfile', $config);
 
-    /**
+    /*
      * 得到上传文件所对应的各个参数,数组结构
      * array(
      *     "originalName" => "",   //原始文件名
@@ -65,7 +63,7 @@
      */
     $info = $up->getFileInfo();
 
-    /**
+    /*
      * 向浏览器返回数据json数据
      * {
      *   'url'      :'a.jpg',   //保存后的文件路径
@@ -74,5 +72,4 @@
      *   'state'    :'SUCCESS'  //上传状态，成功时返回SUCCESS,其他任何值将原样返回至图片上传框中
      * }
      */
-    echo "{'url':'" . $info["url"] . "','title':'" . $title . "','original':'" . $info["originalName"] . "','state':'" . $info["state"] . "'}";
-
+    echo "{'url':'".$info['url']."','title':'".$title."','original':'".$info['originalName']."','state':'".$info['state']."'}";

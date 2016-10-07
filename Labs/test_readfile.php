@@ -10,29 +10,34 @@
 // 	}
 // }
 
-class A{
-	private $o = "what";
-	public function __construct(){
+class A
+{
+    private $o = 'what';
 
-	}
-	public function hello($name){
-		$this->trans(function($name){
-			echo $name . "-" . $this->o;
-			throw new \Exception("sorry!");
-		}, $name);
-	}
+    public function __construct()
+    {
+    }
 
-	public function trans($callback, $args){
-		try{
-			$args = func_get_args();
-			array_shift($args);
-			call_user_func_array($callback, $args);
-		}catch(Exception $e){
-			echo $e->getMessage();
-		}
-	}
+    public function hello($name)
+    {
+        $this->trans(function ($name) {
+            echo $name.'-'.$this->o;
+            throw new \Exception('sorry!');
+        }, $name);
+    }
+
+    public function trans($callback, $args)
+    {
+        try {
+            $args = func_get_args();
+            array_shift($args);
+            call_user_func_array($callback, $args);
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+    }
 }
 
 $className = 'A';
-$a = new $className(array());
-$a->hello("jack");
+$a = new $className([]);
+$a->hello('jack');

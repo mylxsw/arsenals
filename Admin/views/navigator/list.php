@@ -21,27 +21,27 @@
 		<tbody>
 			<?php foreach ($navs as $nav):?>
 				<tr>
-					<td><input type="checkbox" name="id" class="select_all_item" value="<?php echo $nav['id'];?>" /></td>
-					<td><?php echo $nav['name'];?></td>
-					<td><?php echo $nav['url'];?></td>
-					<td><?php echo $nav['sort'];?></td>
-					<td style='font-weight:bold;'><?php echo $nav['pos'];?></td>
-					<td><?php echo $nav['isvalid'] == 1 ? '<span style="color: green">是</span>' : '<span style="color: red">否</span>';?></td>
+					<td><input type="checkbox" name="id" class="select_all_item" value="<?php echo $nav['id']; ?>" /></td>
+					<td><?php echo $nav['name']; ?></td>
+					<td><?php echo $nav['url']; ?></td>
+					<td><?php echo $nav['sort']; ?></td>
+					<td style='font-weight:bold;'><?php echo $nav['pos']; ?></td>
+					<td><?php echo $nav['isvalid'] == 1 ? '<span style="color: green">是</span>' : '<span style="color: red">否</span>'; ?></td>
 				</tr>
-				<?php  $sub_nav = $navModel->listByCondition(array('pid'=> $nav['id'], 'pos'=>$nav['pos'])); ?>
+				<?php  $sub_nav = $navModel->listByCondition(['pid' => $nav['id'], 'pos' => $nav['pos']]); ?>
 				<?php if (!is_null($sub_nav) && count($sub_nav) > 0):?>
 					<?php foreach ($sub_nav as $sn):?>
 						<tr>
-							<td><input type="checkbox" name="id" class="select_all_item" value="<?php echo $sn['id'];?>" /></td>
-							<td style="color:#999"><?php echo '&nbsp;&nbsp;&nbsp;&nbsp;->' , $sn['name'];?></td>
-							<td><?php echo $sn['url'];?></td>
-							<td><?php echo $sn['sort'];?></td>
-							<td style='font-weight:bold;'><?php echo $sn['pos'];?></td>
-							<td><?php echo $sn['isvalid'] == 1 ? '<span style="color: green">是</span>' : '<span style="color: red">否</span>';?></td>
+							<td><input type="checkbox" name="id" class="select_all_item" value="<?php echo $sn['id']; ?>" /></td>
+							<td style="color:#999"><?php echo '&nbsp;&nbsp;&nbsp;&nbsp;->' , $sn['name']; ?></td>
+							<td><?php echo $sn['url']; ?></td>
+							<td><?php echo $sn['sort']; ?></td>
+							<td style='font-weight:bold;'><?php echo $sn['pos']; ?></td>
+							<td><?php echo $sn['isvalid'] == 1 ? '<span style="color: green">是</span>' : '<span style="color: red">否</span>'; ?></td>
 						</tr>
-					<?php endforeach;?>
-				<?php endif;?>
-			<?php endforeach;?>
+					<?php endforeach; ?>
+				<?php endif; ?>
+			<?php endforeach; ?>
 		</tbody>
 	</table>
 </div>

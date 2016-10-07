@@ -1,4 +1,5 @@
 <?php
-return array(
-	'log_enabled' => false
-	);
+
+return [
+    'log_enabled' => false,
+    ];

@@ -19,12 +19,12 @@
 		<tbody>
 			<?php foreach ($categories as $cat):?>
 				<tr>
-					<td><input type="checkbox" name="id" class="select_all_item" value="<?php echo $cat['id'];?>" /></td>
-					<td><?php echo $cat['id'];?></td>
-					<td><?php echo "<a href='" , \Admin\url("article/lists?cat={$cat['id']}") ,"'>{$cat['name']}</a>";?></td>
-					<td><?php echo $cat['isvalid'] == 1 ? '是' : '否';?></td>
+					<td><input type="checkbox" name="id" class="select_all_item" value="<?php echo $cat['id']; ?>" /></td>
+					<td><?php echo $cat['id']; ?></td>
+					<td><?php echo "<a href='" , \Admin\url("article/lists?cat={$cat['id']}") ,"'>{$cat['name']}</a>"; ?></td>
+					<td><?php echo $cat['isvalid'] == 1 ? '是' : '否'; ?></td>
 				</tr>
-			<?php endforeach;?>
+			<?php endforeach; ?>
 		</tbody>
 	</table>
 </div>

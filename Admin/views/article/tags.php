@@ -19,12 +19,12 @@
 		<tbody>
 			<?php foreach ($tags as $tag):?>
 				<tr>
-					<td><input type="checkbox" name="id" class="select_all_item" value="<?php echo $tag['id'];?>" /></td>
-					<td><?php echo $tag['id'];?></td>
-					<td><?php echo $tag['name'];?></td>
-					<td><?php echo $tag['isvalid'] == 1 ? '是' : '否';?></td>
+					<td><input type="checkbox" name="id" class="select_all_item" value="<?php echo $tag['id']; ?>" /></td>
+					<td><?php echo $tag['id']; ?></td>
+					<td><?php echo $tag['name']; ?></td>
+					<td><?php echo $tag['isvalid'] == 1 ? '是' : '否'; ?></td>
 				</tr>
-			<?php endforeach;?>
+			<?php endforeach; ?>
 		</tbody>
 	</table>
 </div>
