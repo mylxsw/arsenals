@@ -17,7 +17,7 @@
 
 	<script src="<?php \Admin\public_resource_path()?>less-1.4.2.min.js"></script>
 	<script type="text/javascript">
-		var basePath = "<?php echo SITE_URL;?>";
+		var basePath = "<?php echo SITE_URL; ?>";
 		window.UEDITOR_HOME_URL = basePath + "Public/ueditor/";
 	</script>
 </head>
@@ -26,7 +26,7 @@
 		<div id="login-area" class="ribbed-amber">
 			<div class="box">
 				<h1>AiCode<sup>dev</sup></h1>
-				<form id="login-form" action="<?php echo \Admin\url('account/loginPost');?>" method="post">
+				<form id="login-form" action="<?php echo \Admin\url('account/loginPost'); ?>" method="post">
 					<fieldset>
 						<label for="account">账号:</label>
 						<div class="input-control text size4">
@@ -43,7 +43,7 @@
                             <input type="text" id="verify_code" required name="verify_code" placeholder="验证码" />
                             <button class="btn-clear" tabindex="-1" type="button"></button>
                         </div>
-                        <img id="verify_code_img" style="cursor: pointer" title="点击刷新" src="<?php echo \Admin\url('account/verifyCode');?>" />
+                        <img id="verify_code_img" style="cursor: pointer" title="点击刷新" src="<?php echo \Admin\url('account/verifyCode'); ?>" />
 						<div><button class="primary" id="login-btn" type="submit"><i class="icon-rocket on-left"></i>登陆</button></div>
 					</fieldset>
 				</form>
@@ -64,7 +64,7 @@
 	<script>
 		$(function(){
             $("#verify_code_img").click(function(){
-            	$(this).attr("src", "<?php echo \Admin\url('account/verifyCode');?>?r=" + Math.random());
+            	$(this).attr("src", "<?php echo \Admin\url('account/verifyCode'); ?>?r=" + Math.random());
             });
             
 			var login_form = $("#login-form");
@@ -84,7 +84,7 @@
 					f.tip(data.info, data.status == 1 ? 'success' : 'error');
 					if(data.status == 1){
 						window.setTimeout(function(){
-							window.location.href='<?php echo \Admin\url('');?>';
+							window.location.href='<?php echo \Admin\url(''); ?>';
 						}, 1000);
 					}
 				},

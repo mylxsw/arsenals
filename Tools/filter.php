@@ -1,7 +1,8 @@
 <?php
+
 require 'BuildTools.php';
 
-$usage = <<<USAGE
+$usage = <<<'USAGE'
  * Usage:
  * 		php filter.php -n PROJECT_NAME 
  * 
@@ -12,26 +13,26 @@ USAGE;
 
 BuildTools::isCLI() || exit($usage);
 
-$opts = array(
-	'filter_name'		=> '',
-	'author'			=> get_current_user()
-);
+$opts = [
+    'filter_name'        => '',
+    'author'             => get_current_user(),
+];
 
-try{
-	$tools = new BuildTools($opts);
-	$tools->readConfig();
-	if ($tools->getParam('filter_name') == ''){
-		exit($usage);
-	}
-	$model_file = $tools->getParam('filter') . DIRECTORY_SEPARATOR . $tools->getParam('filter_name') . '.php';
-	
-	$tools->addReplaceVar('namespace', BuildTools::convPath2Namespace($tools->getProjectName() . DIRECTORY_SEPARATOR . $tools->getParam('filter')));
-	
-	$files = array(
-		$model_file			=> 'templates/filter.tpl'
-	);
-	
-	$tools->createFiles($files);
-} catch (Exception $e){
-	BuildTools::output($usage);
+try {
+    $tools = new BuildTools($opts);
+    $tools->readConfig();
+    if ($tools->getParam('filter_name') == '') {
+        exit($usage);
+    }
+    $model_file = $tools->getParam('filter').DIRECTORY_SEPARATOR.$tools->getParam('filter_name').'.php';
+
+    $tools->addReplaceVar('namespace', BuildTools::convPath2Namespace($tools->getProjectName().DIRECTORY_SEPARATOR.$tools->getParam('filter')));
+
+    $files = [
+        $model_file            => 'templates/filter.tpl',
+    ];
+
+    $tools->createFiles($files);
+} catch (Exception $e) {
+    BuildTools::output($usage);
 }

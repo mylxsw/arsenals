@@ -1,4 +1,4 @@
-<form action="<?php echo \Admin\url('article/categoryAddPost');?>" method="post" id="categoryAddPost">
+<form action="<?php echo \Admin\url('article/categoryAddPost'); ?>" method="post" id="categoryAddPost">
 	<fieldset>
 		<label for="cate_name">分类名称</label>
 		<div class="input-control text size4" data-role="input-control">

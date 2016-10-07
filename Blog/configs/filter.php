@@ -1,9 +1,9 @@
 <?php
 /**
- * 过滤器配置
+ * 过滤器配置.
  *
  * @author 管宜尧
  */
-return array(
-    'BlogFilter', 'CacheFilter'
-);
+return [
+    'BlogFilter', 'CacheFilter',
+];

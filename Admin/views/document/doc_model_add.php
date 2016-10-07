@@ -1,6 +1,6 @@
-<?php \Admin\block_header('新增模型');?>
+<?php \Admin\block_header('新增模型'); ?>
 <div class="page-section">
-	<form action="<?php echo \Admin\url('document/doc_model_add_post');?>" method="post" id="docModelAddPost">
+	<form action="<?php echo \Admin\url('document/doc_model_add_post'); ?>" method="post" id="docModelAddPost">
 		<fieldset>
 			<label for="model_name">名称</label>
 			<div class="input-control text size4" data-role="input-control">

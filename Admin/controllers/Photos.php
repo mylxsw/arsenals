@@ -1,71 +1,78 @@
 <?php
+
 namespace Admin\controllers;
 
-use Arsenals\Core\Session;
 use Admin\utils\Ajax;
 use Arsenals\Libraries\Images\ImageUtils;
 
-
 /**
- * 相册控制器
- * 
+ * 相册控制器.
+ *
  * @author
- * 
- */ 
-class Photos extends CoreController{
-	/**
-	 * 图片列表
-	 */ 
-	public function lists(){
-		$tag = $this->get('tag', null, 'tag');
+ */
+class Photos extends CoreController
+{
+    /**
+     * 图片列表.
+     */
+    public function lists()
+    {
+        $tag = $this->get('tag', null, 'tag');
         $p = $this->get('p', 1, 'int');
-        
+
         $photosModel = $this->model('Photos');
         $this->assign('photos', $photosModel->getAllPhotos($p, $tag));
-    	
+
         $this->assign('p', $p);
         $this->assign('tag', $tag);
 
         return $this->view('photos/lists');
-	}
+    }
+
     /**
-     * 添加图片
-     */ 
-    public function add(){
+     * 添加图片.
+     */
+    public function add()
+    {
         $this->_init_tags();
+
         return $this->view('photos/add');
     }
 
     /**
-     * 初始化图片标签列表
+     * 初始化图片标签列表.
      */
-    private function _init_tags(){
+    private function _init_tags()
+    {
         $tags = $this->model('Setting')->getSetting('photo_tags', 'dlroom');
-        if(is_null($tags)){
-            $this->assign('tags', array());
-            return ;
+        if (is_null($tags)) {
+            $this->assign('tags', []);
+
+            return;
         }
         $result = explode(',', str_replace(' ', '', $tags['setting_value']));
         $this->assign('tags', $result);
     }
+
     /**
-     * 添加图片提交
+     * 添加图片提交.
+     *
      * @return string
      */
-    public function addPost(){
-
-        $data = array();
+    public function addPost()
+    {
+        $data = [];
         $data['title'] = $this->post('title', '', 'required|len:1,200');
         $data['tags'] = $this->post('tags', '', 'len:0,255');
         $data['intro'] = $this->post('intro', '', 'len:0,1000');
 
-        $data['images'] = array();
+        $data['images'] = [];
         $images = $this->post('image');
         $intros = $this->post('image_intro');
 
-        if(is_array($images) && count($images) > 0){
-            foreach($images as $k=>$v){
-                $data['images'][] = array($images[$k], $intros[$k]);
+        if (is_array($images) && count($images) > 0) {
+            foreach ($images as $k => $v) {
+                $data['images'][] = [$images[$k], $intros[$k]];
             }
         }
 
@@ -76,9 +83,10 @@ class Photos extends CoreController{
     }
 
     /**
-     * 编辑照片库
+     * 编辑照片库.
      */
-    public function edit(){
+    public function edit()
+    {
         $id = $this->get('id', null, 'required|int');
 
         $photoModel = $this->model('Photos');
@@ -90,21 +98,22 @@ class Photos extends CoreController{
     }
 
     /**
-     * 编辑照片库POST
+     * 编辑照片库POST.
      */
-    public function editPost(){
-        $data = array();
+    public function editPost()
+    {
+        $data = [];
         $data['title'] = $this->post('title', '', 'required|len:1,200');
         $data['tags'] = $this->post('tags', '', 'len:0,255');
         $data['intro'] = $this->post('intro', '', 'len:0,1000');
 
-        $data['images'] = array();
+        $data['images'] = [];
         $images = $this->post('image');
         $intros = $this->post('image_intro');
 
-        if(is_array($images) && count($images) > 0){
-            foreach($images as $k=>$v){
-                $data['images'][] = array($images[$k], $intros[$k]);
+        if (is_array($images) && count($images) > 0) {
+            foreach ($images as $k => $v) {
+                $data['images'][] = [$images[$k], $intros[$k]];
             }
         }
 
@@ -115,9 +124,10 @@ class Photos extends CoreController{
     }
 
     /**
-     * 删除照片库
+     * 删除照片库.
      */
-    public function del(){
+    public function del()
+    {
         $ids = str_replace(' ', '', $this->post('ids', null, 'required|len:1,100'));
         $ids_array = preg_split('/,/', $ids);
 
@@ -128,26 +138,27 @@ class Photos extends CoreController{
     }
 
     /**
-     * 上传图片
+     * 上传图片.
      */
-    public function upload(){
+    public function upload()
+    {
         // 生成文件签名，检查文件是否已经上传过了
         $file_sig = md5_file($_FILES['upload_file']['tmp_name']);
         $uploaded_file = $this->model('Upload')->getFileBySig($file_sig);
         $up_status = '';
-        if(!is_null($uploaded_file) && is_array($uploaded_file)){
+        if (!is_null($uploaded_file) && is_array($uploaded_file)) {
             $up_status = $uploaded_file['url'];
-        }else{
+        } else {
             // 生成保存的文件名
-            $file_name = md5($_FILES['upload_file']['name'] . time()) . '.'
-                . substr($_FILES['upload_file']['name'], strrpos($_FILES['upload_file']['name'], '.') + 1);
+            $file_name = md5($_FILES['upload_file']['name'].time()).'.'
+                .substr($_FILES['upload_file']['name'], strrpos($_FILES['upload_file']['name'], '.') + 1);
             // 创建原始图片存储目录
             \Arsenals\Core\create_dir('Resources/uploads/photos/');
-            $dest_file = 'photos/' . $file_name;
+            $dest_file = 'photos/'.$file_name;
 
             // 上传原始图片
             $uploader = $this->load('\Arsenals\Libraries\Files\Uploader');
-            $up_status = $uploader->upload('upload_file', IS_SAE ? $dest_file : ('Resources/uploads/' . $dest_file));
+            $up_status = $uploader->upload('upload_file', IS_SAE ? $dest_file : ('Resources/uploads/'.$dest_file));
 
             // 创建图片缩略图（小图）
             \Arsenals\Core\create_dir('Resources/uploads/photos/thumb_small');
@@ -157,7 +168,7 @@ class Photos extends CoreController{
             $content = ob_get_contents();
             ob_end_clean();
 
-            $small_filename = IS_SAE ? 'photos/thumb_small/' . $file_name :('Resources/uploads/photos/thumb_small/' . $file_name);
+            $small_filename = IS_SAE ? 'photos/thumb_small/'.$file_name : ('Resources/uploads/photos/thumb_small/'.$file_name);
             \Arsenals\Core\write_file($small_filename, $content);
 
             // 创建图片缩略图（大图）
@@ -168,16 +179,15 @@ class Photos extends CoreController{
             $content = ob_get_contents();
             ob_end_clean();
 
-            $large_filename = IS_SAE ? 'photos/thumb_large/' . $file_name : ('Resources/uploads/photos/thumb_large/' . $file_name);
+            $large_filename = IS_SAE ? 'photos/thumb_large/'.$file_name : ('Resources/uploads/photos/thumb_large/'.$file_name);
             \Arsenals\Core\write_file($large_filename, $content);
-
         }
         $source_filename = $_FILES['upload_file']['name'];
         $source_filename = substr($source_filename, 0, strrpos($source_filename, '.'));
 
 
         // 存储图片元信息
-        $meta = array();
+        $meta = [];
         $meta['file_name'] = $source_filename;
         $meta['url'] = $up_status;
         $meta['upload_time'] = time();
@@ -187,20 +197,23 @@ class Photos extends CoreController{
         list($meta['width'], $meta['height']) = ImageUtils::getImageInfo($up_status);
         $this->model('Upload')->addImage($meta);
 
-        return Ajax::success($up_status, array('filename'=> $source_filename));
+        return Ajax::success($up_status, ['filename' => $source_filename]);
     }
 
     /**
-     * 图片管理
+     * 图片管理.
+     *
      * @return \Arsenals\Core\View\ViewAndModel
      */
-    public function manager(){
+    public function manager()
+    {
         $p = $this->get('p', 1, 'int');
 
         $photos = $this->model('Upload')->getAllImages($p);
         $this->assign('photos', $photos);
 
         $this->assign('p', $p);
+
         return $this->view('photos/manager');
     }
 }

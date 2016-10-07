@@ -1,4 +1,5 @@
 <?php
-return array(
-	'enable_remark' => true
-);
+
+return [
+    'enable_remark' => true,
+];

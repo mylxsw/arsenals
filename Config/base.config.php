@@ -1,6 +1,7 @@
 <?php
-return array(
 
-	'site_url'		=>  'http://localhost/Arsenals/',
+return [
 
-);
+    'site_url'        => 'http://localhost/Arsenals/',
+
+];

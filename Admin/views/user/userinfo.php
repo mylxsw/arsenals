@@ -1,9 +1,9 @@
-<?php \Admin\block_header('个人信息');?>
-<form action="<?php echo \Admin\url('user/changePassword');?>" method="post" id="o-form-change-pwd" >
+<?php \Admin\block_header('个人信息'); ?>
+<form action="<?php echo \Admin\url('user/changePassword'); ?>" method="post" id="o-form-change-pwd" >
 	<fieldset>
 		<label for="username">用户名</label>
 		<div class="input-control text size4" data-role="input-control">
-	      <input type="text" name="username" id="username" placeholder="用户名" disabled="disabled" value="<?php echo $user['username'];?>" />
+	      <input type="text" name="username" id="username" placeholder="用户名" disabled="disabled" value="<?php echo $user['username']; ?>" />
 	      <button class="btn-clear" type="button"></button>
 		</div>
 		<label for="old_password">原始密码</label>

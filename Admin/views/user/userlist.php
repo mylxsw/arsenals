@@ -1,4 +1,4 @@
-<?php \Admin\block_header('用户');?>
+<?php \Admin\block_header('用户'); ?>
 <div class="page-section">
 	<div class="toolbar transparent">
 	    <div class="toolbar-group">
@@ -20,13 +20,13 @@
 		<tbody>
 			<?php foreach ($users as $user):?>
 				<tr>
-					<td><input type="checkbox" name="id" class="select_all_item" value="<?php echo $user['id'];?>" /></td>
-					<td><?php echo $user['id'];?><?php if($current_user['username'] == $user['username']): ?> <span class="icon-locked" title="当前用户"></span><?php endif;?></td>
-					<td><?php echo $user['username'];?></td>
-					<td><?php echo $user['role'];?></td>
-					<td><?php echo $user['isvalid'] == 1 ? '是' : '否';?></td>
+					<td><input type="checkbox" name="id" class="select_all_item" value="<?php echo $user['id']; ?>" /></td>
+					<td><?php echo $user['id']; ?><?php if ($current_user['username'] == $user['username']): ?> <span class="icon-locked" title="当前用户"></span><?php endif; ?></td>
+					<td><?php echo $user['username']; ?></td>
+					<td><?php echo $user['role']; ?></td>
+					<td><?php echo $user['isvalid'] == 1 ? '是' : '否'; ?></td>
 				</tr>
-			<?php endforeach;?>
+			<?php endforeach; ?>
 		</tbody>
 	</table>
 </div>

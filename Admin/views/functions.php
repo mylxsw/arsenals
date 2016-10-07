@@ -1,188 +1,216 @@
 <?php
+
 namespace Admin;
+
 use Arsenals\Core\Config;
 use Arsenals\Core\Registry;
 
 $config = Config::load('config');
-define('TMP_FUNC', VIEW_PATH . $config['theme'] . DIRECTORY_SEPARATOR . '@templates' . DIRECTORY_SEPARATOR);
+define('TMP_FUNC', VIEW_PATH.$config['theme'].DIRECTORY_SEPARATOR.'@templates'.DIRECTORY_SEPARATOR);
 define('SITE_URL', IS_SAE ? 'http://aicode.cc/' : $config['site_url']);
 /**
- * 资源文件路径
-*/
-function resource_path(){
-	echo SITE_URL , 'Admin/views/public/';
-}
-/**
- * 公共资源路径
+ * 资源文件路径.
  */
-function public_resource_path(){
-	echo SITE_URL . 'Public/';
+function resource_path()
+{
+    echo SITE_URL , 'Admin/views/public/';
 }
 /**
- * 站点根路径
+ * 公共资源路径.
  */
-function site_url(){
-	return SITE_URL ;
+function public_resource_path()
+{
+    echo SITE_URL.'Public/';
 }
 /**
- * 移除Html中的标签
+ * 站点根路径.
+ */
+function site_url()
+{
+    return SITE_URL;
+}
+/**
+ * 移除Html中的标签.
+ *
  * @param string $html
+ *
  * @return string
  */
-function htmlToText($html){
-	return strip_tags($html);
+function htmlToText($html)
+{
+    return strip_tags($html);
 }
 /**
- * 安全输出html内容
- */ 
-function escape($text){
-	echo htmlspecialchars($text);
+ * 安全输出html内容.
+ */
+function escape($text)
+{
+    echo htmlspecialchars($text);
 }
 /**
- * 解析超链接
+ * 解析超链接.
+ *
  * @param unknown $url
  */
-function url($url){
-	$split_pos = strpos($url, '?');
-	$new_url = $split_pos ? (substr($url, 0, $split_pos). '?' . str_replace('?', '&', substr($url, $split_pos + 1))) : $url;
+function url($url)
+{
+    $split_pos = strpos($url, '?');
+    $new_url = $split_pos ? (substr($url, 0, $split_pos).'?'.str_replace('?', '&', substr($url, $split_pos + 1))) : $url;
 
-	if(\Arsenals\Core\str_start_with($url, 'http://') || \Arsenals\Core\str_start_with($url, 'https://')){
-		return $new_url;
-	}
-	return SITE_URL  . 'admin.php/' . $new_url;
+    if (\Arsenals\Core\str_start_with($url, 'http://') || \Arsenals\Core\str_start_with($url, 'https://')) {
+        return $new_url;
+    }
+
+    return SITE_URL.'admin.php/'.$new_url;
 }
 /**
- * 顶栏菜单
+ * 顶栏菜单.
+ *
  * @param string $current_nav
+ *
  * @return string
  */
-function top_nav($current_nav = 'home'){
-	$navModel = Registry::load('Demo\\models\\Navigator');
-	$ui_top_menus = $navModel->getNavTrees(0,'top',3);
-	// 	\Arsenals\Core\_D($ui_top_menus);
-	$_top_menus = '<li'. ($current_nav == 'home' ? ' class="active" ' : '') .'><a href="' . url('') . '"><i class="icon-home"></i></a></li>';
-	foreach($ui_top_menus as $k => $v){
-		$_top_menus .=
-		'<li'. ($current_nav == $v['id'] ?
-				' class="active" '
-				: '')
-				."><a href=\"" . url($v['url']) . "\">{$v['name']}</a>";
-		if( isset($v['sub']) && is_array($v['sub']) && count($v['sub']) > 0){
-			$_top_menus .= "<ul class=\"submenu\">";
-			foreach ($v['sub'] as $k2=>$v2){
-				$_top_menus .=
-				"<li><a href=\"" . url($v2['url']) . "\">{$v2['name']}</a></li>";
-			}
-			$_top_menus .= "</ul>";
-		}
-		$_top_menus .=  "</li>";
-	}
-	return $_top_menus;
+function top_nav($current_nav = 'home')
+{
+    $navModel = Registry::load('Demo\\models\\Navigator');
+    $ui_top_menus = $navModel->getNavTrees(0, 'top', 3);
+    // 	\Arsenals\Core\_D($ui_top_menus);
+    $_top_menus = '<li'.($current_nav == 'home' ? ' class="active" ' : '').'><a href="'.url('').'"><i class="icon-home"></i></a></li>';
+    foreach ($ui_top_menus as $k => $v) {
+        $_top_menus .=
+        '<li'.($current_nav == $v['id'] ?
+                ' class="active" '
+                : '')
+                .'><a href="'.url($v['url'])."\">{$v['name']}</a>";
+        if (isset($v['sub']) && is_array($v['sub']) && count($v['sub']) > 0) {
+            $_top_menus .= '<ul class="submenu">';
+            foreach ($v['sub'] as $k2 => $v2) {
+                $_top_menus .=
+                '<li><a href="'.url($v2['url'])."\">{$v2['name']}</a></li>";
+            }
+            $_top_menus .= '</ul>';
+        }
+        $_top_menus .= '</li>';
+    }
+
+    return $_top_menus;
 }
 /**
- * 首页轮播图
+ * 首页轮播图.
+ *
  * @return string
  */
-function index_lunbo(){
-	$settingModel = Registry::load('Demo\\models\\Setting');
-	$lunbos = $settingModel->getSetting('index_lunbo_imgs', 'plugin');
-	$lunbo_imgs = \unserialize($lunbos['setting_value']);
-	$html = "<div id='sliderPlay' style='visibility: hidden'>";
-	foreach ($lunbo_imgs as $key=>$val){
-		$html .= "<a href='" . url($val['url']) . "' target=\"_blank\"><img src='" . url($val['img']) . "' alt='" . $val['title'] . "' height='376px' width='940px'/></a>";
-	}
-	$html .= "</div>";
-	return $html;
+function index_lunbo()
+{
+    $settingModel = Registry::load('Demo\\models\\Setting');
+    $lunbos = $settingModel->getSetting('index_lunbo_imgs', 'plugin');
+    $lunbo_imgs = \unserialize($lunbos['setting_value']);
+    $html = "<div id='sliderPlay' style='visibility: hidden'>";
+    foreach ($lunbo_imgs as $key => $val) {
+        $html .= "<a href='".url($val['url'])."' target=\"_blank\"><img src='".url($val['img'])."' alt='".$val['title']."' height='376px' width='940px'/></a>";
+    }
+    $html .= '</div>';
+
+    return $html;
 }
 /**
- * 最新的文章
+ * 最新的文章.
+ *
  * @param unknown $category
- * @param number $count
+ * @param number  $count
  */
-function new_blog($category, $count = 1){
-	$articleModel = Registry::load('Demo\\models\\Article');
-	return $articleModel->getNewArticlesInCategory($category, $count);
+function new_blog($category, $count = 1)
+{
+    $articleModel = Registry::load('Demo\\models\\Article');
+
+    return $articleModel->getNewArticlesInCategory($category, $count);
 }
 /**
- * 面包屑导航
+ * 面包屑导航.
+ *
  * @param array $elements
  */
-function breadcrumbs($elements = array()){
-	if(!is_array($elements) || count($elements) == 0){
-		return '';
-	}
-	$html = '<nav class="ink-navigation"><ul class="breadcrumbs">';
-	$i = 0;
-	foreach ($elements as $k => $e){
-		$html .= '<li' . ($i == (count($elements) - 1) ? ' class="active" ' : '') . '>';
-		$html .= '<a href="' . url($e) . '">';
-		$html .= $k;
-		$html .= '</a>';
-		$html .= "</li>";
-		$i ++;
-	}
-	$html .= '</ul></nav>';
+function breadcrumbs($elements = [])
+{
+    if (!is_array($elements) || count($elements) == 0) {
+        return '';
+    }
+    $html = '<nav class="ink-navigation"><ul class="breadcrumbs">';
+    $i = 0;
+    foreach ($elements as $k => $e) {
+        $html .= '<li'.($i == (count($elements) - 1) ? ' class="active" ' : '').'>';
+        $html .= '<a href="'.url($e).'">';
+        $html .= $k;
+        $html .= '</a>';
+        $html .= '</li>';
+        $i++;
+    }
+    $html .= '</ul></nav>';
 
-	return $html;
+    return $html;
 }
 /**
- * 分页
+ * 分页.
+ *
  * @param string $url
  * @param number $totals
  * @param number $page_count
  * @param number $current
  * @param number $show_offset 当前页码前后显示的页码数量
+ *
  * @return string
  */
-function pagination($url, $totals, $page_count, $current, $show_offset = 3){
+function pagination($url, $totals, $page_count, $current, $show_offset = 3)
+{
+    $current = intval($current);
+    if ($current < 1 || $current > $page_count) {
+        $current = 1;
+    }
 
-	$current = intval($current);
-	if($current < 1 || $current > $page_count){
-		$current = 1;
-	}
-
-	$html = '<div class="pagination">
+    $html = '<div class="pagination">
 				<ul>';
 
-	// 是否显示上一页
-	if($current > 1){
-		$html .= '<li class="prev"><a href="' . url("{$url}?p=" . ($current - 1)) . '">上一页</a></li>';
-	}
+    // 是否显示上一页
+    if ($current > 1) {
+        $html .= '<li class="prev"><a href="'.url("{$url}?p=".($current - 1)).'">上一页</a></li>';
+    }
 
-	$start = 1;
-	if($current - $show_offset > 0){
-		$start = $current - $show_offset;
-	}
+    $start = 1;
+    if ($current - $show_offset > 0) {
+        $start = $current - $show_offset;
+    }
 
-	$end = $page_count;
-	if($current + $show_offset < $page_count){
-		$end = $current + $show_offset;
-	}
+    $end = $page_count;
+    if ($current + $show_offset < $page_count) {
+        $end = $current + $show_offset;
+    }
 
-	for($i = $start; $i <= $end; $i ++){
-		$html .= '		<li ' . ($current != $i ? '' : ' class="active" ' ) . '><a href="' . url($url . '?p=' . $i) . '">' . $i . '</a></li>';
+    for ($i = $start; $i <= $end; $i++) {
+        $html .= '		<li '.($current != $i ? '' : ' class="active" ').'><a href="'.url($url.'?p='.$i).'">'.$i.'</a></li>';
+    }
 
-	}
+    // 是否显示下一页
+    if ($current < $page_count) {
+        $html .= '<li class="next"><a href="'.url("{$url}?p=".($current + 1)).'">下一页</a></li>';
+    }
 
-	// 是否显示下一页
-	if($current < $page_count){
-		$html .= '<li class="next"><a href="' . url("{$url}?p=" . ($current + 1)) . '">下一页</a></li>';
-	}
-
-	$html .= '	</ul>
+    $html .= '	</ul>
 			</div>';
-	return $html;
+
+    return $html;
 }
 /**
- * 页面标题
+ * 页面标题.
  */
-function block_header($title){
-	echo "<blockquote class=\"block-title\">{$title}</blockquote>";
+function block_header($title)
+{
+    echo "<blockquote class=\"block-title\">{$title}</blockquote>";
 }
 
-function code_editor($name, $default = ''){
-	$resource_path = SITE_URL ;
-	echo <<<START
+function code_editor($name, $default = '')
+{
+    $resource_path = SITE_URL;
+    echo <<<START
 <input type="hidden" name="{$name}" value="{$default}" />
 <div class="code-area"><pre id="ace-editor" class="ace-editor" ></pre></div>
 <script src="{$resource_path}Public/ace/ace.js" type="text/javascript" charset="utf-8"></script>
@@ -198,92 +226,104 @@ function code_editor($name, $default = ''){
 START;
 }
 /**
- * 获取文章分类
- */ 
-function category($id, $join_str = ', '){
-	$categoryModel = Registry::load('Common\\models\\Category');
-	$categorys = $categoryModel->getCatesByArtId($id);
-	
-	$cate_arr = array();
-	foreach ($categorys as $k => $v) {
-		$cate_arr[] = $join_str === false ? $v['id'] : ("<a href='" . url("article/lists?cat={$v['id']}") . "'>{$v['name']}</a>");
-	}
+ * 获取文章分类.
+ */
+function category($id, $join_str = ', ')
+{
+    $categoryModel = Registry::load('Common\\models\\Category');
+    $categorys = $categoryModel->getCatesByArtId($id);
 
-	return $join_str === false ? $cate_arr : implode($join_str, $cate_arr);
+    $cate_arr = [];
+    foreach ($categorys as $k => $v) {
+        $cate_arr[] = $join_str === false ? $v['id'] : ("<a href='".url("article/lists?cat={$v['id']}")."'>{$v['name']}</a>");
+    }
+
+    return $join_str === false ? $cate_arr : implode($join_str, $cate_arr);
 }
 /**
- * 获取导航
+ * 获取导航.
+ *
  * @param unknown $id
+ *
  * @return string
  */
-function naviagtor($id){
-	if ($id == 0){
-		return '一级导航';
-	}
-	$navModel = Registry::load('Common\\models\\Navigator');
-	$nav = $navModel->load(array('id' => intval($id)));
-	
-	return $nav['name'];
+function naviagtor($id)
+{
+    if ($id == 0) {
+        return '一级导航';
+    }
+    $navModel = Registry::load('Common\\models\\Navigator');
+    $nav = $navModel->load(['id' => intval($id)]);
+
+    return $nav['name'];
 }
 
 /**
- * 获取标签
+ * 获取标签.
+ *
  * @param unknown $id
- * @param string $join_str
+ * @param string  $join_str
+ *
  * @return string
  */
-function tags($id, $join_str = ','){
-	$tagModel = Registry::load('Common\\models\\Tag');
-	$tags = $tagModel->getTagsByArtId($id);
+function tags($id, $join_str = ',')
+{
+    $tagModel = Registry::load('Common\\models\\Tag');
+    $tags = $tagModel->getTagsByArtId($id);
 
-	$tag_arr = array();
-	foreach ($tags as $t) {
-		$tag_arr[] = $t['name'];
-	}
+    $tag_arr = [];
+    foreach ($tags as $t) {
+        $tag_arr[] = $t['name'];
+    }
 
-	return implode($join_str, $tag_arr);
+    return implode($join_str, $tag_arr);
 }
 
-function tags_str($tags, $join_str = ','){
-	if(is_null($tags) || strlen($tags) == 0){
-		return '';
-	}
+function tags_str($tags, $join_str = ',')
+{
+    if (is_null($tags) || strlen($tags) == 0) {
+        return '';
+    }
 
-	$tags_arr = explode(',', trim($tags, ','));
+    $tags_arr = explode(',', trim($tags, ','));
 
-	return implode(',', array_map(function($a){
-		return "<a href='#{$a}'>{$a}</a>";
-	}, $tags_arr));
+    return implode(',', array_map(function ($a) {
+        return "<a href='#{$a}'>{$a}</a>";
+    }, $tags_arr));
 }
 
 /**
- * 文章来源数据来源
- */ 
-function article_source_list($id){
-	$settingModel = Registry::load('Common\\models\\Setting');
-	$source_list = $settingModel->getSetting('source_list', 'system');
-	$source_lists = \json_decode($source_list['setting_value']);
+ * 文章来源数据来源.
+ */
+function article_source_list($id)
+{
+    $settingModel = Registry::load('Common\\models\\Setting');
+    $source_list = $settingModel->getSetting('source_list', 'system');
+    $source_lists = \json_decode($source_list['setting_value']);
 
-	$html = "<datalist id='{$id}'>";
-	foreach($source_lists as $k=>$v){
-		$html .= "<option label='{$v->label}' value='{$v->value}' />";
-	}
+    $html = "<datalist id='{$id}'>";
+    foreach ($source_lists as $k => $v) {
+        $html .= "<option label='{$v->label}' value='{$v->value}' />";
+    }
 
-	$html .= "</datalist>";
-	return $html;
+    $html .= '</datalist>';
+
+    return $html;
 }
 
 /**
  * 为文件名添加前缀
+ *
  * @param $filename
  * @param $prefix
  */
-function filename_prefix($filename, $prefix){
+function filename_prefix($filename, $prefix)
+{
     $filename = str_replace('\\', '/', $filename);
     $last_pos = strrpos($filename, '/');
 
     $path = substr($filename, 0, $last_pos + 1);
     $name = substr($filename, $last_pos + 1);
 
-    return $path . $prefix . $name;
+    return $path.$prefix.$name;
 }

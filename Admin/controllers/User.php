@@ -1,95 +1,108 @@
 <?php
+
 namespace Admin\controllers;
 
 use Admin\utils\Ajax;
 use Arsenals\Core\Session;
 
-class User extends CoreController{
-	public function userInfo(){
-		$user = Session::get('user');
-		return $this->view('user/userinfo', array('user'=> $user));
-	}
+class User extends CoreController
+{
+    public function userInfo()
+    {
+        $user = Session::get('user');
 
-	public function userList(){
-		$this->assign('users', $this->model('User')->lists());
-		$this->assign('current_user', Session::get('user'));
+        return $this->view('user/userinfo', ['user' => $user]);
+    }
 
-		return $this->view('user/userlist');
-	}
+    public function userList()
+    {
+        $this->assign('users', $this->model('User')->lists());
+        $this->assign('current_user', Session::get('user'));
 
-	public function addUser(){
-		return $this->view('user/add_user');
-	}
+        return $this->view('user/userlist');
+    }
 
-	public function addUserPost(){
-		$data = array();
-		$data['username'] = $this->post('username', '', 'required|len: 2,30');
-		$data['password'] = $this->post('password', '', 'required|len: 6,20');
-		$data['isvalid'] = $this->post('isvalid', '1', 'required|in:0,1');
-		$data['role'] = $this->post('role', 'nologin', 'required|len:1,20');
+    public function addUser()
+    {
+        return $this->view('user/add_user');
+    }
 
-		$userModel = $this->model('User');
-		$userModel->addUser($data);
+    public function addUserPost()
+    {
+        $data = [];
+        $data['username'] = $this->post('username', '', 'required|len: 2,30');
+        $data['password'] = $this->post('password', '', 'required|len: 6,20');
+        $data['isvalid'] = $this->post('isvalid', '1', 'required|in:0,1');
+        $data['role'] = $this->post('role', 'nologin', 'required|len:1,20');
 
-		return Ajax::ajaxReturn('操作完成！', Ajax::SUCCESS);
-	}
+        $userModel = $this->model('User');
+        $userModel->addUser($data);
 
-	public function updateUser(){
-		$id = $this->get('id', '', 'required|int');
-		$userModel = $this->model('User');
+        return Ajax::ajaxReturn('操作完成！', Ajax::SUCCESS);
+    }
 
-		$this->assign('user', $userModel->load(array('id'=>$id)));
-		$this->assign('current_user', Session::get('user'));
-		return $this->view('user/edit_user');
-	}
+    public function updateUser()
+    {
+        $id = $this->get('id', '', 'required|int');
+        $userModel = $this->model('User');
 
-	public function updateUserPost(){
-		$data = array();
-		$data['password'] = $this->post('password', '');
-		$data['isvalid'] = $this->post('isvalid', '1', 'required|in:0,1');
-		$data['role'] = $this->post('role', 'nologin', 'required|len:1,20');
+        $this->assign('user', $userModel->load(['id' => $id]));
+        $this->assign('current_user', Session::get('user'));
 
-		$userModel = $this->model('User');
-		$userModel->updateUser($data, $this->post('id', '', 'required|int'));
+        return $this->view('user/edit_user');
+    }
 
-		return Ajax::ajaxReturn('操作完成！', Ajax::SUCCESS);
-	}
+    public function updateUserPost()
+    {
+        $data = [];
+        $data['password'] = $this->post('password', '');
+        $data['isvalid'] = $this->post('isvalid', '1', 'required|in:0,1');
+        $data['role'] = $this->post('role', 'nologin', 'required|len:1,20');
 
-	public function delUser(){
-		$ids = str_replace(' ', '', $this->post('ids', null, 'required|len:1,100'));
-    	$ids_array = preg_split('/,/', $ids);
+        $userModel = $this->model('User');
+        $userModel->updateUser($data, $this->post('id', '', 'required|int'));
 
-    	$user = Session::get('user');
+        return Ajax::ajaxReturn('操作完成！', Ajax::SUCCESS);
+    }
 
-		$userModel = $this->model('User');
-		$userModel->delUsers($ids_array, $user['username']);
-		
-		return Ajax::ajaxReturn('操作成功！', Ajax::SUCCESS);
-	}
-	/**
-	 * 修改密码
-	 */ 
-	public function changePassword(){
-		$old_password = $this->post('old_password', '', 'required|len:6,20');
-		$new_password = $this->post('new_password', '', 'required|len:6,20');
-		$new_password_confirm = $this->post('new_password_confirm', '', 'required|len:6,20');
+    public function delUser()
+    {
+        $ids = str_replace(' ', '', $this->post('ids', null, 'required|len:1,100'));
+        $ids_array = preg_split('/,/', $ids);
 
-		// 检查密码确认是否一致
-		if ($new_password != $new_password_confirm) {
-			throw new \Arsenals\Core\Exceptions\FormInvalidException('两次输入的密码不一致！');
-		}
+        $user = Session::get('user');
 
-		// 检查旧密码是否合法
-		$userModel = $this->model('User');
-		$user = Session::get('user');
+        $userModel = $this->model('User');
+        $userModel->delUsers($ids_array, $user['username']);
 
-		if(!$userModel->getUser($user['username'], $old_password)){
-			throw new \Arsenals\Core\Exceptions\FormInvalidException('原始密码不正确！');
-		}
+        return Ajax::ajaxReturn('操作成功！', Ajax::SUCCESS);
+    }
 
-		// 更新密码
-		$userModel->updateUserPassword($user['username'], $new_password);
+    /**
+     * 修改密码
+     */
+    public function changePassword()
+    {
+        $old_password = $this->post('old_password', '', 'required|len:6,20');
+        $new_password = $this->post('new_password', '', 'required|len:6,20');
+        $new_password_confirm = $this->post('new_password_confirm', '', 'required|len:6,20');
 
-		return Ajax::ajaxReturn('操作成功！', Ajax::SUCCESS);
-	}
+        // 检查密码确认是否一致
+        if ($new_password != $new_password_confirm) {
+            throw new \Arsenals\Core\Exceptions\FormInvalidException('两次输入的密码不一致！');
+        }
+
+        // 检查旧密码是否合法
+        $userModel = $this->model('User');
+        $user = Session::get('user');
+
+        if (!$userModel->getUser($user['username'], $old_password)) {
+            throw new \Arsenals\Core\Exceptions\FormInvalidException('原始密码不正确！');
+        }
+
+        // 更新密码
+        $userModel->updateUserPassword($user['username'], $new_password);
+
+        return Ajax::ajaxReturn('操作成功！', Ajax::SUCCESS);
+    }
 }

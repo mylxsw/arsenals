@@ -1,4 +1,4 @@
-<form action="<?php echo \Admin\url('article/tagAddPost');?>" method="post" id="tagAddPost">
+<form action="<?php echo \Admin\url('article/tagAddPost'); ?>" method="post" id="tagAddPost">
 	<fieldset>
 		<label for="tag_name">名称</label>
 		<div class="input-control text size4" data-role="input-control">

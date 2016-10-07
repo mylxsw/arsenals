@@ -13,9 +13,9 @@
 		<tbody></tbody>
 	</table>
 </div>
-<script src="<?php \Admin\public_resource_path();?>jquery/jquery.dataTables.js"></script>
+<script src="<?php \Admin\public_resource_path(); ?>jquery/jquery.dataTables.js"></script>
 <script type="text/javascript">
 	$(function(){
-		f.dataTable("#logTable",  "<?php echo \Admin\url('log/async');?>");
+		f.dataTable("#logTable",  "<?php echo \Admin\url('log/async'); ?>");
 	});
 </script>

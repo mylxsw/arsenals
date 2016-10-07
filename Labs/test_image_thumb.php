@@ -1,5 +1,6 @@
 <?php
-require "../Arsenals/Libraries/Images/ImageUtils.php";
+
+require '../Arsenals/Libraries/Images/ImageUtils.php';
 use \Arsenals\Libraries\Images\ImageUtils;
 
 $filename = 'test.jpg';
@@ -10,8 +11,9 @@ $filename = 'test.jpg';
 ImageUtils::thumb($filename, 400, 200);
 
 
-function D($str){
-	echo "<pre>";
-	var_dump($str);
-	echo "</pre>";
+function D($str)
+{
+    echo '<pre>';
+    var_dump($str);
+    echo '</pre>';
 }

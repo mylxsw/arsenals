@@ -15,9 +15,9 @@
 		<tbody></tbody>
 	</table>
 </div>
-<script src="<?php \Admin\public_resource_path();?>jquery/jquery.dataTables.js"></script>
+<script src="<?php \Admin\public_resource_path(); ?>jquery/jquery.dataTables.js"></script>
 <script type="text/javascript">
 	$(function(){
-		f.dataTable("#messageTable",  "<?php echo \Admin\url('message/async');?>");
+		f.dataTable("#messageTable",  "<?php echo \Admin\url('message/async'); ?>");
 	});
 </script>
